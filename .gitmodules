@@ -1,0 +1,3 @@
+[submodule "External/SGHotKeysLib"]
+	path = External/SGHotKeysLib
+	url = https://github.com/secondgear/SGHotKeysLib.git
