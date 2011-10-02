@@ -1295,26 +1295,28 @@
 				<int key="NSWindowStyleMask">270</int>
 				<bool key="NSWindowAllowNontitledResizable">YES</bool>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{102, 184}, {279, 208}}</string>
+				<string key="NSWindowRect">{{50, 58}, {200, 200}}</string>
 				<int key="NSWTFlags">1954025472</int>
 				<string key="NSWindowTitle">SkronkSpike</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
+				<string key="NSWindowContentMaxSize">{200, 200}</string>
+				<string key="NSWindowContentMinSize">{200, 200}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
-						<object class="NSTextField" id="284705457">
+						<object class="NSTextField" id="1040691702">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{17, 96}, {245, 17}}</string>
+							<string key="NSFrame">{{17, 92}, {245, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:3944</string>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSTextFieldCell" key="NSCell" id="372128720">
+							<object class="NSTextFieldCell" key="NSCell" id="543092034">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272630784</int>
 								<string key="NSContents">Status</string>
@@ -1324,7 +1326,7 @@
 									<int key="NSfFlags">1044</int>
 								</object>
 								<string key="NSCellIdentifier">_NS:3944</string>
-								<reference key="NSControlView" ref="284705457"/>
+								<reference key="NSControlView" ref="1040691702"/>
 								<object class="NSColor" key="NSBackgroundColor">
 									<int key="NSColorSpace">6</int>
 									<string key="NSCatalogName">System</string>
@@ -1346,13 +1348,14 @@
 							</object>
 						</object>
 					</array>
-					<string key="NSFrameSize">{279, 208}</string>
+					<string key="NSFrameSize">{200, 200}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView" ref="284705457"/>
+					<reference key="NSNextKeyView" ref="1040691702"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
-				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
+				<string key="NSMinSize">{200, 200}</string>
+				<string key="NSMaxSize">{200, 200}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="976324537">
@@ -2048,7 +2051,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">statusLabel</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="284705457"/>
+						<reference key="destination" ref="1040691702"/>
 					</object>
 					<int key="connectionID">538</int>
 				</object>
@@ -2577,7 +2580,7 @@
 						<int key="objectID">372</int>
 						<reference key="object" ref="439893737"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="284705457"/>
+							<reference ref="1040691702"/>
 						</array>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -3056,16 +3059,16 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">536</int>
-						<reference key="object" ref="284705457"/>
+						<reference key="object" ref="1040691702"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="372128720"/>
+							<reference ref="543092034"/>
 						</array>
 						<reference key="parent" ref="439893737"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">537</int>
-						<reference key="object" ref="372128720"/>
-						<reference key="parent" ref="284705457"/>
+						<reference key="object" ref="543092034"/>
+						<reference key="parent" ref="1040691702"/>
 					</object>
 				</array>
 			</object>

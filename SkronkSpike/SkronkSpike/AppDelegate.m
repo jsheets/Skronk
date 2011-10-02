@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "SGHotKey.h"
+#import "SGHotKeyCenter.h"
+
+NSString *kGlobalHotKey = @"Global Hot Key";
 
 @implementation AppDelegate
 
@@ -18,6 +22,29 @@
     // Insert code here to initialize your application
     self.statusLabel.stringValue = @"Initialized.";
     [self.window setLevel:kCGDesktopWindowLevel];
+}
+
+- (void)setupHotkeys
+{
+    // Modifiers: cmdKey, shiftKey, optionKey, controlKey
+    
+    // Cmd-Opt-Ctrl-g
+    NSInteger keyCode = 5;
+    NSInteger modifier = cmdKey + optionKey + controlKey;
+    
+    SGKeyCombo *keyCombo = [SGKeyCombo keyComboWithKeyCode:keyCode modifiers:modifier];
+    SGHotKey *hotKey = [[SGHotKey alloc] initWithIdentifier:kGlobalHotKey keyCombo:keyCombo target:self action:@selector(hotKeyPressed:)];
+    [[SGHotKeyCenter sharedCenter] registerHotKey:hotKey];
+}
+
+- (void)awakeFromNib
+{
+    [self setupHotkeys];
+}
+
+- (void)hotKeyPressed:(id)sender
+{
+    self.statusLabel.stringValue = @"Globalized.";
 }
 
 @end

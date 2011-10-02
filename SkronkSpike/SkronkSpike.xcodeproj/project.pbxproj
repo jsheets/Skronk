@@ -17,6 +17,11 @@
 		0D57C3821438C40B0024D014 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57C3621438C40A0024D014 /* Cocoa.framework */; };
 		0D57C38A1438C40B0024D014 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D57C3881438C40B0024D014 /* InfoPlist.strings */; };
 		0D57C38D1438C40B0024D014 /* SkronkSpikeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C38C1438C40B0024D014 /* SkronkSpikeTests.m */; };
+		0D57C3A61438F4ED0024D014 /* SGHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C39F1438F4ED0024D014 /* SGHotKey.m */; };
+		0D57C3A71438F4ED0024D014 /* SGHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C3A11438F4ED0024D014 /* SGHotKeyCenter.m */; };
+		0D57C3A81438F4ED0024D014 /* SGKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C3A31438F4ED0024D014 /* SGKeyCodeTranslator.m */; };
+		0D57C3A91438F4ED0024D014 /* SGKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C3A51438F4ED0024D014 /* SGKeyCombo.m */; };
+		0D57C3AB1438FBA00024D014 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57C3AA1438FBA00024D014 /* Carbon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,15 @@
 		0D57C3891438C40B0024D014 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0D57C38B1438C40B0024D014 /* SkronkSpikeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkronkSpikeTests.h; sourceTree = "<group>"; };
 		0D57C38C1438C40B0024D014 /* SkronkSpikeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkronkSpikeTests.m; sourceTree = "<group>"; };
+		0D57C39E1438F4ED0024D014 /* SGHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHotKey.h; sourceTree = "<group>"; };
+		0D57C39F1438F4ED0024D014 /* SGHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHotKey.m; sourceTree = "<group>"; };
+		0D57C3A01438F4ED0024D014 /* SGHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHotKeyCenter.h; sourceTree = "<group>"; };
+		0D57C3A11438F4ED0024D014 /* SGHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHotKeyCenter.m; sourceTree = "<group>"; };
+		0D57C3A21438F4ED0024D014 /* SGKeyCodeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKeyCodeTranslator.h; sourceTree = "<group>"; };
+		0D57C3A31438F4ED0024D014 /* SGKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKeyCodeTranslator.m; sourceTree = "<group>"; };
+		0D57C3A41438F4ED0024D014 /* SGKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKeyCombo.h; sourceTree = "<group>"; };
+		0D57C3A51438F4ED0024D014 /* SGKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKeyCombo.m; sourceTree = "<group>"; };
+		0D57C3AA1438FBA00024D014 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D57C3AB1438FBA00024D014 /* Carbon.framework in Frameworks */,
 				0D57C3631438C40A0024D014 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +90,7 @@
 		0D57C3531438C40A0024D014 = {
 			isa = PBXGroup;
 			children = (
+				0D57C3AA1438FBA00024D014 /* Carbon.framework */,
 				0D57C3681438C40A0024D014 /* SkronkSpike */,
 				0D57C3851438C40B0024D014 /* SkronkSpikeTests */,
 				0D57C3611438C40A0024D014 /* Frameworks */,
@@ -117,6 +133,7 @@
 				0D57C3741438C40B0024D014 /* AppDelegate.h */,
 				0D57C3751438C40B0024D014 /* AppDelegate.m */,
 				0D57C3771438C40B0024D014 /* MainMenu.xib */,
+				0D57C39D1438F4ED0024D014 /* SGHotKeysLib */,
 				0D57C3691438C40B0024D014 /* Supporting Files */,
 			);
 			path = SkronkSpike;
@@ -151,6 +168,22 @@
 				0D57C3881438C40B0024D014 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D57C39D1438F4ED0024D014 /* SGHotKeysLib */ = {
+			isa = PBXGroup;
+			children = (
+				0D57C39E1438F4ED0024D014 /* SGHotKey.h */,
+				0D57C39F1438F4ED0024D014 /* SGHotKey.m */,
+				0D57C3A01438F4ED0024D014 /* SGHotKeyCenter.h */,
+				0D57C3A11438F4ED0024D014 /* SGHotKeyCenter.m */,
+				0D57C3A21438F4ED0024D014 /* SGKeyCodeTranslator.h */,
+				0D57C3A31438F4ED0024D014 /* SGKeyCodeTranslator.m */,
+				0D57C3A41438F4ED0024D014 /* SGKeyCombo.h */,
+				0D57C3A51438F4ED0024D014 /* SGKeyCombo.m */,
+			);
+			name = SGHotKeysLib;
+			path = ../../External/SGHotKeysLib/SGHotKeysLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +296,10 @@
 			files = (
 				0D57C36F1438C40B0024D014 /* main.m in Sources */,
 				0D57C3761438C40B0024D014 /* AppDelegate.m in Sources */,
+				0D57C3A61438F4ED0024D014 /* SGHotKey.m in Sources */,
+				0D57C3A71438F4ED0024D014 /* SGHotKeyCenter.m in Sources */,
+				0D57C3A81438F4ED0024D014 /* SGKeyCodeTranslator.m in Sources */,
+				0D57C3A91438F4ED0024D014 /* SGKeyCombo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +407,7 @@
 		0D57C3911438C40B0024D014 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkronkSpike/SkronkSpike-Prefix.pch";
 				INFOPLIST_FILE = "SkronkSpike/SkronkSpike-Info.plist";
@@ -381,6 +419,7 @@
 		0D57C3921438C40B0024D014 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkronkSpike/SkronkSpike-Prefix.pch";
 				INFOPLIST_FILE = "SkronkSpike/SkronkSpike-Info.plist";
@@ -436,6 +475,7 @@
 				0D57C3921438C40B0024D014 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D57C3931438C40B0024D014 /* Build configuration list for PBXNativeTarget "SkronkSpikeTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +484,7 @@
 				0D57C3951438C40B0024D014 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
