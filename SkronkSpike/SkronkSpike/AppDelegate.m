@@ -11,10 +11,12 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize statusLabel = _statusLabel;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    self.statusLabel.stringValue = @"Initialized.";
     [self.window setLevel:kCGDesktopWindowLevel];
 }
 
