@@ -1,3 +1,6 @@
 [submodule "External/SGHotKeysLib"]
 	path = External/SGHotKeysLib
 	url = https://github.com/secondgear/SGHotKeysLib.git
+[submodule "External/DDHotKey"]
+	path = External/DDHotKey
+	url = https://github.com/davedelong/DDHotKey.git
