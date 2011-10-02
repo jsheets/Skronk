@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'SkronkSpike' target in the 'SkronkSpike' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

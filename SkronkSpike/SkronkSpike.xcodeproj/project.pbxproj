@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D57C3631438C40A0024D014 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57C3621438C40A0024D014 /* Cocoa.framework */; };
+		0D57C36D1438C40B0024D014 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D57C36B1438C40B0024D014 /* InfoPlist.strings */; };
+		0D57C36F1438C40B0024D014 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C36E1438C40B0024D014 /* main.m */; };
+		0D57C3731438C40B0024D014 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0D57C3711438C40B0024D014 /* Credits.rtf */; };
+		0D57C3761438C40B0024D014 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C3751438C40B0024D014 /* AppDelegate.m */; };
+		0D57C3791438C40B0024D014 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D57C3771438C40B0024D014 /* MainMenu.xib */; };
+		0D57C3811438C40B0024D014 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57C3801438C40B0024D014 /* SenTestingKit.framework */; };
+		0D57C3821438C40B0024D014 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57C3621438C40A0024D014 /* Cocoa.framework */; };
+		0D57C38A1438C40B0024D014 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D57C3881438C40B0024D014 /* InfoPlist.strings */; };
+		0D57C38D1438C40B0024D014 /* SkronkSpikeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C38C1438C40B0024D014 /* SkronkSpikeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D57C3831438C40B0024D014 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D57C3551438C40A0024D014 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D57C35D1438C40A0024D014;
+			remoteInfo = SkronkSpike;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D57C35E1438C40A0024D014 /* SkronkSpike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkronkSpike.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D57C3621438C40A0024D014 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0D57C3651438C40A0024D014 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0D57C3661438C40A0024D014 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0D57C3671438C40A0024D014 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0D57C36A1438C40B0024D014 /* SkronkSpike-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkronkSpike-Info.plist"; sourceTree = "<group>"; };
+		0D57C36C1438C40B0024D014 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0D57C36E1438C40B0024D014 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0D57C3701438C40B0024D014 /* SkronkSpike-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SkronkSpike-Prefix.pch"; sourceTree = "<group>"; };
+		0D57C3721438C40B0024D014 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		0D57C3741438C40B0024D014 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0D57C3751438C40B0024D014 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0D57C3781438C40B0024D014 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0D57C37F1438C40B0024D014 /* SkronkSpikeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkronkSpikeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D57C3801438C40B0024D014 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		0D57C3871438C40B0024D014 /* SkronkSpikeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkronkSpikeTests-Info.plist"; sourceTree = "<group>"; };
+		0D57C3891438C40B0024D014 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0D57C38B1438C40B0024D014 /* SkronkSpikeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkronkSpikeTests.h; sourceTree = "<group>"; };
+		0D57C38C1438C40B0024D014 /* SkronkSpikeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkronkSpikeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D57C35B1438C40A0024D014 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D57C3631438C40A0024D014 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D57C37B1438C40B0024D014 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D57C3811438C40B0024D014 /* SenTestingKit.framework in Frameworks */,
+				0D57C3821438C40B0024D014 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D57C3531438C40A0024D014 = {
+			isa = PBXGroup;
+			children = (
+				0D57C3681438C40A0024D014 /* SkronkSpike */,
+				0D57C3851438C40B0024D014 /* SkronkSpikeTests */,
+				0D57C3611438C40A0024D014 /* Frameworks */,
+				0D57C35F1438C40A0024D014 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D57C35F1438C40A0024D014 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D57C35E1438C40A0024D014 /* SkronkSpike.app */,
+				0D57C37F1438C40B0024D014 /* SkronkSpikeTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D57C3611438C40A0024D014 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D57C3621438C40A0024D014 /* Cocoa.framework */,
+				0D57C3801438C40B0024D014 /* SenTestingKit.framework */,
+				0D57C3641438C40A0024D014 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D57C3641438C40A0024D014 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D57C3651438C40A0024D014 /* AppKit.framework */,
+				0D57C3661438C40A0024D014 /* CoreData.framework */,
+				0D57C3671438C40A0024D014 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		0D57C3681438C40A0024D014 /* SkronkSpike */ = {
+			isa = PBXGroup;
+			children = (
+				0D57C3741438C40B0024D014 /* AppDelegate.h */,
+				0D57C3751438C40B0024D014 /* AppDelegate.m */,
+				0D57C3771438C40B0024D014 /* MainMenu.xib */,
+				0D57C3691438C40B0024D014 /* Supporting Files */,
+			);
+			path = SkronkSpike;
+			sourceTree = "<group>";
+		};
+		0D57C3691438C40B0024D014 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D57C36A1438C40B0024D014 /* SkronkSpike-Info.plist */,
+				0D57C36B1438C40B0024D014 /* InfoPlist.strings */,
+				0D57C36E1438C40B0024D014 /* main.m */,
+				0D57C3701438C40B0024D014 /* SkronkSpike-Prefix.pch */,
+				0D57C3711438C40B0024D014 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D57C3851438C40B0024D014 /* SkronkSpikeTests */ = {
+			isa = PBXGroup;
+			children = (
+				0D57C38B1438C40B0024D014 /* SkronkSpikeTests.h */,
+				0D57C38C1438C40B0024D014 /* SkronkSpikeTests.m */,
+				0D57C3861438C40B0024D014 /* Supporting Files */,
+			);
+			path = SkronkSpikeTests;
+			sourceTree = "<group>";
+		};
+		0D57C3861438C40B0024D014 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D57C3871438C40B0024D014 /* SkronkSpikeTests-Info.plist */,
+				0D57C3881438C40B0024D014 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D57C35D1438C40A0024D014 /* SkronkSpike */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D57C3901438C40B0024D014 /* Build configuration list for PBXNativeTarget "SkronkSpike" */;
+			buildPhases = (
+				0D57C35A1438C40A0024D014 /* Sources */,
+				0D57C35B1438C40A0024D014 /* Frameworks */,
+				0D57C35C1438C40A0024D014 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkronkSpike;
+			productName = SkronkSpike;
+			productReference = 0D57C35E1438C40A0024D014 /* SkronkSpike.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0D57C37E1438C40B0024D014 /* SkronkSpikeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D57C3931438C40B0024D014 /* Build configuration list for PBXNativeTarget "SkronkSpikeTests" */;
+			buildPhases = (
+				0D57C37A1438C40B0024D014 /* Sources */,
+				0D57C37B1438C40B0024D014 /* Frameworks */,
+				0D57C37C1438C40B0024D014 /* Resources */,
+				0D57C37D1438C40B0024D014 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D57C3841438C40B0024D014 /* PBXTargetDependency */,
+			);
+			name = SkronkSpikeTests;
+			productName = SkronkSpikeTests;
+			productReference = 0D57C37F1438C40B0024D014 /* SkronkSpikeTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D57C3551438C40A0024D014 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "JAMF Software";
+			};
+			buildConfigurationList = 0D57C3581438C40A0024D014 /* Build configuration list for PBXProject "SkronkSpike" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0D57C3531438C40A0024D014;
+			productRefGroup = 0D57C35F1438C40A0024D014 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D57C35D1438C40A0024D014 /* SkronkSpike */,
+				0D57C37E1438C40B0024D014 /* SkronkSpikeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D57C35C1438C40A0024D014 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D57C36D1438C40B0024D014 /* InfoPlist.strings in Resources */,
+				0D57C3731438C40B0024D014 /* Credits.rtf in Resources */,
+				0D57C3791438C40B0024D014 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D57C37C1438C40B0024D014 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D57C38A1438C40B0024D014 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D57C37D1438C40B0024D014 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D57C35A1438C40A0024D014 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D57C36F1438C40B0024D014 /* main.m in Sources */,
+				0D57C3761438C40B0024D014 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D57C37A1438C40B0024D014 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D57C38D1438C40B0024D014 /* SkronkSpikeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D57C3841438C40B0024D014 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D57C35D1438C40A0024D014 /* SkronkSpike */;
+			targetProxy = 0D57C3831438C40B0024D014 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0D57C36B1438C40B0024D014 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D57C36C1438C40B0024D014 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0D57C3711438C40B0024D014 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D57C3721438C40B0024D014 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		0D57C3771438C40B0024D014 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D57C3781438C40B0024D014 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		0D57C3881438C40B0024D014 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D57C3891438C40B0024D014 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D57C38E1438C40B0024D014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0D57C38F1438C40B0024D014 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0D57C3911438C40B0024D014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkronkSpike/SkronkSpike-Prefix.pch";
+				INFOPLIST_FILE = "SkronkSpike/SkronkSpike-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0D57C3921438C40B0024D014 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkronkSpike/SkronkSpike-Prefix.pch";
+				INFOPLIST_FILE = "SkronkSpike/SkronkSpike-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0D57C3941438C40B0024D014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SkronkSpike.app/Contents/MacOS/SkronkSpike";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkronkSpike/SkronkSpike-Prefix.pch";
+				INFOPLIST_FILE = "SkronkSpikeTests/SkronkSpikeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0D57C3951438C40B0024D014 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SkronkSpike.app/Contents/MacOS/SkronkSpike";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkronkSpike/SkronkSpike-Prefix.pch";
+				INFOPLIST_FILE = "SkronkSpikeTests/SkronkSpikeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D57C3581438C40A0024D014 /* Build configuration list for PBXProject "SkronkSpike" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D57C38E1438C40B0024D014 /* Debug */,
+				0D57C38F1438C40B0024D014 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D57C3901438C40B0024D014 /* Build configuration list for PBXNativeTarget "SkronkSpike" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D57C3911438C40B0024D014 /* Debug */,
+				0D57C3921438C40B0024D014 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0D57C3931438C40B0024D014 /* Build configuration list for PBXNativeTarget "SkronkSpikeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D57C3941438C40B0024D014 /* Debug */,
+				0D57C3951438C40B0024D014 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D57C3551438C40A0024D014 /* Project object */;
+}
