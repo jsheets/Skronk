@@ -20,8 +20,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
-    [self.window setLevel:kCGDesktopWindowLevel];
+    // Allow dragging window from anywhere.
+    [self.window setMovableByWindowBackground:YES];
+    
+    // Staple window to desktop layer.
+//    [self.window setLevel:kCGDesktopWindowLevel];
 }
 
 - (void)awakeFromNib
