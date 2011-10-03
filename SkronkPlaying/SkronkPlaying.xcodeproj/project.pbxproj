@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D1AE9FD1439573500570D0E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1AE9FC1439573500570D0E /* Cocoa.framework */; };
+		0D1AEA071439573500570D0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D1AEA051439573500570D0E /* InfoPlist.strings */; };
+		0D1AEA091439573500570D0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AEA081439573500570D0E /* main.m */; };
+		0D1AEA0D1439573500570D0E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0D1AEA0B1439573500570D0E /* Credits.rtf */; };
+		0D1AEA101439573500570D0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AEA0F1439573500570D0E /* AppDelegate.m */; };
+		0D1AEA131439573600570D0E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1AEA111439573600570D0E /* MainMenu.xib */; };
+		0D1AEA1B1439573600570D0E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1AEA1A1439573600570D0E /* SenTestingKit.framework */; };
+		0D1AEA1C1439573600570D0E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1AE9FC1439573500570D0E /* Cocoa.framework */; };
+		0D1AEA241439573600570D0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D1AEA221439573600570D0E /* InfoPlist.strings */; };
+		0D1AEA271439573600570D0E /* SkronkPlayingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AEA261439573600570D0E /* SkronkPlayingTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D1AEA1D1439573600570D0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D1AE9EF1439573400570D0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D1AE9F71439573500570D0E;
+			remoteInfo = SkronkPlaying;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D1AE9F81439573500570D0E /* SkronkPlaying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkronkPlaying.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D1AE9FC1439573500570D0E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0D1AE9FF1439573500570D0E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0D1AEA001439573500570D0E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0D1AEA011439573500570D0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0D1AEA041439573500570D0E /* SkronkPlaying-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkronkPlaying-Info.plist"; sourceTree = "<group>"; };
+		0D1AEA061439573500570D0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0D1AEA081439573500570D0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0D1AEA0A1439573500570D0E /* SkronkPlaying-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SkronkPlaying-Prefix.pch"; sourceTree = "<group>"; };
+		0D1AEA0C1439573500570D0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		0D1AEA0E1439573500570D0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0D1AEA0F1439573500570D0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0D1AEA121439573600570D0E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0D1AEA191439573600570D0E /* SkronkPlayingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkronkPlayingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D1AEA1A1439573600570D0E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		0D1AEA211439573600570D0E /* SkronkPlayingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkronkPlayingTests-Info.plist"; sourceTree = "<group>"; };
+		0D1AEA231439573600570D0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0D1AEA251439573600570D0E /* SkronkPlayingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkronkPlayingTests.h; sourceTree = "<group>"; };
+		0D1AEA261439573600570D0E /* SkronkPlayingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkronkPlayingTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D1AE9F51439573500570D0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D1AE9FD1439573500570D0E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D1AEA151439573600570D0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D1AEA1B1439573600570D0E /* SenTestingKit.framework in Frameworks */,
+				0D1AEA1C1439573600570D0E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D1AE9ED1439573400570D0E = {
+			isa = PBXGroup;
+			children = (
+				0D1AEA021439573500570D0E /* SkronkPlaying */,
+				0D1AEA1F1439573600570D0E /* SkronkPlayingTests */,
+				0D1AE9FB1439573500570D0E /* Frameworks */,
+				0D1AE9F91439573500570D0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D1AE9F91439573500570D0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D1AE9F81439573500570D0E /* SkronkPlaying.app */,
+				0D1AEA191439573600570D0E /* SkronkPlayingTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D1AE9FB1439573500570D0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D1AE9FC1439573500570D0E /* Cocoa.framework */,
+				0D1AEA1A1439573600570D0E /* SenTestingKit.framework */,
+				0D1AE9FE1439573500570D0E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D1AE9FE1439573500570D0E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D1AE9FF1439573500570D0E /* AppKit.framework */,
+				0D1AEA001439573500570D0E /* CoreData.framework */,
+				0D1AEA011439573500570D0E /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		0D1AEA021439573500570D0E /* SkronkPlaying */ = {
+			isa = PBXGroup;
+			children = (
+				0D1AEA0E1439573500570D0E /* AppDelegate.h */,
+				0D1AEA0F1439573500570D0E /* AppDelegate.m */,
+				0D1AEA111439573600570D0E /* MainMenu.xib */,
+				0D1AEA031439573500570D0E /* Supporting Files */,
+			);
+			path = SkronkPlaying;
+			sourceTree = "<group>";
+		};
+		0D1AEA031439573500570D0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D1AEA041439573500570D0E /* SkronkPlaying-Info.plist */,
+				0D1AEA051439573500570D0E /* InfoPlist.strings */,
+				0D1AEA081439573500570D0E /* main.m */,
+				0D1AEA0A1439573500570D0E /* SkronkPlaying-Prefix.pch */,
+				0D1AEA0B1439573500570D0E /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D1AEA1F1439573600570D0E /* SkronkPlayingTests */ = {
+			isa = PBXGroup;
+			children = (
+				0D1AEA251439573600570D0E /* SkronkPlayingTests.h */,
+				0D1AEA261439573600570D0E /* SkronkPlayingTests.m */,
+				0D1AEA201439573600570D0E /* Supporting Files */,
+			);
+			path = SkronkPlayingTests;
+			sourceTree = "<group>";
+		};
+		0D1AEA201439573600570D0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D1AEA211439573600570D0E /* SkronkPlayingTests-Info.plist */,
+				0D1AEA221439573600570D0E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D1AE9F71439573500570D0E /* SkronkPlaying */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D1AEA2A1439573600570D0E /* Build configuration list for PBXNativeTarget "SkronkPlaying" */;
+			buildPhases = (
+				0D1AE9F41439573500570D0E /* Sources */,
+				0D1AE9F51439573500570D0E /* Frameworks */,
+				0D1AE9F61439573500570D0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkronkPlaying;
+			productName = SkronkPlaying;
+			productReference = 0D1AE9F81439573500570D0E /* SkronkPlaying.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0D1AEA181439573600570D0E /* SkronkPlayingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D1AEA2D1439573600570D0E /* Build configuration list for PBXNativeTarget "SkronkPlayingTests" */;
+			buildPhases = (
+				0D1AEA141439573600570D0E /* Sources */,
+				0D1AEA151439573600570D0E /* Frameworks */,
+				0D1AEA161439573600570D0E /* Resources */,
+				0D1AEA171439573600570D0E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D1AEA1E1439573600570D0E /* PBXTargetDependency */,
+			);
+			name = SkronkPlayingTests;
+			productName = SkronkPlayingTests;
+			productReference = 0D1AEA191439573600570D0E /* SkronkPlayingTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D1AE9EF1439573400570D0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "JAMF Software";
+			};
+			buildConfigurationList = 0D1AE9F21439573400570D0E /* Build configuration list for PBXProject "SkronkPlaying" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0D1AE9ED1439573400570D0E;
+			productRefGroup = 0D1AE9F91439573500570D0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D1AE9F71439573500570D0E /* SkronkPlaying */,
+				0D1AEA181439573600570D0E /* SkronkPlayingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D1AE9F61439573500570D0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D1AEA071439573500570D0E /* InfoPlist.strings in Resources */,
+				0D1AEA0D1439573500570D0E /* Credits.rtf in Resources */,
+				0D1AEA131439573600570D0E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D1AEA161439573600570D0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D1AEA241439573600570D0E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D1AEA171439573600570D0E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D1AE9F41439573500570D0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D1AEA091439573500570D0E /* main.m in Sources */,
+				0D1AEA101439573500570D0E /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D1AEA141439573600570D0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D1AEA271439573600570D0E /* SkronkPlayingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D1AEA1E1439573600570D0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D1AE9F71439573500570D0E /* SkronkPlaying */;
+			targetProxy = 0D1AEA1D1439573600570D0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0D1AEA051439573500570D0E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D1AEA061439573500570D0E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0D1AEA0B1439573500570D0E /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D1AEA0C1439573500570D0E /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		0D1AEA111439573600570D0E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D1AEA121439573600570D0E /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		0D1AEA221439573600570D0E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D1AEA231439573600570D0E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D1AEA281439573600570D0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0D1AEA291439573600570D0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0D1AEA2B1439573600570D0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkronkPlaying/SkronkPlaying-Prefix.pch";
+				INFOPLIST_FILE = "SkronkPlaying/SkronkPlaying-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0D1AEA2C1439573600570D0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkronkPlaying/SkronkPlaying-Prefix.pch";
+				INFOPLIST_FILE = "SkronkPlaying/SkronkPlaying-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0D1AEA2E1439573600570D0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SkronkPlaying.app/Contents/MacOS/SkronkPlaying";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkronkPlaying/SkronkPlaying-Prefix.pch";
+				INFOPLIST_FILE = "SkronkPlayingTests/SkronkPlayingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0D1AEA2F1439573600570D0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SkronkPlaying.app/Contents/MacOS/SkronkPlaying";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SkronkPlaying/SkronkPlaying-Prefix.pch";
+				INFOPLIST_FILE = "SkronkPlayingTests/SkronkPlayingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D1AE9F21439573400570D0E /* Build configuration list for PBXProject "SkronkPlaying" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D1AEA281439573600570D0E /* Debug */,
+				0D1AEA291439573600570D0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D1AEA2A1439573600570D0E /* Build configuration list for PBXNativeTarget "SkronkPlaying" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D1AEA2B1439573600570D0E /* Debug */,
+				0D1AEA2C1439573600570D0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0D1AEA2D1439573600570D0E /* Build configuration list for PBXNativeTarget "SkronkPlayingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D1AEA2E1439573600570D0E /* Debug */,
+				0D1AEA2F1439573600570D0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D1AE9EF1439573400570D0E /* Project object */;
+}
