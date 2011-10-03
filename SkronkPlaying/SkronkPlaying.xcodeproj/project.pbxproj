@@ -17,6 +17,7 @@
 		0D1AEA1C1439573600570D0E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1AE9FC1439573500570D0E /* Cocoa.framework */; };
 		0D1AEA241439573600570D0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D1AEA221439573600570D0E /* InfoPlist.strings */; };
 		0D1AEA271439573600570D0E /* SkronkPlayingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AEA261439573600570D0E /* SkronkPlayingTests.m */; };
+		0D1AEA321439623500570D0E /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AEA311439623500570D0E /* MainView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		0D1AEA231439573600570D0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0D1AEA251439573600570D0E /* SkronkPlayingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkronkPlayingTests.h; sourceTree = "<group>"; };
 		0D1AEA261439573600570D0E /* SkronkPlayingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkronkPlayingTests.m; sourceTree = "<group>"; };
+		0D1AEA301439623500570D0E /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		0D1AEA311439623500570D0E /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 			children = (
 				0D1AEA0E1439573500570D0E /* AppDelegate.h */,
 				0D1AEA0F1439573500570D0E /* AppDelegate.m */,
+				0D1AEA301439623500570D0E /* MainView.h */,
+				0D1AEA311439623500570D0E /* MainView.m */,
 				0D1AEA111439573600570D0E /* MainMenu.xib */,
 				0D1AEA031439573500570D0E /* Supporting Files */,
 			);
@@ -263,6 +268,7 @@
 			files = (
 				0D1AEA091439573500570D0E /* main.m in Sources */,
 				0D1AEA101439573500570D0E /* AppDelegate.m in Sources */,
+				0D1AEA321439623500570D0E /* MainView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
