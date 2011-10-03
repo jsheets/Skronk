@@ -4,3 +4,6 @@
 [submodule "External/DDHotKey"]
 	path = External/DDHotKey
 	url = https://github.com/davedelong/DDHotKey.git
+[submodule "External/DBPrefsWindowController"]
+	path = External/DBPrefsWindowController
+	url = https://github.com/InScopeApps/DBPrefsWindowController.git
