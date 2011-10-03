@@ -16,6 +16,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 
 @synthesize window = _window;
 @synthesize statusLabel = _statusLabel;
+@synthesize statusMenu = _statusMenu;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -40,11 +41,27 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 - (void)awakeFromNib
 {
     [self setupHotkeys];
+    
+    _statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
+    _statusItem.menu = self.statusMenu;
+    _statusItem.title = @"SkronkSpike";
+    _statusItem.highlightMode = YES;
+//    _statusItem.image = nil;
+
 }
 
 - (void)hotKeyPressed:(id)sender
 {
     self.statusLabel.stringValue = @"Globalized.";
+}
+
+- (IBAction)statusClicked:(id)sender
+{
+    self.statusLabel.stringValue = @"Updated";
+}
+
+- (IBAction)growlClicked:(id)sender
+{
 }
 
 @end
