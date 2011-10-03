@@ -90,7 +90,6 @@
 		0D57C3531438C40A0024D014 = {
 			isa = PBXGroup;
 			children = (
-				0D57C3AA1438FBA00024D014 /* Carbon.framework */,
 				0D57C3681438C40A0024D014 /* SkronkSpike */,
 				0D57C3851438C40B0024D014 /* SkronkSpikeTests */,
 				0D57C3611438C40A0024D014 /* Frameworks */,
@@ -110,6 +109,7 @@
 		0D57C3611438C40A0024D014 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D57C3AA1438FBA00024D014 /* Carbon.framework */,
 				0D57C3621438C40A0024D014 /* Cocoa.framework */,
 				0D57C3801438C40B0024D014 /* SenTestingKit.framework */,
 				0D57C3641438C40A0024D014 /* Other Frameworks */,
