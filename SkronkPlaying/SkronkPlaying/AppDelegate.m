@@ -24,7 +24,7 @@
     [self.window setMovableByWindowBackground:YES];
     
     // Staple window to desktop layer.
-//    [self.window setLevel:kCGDesktopWindowLevel];
+    [self.window setLevel:kCGDesktopIconWindowLevel];
 }
 
 - (void)awakeFromNib
