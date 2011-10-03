@@ -11,6 +11,7 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize statusMenu = _statusMenu;
 
 - (void)dealloc
 {
@@ -21,6 +22,15 @@
 {
     // Insert code here to initialize your application
     [self.window setLevel:kCGDesktopWindowLevel];
+}
+
+- (void)awakeFromNib
+{
+    _statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
+    _statusItem.menu = self.statusMenu;
+    _statusItem.title = @"Skronk";
+    _statusItem.highlightMode = YES;
+    //    _statusItem.image = nil;
 }
 
 @end
