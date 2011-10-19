@@ -22,7 +22,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 {
     // Insert code here to initialize your application
     self.statusLabel.stringValue = @"Initialized.";
-    [self.window setLevel:kCGDesktopWindowLevel];
+//    [self.window setLevel:kCGDesktopWindowLevel];
 }
 
 - (void)setupHotkeys
