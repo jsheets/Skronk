@@ -24,6 +24,9 @@
 		0D57C3AB1438FBA00024D014 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57C3AA1438FBA00024D014 /* Carbon.framework */; };
 		0D9E8498144E50260049625B /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E8497144E50260049625B /* Track.m */; };
 		0D9E849B144E53980049625B /* evil-empire.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D9E849A144E53980049625B /* evil-empire.jpg */; };
+		0D9E849D144E59DC0049625B /* sample-tracks.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D9E849C144E59DC0049625B /* sample-tracks.plist */; };
+		0DA009E1144FA0B000F520D8 /* dark-eyed-sailor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DA009DF144FA0B000F520D8 /* dark-eyed-sailor.jpg */; };
+		0DA009E2144FA0B000F520D8 /* martone-clean.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DA009E0144FA0B000F520D8 /* martone-clean.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		0D9E8496144E50260049625B /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
 		0D9E8497144E50260049625B /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 		0D9E849A144E53980049625B /* evil-empire.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "evil-empire.jpg"; sourceTree = "<group>"; };
+		0D9E849C144E59DC0049625B /* sample-tracks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-tracks.plist"; sourceTree = "<group>"; };
+		0DA009DF144FA0B000F520D8 /* dark-eyed-sailor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dark-eyed-sailor.jpg"; sourceTree = "<group>"; };
+		0DA009E0144FA0B000F520D8 /* martone-clean.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "martone-clean.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +146,7 @@
 				0D9E8496144E50260049625B /* Track.h */,
 				0D9E8497144E50260049625B /* Track.m */,
 				0D57C3771438C40B0024D014 /* MainMenu.xib */,
-				0D9E849A144E53980049625B /* evil-empire.jpg */,
+				0DA009E4144FA0B800F520D8 /* Sample Tracks */,
 				0D57C39D1438F4ED0024D014 /* SGHotKeysLib */,
 				0D57C3691438C40B0024D014 /* Supporting Files */,
 			);
@@ -192,6 +198,17 @@
 			);
 			name = SGHotKeysLib;
 			path = ../../External/SGHotKeysLib/SGHotKeysLib;
+			sourceTree = "<group>";
+		};
+		0DA009E4144FA0B800F520D8 /* Sample Tracks */ = {
+			isa = PBXGroup;
+			children = (
+				0D9E849A144E53980049625B /* evil-empire.jpg */,
+				0DA009DF144FA0B000F520D8 /* dark-eyed-sailor.jpg */,
+				0DA009E0144FA0B000F520D8 /* martone-clean.jpg */,
+				0D9E849C144E59DC0049625B /* sample-tracks.plist */,
+			);
+			name = "Sample Tracks";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +286,9 @@
 				0D57C3731438C40B0024D014 /* Credits.rtf in Resources */,
 				0D57C3791438C40B0024D014 /* MainMenu.xib in Resources */,
 				0D9E849B144E53980049625B /* evil-empire.jpg in Resources */,
+				0D9E849D144E59DC0049625B /* sample-tracks.plist in Resources */,
+				0DA009E1144FA0B000F520D8 /* dark-eyed-sailor.jpg in Resources */,
+				0DA009E2144FA0B000F520D8 /* martone-clean.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

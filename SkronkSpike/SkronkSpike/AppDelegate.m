@@ -15,14 +15,21 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize statusLabel = _statusLabel;
-@synthesize statusMenu = _statusMenu;
+@synthesize statusMenu, trackArray;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    self.statusLabel.stringValue = @"Initialized.";
 //    [self.window setLevel:kCGDesktopWindowLevel];
+    
+    NSURL *tracksURL = [[NSBundle mainBundle] URLForResource:@"sample-tracks" withExtension:@"plist"];
+    NSLog(@"Tracks URL: %@", tracksURL);
+    
+    if (tracksURL)
+    {
+        self.trackArray = [NSDictionary dictionaryWithContentsOfURL:tracksURL];
+        NSLog(@"Tracks: %@", self.trackArray);
+    }
 }
 
 - (void)setupHotkeys
@@ -52,16 +59,17 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 
 - (void)hotKeyPressed:(id)sender
 {
-    self.statusLabel.stringValue = @"Globalized.";
+    NSLog(@"Hot key pressed");
 }
 
 - (IBAction)statusClicked:(id)sender
 {
-    self.statusLabel.stringValue = @"Updated";
+    NSLog(@"Status clicked");
 }
 
 - (IBAction)growlClicked:(id)sender
 {
+    NSLog(@"Growl clicked");
 }
 
 @end

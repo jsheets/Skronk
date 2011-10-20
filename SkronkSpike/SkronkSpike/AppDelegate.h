@@ -14,7 +14,7 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet NSTextField *statusLabel;
 @property (assign) IBOutlet NSMenu *statusMenu;
+@property (nonatomic, copy) NSArray *trackArray;
 
 @end
