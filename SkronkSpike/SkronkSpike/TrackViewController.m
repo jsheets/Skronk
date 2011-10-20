@@ -48,7 +48,8 @@
         for (NSDictionary *trackDict in tracks)
         {
             Track *track = [[[Track alloc] initWithDictionary:trackDict] autorelease];
-            [self.trackArray addObject:track];
+            NSLog(@"Adding track: %@", [track valueForKey:@"track"]);
+            [self.arrayController addObject:track];
         }
     }
     
