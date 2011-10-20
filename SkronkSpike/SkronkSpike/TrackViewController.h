@@ -10,4 +10,7 @@
 
 @interface TrackViewController : NSViewController
 
+@property (nonatomic, retain) NSMutableArray *trackArray;
+@property (assign) IBOutlet NSArrayController *arrayController;
+
 @end

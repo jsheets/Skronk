@@ -12,6 +12,24 @@
 
 @synthesize artist, album, track, cover;
 
+- (id)initWithDictionary:(NSDictionary *)trackDict
+{
+    if ((self = [super init]))
+    {
+        self.artist = [trackDict valueForKey:@"artist"];
+        self.album = [trackDict valueForKey:@"album"];
+        self.track = [trackDict valueForKey:@"track"];
+        
+        NSImage *image = [NSImage imageNamed:[trackDict valueForKey:@"coverFile"]];
+        if (image)
+        {
+            self.cover = image;
+        }
+    }
+    
+    return self;
+}               
+
 - (id)init
 {
     if ((self = [super init]))
@@ -24,4 +42,5 @@
     
     return self;
 }               
+
 @end

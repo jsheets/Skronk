@@ -7,14 +7,18 @@
 //
 
 #import "TrackViewController.h"
+#import "Track.h"
 
 @implementation TrackViewController
+
+@synthesize trackArray, arrayController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
     {
         // Initialization code here.
+        self.trackArray = [NSMutableArray array];
     }
     
     return self;
@@ -28,6 +32,28 @@
     }
     
     return self;
+}
+
+- (void)awakeFromNib
+{
+    NSURL *tracksURL = [[NSBundle mainBundle] URLForResource:@"sample-tracks" withExtension:@"plist"];
+    NSLog(@"Tracks URL: %@", tracksURL);
+    
+    if (tracksURL)
+    {
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfURL:tracksURL];
+        NSArray *tracks = [dict valueForKey:@"tracks"];
+        NSLog(@"Tracks: %@", tracks);
+        
+        for (NSDictionary *trackDict in tracks)
+        {
+            Track *track = [[[Track alloc] initWithDictionary:trackDict] autorelease];
+            [self.trackArray addObject:track];
+        }
+    }
+    
+    self.arrayController.selectionIndex = 0;
+    NSLog(@"Array Controller selected track: %@", [self.arrayController.selection valueForKey:@"track"]);
 }
 
 - (BOOL)acceptsFirstResponder

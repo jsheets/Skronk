@@ -17,7 +17,6 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSMenu *statusMenu;
-@property (nonatomic, copy) NSArray *trackArray;
 @property (nonatomic, retain) TrackViewController *trackViewController;
 
 @end

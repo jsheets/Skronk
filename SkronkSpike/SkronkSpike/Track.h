@@ -15,4 +15,6 @@
 @property (nonatomic, copy) NSString *track;
 @property (nonatomic, retain) NSImage *cover;
 
+- (id)initWithDictionary:(NSDictionary *)trackDict;
+
 @end

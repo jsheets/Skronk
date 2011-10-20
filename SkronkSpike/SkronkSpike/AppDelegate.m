@@ -16,21 +16,23 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize statusMenu, trackArray, trackViewController;
+@synthesize statusMenu, trackViewController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
 //    [self.window setLevel:kCGDesktopWindowLevel];
     
-    NSURL *tracksURL = [[NSBundle mainBundle] URLForResource:@"sample-tracks" withExtension:@"plist"];
-    NSLog(@"Tracks URL: %@", tracksURL);
+    self.trackViewController = [[[TrackViewController alloc] init] autorelease];
+    [self.window.contentView addSubview:self.trackViewController.view];
     
-    if (tracksURL)
-    {
-        self.trackArray = [NSDictionary dictionaryWithContentsOfURL:tracksURL];
-        NSLog(@"Tracks: %@", self.trackArray);
-    }
+    // Inject view controller into responder chain.
+    //    NSResponder *nextResponder = [self.window.contentView nextResponder];
+    //    [self.window.contentView setNextResponder:self.trackViewController];
+    //    [self.trackViewController setNextResponder:nextResponder];
+    //    NSResponder *nextResponder = [self.window nextResponder];
+    //    [self.window setNextResponder:self.trackViewController];
+    //    [self.trackViewController setNextResponder:nextResponder];
     
 //    self.window.initialFirstResponder = self.trackViewController.view;
     [self.window makeFirstResponder:self.trackViewController.view];
@@ -58,23 +60,26 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     _statusItem.title = @"SkronkSpike";
     _statusItem.highlightMode = YES;
 //    _statusItem.image = nil;
+}
+
+- (void)nextTrack
+{
+    NSUInteger selection = self.trackViewController.arrayController.selectionIndex;
+    NSUInteger count = [self.trackViewController.trackArray count];
     
-    self.trackViewController = [[[TrackViewController alloc] init] autorelease];
-    [self.window.contentView addSubview:self.trackViewController.view];
-    
-    // Inject view controller into responder chain.
-//    NSResponder *nextResponder = [self.window.contentView nextResponder];
-//    [self.window.contentView setNextResponder:self.trackViewController];
-//    [self.trackViewController setNextResponder:nextResponder];
-//    NSResponder *nextResponder = [self.window nextResponder];
-//    [self.window setNextResponder:self.trackViewController];
-//    [self.trackViewController setNextResponder:nextResponder];
-    
+    NSLog(@"Current Selection = %lu (of %lu)", selection, count);
+    selection++;
+    if (selection >= count)
+    {
+        selection = 0;
+    }
+    self.trackViewController.arrayController.selectionIndex = selection;
 }
 
 - (void)hotKeyPressed:(id)sender
 {
     NSLog(@"Hot key pressed");
+    [self nextTrack];
 }
 
 - (IBAction)statusClicked:(id)sender

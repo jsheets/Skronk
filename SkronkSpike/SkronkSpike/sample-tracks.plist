@@ -6,23 +6,23 @@
 	<array>
 		<dict>
 			<key>track</key>
-			<string>Bulls on Parade</string>
-			<key>album</key>
-			<string>Evil Empire</string>
-			<key>artist</key>
-			<string>Rage Against the Machine</string>
-			<key>cover</key>
-			<string>evil-empire.jpg</string>
-		</dict>
-		<dict>
-			<key>track</key>
 			<string>The Unquiet Grave</string>
 			<key>album</key>
 			<string>Dark-Eyed Sailor</string>
 			<key>artist</key>
 			<string>Karen Mal</string>
-			<key>cover</key>
+			<key>coverFile</key>
 			<string>dark-eyed-sailor.jpg</string>
+		</dict>
+		<dict>
+			<key>track</key>
+			<string>Bulls on Parade</string>
+			<key>album</key>
+			<string>Evil Empire</string>
+			<key>artist</key>
+			<string>Rage Against the Machine</string>
+			<key>coverFile</key>
+			<string>evil-empire.jpg</string>
 		</dict>
 		<dict>
 			<key>track</key>
@@ -31,7 +31,7 @@
 			<string>Clean</string>
 			<key>artist</key>
 			<string>Dave Martone</string>
-			<key>cover</key>
+			<key>coverFile</key>
 			<string>martone-clean.jpg</string>
 		</dict>
 	</array>

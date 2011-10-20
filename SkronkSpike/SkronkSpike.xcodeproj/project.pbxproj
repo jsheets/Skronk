@@ -216,10 +216,10 @@
 		0DA009E4144FA0B800F520D8 /* Sample Tracks */ = {
 			isa = PBXGroup;
 			children = (
+				0D9E849C144E59DC0049625B /* sample-tracks.plist */,
 				0D9E849A144E53980049625B /* evil-empire.jpg */,
 				0DA009DF144FA0B000F520D8 /* dark-eyed-sailor.jpg */,
 				0DA009E0144FA0B000F520D8 /* martone-clean.jpg */,
-				0D9E849C144E59DC0049625B /* sample-tracks.plist */,
 			);
 			name = "Sample Tracks";
 			sourceTree = "<group>";
