@@ -9,13 +9,14 @@
 #import "AppDelegate.h"
 #import "SGHotKey.h"
 #import "SGHotKeyCenter.h"
+#import "TrackViewController.h"
 
 NSString *kGlobalHotKey = @"Global Hot Key";
 
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize statusMenu, trackArray;
+@synthesize statusMenu, trackArray, trackViewController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -30,6 +31,9 @@ NSString *kGlobalHotKey = @"Global Hot Key";
         self.trackArray = [NSDictionary dictionaryWithContentsOfURL:tracksURL];
         NSLog(@"Tracks: %@", self.trackArray);
     }
+    
+//    self.window.initialFirstResponder = self.trackViewController.view;
+    [self.window makeFirstResponder:self.trackViewController.view];
 }
 
 - (void)setupHotkeys
@@ -54,7 +58,18 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     _statusItem.title = @"SkronkSpike";
     _statusItem.highlightMode = YES;
 //    _statusItem.image = nil;
-
+    
+    self.trackViewController = [[[TrackViewController alloc] init] autorelease];
+    [self.window.contentView addSubview:self.trackViewController.view];
+    
+    // Inject view controller into responder chain.
+//    NSResponder *nextResponder = [self.window.contentView nextResponder];
+//    [self.window.contentView setNextResponder:self.trackViewController];
+//    [self.trackViewController setNextResponder:nextResponder];
+//    NSResponder *nextResponder = [self.window nextResponder];
+//    [self.window setNextResponder:self.trackViewController];
+//    [self.trackViewController setNextResponder:nextResponder];
+    
 }
 
 - (void)hotKeyPressed:(id)sender

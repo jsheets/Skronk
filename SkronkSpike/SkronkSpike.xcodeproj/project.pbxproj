@@ -27,6 +27,9 @@
 		0D9E849D144E59DC0049625B /* sample-tracks.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D9E849C144E59DC0049625B /* sample-tracks.plist */; };
 		0DA009E1144FA0B000F520D8 /* dark-eyed-sailor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DA009DF144FA0B000F520D8 /* dark-eyed-sailor.jpg */; };
 		0DA009E2144FA0B000F520D8 /* martone-clean.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DA009E0144FA0B000F520D8 /* martone-clean.jpg */; };
+		0DA009E81450662A00F520D8 /* TrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA009E61450662A00F520D8 /* TrackViewController.m */; };
+		0DA009E91450662A00F520D8 /* TrackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA009E71450662A00F520D8 /* TrackViewController.xib */; };
+		0DA00A0814507C4300F520D8 /* TrackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA00A0714507C4300F520D8 /* TrackView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,11 @@
 		0D9E849C144E59DC0049625B /* sample-tracks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sample-tracks.plist"; sourceTree = "<group>"; };
 		0DA009DF144FA0B000F520D8 /* dark-eyed-sailor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dark-eyed-sailor.jpg"; sourceTree = "<group>"; };
 		0DA009E0144FA0B000F520D8 /* martone-clean.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "martone-clean.jpg"; sourceTree = "<group>"; };
+		0DA009E51450662A00F520D8 /* TrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackViewController.h; sourceTree = "<group>"; };
+		0DA009E61450662A00F520D8 /* TrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackViewController.m; sourceTree = "<group>"; };
+		0DA009E71450662A00F520D8 /* TrackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackViewController.xib; sourceTree = "<group>"; };
+		0DA00A0614507C4300F520D8 /* TrackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackView.h; sourceTree = "<group>"; };
+		0DA00A0714507C4300F520D8 /* TrackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,9 +151,14 @@
 			children = (
 				0D57C3741438C40B0024D014 /* AppDelegate.h */,
 				0D57C3751438C40B0024D014 /* AppDelegate.m */,
+				0D57C3771438C40B0024D014 /* MainMenu.xib */,
+				0DA009E51450662A00F520D8 /* TrackViewController.h */,
+				0DA009E61450662A00F520D8 /* TrackViewController.m */,
+				0DA009E71450662A00F520D8 /* TrackViewController.xib */,
 				0D9E8496144E50260049625B /* Track.h */,
 				0D9E8497144E50260049625B /* Track.m */,
-				0D57C3771438C40B0024D014 /* MainMenu.xib */,
+				0DA00A0614507C4300F520D8 /* TrackView.h */,
+				0DA00A0714507C4300F520D8 /* TrackView.m */,
 				0DA009E4144FA0B800F520D8 /* Sample Tracks */,
 				0D57C39D1438F4ED0024D014 /* SGHotKeysLib */,
 				0D57C3691438C40B0024D014 /* Supporting Files */,
@@ -289,6 +302,7 @@
 				0D9E849D144E59DC0049625B /* sample-tracks.plist in Resources */,
 				0DA009E1144FA0B000F520D8 /* dark-eyed-sailor.jpg in Resources */,
 				0DA009E2144FA0B000F520D8 /* martone-clean.jpg in Resources */,
+				0DA009E91450662A00F520D8 /* TrackViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +344,8 @@
 				0D57C3A81438F4ED0024D014 /* SGKeyCodeTranslator.m in Sources */,
 				0D57C3A91438F4ED0024D014 /* SGKeyCombo.m in Sources */,
 				0D9E8498144E50260049625B /* Track.m in Sources */,
+				0DA009E81450662A00F520D8 /* TrackViewController.m in Sources */,
+				0DA00A0814507C4300F520D8 /* TrackView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
