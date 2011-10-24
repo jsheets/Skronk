@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D03748E145341AD00D2532B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D03748D145341AD00D2532B /* JSONKit.m */; };
+		0D037491145341B700D2532B /* INKeychainAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D037490145341B700D2532B /* INKeychainAccess.m */; };
+		0D037494145341BF00D2532B /* SNRLastFMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D037493145341BF00D2532B /* SNRLastFMEngine.m */; };
+		0D037496145341F600D2532B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D037495145341F600D2532B /* Security.framework */; };
 		0D57C3631438C40A0024D014 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D57C3621438C40A0024D014 /* Cocoa.framework */; };
 		0D57C36D1438C40B0024D014 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D57C36B1438C40B0024D014 /* InfoPlist.strings */; };
 		0D57C36F1438C40B0024D014 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D57C36E1438C40B0024D014 /* main.m */; };
@@ -43,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D03748C145341AD00D2532B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = ../../SNRLastFMEngine/JSONKit/JSONKit.h; sourceTree = "<group>"; };
+		0D03748D145341AD00D2532B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = ../../SNRLastFMEngine/JSONKit/JSONKit.m; sourceTree = "<group>"; };
+		0D03748F145341B700D2532B /* INKeychainAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INKeychainAccess.h; path = ../../SNRLastFMEngine/INKeychainAccess/INKeychainAccess.h; sourceTree = "<group>"; };
+		0D037490145341B700D2532B /* INKeychainAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INKeychainAccess.m; path = ../../SNRLastFMEngine/INKeychainAccess/INKeychainAccess.m; sourceTree = "<group>"; };
+		0D037492145341BF00D2532B /* SNRLastFMEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SNRLastFMEngine.h; path = ../../SNRLastFMEngine/SNRLastFMEngine.h; sourceTree = "<group>"; };
+		0D037493145341BF00D2532B /* SNRLastFMEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SNRLastFMEngine.m; path = ../../SNRLastFMEngine/SNRLastFMEngine.m; sourceTree = "<group>"; };
+		0D037495145341F600D2532B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0D57C35E1438C40A0024D014 /* SkronkSpike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkronkSpike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D57C3621438C40A0024D014 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0D57C3651438C40A0024D014 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -91,6 +102,7 @@
 			files = (
 				0D57C3AB1438FBA00024D014 /* Carbon.framework in Frameworks */,
 				0D57C3631438C40A0024D014 /* Cocoa.framework in Frameworks */,
+				0D037496145341F600D2532B /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,10 +118,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D03748B1453404700D2532B /* last.fm */ = {
+			isa = PBXGroup;
+			children = (
+				0D03748C145341AD00D2532B /* JSONKit.h */,
+				0D03748D145341AD00D2532B /* JSONKit.m */,
+				0D03748F145341B700D2532B /* INKeychainAccess.h */,
+				0D037490145341B700D2532B /* INKeychainAccess.m */,
+				0D037492145341BF00D2532B /* SNRLastFMEngine.h */,
+				0D037493145341BF00D2532B /* SNRLastFMEngine.m */,
+			);
+			name = last.fm;
+			path = ../External/SGHotKeysLib/SGHotKeysLib;
+			sourceTree = "<group>";
+		};
 		0D57C3531438C40A0024D014 = {
 			isa = PBXGroup;
 			children = (
 				0D57C3681438C40A0024D014 /* SkronkSpike */,
+				0D03748B1453404700D2532B /* last.fm */,
+				0D57C39D1438F4ED0024D014 /* SGHotKeysLib */,
 				0D57C3851438C40B0024D014 /* SkronkSpikeTests */,
 				0D57C3611438C40A0024D014 /* Frameworks */,
 				0D57C35F1438C40A0024D014 /* Products */,
@@ -130,6 +158,7 @@
 			children = (
 				0D57C3AA1438FBA00024D014 /* Carbon.framework */,
 				0D57C3621438C40A0024D014 /* Cocoa.framework */,
+				0D037495145341F600D2532B /* Security.framework */,
 				0D57C3801438C40B0024D014 /* SenTestingKit.framework */,
 				0D57C3641438C40A0024D014 /* Other Frameworks */,
 			);
@@ -160,7 +189,6 @@
 				0DA00A0614507C4300F520D8 /* TrackView.h */,
 				0DA00A0714507C4300F520D8 /* TrackView.m */,
 				0DA009E4144FA0B800F520D8 /* Sample Tracks */,
-				0D57C39D1438F4ED0024D014 /* SGHotKeysLib */,
 				0D57C3691438C40B0024D014 /* Supporting Files */,
 			);
 			path = SkronkSpike;
@@ -210,7 +238,7 @@
 				0D57C3A51438F4ED0024D014 /* SGKeyCombo.m */,
 			);
 			name = SGHotKeysLib;
-			path = ../../External/SGHotKeysLib/SGHotKeysLib;
+			path = ../External/SGHotKeysLib/SGHotKeysLib;
 			sourceTree = "<group>";
 		};
 		0DA009E4144FA0B800F520D8 /* Sample Tracks */ = {
@@ -346,6 +374,9 @@
 				0D9E8498144E50260049625B /* Track.m in Sources */,
 				0DA009E81450662A00F520D8 /* TrackViewController.m in Sources */,
 				0DA00A0814507C4300F520D8 /* TrackView.m in Sources */,
+				0D03748E145341AD00D2532B /* JSONKit.m in Sources */,
+				0D037491145341B700D2532B /* INKeychainAccess.m in Sources */,
+				0D037494145341BF00D2532B /* SNRLastFMEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

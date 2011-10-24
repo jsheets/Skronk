@@ -9,9 +9,12 @@
 #import "TrackViewController.h"
 #import "Track.h"
 
-@implementation TrackViewController
+static NSString* const kCustomURLScheme = @"x-com-fourfringe-skronknow";
 
-@synthesize trackArray, arrayController;
+@implementation TrackViewController
+@synthesize authLabel;
+
+@synthesize trackArray, arrayController, lastFm, user;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,8 +37,32 @@
     return self;
 }
 
+- (void)configureLastFm
+{
+    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    self.lastFm = [SNRLastFMEngine lastFMEngineWithUsername:username];
+    
+    NSString *authString = username ? [NSString stringWithFormat:@"Authenticated as: %@", username] : @"Not authenticated";
+    self.authLabel.stringValue = authString;
+}
+
+- (void)registerCustomURLSchemeHandler
+{
+    // Register for Apple Events
+    NSAppleEventManager *em = [NSAppleEventManager sharedAppleEventManager];
+    [em setEventHandler:self andSelector:@selector(getURL:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
+    
+    // Set app as the default handler
+    NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier];
+    LSSetDefaultHandlerForURLScheme((CFStringRef)kCustomURLScheme, (CFStringRef)bundleID);
+}
+
+
 - (void)awakeFromNib
 {
+    [self registerCustomURLSchemeHandler];
+    [self configureLastFm];
+    
     NSURL *tracksURL = [[NSBundle mainBundle] URLForResource:@"sample-tracks" withExtension:@"plist"];
     NSLog(@"Tracks URL: %@", tracksURL);
     
@@ -57,25 +84,43 @@
     NSLog(@"Array Controller selected track: %@", [self.arrayController.selection valueForKey:@"track"]);
 }
 
-- (BOOL)acceptsFirstResponder
+- (IBAction)authenticate:(id)sender
 {
-    return YES;
+    NSLog(@"Authenticating with last.fm\nAPI_KEY = %@\nAPI_SECRET = %@", API_KEY, API_SECRET);
+    NSString *callback = [NSString stringWithFormat:@"%@://auth/", kCustomURLScheme];
+    NSURL *callbackURL = [NSURL URLWithString:callback];
+    [[NSWorkspace sharedWorkspace] openURL:[SNRLastFMEngine webAuthenticationURLWithCallbackURL:callbackURL]];
 }
 
-- (void)keyDown:(NSEvent *)event
+- (void)getURL:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent
 {
-    NSLog(@"A key has been pressed");
-    switch([event keyCode])
+    NSLog(@"Returned from last.fm authentication");
+    
+    NSString *prefix = [NSString stringWithFormat:@"%@://auth/?token=", kCustomURLScheme];
+    NSString *urlString = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
+    NSString *token = [urlString substringFromIndex:[prefix length]];
+    [self.lastFm retrieveAndStoreSessionKeyWithToken:token completionHandler:^(NSString *user, NSError *error)
+     {
+         NSLog(@"Storing last.fm session for user: %@", user);
+         if (error)
+         { 
+             NSLog(@"%@ %@", error, [error userInfo]);
+         }
+         
+         [[NSUserDefaults standardUserDefaults] setObject:user forKey:@"username"];
+         self.authLabel.stringValue = [NSString stringWithFormat:@"Authenticated as: %@", user];
+     }];
+}
+
+- (IBAction)update:(id)sender
+{
+    if ([self.lastFm isAuthenticated])
     {
-        case 126:       // up arrow
-        case 125:       // down arrow
-        case 124:       // right arrow
-        case 123:       // left arrow
-            NSLog(@"Arrow key pressed!");
-            break;
-        default:
-            NSLog(@"Key pressed: %@", event);
-            break;
+        NSLog(@"Updating to current last.fm track");
+    }
+    else
+    {
+        NSLog(@"last.fm not yet authorized");
     }
 }
 
