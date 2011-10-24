@@ -9,4 +9,4 @@
 	url = https://github.com/InScopeApps/DBPrefsWindowController.git
 [submodule "External/SNRLastFMEngine"]
 	path = External/SNRLastFMEngine
-	url = https://github.com/indragiek/SNRLastFMEngine.git
+	url = git@github.com:jsheets/SNRLastFMEngine.git
