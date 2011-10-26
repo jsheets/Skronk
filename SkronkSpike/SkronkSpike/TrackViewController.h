@@ -14,7 +14,7 @@
 
 @interface TrackViewController : NSViewController
 
-@property (nonatomic, copy) NSString *user;
+@property (nonatomic, copy) NSString *username;
 @property (nonatomic, retain) SNRLastFMEngine *lastFm;
 @property (nonatomic, retain) NSMutableArray *trackArray;
 @property (assign) IBOutlet NSArrayController *arrayController;

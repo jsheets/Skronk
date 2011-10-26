@@ -14,7 +14,7 @@ static NSString* const kCustomURLScheme = @"x-com-fourfringe-skronknow";
 @implementation TrackViewController
 @synthesize authLabel;
 
-@synthesize trackArray, arrayController, lastFm, user;
+@synthesize trackArray, arrayController, lastFm, username;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,10 +39,10 @@ static NSString* const kCustomURLScheme = @"x-com-fourfringe-skronknow";
 
 - (void)configureLastFm
 {
-    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
-    self.lastFm = [SNRLastFMEngine lastFMEngineWithUsername:username];
+    self.username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    self.lastFm = [SNRLastFMEngine lastFMEngineWithUsername:self.username];
     
-    NSString *authString = username ? [NSString stringWithFormat:@"Authenticated as: %@", username] : @"Not authenticated";
+    NSString *authString = self.username ? [NSString stringWithFormat:@"Authenticated as: %@", self.username] : @"Not authenticated";
     self.authLabel.stringValue = authString;
 }
 
@@ -102,13 +102,14 @@ static NSString* const kCustomURLScheme = @"x-com-fourfringe-skronknow";
     [self.lastFm retrieveAndStoreSessionKeyWithToken:token completionHandler:^(NSString *user, NSError *error)
      {
          NSLog(@"Storing last.fm session for user: %@", user);
+         self.username = user;
          if (error)
          { 
              NSLog(@"%@ %@", error, [error userInfo]);
          }
          
-         [[NSUserDefaults standardUserDefaults] setObject:user forKey:@"username"];
-         self.authLabel.stringValue = [NSString stringWithFormat:@"Authenticated as: %@", user];
+         [[NSUserDefaults standardUserDefaults] setObject:self.username forKey:@"username"];
+         self.authLabel.stringValue = [NSString stringWithFormat:@"Authenticated as: %@", self.username];
      }];
 }
 
@@ -116,7 +117,18 @@ static NSString* const kCustomURLScheme = @"x-com-fourfringe-skronknow";
 {
     if ([self.lastFm isAuthenticated])
     {
-        NSLog(@"Updating to current last.fm track");
+        NSLog(@"Updating to current last.fm track for user: %@", self.username);
+        NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:self.username, @"user", nil];
+        [self.lastFm callMethod:@"user.getRecentTracks" withParameters:parameters requireAuth:NO HTTPMethod:SNRHTTPMethodGET completionBlock:^(NSDictionary *response, NSError *error)
+        {
+            NSArray *tracks = [response valueForKeyPath:@"recenttracks.track"];
+            
+            NSDictionary *currentTrackDict = [tracks objectAtIndex:0];
+            NSLog(@"Most Recent Track: %@", currentTrackDict);
+            Track *currentTrack = [[[Track alloc] initWithLastFm:currentTrackDict] autorelease];
+            
+            [self.arrayController insertObject:currentTrack atArrangedObjectIndex:0];
+        }];
     }
     else
     {

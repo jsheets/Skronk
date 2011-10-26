@@ -16,5 +16,6 @@
 @property (nonatomic, retain) NSImage *cover;
 
 - (id)initWithDictionary:(NSDictionary *)trackDict;
+- (id)initWithLastFm:(NSDictionary *)trackDict;
 
 @end
