@@ -19,6 +19,9 @@
 		0DE0244614DDCC52004E2227 /* NowPlaying.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE0244414DDCC52004E2227 /* NowPlaying.h */; };
 		0DE0244714DDCC52004E2227 /* NowPlaying.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0244514DDCC52004E2227 /* NowPlaying.m */; };
 		0DE0244814DDCC52004E2227 /* NowPlaying.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0244514DDCC52004E2227 /* NowPlaying.m */; };
+		0DE0245814DDF349004E2227 /* FMJson.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE0245614DDF349004E2227 /* FMJson.h */; };
+		0DE0245914DDF349004E2227 /* FMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0245714DDF349004E2227 /* FMJson.m */; };
+		0DE0245A14DDF349004E2227 /* FMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0245714DDF349004E2227 /* FMJson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,8 @@
 		0DE0243F14DDCC18004E2227 /* Specs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Specs.m; sourceTree = "<group>"; };
 		0DE0244414DDCC52004E2227 /* NowPlaying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NowPlaying.h; sourceTree = "<group>"; };
 		0DE0244514DDCC52004E2227 /* NowPlaying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NowPlaying.m; sourceTree = "<group>"; };
+		0DE0245614DDF349004E2227 /* FMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMJson.h; sourceTree = "<group>"; };
+		0DE0245714DDF349004E2227 /* FMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMJson.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +111,8 @@
 		0DE0241914DDC9FB004E2227 /* SkronkMini */ = {
 			isa = PBXGroup;
 			children = (
-				0DE0242514DDC9FB004E2227 /* AppDelegate.h */,
-				0DE0242614DDC9FB004E2227 /* AppDelegate.m */,
-				0DE0242814DDC9FC004E2227 /* MainMenu.xib */,
-				0DE0244414DDCC52004E2227 /* NowPlaying.h */,
-				0DE0244514DDCC52004E2227 /* NowPlaying.m */,
+				0DE0245B14DDF35C004E2227 /* UI */,
+				0DE0245C14DDF363004E2227 /* Model */,
 				0DE0241A14DDC9FB004E2227 /* Supporting Files */,
 			);
 			path = SkronkMini;
@@ -148,6 +150,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0DE0245B14DDF35C004E2227 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0DE0242514DDC9FB004E2227 /* AppDelegate.h */,
+				0DE0242614DDC9FB004E2227 /* AppDelegate.m */,
+				0DE0242814DDC9FC004E2227 /* MainMenu.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		0DE0245C14DDF363004E2227 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0DE0245614DDF349004E2227 /* FMJson.h */,
+				0DE0245714DDF349004E2227 /* FMJson.m */,
+				0DE0244414DDCC52004E2227 /* NowPlaying.h */,
+				0DE0244514DDCC52004E2227 /* NowPlaying.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -156,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DE0244614DDCC52004E2227 /* NowPlaying.h in Headers */,
+				0DE0245814DDF349004E2227 /* FMJson.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +277,7 @@
 				0DE0242014DDC9FB004E2227 /* main.m in Sources */,
 				0DE0242714DDC9FB004E2227 /* AppDelegate.m in Sources */,
 				0DE0244714DDCC52004E2227 /* NowPlaying.m in Sources */,
+				0DE0245914DDF349004E2227 /* FMJson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +287,7 @@
 			files = (
 				0DE0244014DDCC18004E2227 /* Specs.m in Sources */,
 				0DE0244814DDCC52004E2227 /* NowPlaying.m in Sources */,
+				0DE0245A14DDF349004E2227 /* FMJson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

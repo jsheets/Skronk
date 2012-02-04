@@ -10,16 +10,6 @@
 
 @implementation NowPlaying
 
-@synthesize json = _json;
-
-- (id)initWithJson:(NSString *)json
-{
-    if ((self = [super init]))
-    {
-        _json = json;
-    }
-
-    return self;
-}
+@synthesize isPlaying = _isPlaying;
 
 @end

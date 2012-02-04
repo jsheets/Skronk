@@ -1,5 +1,5 @@
 //
-//  NowPlaying.h
+//  FMJson.h
 //  SkronkMini
 //
 //  Created by John Sheets on 2/4/12.
@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FMJson.h"
 
-@interface NowPlaying : FMJson
+@interface FMJson : NSObject
 
-@property (assign) BOOL isPlaying;
+@property (retain) NSString *json;
+
+- (id)initWithJson:(NSString *)json;
 
 @end
