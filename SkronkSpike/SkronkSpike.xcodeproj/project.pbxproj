@@ -298,7 +298,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
-				ORGANIZATIONNAME = "JAMF Software";
+				ORGANIZATIONNAME = FourFringe;
 			};
 			buildConfigurationList = 0D57C3581438C40A0024D014 /* Build configuration list for PBXProject "SkronkSpike" */;
 			compatibilityVersion = "Xcode 3.2";
