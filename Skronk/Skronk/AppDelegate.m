@@ -11,10 +11,13 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize label = _label;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    self.label.stringValue = @"Artist - Album - Track";
+    [self.window setMovableByWindowBackground:YES];
 }
 
 @end
