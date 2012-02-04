@@ -10,3 +10,6 @@
 [submodule "External/SNRLastFMEngine"]
 	path = External/SNRLastFMEngine
 	url = git@github.com:jsheets/SNRLastFMEngine.git
+[submodule "External/asi-http-request"]
+	path = External/asi-http-request
+	url = https://github.com/pokeb/asi-http-request.git
