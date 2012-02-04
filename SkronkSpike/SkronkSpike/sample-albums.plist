@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>albums</key>
+	<array>
+		<dict>
+			<key>album-name</key>
+			<string>The Unquiet Grave</string>
+			<key>album-name</key>
+			<string>Dark-Eyed Sailor</string>
+			<key>artist</key>
+			<string>Karen Mal</string>
+			<key>coverFile</key>
+			<string>dark-eyed-sailor.jpg</string>
+		</dict>
+		<dict>
+			<key>track</key>
+			<string>Bulls on Parade</string>
+			<key>album</key>
+			<string>Evil Empire</string>
+			<key>artist</key>
+			<string>Rage Against the Machine</string>
+			<key>coverFile</key>
+			<string>evil-empire.jpg</string>
+		</dict>
+		<dict>
+			<key>track</key>
+			<string>Nail Grinder</string>
+			<key>album</key>
+			<string>Clean</string>
+			<key>artist</key>
+			<string>Dave Martone</string>
+			<key>coverFile</key>
+			<string>martone-clean.jpg</string>
+		</dict>
+	</array>
+
+	<key>tracks</key>
+	<array>
+		<dict>
+			<key>track</key>
+			<string>The Unquiet Grave</string>
+			<key>album</key>
+			<string>Dark-Eyed Sailor</string>
+			<key>artist</key>
+			<string>Karen Mal</string>
+			<key>coverFile</key>
+			<string>dark-eyed-sailor.jpg</string>
+		</dict>
+		<dict>
+			<key>track</key>
+			<string>Bulls on Parade</string>
+			<key>album</key>
+			<string>Evil Empire</string>
+			<key>artist</key>
+			<string>Rage Against the Machine</string>
+			<key>coverFile</key>
+			<string>evil-empire.jpg</string>
+		</dict>
+		<dict>
+			<key>track</key>
+			<string>Nail Grinder</string>
+			<key>album</key>
+			<string>Clean</string>
+			<key>artist</key>
+			<string>Dave Martone</string>
+			<key>coverFile</key>
+			<string>martone-clean.jpg</string>
+		</dict>
+	</array>
+</dict>
+</plist>
