@@ -10,4 +10,8 @@
 
 @interface NowPlaying : NSObject
 
+@property (retain) NSString *json;
+
+- (id)initWithJson:(NSString *)json;
+
 @end
