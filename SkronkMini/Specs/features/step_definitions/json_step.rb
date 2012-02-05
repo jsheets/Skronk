@@ -13,17 +13,23 @@ When /^I parse the JSON$/ do
 end
 
 Then /^I should find the JSON property "([^"]*)"$/ do |property_name|
-  pending
+  @fm_json.valueForProperty(property_name).should_not be_nil
 end
 
 Then /^I should find the JSON property "([^"]*)" with the values:$/ do |property_name, table|
-  # table is a | perPage    | 2          |pending
+  value = @fm_json.valueForProperty(property_name)
+  value.should_not be_nil, "Property #{property_name} should exist"
+  validate_table(table, value)
 end
 
 Then /^the JSON property "([^"]*)" should have (\d+) entries$/ do |property_name, array_size|
-  pending
+  @array = @fm_json.valueForProperty(property_name)
+  @array.should_not be_nil, "Property #{property_name} should exist"
+  @array.count.should == array_size
 end
 
 When /^track (\d+) should have JSON properties:$/ do |track_index, table|
-  # table is a | artist           | Spock's Beard         |pending
+  track = @array[track_index]
+  track.should_not be_nil, "Track #{track_index} should exist"
+  validate_table(table, track)
 end

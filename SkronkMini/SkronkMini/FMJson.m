@@ -22,4 +22,9 @@
     return self;
 }
 
+- (NSString *)valueForProperty:(NSString *)keyPath
+{
+    return nil;
+}
+
 @end
