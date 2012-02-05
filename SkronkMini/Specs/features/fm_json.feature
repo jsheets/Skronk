@@ -5,8 +5,6 @@ Feature: last.fm JSON Parser
   As a developer
   I want a class to wrap it
 
-# Run this for every scenario.
-
   Background:
     Given a JSON data string with a currently playing song
     When I parse the JSON
@@ -25,20 +23,26 @@ Feature: last.fm JSON Parser
   Scenario: JSON array
     Then the JSON property "recenttracks.track" should have 3 entries
     And track 0 should have JSON properties:
-      | @attr.nowplaying | true                  |
-      | artist           | Spock's Beard         |
-      | name             | The Emperor's Clothes |
-      | streamable       | 0                     |
+      | name       | The Emperor's Clothes |
+      | streamable | 0                     |
     And track 1 should have JSON properties:
-      | album      | X                     |
-      | artist     | Spock's Beard         |
-      | date       | 4 Feb 2012, 01:17     |
       | name       | The Emperor's Clothes |
       | streamable | 0                     |
     And track 2 should have JSON properties:
-      | album      | X                          |
-      | artist     | Spock's Beard              |
-      | date       | 4 Feb 2012, 01:10          |
       | name       | The Man Behind the Curtain |
       | streamable | 0                          |
+
+  Scenario: JSON array with #text values
+    Then the JSON property "recenttracks.track" should have 3 entries
+    And track 0 should have JSON properties:
+      | @attr.nowplaying | true          |
+      | artist.#text     | Spock's Beard |
+    And track 1 should have JSON properties:
+      | album.#text  | X                 |
+      | artist.#text | Spock's Beard     |
+      | date.#text   | 4 Feb 2012, 01:17 |
+    And track 2 should have JSON properties:
+      | album.#text  | X                 |
+      | artist.#text | Spock's Beard     |
+      | date.#text   | 4 Feb 2012, 01:10 |
 

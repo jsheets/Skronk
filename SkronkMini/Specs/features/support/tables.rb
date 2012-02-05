@@ -5,8 +5,8 @@ def validate_table(table, actual_values)
   rows.each do |property_name, property_value_regex|
     value = actual_values[property_name]
 
-    value.should_not be_nil, "Device property '#{property_name}' should not be nil"
+    value.should_not be_nil, "Property '#{property_name}' should not be nil"
     value.to_s.should match(/^#{property_value_regex}$/),
-                      "Device property '#{property_name}' does not match '#{value}'"
+                      "Property '#{property_name}' does not match '#{value}'"
   end
 end

@@ -10,7 +10,8 @@
 
 @interface FMJson : NSObject
 
-@property (retain) NSString *json;
+@property (retain) NSString *jsonText;
+@property (retain) id jsonObject;
 
 - (id)initWithJson:(NSString *)json;
 - (NSString *)valueForProperty:(NSString *)keyPath;
