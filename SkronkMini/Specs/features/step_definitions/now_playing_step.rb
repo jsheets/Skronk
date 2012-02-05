@@ -8,3 +8,7 @@ When /^the now-playing flag should be "([^"]*)"$/ do |is_playing|
   expected = (is_playing == "on") ? 1 : 0
   @now_playing.isPlaying.should == expected
 end
+
+When /^the "([^"]*)" should be "([^"]*)"$/ do |property_name, value|
+  @now_playing.send(property_name).to_s.should == value
+end

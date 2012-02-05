@@ -13,4 +13,8 @@
 
 @property (assign) BOOL isPlaying;
 
+@property (retain) NSString *artist;
+@property (retain) NSString *album;
+@property (retain) NSString *track;
+
 @end

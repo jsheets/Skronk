@@ -23,7 +23,7 @@ Feature: last.fm JSON Parser
   Scenario: JSON array
     Then the JSON property "recenttracks.track" should have 3 entries
     And track 0 should have JSON properties:
-      | name       | The Emperor's Clothes |
+      | name       | Playing The Emperor's Clothes |
       | streamable | 0                     |
     And track 1 should have JSON properties:
       | name       | The Emperor's Clothes |
@@ -36,7 +36,7 @@ Feature: last.fm JSON Parser
     Then the JSON property "recenttracks.track" should have 3 entries
     And track 0 should have JSON properties:
       | @attr.nowplaying | true          |
-      | artist.#text     | Spock's Beard |
+      | artist.#text     | Playing Spock's Beard |
     And track 1 should have JSON properties:
       | album.#text  | X                 |
       | artist.#text | Spock's Beard     |
