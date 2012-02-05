@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "NowPlaying.h"
+#import "ASIHTTPRequest.h"
 
 @implementation AppDelegate
 
@@ -19,6 +21,28 @@
     NSURL *url = [NSURL URLWithString:urlString];
 
     NSLog(@"Looking up last.fm URL: %@", url);
+    
+    __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request setCompletionBlock:^{
+        // Use when fetching text data
+        NSString *responseString = [request responseString];
+        NSLog(@"Received JSON: %@", responseString);
+
+        NowPlaying *nowPlaying = [[NowPlaying alloc] initWithJson:responseString];
+        NSString *displayText = [NSString stringWithFormat:@"%@ - %@ - %@", nowPlaying.artist, nowPlaying.album, nowPlaying.track];
+
+        // Back on main thread...
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.label.stringValue = displayText;
+        });
+    }];
+    
+    [request setFailedBlock:^{
+        NSError *error = [request error];
+        NSLog(@"Error updating last.fm status for user %@: %@", username, [error localizedDescription]);
+    }];
+    
+    [request startAsynchronous];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
