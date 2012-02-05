@@ -12,4 +12,16 @@
 
 @synthesize isPlaying = _isPlaying;
 
+- (id)initWithJson:(NSString *)json
+{
+    if ((self = [super initWithJson:json]))
+    {
+        // Assign nowPlaying property.
+        NSString *nowPlayingValue = [self valueForProperty:@"recenttracks.track[0].@attr.nowplaying"];
+        self.isPlaying = [nowPlayingValue isEqualToString:@"true"];
+    }
+
+    return self;
+}
+
 @end
