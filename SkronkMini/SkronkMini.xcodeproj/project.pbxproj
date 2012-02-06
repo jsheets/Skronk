@@ -104,8 +104,6 @@
 		0DE0240414DDC9FB004E2227 = {
 			isa = PBXGroup;
 			children = (
-				0DE0248A14DF3BF8004E2227 /* SystemConfiguration.framework */,
-				0DE0248814DF3BE8004E2227 /* libz.dylib */,
 				0DE0241914DDC9FB004E2227 /* SkronkMini */,
 				0DE0243714DDCC18004E2227 /* Specs */,
 				0DE0241214DDC9FB004E2227 /* Frameworks */,
@@ -126,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				0DE0241314DDC9FB004E2227 /* Cocoa.framework */,
+				0DE0248A14DF3BF8004E2227 /* SystemConfiguration.framework */,
+				0DE0248814DF3BE8004E2227 /* libz.dylib */,
 				0DE0241514DDC9FB004E2227 /* Other Frameworks */,
 			);
 			name = Frameworks;

@@ -12,5 +12,10 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSTextField *label;
+@property (assign) IBOutlet NSTextField *icon;
+@property (assign) IBOutlet NSProgressIndicator *progress;
+@property (assign) IBOutlet NSTimer *timer;
+
+@property (retain) NSString *username;
 
 @end
