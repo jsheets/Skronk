@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "NowPlaying.h"
 #import "ASIHTTPRequest.h"
+#import "SGHotKey.h"
+#import "SGHotKeyCenter.h"
+
+NSString *kGlobalHotKey = @"Global Hot Key";
 
 @implementation AppDelegate
 
@@ -58,8 +62,30 @@
     [request startAsynchronous];
 }
 
+- (void)setupHotkeys
+{
+    // Modifiers: cmdKey, shiftKey, optionKey, controlKey
+    
+    // Cmd-Opt-Ctrl-l
+    NSInteger keyCode = 37;
+    NSInteger modifier = cmdKey + optionKey + controlKey;
+    
+    SGKeyCombo *keyCombo = [SGKeyCombo keyComboWithKeyCode:keyCode modifiers:modifier];
+    SGHotKey *hotKey = [[SGHotKey alloc] initWithIdentifier:kGlobalHotKey keyCombo:keyCombo target:self action:@selector(hotKeyPressed:)];
+    [[SGHotKeyCenter sharedCenter] registerHotKey:hotKey];
+}
+
+- (void)hotKeyPressed:(id)sender
+{
+    NSLog(@"Hot key pressed");
+    BOOL visibleState = [self.window isVisible];
+    [self.window setIsVisible:!visibleState];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    [self setupHotkeys];
+    
     [self.window setMovableByWindowBackground:YES];
     self.window.level = NSFloatingWindowLevel;
 

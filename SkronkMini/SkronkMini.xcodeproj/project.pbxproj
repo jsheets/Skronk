@@ -31,6 +31,11 @@
 		0DE0248714DF3936004E2227 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0247F14DF3936004E2227 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0DE0248914DF3BE8004E2227 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE0248814DF3BE8004E2227 /* libz.dylib */; };
 		0DE0248B14DF3BF8004E2227 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE0248A14DF3BF8004E2227 /* SystemConfiguration.framework */; };
+		0DE0249914DF65D4004E2227 /* SGHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0249214DF65D4004E2227 /* SGHotKey.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0DE0249A14DF65D4004E2227 /* SGHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0249414DF65D4004E2227 /* SGHotKeyCenter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0DE0249B14DF65D4004E2227 /* SGKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0249614DF65D4004E2227 /* SGKeyCodeTranslator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0DE0249C14DF65D4004E2227 /* SGKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0249814DF65D4004E2227 /* SGKeyCombo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0DE0249E14DF72BC004E2227 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE0249D14DF72BC004E2227 /* Carbon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +82,15 @@
 		0DE0248014DF3936004E2227 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../../External/asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = "<group>"; };
 		0DE0248814DF3BE8004E2227 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0DE0248A14DF3BF8004E2227 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0DE0249114DF65D4004E2227 /* SGHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHotKey.h; sourceTree = "<group>"; };
+		0DE0249214DF65D4004E2227 /* SGHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHotKey.m; sourceTree = "<group>"; };
+		0DE0249314DF65D4004E2227 /* SGHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHotKeyCenter.h; sourceTree = "<group>"; };
+		0DE0249414DF65D4004E2227 /* SGHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHotKeyCenter.m; sourceTree = "<group>"; };
+		0DE0249514DF65D4004E2227 /* SGKeyCodeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKeyCodeTranslator.h; sourceTree = "<group>"; };
+		0DE0249614DF65D4004E2227 /* SGKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKeyCodeTranslator.m; sourceTree = "<group>"; };
+		0DE0249714DF65D4004E2227 /* SGKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKeyCombo.h; sourceTree = "<group>"; };
+		0DE0249814DF65D4004E2227 /* SGKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKeyCombo.m; sourceTree = "<group>"; };
+		0DE0249D14DF72BC004E2227 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE0249E14DF72BC004E2227 /* Carbon.framework in Frameworks */,
 				0DE0241414DDC9FB004E2227 /* Cocoa.framework in Frameworks */,
 				0DE0248B14DF3BF8004E2227 /* SystemConfiguration.framework in Frameworks */,
 				0DE0248914DF3BE8004E2227 /* libz.dylib in Frameworks */,
@@ -124,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				0DE0241314DDC9FB004E2227 /* Cocoa.framework */,
+				0DE0249D14DF72BC004E2227 /* Carbon.framework */,
 				0DE0248A14DF3BF8004E2227 /* SystemConfiguration.framework */,
 				0DE0248814DF3BE8004E2227 /* libz.dylib */,
 				0DE0241514DDC9FB004E2227 /* Other Frameworks */,
@@ -144,9 +160,10 @@
 		0DE0241914DDC9FB004E2227 /* SkronkMini */ = {
 			isa = PBXGroup;
 			children = (
-				0DE0246D14DF3826004E2227 /* ASIHTTPRequest */,
 				0DE0245B14DDF35C004E2227 /* UI */,
 				0DE0245C14DDF363004E2227 /* Model */,
+				0DE0246D14DF3826004E2227 /* ASIHTTPRequest */,
+				0DE0249014DF65D4004E2227 /* SGHotKeysLib */,
 				0DE0241A14DDC9FB004E2227 /* Supporting Files */,
 			);
 			path = SkronkMini;
@@ -228,6 +245,22 @@
 				0DE0248014DF3936004E2227 /* ASIProgressDelegate.h */,
 			);
 			name = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		0DE0249014DF65D4004E2227 /* SGHotKeysLib */ = {
+			isa = PBXGroup;
+			children = (
+				0DE0249114DF65D4004E2227 /* SGHotKey.h */,
+				0DE0249214DF65D4004E2227 /* SGHotKey.m */,
+				0DE0249314DF65D4004E2227 /* SGHotKeyCenter.h */,
+				0DE0249414DF65D4004E2227 /* SGHotKeyCenter.m */,
+				0DE0249514DF65D4004E2227 /* SGKeyCodeTranslator.h */,
+				0DE0249614DF65D4004E2227 /* SGKeyCodeTranslator.m */,
+				0DE0249714DF65D4004E2227 /* SGKeyCombo.h */,
+				0DE0249814DF65D4004E2227 /* SGKeyCombo.m */,
+			);
+			name = SGHotKeysLib;
+			path = ../../External/SGHotKeysLib/SGHotKeysLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +377,10 @@
 				0DE0248514DF3936004E2227 /* ASIHTTPRequest.m in Sources */,
 				0DE0248614DF3936004E2227 /* ASIInputStream.m in Sources */,
 				0DE0248714DF3936004E2227 /* ASINetworkQueue.m in Sources */,
+				0DE0249914DF65D4004E2227 /* SGHotKey.m in Sources */,
+				0DE0249A14DF65D4004E2227 /* SGHotKeyCenter.m in Sources */,
+				0DE0249B14DF65D4004E2227 /* SGKeyCodeTranslator.m in Sources */,
+				0DE0249C14DF65D4004E2227 /* SGKeyCombo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
