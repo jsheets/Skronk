@@ -1294,6 +1294,8 @@
 				<string key="NSName">_NSMainMenu</string>
 			</object>
 			<object class="NSWindowTemplate" id="713271124">
+				<int key="NSWindowStyleMask">8</int>
+				<bool key="NSWindowAllowNontitledResizable">YES</bool>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{335, 390}, {550, 30}}</string>
 				<int key="NSWTFlags">1954021376</int>
@@ -1301,13 +1303,15 @@
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
+				<string key="NSWindowContentMaxSize">{1024, 30}</string>
+				<string key="NSWindowContentMinSize">{350, 30}</string>
 				<object class="NSView" key="NSWindowView" id="275091113">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSBox" id="849687697">
 							<reference key="NSNextResponder" ref="275091113"/>
-							<int key="NSvFlags">12</int>
+							<int key="NSvFlags">18</int>
 							<array class="NSMutableArray" key="NSSubviews">
 								<object class="NSView" id="790770263">
 									<reference key="NSNextResponder" ref="849687697"/>
@@ -1355,7 +1359,7 @@
 										</object>
 										<object class="NSProgressIndicator" id="403347300">
 											<reference key="NSNextResponder" ref="790770263"/>
-											<int key="NSvFlags">1292</int>
+											<int key="NSvFlags">1289</int>
 											<object class="NSPSMatrix" key="NSDrawMatrix"/>
 											<string key="NSFrame">{{525, 6}, {16, 16}}</string>
 											<reference key="NSSuperview" ref="790770263"/>
@@ -1445,7 +1449,8 @@
 					<reference key="NSNextKeyView" ref="849687697"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
-				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
+				<string key="NSMinSize">{350, 30}</string>
+				<string key="NSMaxSize">{1024, 30}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="976324537">
@@ -3388,6 +3393,7 @@
 						<string key="icon">NSTextField</string>
 						<string key="label">NSTextField</string>
 						<string key="progress">NSProgressIndicator</string>
+						<string key="timer">NSTimer</string>
 						<string key="window">NSWindow</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -3402,6 +3408,10 @@
 						<object class="IBToOneOutletInfo" key="progress">
 							<string key="name">progress</string>
 							<string key="candidateClassName">NSProgressIndicator</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="timer">
+							<string key="name">timer</string>
+							<string key="candidateClassName">NSTimer</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="window">
 							<string key="name">window</string>

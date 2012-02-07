@@ -40,13 +40,24 @@ NSString *kGlobalHotKey = @"Global Hot Key";
         // Use when fetching text data
         NSString *responseString = [request responseString];
 //        NSLog(@"Received JSON: %@", responseString);
+        
+        NSString *displayText = @"Nothing playing...";
 
         NowPlaying *nowPlaying = [[NowPlaying alloc] initWithJson:responseString];
-        NSString *displayText = [NSString stringWithFormat:@"%@ - %@ - %@", nowPlaying.artist, nowPlaying.album, nowPlaying.track];
+        if (nowPlaying.isPlaying)
+        {
+            NSMutableArray *fields = [NSMutableArray array];
+            if (nowPlaying.artist.length > 0) [fields addObject:nowPlaying.artist];
+            if (nowPlaying.album.length > 0) [fields addObject:nowPlaying.album];
+            if (nowPlaying.track.length > 0) [fields addObject:nowPlaying.track];
+            
+            displayText = [fields componentsJoinedByString:@" - "];
+        }
 
         // Back on main thread...
         dispatch_async(dispatch_get_main_queue(), ^{
             self.label.stringValue = displayText;
+            self.label.textColor = nowPlaying.isPlaying ? [NSColor textColor] : [NSColor controlShadowColor];
             self.icon.textColor = nowPlaying.isPlaying ? [NSColor alternateSelectedControlColor] : [NSColor controlShadowColor];
             
             // Stop spinner.
@@ -88,6 +99,11 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     
     [self.window setMovableByWindowBackground:YES];
     self.window.level = NSFloatingWindowLevel;
+//    self.window.level = kCGMainMenuWindowLevel - 1;
+
+    // Stick to all windows.
+//    [self.window setCollectionBehavior:NSWindowCollectionBehaviorStationary |
+//        NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorFullScreenAuxiliary];
 
     self.username = @"johnsheets";
     [self updateCurrentTrack];
