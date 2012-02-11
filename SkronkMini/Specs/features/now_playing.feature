@@ -12,6 +12,7 @@ Feature: NowPlaying last.fm parser
     And the "artist" should be "Playing Spock's Beard"
     And the "album" should be "Playing X"
     And the "track" should be "Playing The Emperor's Clothes"
+    And the "artSmallUrl" should be "http://playing-ak.last.fm/serve/34s/52941109.jpg"
 
   Scenario: No tracks are currently playing
     Given a JSON data string with no currently playing songs
@@ -20,3 +21,4 @@ Feature: NowPlaying last.fm parser
     And the "artist" should be "Spock's Beard"
     And the "album" should be "X"
     And the "track" should be "From The Darkness"
+    And the "artSmallUrl" should be "http://userserve-ak.last.fm/serve/34s/52941109.jpg"

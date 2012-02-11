@@ -14,6 +14,6 @@
 @property (retain) id jsonObject;
 
 - (id)initWithJson:(NSString *)json;
-- (NSString *)valueForProperty:(NSString *)keyPath;
+- (id)valueForProperty:(NSString *)keyPath;
 
 @end

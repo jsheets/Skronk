@@ -22,19 +22,19 @@
         }, 
         "image": [
           {
-            "#text": "", 
+            "#text": "http://playing-ak.last.fm/serve/34s/52941109.jpg",
             "size": "small"
           }, 
           {
-            "#text": "", 
+            "#text": "http://playing-ak.last.fm/serve/64s/52941109.jpg",
             "size": "medium"
           }, 
           {
-            "#text": "", 
+            "#text": "http://playing-ak.last.fm/serve/126/52941109.jpg",
             "size": "large"
           }, 
           {
-            "#text": "", 
+            "#text": "http://playing-ak.last.fm/serve/300x300/52941109.jpg",
             "size": "extralarge"
           }
         ], 

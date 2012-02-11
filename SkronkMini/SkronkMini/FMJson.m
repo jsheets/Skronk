@@ -58,7 +58,7 @@
 
 // keyPath is a blend of KVO and XPath (KVO with array accessors), but that allows properties
 // such as "@attr" and "#text".
-- (NSString *)valueForProperty:(NSString *)keyPath
+- (id)valueForProperty:(NSString *)keyPath
 {
     id currentObject = self.jsonObject;
     NSArray *pathParts = [keyPath componentsSeparatedByString:@"."];
