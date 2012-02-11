@@ -23,6 +23,42 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 @synthesize timer = _timer;
 @synthesize username = _username;
 @synthesize art = _art;
+@synthesize hideWhenNotPlaying = _hideWhenNotPlaying;
+
+- (BOOL)windowIsVisible
+{
+    return self.window.alphaValue == 1.0;
+}
+
+- (void)fadeInWindow
+{
+    // Fade in then expand.
+    NSDictionary *newFadeIn = [NSDictionary dictionaryWithObjectsAndKeys:
+                                      self.window, NSViewAnimationTargetKey,
+                                      NSViewAnimationFadeInEffect, NSViewAnimationEffectKey, nil];
+
+    // Fade in stripe, then block until fully visible.
+    NSArray *animations = [NSArray arrayWithObject:newFadeIn];
+    NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:animations];
+
+    [animation setAnimationBlockingMode:NSAnimationBlocking];
+    [animation setDuration:0.5];
+    [animation startAnimation];
+
+    // When fade-in is complete, expand the window.
+    NSRect newFrame = [self.window frame];
+    newFrame.size.height = 30;
+    [self.window setFrame:newFrame display:YES animate:YES];
+}
+
+- (void)fadeOutWindow
+{
+    // Shrink then fade out.
+    NSRect newFrame = [self.window frame];
+    newFrame.size.height = 3;
+    [self.window setFrame:newFrame display:YES animate:YES];
+    [self.window.animator setAlphaValue:0.0];
+}
 
 - (void)updateCurrentTrack
 {
@@ -65,8 +101,27 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 
             self.label.textColor = nowPlaying.isPlaying ? [NSColor textColor] : [NSColor controlShadowColor];
             self.icon.textColor = nowPlaying.isPlaying ? [NSColor alternateSelectedControlColor] : [NSColor controlShadowColor];
+
             self.art.hidden = !nowPlaying.isPlaying;
-            
+            if (self.hideWhenNotPlaying)
+            {
+                if (nowPlaying.isPlaying)
+                {
+                    if (![self windowIsVisible])
+                    {
+                        [self fadeInWindow];
+                    }
+                }
+                else
+                {
+                    // Not playing. If window is still visible, hide it.
+                    if ([self windowIsVisible])
+                    {
+                        [self fadeOutWindow];
+                    }
+                }
+            }
+
             // Stop spinner.
             [self.progress stopAnimation:self];
         });
@@ -103,41 +158,6 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     [[SGHotKeyCenter sharedCenter] registerHotKey:hotKey];
 }
 
-- (BOOL)windowIsVisible
-{
-    return self.window.alphaValue == 1.0;
-}
-
-- (void)fadeInWindow
-{
-    // Fade in then expand.
-    NSDictionary *newFadeIn = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      self.window, NSViewAnimationTargetKey,
-                                      NSViewAnimationFadeInEffect, NSViewAnimationEffectKey, nil];
-
-    // Fade in stripe, then block until fully visible.
-    NSArray *animations = [NSArray arrayWithObject:newFadeIn];
-    NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:animations];
-
-    [animation setAnimationBlockingMode:NSAnimationBlocking];
-    [animation setDuration:0.5];
-    [animation startAnimation];
-
-    // When fade-in is complete, expand the window.
-    NSRect newFrame = [self.window frame];
-    newFrame.size.height = 30;
-    [self.window setFrame:newFrame display:YES animate:YES];
-}
-
-- (void)fadeOutWindow
-{
-    // Shrink then fade out.
-    NSRect newFrame = [self.window frame];
-    newFrame.size.height = 3;
-    [self.window setFrame:newFrame display:YES animate:YES];
-    [self.window.animator setAlphaValue:0.0];
-}
-
 - (void)hotKeyPressed:(id)sender
 {
     NSLog(@"Hot key pressed");
@@ -161,6 +181,8 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    self.hideWhenNotPlaying = YES;
+
     [self setupHotkeys];
     
     [self.window setMovableByWindowBackground:YES];

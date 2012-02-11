@@ -18,5 +18,6 @@
 @property (assign) IBOutlet NSTimer *timer;
 
 @property (retain) NSString *username;
+@property (assign) BOOL hideWhenNotPlaying;
 
 @end
