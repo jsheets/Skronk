@@ -40,8 +40,8 @@ NSString *kGlobalHotKey = @"Global Hot Key";
         // Use when fetching text data
         NSString *responseString = [request responseString];
 //        NSLog(@"Received JSON: %@", responseString);
-        
-        NSString *displayText = @"Nothing playing...";
+
+        NSString *displayText = nil;
 
         NowPlaying *nowPlaying = [[NowPlaying alloc] initWithJson:responseString];
         if (nowPlaying.isPlaying)
@@ -56,7 +56,12 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 
         // Back on main thread...
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.label.stringValue = displayText;
+            // If we have something new to report, show it.
+            if (displayText)
+            {
+                self.label.stringValue = displayText;
+            }
+
             self.label.textColor = nowPlaying.isPlaying ? [NSColor textColor] : [NSColor controlShadowColor];
             self.icon.textColor = nowPlaying.isPlaying ? [NSColor alternateSelectedControlColor] : [NSColor controlShadowColor];
             
