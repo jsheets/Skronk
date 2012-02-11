@@ -22,6 +22,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 @synthesize progress = _progress;
 @synthesize timer = _timer;
 @synthesize username = _username;
+@synthesize art = _art;
 
 - (void)updateCurrentTrack
 {
@@ -64,10 +65,22 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 
             self.label.textColor = nowPlaying.isPlaying ? [NSColor textColor] : [NSColor controlShadowColor];
             self.icon.textColor = nowPlaying.isPlaying ? [NSColor alternateSelectedControlColor] : [NSColor controlShadowColor];
+            self.art.hidden = !nowPlaying.isPlaying;
             
             // Stop spinner.
             [self.progress stopAnimation:self];
         });
+
+        // Fetch album art.
+        if (nowPlaying.isPlaying && nowPlaying.artSmallUrl)
+        {
+            NSImage *albumImage = [[NSImage alloc] initWithContentsOfURL:nowPlaying.artSmallUrl];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.art.hidden = NO;
+                self.art.image = albumImage;
+            });
+        }
+
     }];
     
     [request setFailedBlock:^{
