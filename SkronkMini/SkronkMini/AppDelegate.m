@@ -80,7 +80,6 @@ NSString *kGlobalHotKey = @"Global Hot Key";
                 self.art.image = albumImage;
             });
         }
-
     }];
     
     [request setFailedBlock:^{
@@ -104,11 +103,60 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     [[SGHotKeyCenter sharedCenter] registerHotKey:hotKey];
 }
 
+- (BOOL)windowIsVisible
+{
+    return self.window.alphaValue == 1.0;
+}
+
+- (void)fadeInWindow
+{
+    // Fade in then expand.
+    NSDictionary *newFadeIn = [NSDictionary dictionaryWithObjectsAndKeys:
+                                      self.window, NSViewAnimationTargetKey,
+                                      NSViewAnimationFadeInEffect, NSViewAnimationEffectKey, nil];
+
+    // Fade in stripe, then block until fully visible.
+    NSArray *animations = [NSArray arrayWithObject:newFadeIn];
+    NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:animations];
+
+    [animation setAnimationBlockingMode:NSAnimationBlocking];
+    [animation setDuration:0.5];
+    [animation startAnimation];
+
+    // When fade-in is complete, expand the window.
+    NSRect newFrame = [self.window frame];
+    newFrame.size.height = 30;
+    [self.window setFrame:newFrame display:YES animate:YES];
+}
+
+- (void)fadeOutWindow
+{
+    // Shrink then fade out.
+    NSRect newFrame = [self.window frame];
+    newFrame.size.height = 3;
+    [self.window setFrame:newFrame display:YES animate:YES];
+    [self.window.animator setAlphaValue:0.0];
+}
+
 - (void)hotKeyPressed:(id)sender
 {
     NSLog(@"Hot key pressed");
-    BOOL visibleState = [self.window isVisible];
-    [self.window setIsVisible:!visibleState];
+
+    // Show/hide abruptly.
+//    BOOL newVisibleState = ![self.window isVisible];
+//    [self.window setIsVisible:newVisibleState];
+
+    // Show/hide smoothly.
+    BOOL wasVisible = [self windowIsVisible];
+    if (wasVisible)
+    {
+        [self fadeOutWindow];
+    }
+    else
+    {
+        [self fadeInWindow];
+    }
+
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
