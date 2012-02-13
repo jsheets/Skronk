@@ -1351,10 +1351,10 @@
 												<object class="NSColor" key="NSTextColor">
 													<int key="NSColorSpace">6</int>
 													<string key="NSCatalogName">System</string>
-													<string key="NSColorName">textColor</string>
-													<object class="NSColor" key="NSColor">
+													<string key="NSColorName">highlightColor</string>
+													<object class="NSColor" key="NSColor" id="180642307">
 														<int key="NSColorSpace">3</int>
-														<bytes key="NSWhite">MAA</bytes>
+														<bytes key="NSWhite">MQA</bytes>
 													</object>
 												</object>
 											</object>
@@ -1396,10 +1396,7 @@
 													<int key="NSColorSpace">6</int>
 													<string key="NSCatalogName">System</string>
 													<string key="NSColorName">controlHighlightColor</string>
-													<object class="NSColor" key="NSColor" id="180642307">
-														<int key="NSColorSpace">3</int>
-														<bytes key="NSWhite">MQA</bytes>
-													</object>
+													<reference key="NSColor" ref="180642307"/>
 												</object>
 											</object>
 										</object>
@@ -1470,7 +1467,15 @@
 							<int key="NSBoxType">4</int>
 							<int key="NSTitlePosition">0</int>
 							<bool key="NSTransparent">NO</bool>
-							<reference key="NSFillColor2" ref="679252265"/>
+							<object class="NSColor" key="NSFillColor2">
+								<int key="NSColorSpace">6</int>
+								<string key="NSCatalogName">System</string>
+								<string key="NSColorName">disabledControlTextColor</string>
+								<object class="NSColor" key="NSColor">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
+								</object>
+							</object>
 						</object>
 					</array>
 					<string key="NSFrameSize">{550, 30}</string>

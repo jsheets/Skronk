@@ -99,7 +99,8 @@ NSString *kGlobalHotKey = @"Global Hot Key";
                 self.label.stringValue = displayText;
             }
 
-            self.label.textColor = nowPlaying.isPlaying ? [NSColor textColor] : [NSColor controlShadowColor];
+//            self.label.textColor = nowPlaying.isPlaying ? [NSColor textColor] : [NSColor controlShadowColor];
+            self.label.textColor = nowPlaying.isPlaying ? [NSColor highlightColor] : [NSColor controlShadowColor];
             self.icon.textColor = nowPlaying.isPlaying ? [NSColor alternateSelectedControlColor] : [NSColor controlShadowColor];
 
             self.art.hidden = !nowPlaying.isPlaying;
