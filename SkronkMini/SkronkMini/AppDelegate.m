@@ -160,14 +160,15 @@ NSString *kGlobalHotKey = @"Global Hot Key";
         });
 
         // Fetch album art.
+        NSImage *albumImage = nil;
         if (nowPlaying.isPlaying && nowPlaying.artSmallUrl)
         {
-            NSImage *albumImage = [[NSImage alloc] initWithContentsOfURL:nowPlaying.artSmallUrl];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.art.hidden = NO;
-                self.art.image = albumImage;
-            });
+            albumImage = [[NSImage alloc] initWithContentsOfURL:nowPlaying.artSmallUrl];
         }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.art.hidden = !nowPlaying.isPlaying;
+            self.art.image = albumImage;
+        });
     }];
     
     [request setFailedBlock:^{
