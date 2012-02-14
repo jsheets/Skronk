@@ -64,7 +64,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
         [NSValue valueWithRect:newFrame], NSViewAnimationEndFrameKey,
         nil];
 
-    NSLog(@"Animating fadeIn from %@ to %@", NSStringFromRect(self.window.frame), NSStringFromRect(newFrame));
+//    NSLog(@"Animating fadeIn from %@ to %@", NSStringFromRect(self.window.frame), NSStringFromRect(newFrame));
     animation = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObject:move]];
     [animation setDuration:0.5];
     [animation setAnimationBlockingMode:NSAnimationBlocking];
@@ -103,15 +103,25 @@ NSString *kGlobalHotKey = @"Global Hot Key";
         NSString *displayText = nil;
 
         NowPlaying *nowPlaying = [[NowPlaying alloc] initWithJson:responseString];
-        if (nowPlaying.isPlaying)
+        BOOL firstTime = [self.label.stringValue isEqualToString:@"Loading..."];
+        if (nowPlaying.isPlaying || firstTime)
         {
+            if (firstTime)
+            {
+                NSLog(@"Initial startup, not playing: loading previous track.");
+            }
+
             NSMutableArray *fields = [NSMutableArray array];
             if (nowPlaying.artist.length > 0) [fields addObject:nowPlaying.artist];
             if (nowPlaying.album.length > 0) [fields addObject:nowPlaying.album];
             if (nowPlaying.track.length > 0) [fields addObject:nowPlaying.track];
-            
+
             displayText = [fields componentsJoinedByString:@" - "];
         }
+        else if (firstTime)
+        {
+        }
+
 
         // Back on main thread...
         dispatch_async(dispatch_get_main_queue(), ^{

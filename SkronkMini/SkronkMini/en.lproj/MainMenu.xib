@@ -1295,19 +1295,19 @@
 				</array>
 				<string key="NSName">_NSMainMenu</string>
 			</object>
-			<object class="NSMenu" id="653366782">
+			<object class="NSMenu" id="481416820">
 				<string key="NSTitle"/>
 				<array class="NSMutableArray" key="NSMenuItems">
-					<object class="NSMenuItem" id="449052981">
-						<reference key="NSMenu" ref="653366782"/>
+					<object class="NSMenuItem" id="653909325">
+						<reference key="NSMenu" ref="481416820"/>
 						<string key="NSTitle">Preferences</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="687507324">
-						<reference key="NSMenu" ref="653366782"/>
+					<object class="NSMenuItem" id="694223885">
+						<reference key="NSMenu" ref="481416820"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<bool key="NSIsSeparator">YES</bool>
 						<string key="NSTitle"/>
@@ -1316,8 +1316,8 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="790073170">
-						<reference key="NSMenu" ref="653366782"/>
+					<object class="NSMenuItem" id="812804249">
+						<reference key="NSMenu" ref="481416820"/>
 						<string key="NSTitle">Quit</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
@@ -1362,7 +1362,7 @@
 											<object class="NSTextFieldCell" key="NSCell" id="1049187089">
 												<int key="NSCellFlags">68288064</int>
 												<int key="NSCellFlags2">4195328</int>
-												<string key="NSContents">Now Playing...</string>
+												<string key="NSContents">Loading...</string>
 												<object class="NSFont" key="NSSupport">
 													<string key="NSName">LucidaGrande</string>
 													<double key="NSSize">13</double>
@@ -1556,7 +1556,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">terminate:</string>
 						<reference key="source" ref="1021"/>
-						<reference key="destination" ref="790073170"/>
+						<reference key="destination" ref="812804249"/>
 					</object>
 					<int key="connectionID">567</int>
 				</object>
@@ -2252,7 +2252,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">statusMenu</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="653366782"/>
+						<reference key="destination" ref="481416820"/>
 					</object>
 					<int key="connectionID">566</int>
 				</object>
@@ -2260,7 +2260,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">preferencesClicked:</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="449052981"/>
+						<reference key="destination" ref="653909325"/>
 					</object>
 					<int key="connectionID">568</int>
 				</object>
@@ -3329,28 +3329,28 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">561</int>
-						<reference key="object" ref="653366782"/>
+						<reference key="object" ref="481416820"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="449052981"/>
-							<reference ref="790073170"/>
-							<reference ref="687507324"/>
+							<reference ref="653909325"/>
+							<reference ref="812804249"/>
+							<reference ref="694223885"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">562</int>
-						<reference key="object" ref="449052981"/>
-						<reference key="parent" ref="653366782"/>
+						<reference key="object" ref="653909325"/>
+						<reference key="parent" ref="481416820"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">563</int>
-						<reference key="object" ref="790073170"/>
-						<reference key="parent" ref="653366782"/>
+						<reference key="object" ref="812804249"/>
+						<reference key="parent" ref="481416820"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">565</int>
-						<reference key="object" ref="687507324"/>
-						<reference key="parent" ref="653366782"/>
+						<reference key="object" ref="694223885"/>
+						<reference key="parent" ref="481416820"/>
 					</object>
 				</array>
 			</object>
