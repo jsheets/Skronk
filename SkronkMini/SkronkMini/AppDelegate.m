@@ -38,17 +38,28 @@ NSString *kGlobalHotKey = @"Global Hot Key";
                                       NSViewAnimationFadeInEffect, NSViewAnimationEffectKey, nil];
 
     // Fade in stripe, then block until fully visible.
-    NSArray *animations = [NSArray arrayWithObject:newFadeIn];
-    NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:animations];
-
+    NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObject:newFadeIn]];
     [animation setAnimationBlockingMode:NSAnimationBlocking];
     [animation setDuration:0.5];
     [animation startAnimation];
 
     // When fade-in is complete, expand the window.
-    NSRect newFrame = [self.window frame];
+    NSRect newFrame = self.window.frame;
     newFrame.size.height = 30;
-    [self.window setFrame:newFrame display:YES animate:YES];
+
+    NSDictionary *move = [NSDictionary dictionaryWithObjectsAndKeys:
+        self.window, NSViewAnimationTargetKey,
+        [NSValue valueWithRect:self.window.frame], NSViewAnimationStartFrameKey,
+        [NSValue valueWithRect:newFrame], NSViewAnimationEndFrameKey,
+        nil];
+
+    NSLog(@"Animating fadeIn from %@ to %@", NSStringFromRect(self.window.frame), NSStringFromRect(newFrame));
+    animation = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObject:move]];
+    [animation setDuration:0.5];
+    [animation setAnimationBlockingMode:NSAnimationBlocking];
+    [animation startAnimation];
+
+//    [self.window setFrame:newFrame display:YES animate:YES];
 }
 
 - (void)fadeOutWindow
