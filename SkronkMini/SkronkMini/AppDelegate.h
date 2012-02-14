@@ -11,6 +11,9 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSMenu *statusMenu;
+@property (retain) NSStatusItem *statusItem;
+
 @property (assign) IBOutlet NSTextField *label;
 @property (assign) IBOutlet NSTextField *icon;
 @property (assign) IBOutlet NSImageView *art;
@@ -19,5 +22,7 @@
 
 @property (retain) NSString *username;
 @property (assign) BOOL hideWhenNotPlaying;
+
+- (IBAction)preferencesClicked:(id)sender;
 
 @end

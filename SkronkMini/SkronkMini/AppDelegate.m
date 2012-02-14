@@ -24,6 +24,17 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 @synthesize username = _username;
 @synthesize art = _art;
 @synthesize hideWhenNotPlaying = _hideWhenNotPlaying;
+@synthesize statusMenu = _statusMenu;
+@synthesize statusItem = _statusItem;
+
+-(void)awakeFromNib
+{
+    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    self.statusItem.menu = self.statusMenu;
+    self.statusItem.title = @"π";
+    self.statusItem.highlightMode = YES;
+//    self.statusItem.image = nil;
+}
 
 - (BOOL)windowIsVisible
 {
@@ -188,7 +199,6 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     {
         [self fadeInWindow];
     }
-
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -209,6 +219,11 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     [self updateCurrentTrack];
 
     self.timer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(updateCurrentTrack) userInfo:nil repeats:YES];
+}
+
+- (IBAction)preferencesClicked:(id)sender
+{
+    NSLog(@"Preferences clicked.");
 }
 
 @end
