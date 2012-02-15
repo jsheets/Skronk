@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4AE4D714EB3474002596BD /* PreferencesController.m */; };
+		0D4AE4DB14EB362D002596BD /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D4AE4DA14EB362D002596BD /* Preferences.xib */; };
+		0D4AE4DD14EB568B002596BD /* last.fm-icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D4AE4DC14EB568B002596BD /* last.fm-icon-64.png */; };
 		0DE0241414DDC9FB004E2227 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE0241314DDC9FB004E2227 /* Cocoa.framework */; };
 		0DE0241E14DDC9FB004E2227 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DE0241C14DDC9FB004E2227 /* InfoPlist.strings */; };
 		0DE0242014DDC9FB004E2227 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0241F14DDC9FB004E2227 /* main.m */; };
@@ -39,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D4AE4D614EB3474002596BD /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		0D4AE4D714EB3474002596BD /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		0D4AE4DA14EB362D002596BD /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		0D4AE4DC14EB568B002596BD /* last.fm-icon-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "last.fm-icon-64.png"; path = "../../Docs/Lastfm_LogosAndGuidelines/Logos/last.fm-icon-64.png"; sourceTree = "<group>"; };
 		0DE0240F14DDC9FB004E2227 /* SkronkMini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkronkMini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE0241314DDC9FB004E2227 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0DE0241614DDC9FB004E2227 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -207,6 +214,10 @@
 				0DE0242514DDC9FB004E2227 /* AppDelegate.h */,
 				0DE0242614DDC9FB004E2227 /* AppDelegate.m */,
 				0DE0242814DDC9FC004E2227 /* MainMenu.xib */,
+				0D4AE4D614EB3474002596BD /* PreferencesController.h */,
+				0D4AE4D714EB3474002596BD /* PreferencesController.m */,
+				0D4AE4DA14EB362D002596BD /* Preferences.xib */,
+				0D4AE4DC14EB568B002596BD /* last.fm-icon-64.png */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -348,6 +359,8 @@
 				0DE0241E14DDC9FB004E2227 /* InfoPlist.strings in Resources */,
 				0DE0242414DDC9FB004E2227 /* Credits.rtf in Resources */,
 				0DE0242A14DDC9FC004E2227 /* MainMenu.xib in Resources */,
+				0D4AE4DB14EB362D002596BD /* Preferences.xib in Resources */,
+				0D4AE4DD14EB568B002596BD /* last.fm-icon-64.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +394,7 @@
 				0DE0249A14DF65D4004E2227 /* SGHotKeyCenter.m in Sources */,
 				0DE0249B14DF65D4004E2227 /* SGKeyCodeTranslator.m in Sources */,
 				0DE0249C14DF65D4004E2227 /* SGKeyCombo.m in Sources */,
+				0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

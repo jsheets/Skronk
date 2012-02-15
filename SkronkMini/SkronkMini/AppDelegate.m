@@ -11,6 +11,7 @@
 #import "ASIHTTPRequest.h"
 #import "SGHotKey.h"
 #import "SGHotKeyCenter.h"
+#import "PreferencesController.h"
 
 NSString *kGlobalHotKey = @"Global Hot Key";
 
@@ -26,6 +27,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 @synthesize hideWhenNotPlaying = _hideWhenNotPlaying;
 @synthesize statusMenu = _statusMenu;
 @synthesize statusItem = _statusItem;
+@synthesize preferencesController = _preferencesController;
 
 -(void)awakeFromNib
 {
@@ -235,6 +237,12 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 - (IBAction)preferencesClicked:(id)sender
 {
     NSLog(@"Preferences clicked.");
+    if (self.preferencesController == nil)
+    {
+        self.preferencesController = [[PreferencesController alloc] init];
+    }
+
+    [self.preferencesController showWindow:self];
 }
 
 @end

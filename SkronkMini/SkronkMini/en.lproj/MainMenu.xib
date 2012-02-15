@@ -1302,12 +1302,13 @@
 					<object class="NSMenuItem" id="653909325">
 						<reference key="NSMenu" ref="481416820"/>
 						<string key="NSTitle">Preferences</string>
-						<string key="NSKeyEquiv"/>
+						<string key="NSKeyEquiv">,</string>
+						<int key="NSKeyEquivModMask">1048576</int>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="893326809">
+					<object class="NSMenuItem" id="469346641">
 						<reference key="NSMenu" ref="481416820"/>
 						<string key="NSTitle">Autohide</string>
 						<string key="NSKeyEquiv"/>
@@ -1534,7 +1535,7 @@
 			<object class="NSCustomObject" id="755631768">
 				<string key="NSClassName">NSFontManager</string>
 			</object>
-			<object class="NSUserDefaultsController" id="439436469">
+			<object class="NSUserDefaultsController" id="368844928">
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</array>
@@ -2274,15 +2275,23 @@
 						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="653909325"/>
 					</object>
-					<int key="connectionID">568</int>
+					<int key="connectionID">575</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">preferencesClicked:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="609285721"/>
+					</object>
+					<int key="connectionID">576</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: hideWhenNotPlaying</string>
-						<reference key="source" ref="893326809"/>
+						<reference key="source" ref="469346641"/>
 						<reference key="destination" ref="976324537"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="893326809"/>
+							<reference key="NSSource" ref="469346641"/>
 							<reference key="NSDestination" ref="976324537"/>
 							<string key="NSLabel">value: hideWhenNotPlaying</string>
 							<string key="NSBinding">value</string>
@@ -3362,7 +3371,7 @@
 							<reference ref="653909325"/>
 							<reference ref="812804249"/>
 							<reference ref="694223885"/>
-							<reference ref="893326809"/>
+							<reference ref="469346641"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3383,12 +3392,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">569</int>
-						<reference key="object" ref="893326809"/>
+						<reference key="object" ref="469346641"/>
 						<reference key="parent" ref="481416820"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">571</int>
-						<reference key="object" ref="439436469"/>
+						<reference key="object" ref="368844928"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</array>
@@ -3567,7 +3576,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">574</int>
+			<int key="maxID">576</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

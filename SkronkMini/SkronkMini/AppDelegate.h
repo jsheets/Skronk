@@ -8,11 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class PreferencesController;
+
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSMenu *statusMenu;
 @property (retain) NSStatusItem *statusItem;
+@property (retain) PreferencesController *preferencesController;
 
 @property (assign) IBOutlet NSTextField *label;
 @property (assign) IBOutlet NSTextField *icon;
