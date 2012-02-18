@@ -34,6 +34,8 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     self.statusItem.title = @"π";
     self.statusItem.highlightMode = YES;
 //    self.statusItem.image = nil;
+
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"autohide" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
 }
 
 - (BOOL)windowIsVisible
@@ -80,6 +82,26 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     newFrame.size.height = 3;
     [self.window setFrame:newFrame display:YES animate:YES];
     [self.window.animator setAlphaValue:0.0];
+}
+
+// Update window visibility if changed.
+- (void)fadeWindow:(BOOL)showWindow
+{
+    if (showWindow)
+    {
+        if (![self windowIsVisible])
+        {
+            [self fadeInWindow];
+        }
+    }
+    else
+    {
+        // If window is still visible, hide it.
+        if ([self windowIsVisible])
+        {
+            [self fadeOutWindow];
+        }
+    }
 }
 
 - (void)updateCurrentTrack
@@ -142,24 +164,10 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 
             BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:@"autohide"];
 //            NSLog(@"Autohide is %@", hideWhenNotPlaying ? @"ON" : @"OFF");
-            if (hideWhenNotPlaying)
-            {
-                if (nowPlaying.isPlaying)
-                {
-                    if (![self windowIsVisible])
-                    {
-                        [self fadeInWindow];
-                    }
-                }
-                else
-                {
-                    // Not playing. If window is still visible, hide it.
-                    if ([self windowIsVisible])
-                    {
-                        [self fadeOutWindow];
-                    }
-                }
-            }
+
+            // Hide window when not playing and autohide is on.
+            BOOL hideWindow = !nowPlaying.isPlaying && hideWhenNotPlaying;
+            [self fadeWindow:!hideWindow];
 
             // Stop spinner.
             [self.progress stopAnimation:self];
@@ -183,6 +191,21 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     }];
     
     [request startAsynchronous];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if ((object == [NSUserDefaults standardUserDefaults]) && [keyPath isEqualToString:@"autohide"])
+    {
+        [self updateCurrentTrack];
+    }
+    else
+    {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
 - (void)setupHotkeys
