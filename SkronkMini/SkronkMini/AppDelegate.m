@@ -22,9 +22,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 @synthesize icon = _icon;
 @synthesize progress = _progress;
 @synthesize timer = _timer;
-@synthesize username = _username;
 @synthesize art = _art;
-@synthesize hideWhenNotPlaying = _hideWhenNotPlaying;
 @synthesize statusMenu = _statusMenu;
 @synthesize statusItem = _statusItem;
 @synthesize preferencesController = _preferencesController;
@@ -86,7 +84,14 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 
 - (void)updateCurrentTrack
 {
-    NSString *urlString = [NSString stringWithFormat:@"http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=3a36e88356d8d90aee7a012c6abccae1&limit=2&user=%@&format=json", self.username];
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"lastFmUsername"];
+    if (username == nil)
+    {
+        NSLog(@"Username not set...skipping update.");
+        return;
+    }
+
+    NSString *urlString = [NSString stringWithFormat:@"http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=3a36e88356d8d90aee7a012c6abccae1&limit=2&user=%@&format=json", username];
     NSURL *url = [NSURL URLWithString:urlString];
 
     NSLog(@"Looking up last.fm URL: %@", url);
@@ -120,10 +125,6 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 
             displayText = [fields componentsJoinedByString:@" - "];
         }
-        else if (firstTime)
-        {
-        }
-
 
         // Back on main thread...
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -137,8 +138,11 @@ NSString *kGlobalHotKey = @"Global Hot Key";
             self.label.textColor = nowPlaying.isPlaying ? [NSColor highlightColor] : [NSColor controlShadowColor];
             self.icon.textColor = nowPlaying.isPlaying ? [NSColor alternateSelectedControlColor] : [NSColor controlShadowColor];
 
-            self.art.hidden = !nowPlaying.isPlaying;
-            if (self.hideWhenNotPlaying)
+            [self.art setHidden:!nowPlaying.isPlaying];
+
+            BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:@"autohide"];
+//            NSLog(@"Autohide is %@", hideWhenNotPlaying ? @"ON" : @"OFF");
+            if (hideWhenNotPlaying)
             {
                 if (nowPlaying.isPlaying)
                 {
@@ -168,14 +172,14 @@ NSString *kGlobalHotKey = @"Global Hot Key";
             albumImage = [[NSImage alloc] initWithContentsOfURL:nowPlaying.artSmallUrl];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.art.hidden = !nowPlaying.isPlaying;
+            [self.art setHidden:!nowPlaying.isPlaying];
             self.art.image = albumImage;
         });
     }];
     
     [request setFailedBlock:^{
         NSError *error = [request error];
-        NSLog(@"Error updating last.fm status for user %@: %@", self.username, [error localizedDescription]);
+        NSLog(@"Error updating last.fm status for user %@: %@", username, [error localizedDescription]);
     }];
     
     [request startAsynchronous];
@@ -216,8 +220,6 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    self.hideWhenNotPlaying = YES;
-
     [self setupHotkeys];
     
     [self.window setMovableByWindowBackground:YES];
@@ -228,7 +230,6 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 //    [self.window setCollectionBehavior:NSWindowCollectionBehaviorStationary |
 //        NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorFullScreenAuxiliary];
 
-    self.username = @"johnsheets";
     [self updateCurrentTrack];
 
     self.timer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(updateCurrentTrack) userInfo:nil repeats:YES];

@@ -23,9 +23,6 @@
 @property (assign) IBOutlet NSProgressIndicator *progress;
 @property (assign) IBOutlet NSTimer *timer;
 
-@property (retain) NSString *username;
-@property (assign) BOOL hideWhenNotPlaying;
-
 - (IBAction)preferencesClicked:(id)sender;
 
 @end
