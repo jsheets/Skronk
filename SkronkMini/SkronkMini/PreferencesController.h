@@ -14,6 +14,8 @@
 @property (assign) IBOutlet NSView *generalPreferenceView;
 @property (assign) IBOutlet NSView *lastFmPreferenceView;
 
+@property (assign) NSView *currentView;
+
 - (IBAction)generalTabClicked:(id)sender;
 - (IBAction)lastFmTabClicked:(id)sender;
 

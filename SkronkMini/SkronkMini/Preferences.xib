@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1070</int>
 		<string key="IBDocument.SystemVersion">11D50</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1938</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2177</string>
 		<string key="IBDocument.AppKitVersion">1138.32</string>
 		<string key="IBDocument.HIToolboxVersion">568.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">1938</string>
+			<string key="NS.object.0">2177</string>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -67,7 +67,7 @@
 							<string>8184F9D5-1A1C-4E2A-A1E5-F6577C4E3AE2</string>
 							<string>B601E271-2031-44EF-B005-B65E3B18C958</string>
 						</object>
-						<object class="NSMutableArray" key="dict.values">
+						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="NSToolbarItem" id="752229522">
 								<object class="NSMutableString" key="NSToolbarItemIdentifier">
@@ -115,12 +115,12 @@
 							</object>
 						</object>
 					</object>
-					<object class="NSMutableArray" key="NSToolbarIBAllowedItems">
+					<object class="NSArray" key="NSToolbarIBAllowedItems">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<reference ref="752229522"/>
 						<reference ref="874821525"/>
 					</object>
-					<object class="NSMutableArray" key="NSToolbarIBDefaultItems">
+					<object class="NSArray" key="NSToolbarIBDefaultItems">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<reference ref="752229522"/>
 						<reference ref="874821525"/>
@@ -152,6 +152,7 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{18, 276}, {197, 18}}</string>
 						<reference key="NSSuperview" ref="810515379"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:771</string>
 						<bool key="NSEnabled">YES</bool>
@@ -184,6 +185,7 @@
 				</object>
 				<string key="NSFrameSize">{411, 312}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="693502004"/>
 				<string key="NSReuseIdentifierKey">_NS:1192</string>
 				<string key="NSClassName">NSView</string>
@@ -470,8 +472,10 @@
 					<string>1.IBWindowTemplateEditedContentRect</string>
 					<string>1.NSWindowTemplate.visibleAtLaunch</string>
 					<string>12.IBPluginDependency</string>
+					<string>12.designableToolbarItemIdentifier</string>
 					<string>12.toolbarItem.selectable</string>
 					<string>13.IBPluginDependency</string>
+					<string>13.designableToolbarItemIdentifier</string>
 					<string>13.toolbarItem.selectable</string>
 					<string>15.IBPluginDependency</string>
 					<string>16.IBPluginDependency</string>
@@ -484,7 +488,7 @@
 					<string>22.IBPluginDependency</string>
 					<string>3.IBPluginDependency</string>
 				</object>
-				<object class="NSMutableArray" key="dict.values">
+				<object class="NSArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -493,8 +497,10 @@
 					<string>{{357, 418}, {480, 270}}</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>General</string>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>last.fm</string>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -535,7 +541,7 @@
 							<string>generalTabClicked:</string>
 							<string>lastFmTabClicked:</string>
 						</object>
-						<object class="NSMutableArray" key="dict.values">
+						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>id</string>
 							<string>id</string>
@@ -548,7 +554,7 @@
 							<string>generalTabClicked:</string>
 							<string>lastFmTabClicked:</string>
 						</object>
-						<object class="NSMutableArray" key="dict.values">
+						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBActionInfo">
 								<string key="name">generalTabClicked:</string>
@@ -568,7 +574,7 @@
 							<string>generalPreferenceView</string>
 							<string>lastFmPreferenceView</string>
 						</object>
-						<object class="NSMutableArray" key="dict.values">
+						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSToolbar</string>
 							<string>NSView</string>
@@ -583,7 +589,7 @@
 							<string>generalPreferenceView</string>
 							<string>lastFmPreferenceView</string>
 						</object>
-						<object class="NSMutableArray" key="dict.values">
+						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
 								<string key="name">bar</string>
@@ -622,7 +628,7 @@
 				<string>NSSwitch</string>
 				<string>last.fm-icon-64</string>
 			</object>
-			<object class="NSMutableArray" key="dict.values">
+			<object class="NSArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{32, 32}</string>
 				<string>{15, 15}</string>
