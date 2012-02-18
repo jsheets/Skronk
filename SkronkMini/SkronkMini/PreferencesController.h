@@ -13,6 +13,7 @@
 @property (assign) IBOutlet NSToolbar *bar;
 @property (assign) IBOutlet NSView *generalPreferenceView;
 @property (assign) IBOutlet NSView *lastFmPreferenceView;
+@property (weak) IBOutlet NSTextField *lastFmTextField;
 
 @property (assign) NSView *currentView;
 

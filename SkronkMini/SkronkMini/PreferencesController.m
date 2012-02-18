@@ -13,6 +13,7 @@
 @synthesize bar = _bar;
 @synthesize generalPreferenceView = _generalPreferenceView;
 @synthesize lastFmPreferenceView = _lastFmPreferenceView;
+@synthesize lastFmTextField = _lastFmTextField;
 @synthesize currentView = _currentView;
 
 NSString *const kGeneralPrefsIdentifier = @"GeneralPrefsIdentifier";
@@ -61,6 +62,7 @@ NSString *const kLastFmPrefsIdentifer = @"LastFmPrefsIdentifer";
     [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:0.5];
 
+    [self.lastFmTextField resignFirstResponder];
     [[[self.window contentView] animator] replaceSubview:self.currentView with:self.generalPreferenceView];
     self.currentView = self.generalPreferenceView;
 
@@ -87,6 +89,8 @@ NSString *const kLastFmPrefsIdentifer = @"LastFmPrefsIdentifer";
     self.currentView = self.lastFmPreferenceView;
 
     [NSAnimationContext endGrouping];
+
+    [self.lastFmTextField becomeFirstResponder];
 }
 
 @end
