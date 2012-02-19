@@ -16,6 +16,7 @@
 @property (assign) IBOutlet NSMenu *statusMenu;
 @property (retain) NSStatusItem *statusItem;
 @property (weak) IBOutlet NSMenuItem *showHideMenuItem;
+@property (weak) IBOutlet NSMenuItem *showHideStatusbarItem;
 @property (retain) PreferencesController *preferencesController;
 
 @property (assign) IBOutlet NSTextField *label;

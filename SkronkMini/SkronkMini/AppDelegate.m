@@ -32,6 +32,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 @synthesize statusMenu = _statusMenu;
 @synthesize statusItem = _statusItem;
 @synthesize showHideMenuItem = _showHideMenuItem;
+@synthesize showHideStatusbarItem = _showHideStatusbarItem;
 @synthesize preferencesController = _preferencesController;
 
 - (BOOL)alwaysOnTop
@@ -114,6 +115,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
         if (![self windowIsVisible])
         {
             self.showHideMenuItem.title = @"Hide Skronk";
+            self.showHideStatusbarItem.title = @"Hide Skronk";
             [self fadeInWindow];
         }
     }
@@ -123,6 +125,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
         if ([self windowIsVisible])
         {
             self.showHideMenuItem.title = @"Show Skronk";
+            self.showHideStatusbarItem.title = @"Show Skronk";
             [self fadeOutWindow];
         }
     }
