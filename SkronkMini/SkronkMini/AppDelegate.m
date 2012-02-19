@@ -140,7 +140,6 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
         return;
     }
 
-
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
     if (username == nil)
     {
@@ -236,7 +235,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 {
     if ((object == [NSUserDefaults standardUserDefaults]))
     {
-        if ([keyPath isEqualToString:kPreferenceAutohide])
+        if ([keyPath isEqualToString:kPreferenceAutohide] || [keyPath isEqualToString:kPreferenceLastFmUsername])
         {
             [self updateCurrentTrack];
             return;
@@ -308,6 +307,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAutohide options:(NSKeyValueObservingOptionNew) context:nil];
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceShowInMenubar options:(NSKeyValueObservingOptionNew) context:nil];
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAlwaysOnTop options:(NSKeyValueObservingOptionNew) context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceLastFmUsername options:(NSKeyValueObservingOptionNew) context:nil];
 }
 
 - (void)registerDefaults
@@ -344,6 +344,14 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
     [self updateCurrentTrack];
 
     self.timer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(updateCurrentTrack) userInfo:nil repeats:YES];
+
+    // If not last.fm username set, bring up Preferences dialog with text field focused.
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
+    if (username == nil)
+    {
+        [self preferencesClicked:self];
+        [self.preferencesController.window makeFirstResponder:self.preferencesController.lastFmTextField];
+    }
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
