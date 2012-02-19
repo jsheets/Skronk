@@ -303,11 +303,6 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 
     BOOL shouldShowMenubar = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowInMenubar];
     [self showInMenubar:shouldShowMenubar];
-
-    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAutohide options:(NSKeyValueObservingOptionNew) context:nil];
-    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceShowInMenubar options:(NSKeyValueObservingOptionNew) context:nil];
-    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAlwaysOnTop options:(NSKeyValueObservingOptionNew) context:nil];
-    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceLastFmUsername options:(NSKeyValueObservingOptionNew) context:nil];
 }
 
 - (void)registerDefaults
@@ -353,6 +348,11 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
         [self preferencesClicked:self];
         [self.preferencesController.window makeFirstResponder:self.preferencesController.lastFmTextField];
     }
+
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAutohide options:(NSKeyValueObservingOptionNew) context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceShowInMenubar options:(NSKeyValueObservingOptionNew) context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAlwaysOnTop options:(NSKeyValueObservingOptionNew) context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceLastFmUsername options:(NSKeyValueObservingOptionNew) context:nil];
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
