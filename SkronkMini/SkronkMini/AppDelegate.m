@@ -44,15 +44,6 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     }
 }
 
-- (void)awakeFromNib
-{
-    BOOL shouldShowMenubar = [[NSUserDefaults standardUserDefaults] boolForKey:@"showInMenubar"];
-    [self showInMenubar:shouldShowMenubar];
-
-    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"autohide" options:(NSKeyValueObservingOptionNew) context:nil];
-    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"showInMenubar" options:(NSKeyValueObservingOptionNew) context:nil];
-}
-
 - (BOOL)windowIsVisible
 {
     return self.window.alphaValue == 1.0;
@@ -272,13 +263,27 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     [self.preferencesController showWindow:self];
 }
 
+- (void)awakeFromNib
+{
+    // Hide window so we don't get a jump when we restore the window position.
+    [self.window setAlphaValue:0];
+
+    BOOL shouldShowMenubar = [[NSUserDefaults standardUserDefaults] boolForKey:@"showInMenubar"];
+    [self showInMenubar:shouldShowMenubar];
+
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"autohide" options:(NSKeyValueObservingOptionNew) context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"showInMenubar" options:(NSKeyValueObservingOptionNew) context:nil];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [self setupHotkeys];
-    
+
+    // Explicitly restore autosaved window position, since this doesn't seem to happen by default.
+    [self.window setFrameAutosaveName:@"Skronk"];
+
     [self.window setMovableByWindowBackground:YES];
     self.window.level = NSFloatingWindowLevel;
-//    self.window.level = kCGMainMenuWindowLevel - 1;
 
     // Stick to all windows.
 //    [self.window setCollectionBehavior:NSWindowCollectionBehaviorStationary |
@@ -293,6 +298,12 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 {
     // Briefly unhide if we gain focus.
     [self fadeWindow:YES];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)aNotification
+{
+    // Smooth fade-out.
+    [self fadeWindow:NO];
 }
 
 @end
