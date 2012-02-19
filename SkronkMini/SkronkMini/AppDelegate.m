@@ -28,15 +28,29 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 @synthesize showHideMenuItem = _showHideMenuItem;
 @synthesize preferencesController = _preferencesController;
 
+- (void)showInMenubar:(BOOL)showMenu
+{
+    if (showMenu)
+    {
+        self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+        self.statusItem.menu = self.statusMenu;
+        self.statusItem.title = @"π";
+        self.statusItem.highlightMode = YES;
+//    self.statusItem.image = nil;
+    }
+    else
+    {
+        [[NSStatusBar systemStatusBar] removeStatusItem:self.statusItem];
+    }
+}
+
 - (void)awakeFromNib
 {
-    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    self.statusItem.menu = self.statusMenu;
-    self.statusItem.title = @"π";
-    self.statusItem.highlightMode = YES;
-//    self.statusItem.image = nil;
+    BOOL shouldShowMenubar = [[NSUserDefaults standardUserDefaults] boolForKey:@"showInMenubar"];
+    [self showInMenubar:shouldShowMenubar];
 
-    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"autohide" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"autohide" options:(NSKeyValueObservingOptionNew) context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"showInMenubar" options:(NSKeyValueObservingOptionNew) context:nil];
 }
 
 - (BOOL)windowIsVisible
@@ -201,14 +215,23 @@ NSString *kGlobalHotKey = @"Global Hot Key";
                         change:(NSDictionary *)change
                        context:(void *)context
 {
-    if ((object == [NSUserDefaults standardUserDefaults]) && [keyPath isEqualToString:@"autohide"])
+    if ((object == [NSUserDefaults standardUserDefaults]))
     {
-        [self updateCurrentTrack];
+        if ([keyPath isEqualToString:@"autohide"])
+        {
+            [self updateCurrentTrack];
+            return;
+        }
+        else if ([keyPath isEqualToString:@"showInMenubar"])
+        {
+            // Toggle menubar.
+            BOOL shouldShowMenu = [[change objectForKey:NSKeyValueChangeNewKey] integerValue] == 1;
+            [self showInMenubar:shouldShowMenu];
+            return;
+        }
     }
-    else
-    {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
+
+    [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
 - (void)setupHotkeys
@@ -238,6 +261,17 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     [self fadeWindow:!wasVisible];
 }
 
+- (IBAction)preferencesClicked:(id)sender
+{
+    NSLog(@"Preferences clicked.");
+    if (self.preferencesController == nil)
+    {
+        self.preferencesController = [[PreferencesController alloc] init];
+    }
+
+    [self.preferencesController showWindow:self];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [self setupHotkeys];
@@ -253,17 +287,6 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     [self updateCurrentTrack];
 
     self.timer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(updateCurrentTrack) userInfo:nil repeats:YES];
-}
-
-- (IBAction)preferencesClicked:(id)sender
-{
-    NSLog(@"Preferences clicked.");
-    if (self.preferencesController == nil)
-    {
-        self.preferencesController = [[PreferencesController alloc] init];
-    }
-
-    [self.preferencesController showWindow:self];
 }
 
 @end
