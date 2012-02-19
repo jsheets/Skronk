@@ -91,7 +91,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 }
 
 // Update window visibility if changed.
-- (void)fadeWindow:(BOOL)showWindow
+- (void)showWindow:(BOOL)showWindow
 {
     if (showWindow)
     {
@@ -175,7 +175,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 
             // Hide window when not playing and autohide is on.
             BOOL hideWindow = !nowPlaying.isPlaying && hideWhenNotPlaying;
-            [self fadeWindow:!hideWindow];
+            [self showWindow:!hideWindow];
 
             // Stop spinner.
             [self.progress stopAnimation:self];
@@ -249,7 +249,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 {
     // Show/hide smoothly.
     BOOL wasVisible = [self windowIsVisible];
-    [self fadeWindow:!wasVisible];
+    [self showWindow:!wasVisible];
 }
 
 - (IBAction)preferencesClicked:(id)sender
@@ -297,13 +297,13 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
 {
     // Briefly unhide if we gain focus.
-    [self fadeWindow:YES];
+    [self showWindow:YES];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
 {
     // Smooth fade-out.
-    [self fadeWindow:NO];
+    [self showWindow:NO];
 }
 
 @end
