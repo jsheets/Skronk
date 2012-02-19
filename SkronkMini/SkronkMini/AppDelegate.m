@@ -13,7 +13,13 @@
 #import "SGHotKeyCenter.h"
 #import "PreferencesController.h"
 
-NSString *kGlobalHotKey = @"Global Hot Key";
+static NSString *const kGlobalHotKey = @"Global Hot Key";
+
+static NSString *const kPreferenceAutohide = @"autohide";
+static NSString *const kPreferenceAlwaysOnTop = @"alwaysOnTop";
+static NSString *const kPreferenceShowInMenubar = @"showInMenubar";
+static NSString *const kPreferenceWatchLastFm = @"watchLastFm";
+static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 
 @implementation AppDelegate
 
@@ -27,6 +33,16 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 @synthesize statusItem = _statusItem;
 @synthesize showHideMenuItem = _showHideMenuItem;
 @synthesize preferencesController = _preferencesController;
+
+- (BOOL)alwaysOnTop
+{
+    return self.window.level == NSFloatingWindowLevel;
+}
+
+- (void)setAlwaysOnTop:(BOOL)onTop
+{
+    self.window.level = onTop ? NSFloatingWindowLevel : NSNormalWindowLevel;
+}
 
 - (void)showInMenubar:(BOOL)showMenu
 {
@@ -114,7 +130,15 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 
 - (void)updateCurrentTrack
 {
-    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"lastFmUsername"];
+    BOOL watchLastFm = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceWatchLastFm];
+    if (!watchLastFm)
+    {
+        NSLog(@"Last.fm disabled...skipping update.");
+        return;
+    }
+
+
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
     if (username == nil)
     {
         NSLog(@"Username not set...skipping update.");
@@ -170,7 +194,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 
             [self.art setHidden:!nowPlaying.isPlaying];
 
-            BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:@"autohide"];
+            BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
 //            NSLog(@"Autohide is %@", hideWhenNotPlaying ? @"ON" : @"OFF");
 
             // Hide window when not playing and autohide is on.
@@ -201,6 +225,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     [request startAsynchronous];
 }
 
+// Watch preferences for changes.
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
@@ -208,16 +233,22 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 {
     if ((object == [NSUserDefaults standardUserDefaults]))
     {
-        if ([keyPath isEqualToString:@"autohide"])
+        if ([keyPath isEqualToString:kPreferenceAutohide])
         {
             [self updateCurrentTrack];
             return;
         }
-        else if ([keyPath isEqualToString:@"showInMenubar"])
+        else if ([keyPath isEqualToString:kPreferenceShowInMenubar])
         {
             // Toggle menubar.
             BOOL shouldShowMenu = [[change objectForKey:NSKeyValueChangeNewKey] integerValue] == 1;
             [self showInMenubar:shouldShowMenu];
+            return;
+        }
+        else if ([keyPath isEqualToString:kPreferenceAlwaysOnTop])
+        {
+            // Toggle always on top.
+            self.alwaysOnTop = !self.alwaysOnTop;
             return;
         }
     }
@@ -268,22 +299,40 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     // Hide window so we don't get a jump when we restore the window position.
     [self.window setAlphaValue:0];
 
-    BOOL shouldShowMenubar = [[NSUserDefaults standardUserDefaults] boolForKey:@"showInMenubar"];
+    BOOL shouldShowMenubar = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowInMenubar];
     [self showInMenubar:shouldShowMenubar];
 
-    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"autohide" options:(NSKeyValueObservingOptionNew) context:nil];
-    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:@"showInMenubar" options:(NSKeyValueObservingOptionNew) context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAutohide options:(NSKeyValueObservingOptionNew) context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceShowInMenubar options:(NSKeyValueObservingOptionNew) context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAlwaysOnTop options:(NSKeyValueObservingOptionNew) context:nil];
+}
+
+- (void)registerDefaults
+{
+    // Set defaults to prefs.
+    NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
+        [NSNumber numberWithBool:NO],  kPreferenceAutohide,
+        [NSNumber numberWithBool:YES], kPreferenceAlwaysOnTop,
+        [NSNumber numberWithBool:YES], kPreferenceShowInMenubar,
+        [NSNumber numberWithBool:YES], kPreferenceWatchLastFm,
+//        @"woot", kPreferenceLastFmUsername,
+        nil
+    ];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    [self registerDefaults];
     [self setupHotkeys];
 
     // Explicitly restore autosaved window position, since this doesn't seem to happen by default.
     [self.window setFrameAutosaveName:@"Skronk"];
 
     [self.window setMovableByWindowBackground:YES];
-    self.window.level = NSFloatingWindowLevel;
+
+    BOOL alwaysOnTop = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAlwaysOnTop];
+    [self setAlwaysOnTop:alwaysOnTop];
 
     // Stick to all windows.
 //    [self.window setCollectionBehavior:NSWindowCollectionBehaviorStationary |
