@@ -15,6 +15,7 @@
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSMenu *statusMenu;
 @property (retain) NSStatusItem *statusItem;
+@property (weak) IBOutlet NSMenuItem *showHideMenuItem;
 @property (retain) PreferencesController *preferencesController;
 
 @property (assign) IBOutlet NSTextField *label;
@@ -24,5 +25,6 @@
 @property (assign) IBOutlet NSTimer *timer;
 
 - (IBAction)preferencesClicked:(id)sender;
+- (IBAction)showHideClicked:(id)sender;
 
 @end

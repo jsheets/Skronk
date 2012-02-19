@@ -25,9 +25,10 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 @synthesize art = _art;
 @synthesize statusMenu = _statusMenu;
 @synthesize statusItem = _statusItem;
+@synthesize showHideMenuItem = _showHideMenuItem;
 @synthesize preferencesController = _preferencesController;
 
--(void)awakeFromNib
+- (void)awakeFromNib
 {
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     self.statusItem.menu = self.statusMenu;
@@ -91,6 +92,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     {
         if (![self windowIsVisible])
         {
+            self.showHideMenuItem.title = @"Hide Skronky";
             [self fadeInWindow];
         }
     }
@@ -99,6 +101,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
         // If window is still visible, hide it.
         if ([self windowIsVisible])
         {
+            self.showHideMenuItem.title = @"Show Skronky";
             [self fadeOutWindow];
         }
     }
@@ -225,20 +228,14 @@ NSString *kGlobalHotKey = @"Global Hot Key";
 {
     NSLog(@"Hot key pressed");
 
-    // Show/hide abruptly.
-//    BOOL newVisibleState = ![self.window isVisible];
-//    [self.window setIsVisible:newVisibleState];
+    [self showHideClicked:sender];
+}
 
+- (IBAction)showHideClicked:(id)sender
+{
     // Show/hide smoothly.
     BOOL wasVisible = [self windowIsVisible];
-    if (wasVisible)
-    {
-        [self fadeOutWindow];
-    }
-    else
-    {
-        [self fadeInWindow];
-    }
+    [self fadeWindow:!wasVisible];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
