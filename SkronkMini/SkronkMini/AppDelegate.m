@@ -349,6 +349,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
     if (username == nil)
     {
+        self.label.stringValue = @"Please enter a last.fm user name to continue...";
         [self preferencesClicked:self];
         [self.preferencesController.window makeFirstResponder:self.preferencesController.lastFmTextField];
     }
