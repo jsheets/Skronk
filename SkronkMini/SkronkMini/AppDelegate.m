@@ -106,7 +106,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     {
         if (![self windowIsVisible])
         {
-            self.showHideMenuItem.title = @"Hide Skronky";
+            self.showHideMenuItem.title = @"Hide Skronk";
             [self fadeInWindow];
         }
     }
@@ -115,7 +115,7 @@ NSString *kGlobalHotKey = @"Global Hot Key";
         // If window is still visible, hide it.
         if ([self windowIsVisible])
         {
-            self.showHideMenuItem.title = @"Show Skronky";
+            self.showHideMenuItem.title = @"Show Skronk";
             [self fadeOutWindow];
         }
     }
@@ -287,6 +287,12 @@ NSString *kGlobalHotKey = @"Global Hot Key";
     [self updateCurrentTrack];
 
     self.timer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(updateCurrentTrack) userInfo:nil repeats:YES];
+}
+
+- (void)applicationDidBecomeActive:(NSNotification *)aNotification
+{
+    // Briefly unhide if we gain focus.
+    [self fadeWindow:YES];
 }
 
 @end
