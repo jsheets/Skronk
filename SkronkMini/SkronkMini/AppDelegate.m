@@ -55,7 +55,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
         self.statusItem.highlightMode = YES;
 //    self.statusItem.image = nil;
     }
-    else
+    else if (self.statusItem)
     {
         [[NSStatusBar systemStatusBar] removeStatusItem:self.statusItem];
     }
@@ -233,7 +233,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
                         change:(NSDictionary *)change
                        context:(void *)context
 {
-    if ((object == [NSUserDefaults standardUserDefaults]))
+    if (object == [NSUserDefaults standardUserDefaults])
     {
         if ([keyPath isEqualToString:kPreferenceAutohide] || [keyPath isEqualToString:kPreferenceLastFmUsername])
         {
@@ -300,9 +300,6 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 {
     // Hide window so we don't get a jump when we restore the window position.
     [self.window setAlphaValue:0];
-
-    BOOL shouldShowMenubar = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowInMenubar];
-    [self showInMenubar:shouldShowMenubar];
 }
 
 - (void)registerDefaults
@@ -348,6 +345,9 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
         [self preferencesClicked:self];
         [self.preferencesController.window makeFirstResponder:self.preferencesController.lastFmTextField];
     }
+    
+    BOOL shouldShowMenubar = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowInMenubar];
+    [self showInMenubar:shouldShowMenubar];
 
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAutohide options:(NSKeyValueObservingOptionNew) context:nil];
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceShowInMenubar options:(NSKeyValueObservingOptionNew) context:nil];
