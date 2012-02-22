@@ -13,3 +13,6 @@
 [submodule "External/asi-http-request"]
 	path = External/asi-http-request
 	url = https://github.com/pokeb/asi-http-request.git
+[submodule "External/ShortcutRecorder"]
+	path = External/ShortcutRecorder
+	url = https://github.com/hexa2k9/ShortcutRecorder.git
