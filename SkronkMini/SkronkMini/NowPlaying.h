@@ -17,5 +17,6 @@
 @property (retain) NSString *album;
 @property (retain) NSString *track;
 @property (retain) NSURL *artSmallUrl;
+@property (retain) NSString *error;
 
 @end

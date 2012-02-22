@@ -8,6 +8,11 @@ Given /^a JSON data string with no currently playing songs$/ do
   @json = File.read(json_file).strip
 end
 
+Given /^a JSON data string with an error message$/ do
+  json_file = File.join("data", "error.json")
+  @json = File.read(json_file).strip
+end
+
 When /^I parse the JSON$/ do
   @fm_json = FMJson.alloc.initWithJson(@json)
 end

@@ -15,11 +15,18 @@
 @synthesize album = _album;
 @synthesize track = _track;
 @synthesize artSmallUrl = _artSmallUrl;
+@synthesize error = _error;
 
 - (id)initWithJson:(NSString *)json
 {
     if ((self = [super initWithJson:json]))
     {
+        // Check for error: {"error":8,"message":"Error fetching recent tracks"}
+        if ([self valueForProperty:@"error"])
+        {
+            self.error = [self valueForProperty:@"message"];
+        }
+
         // Assign nowPlaying property.
         NSString *nowPlayingValue = [self valueForProperty:@"recenttracks.track[0].@attr.nowplaying"];
         self.isPlaying = [nowPlayingValue isEqualToString:@"true"];
