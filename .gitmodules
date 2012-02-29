@@ -16,3 +16,6 @@
 [submodule "External/ShortcutRecorder"]
 	path = External/ShortcutRecorder
 	url = https://github.com/hexa2k9/ShortcutRecorder.git
+[submodule "External/yrk-spinning-progress-indicator"]
+	path = External/yrk-spinning-progress-indicator
+	url = https://github.com/kelan/yrk-spinning-progress-indicator.git
