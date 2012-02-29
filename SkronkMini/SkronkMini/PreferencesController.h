@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+static NSString *const kPreferenceHideShortcutCode = @"hideShortcutCode";
+static NSString *const kPreferenceHideShortcutFlags = @"hideShortcutFlags";
+
 @interface PreferencesController : NSWindowController <NSToolbarDelegate>
 
 @property (assign) IBOutlet NSToolbar *bar;

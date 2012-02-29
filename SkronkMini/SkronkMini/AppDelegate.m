@@ -12,6 +12,7 @@
 #import "SGHotKey.h"
 #import "SGHotKeyCenter.h"
 #import "PreferencesController.h"
+#import "SRCommon.h"
 
 static NSString *const kGlobalHotKey = @"Global Hot Key";
 
@@ -258,16 +259,23 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
     [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
-- (void)setupHotkeys
+- (void)updateHotkeys
 {
     // Modifiers: cmdKey, shiftKey, optionKey, controlKey
     
     // Cmd-Opt-Ctrl-l
-    NSInteger keyCode = 37;
-    NSInteger modifier = cmdKey + optionKey + controlKey;
-    NSLog(@"Modifiers: (%lu)", modifier);
-    
-    SGKeyCombo *keyCombo = [SGKeyCombo keyComboWithKeyCode:keyCode modifiers:modifier];
+//    NSInteger keyCode = 37;
+//    NSInteger modifier = cmdKey + optionKey + controlKey;
+//    NSLog(@"Hard-coded modifiers: (%lu %lu)", keyCode, modifier);
+
+    NSInteger hideCode = [[NSUserDefaults standardUserDefaults] integerForKey:kPreferenceHideShortcutCode];
+    NSInteger hideFlags = [[NSUserDefaults standardUserDefaults] integerForKey:kPreferenceHideShortcutFlags];
+    NSLog(@"Preference modifiers: (%lu %lu)", hideCode, SRCocoaToCarbonFlags(hideFlags));
+
+    SGHotKey *oldHotKey = [[SGHotKeyCenter sharedCenter] hotKeyWithIdentifier:kGlobalHotKey];
+    [[SGHotKeyCenter sharedCenter] unregisterHotKey:oldHotKey];
+
+    SGKeyCombo *keyCombo = [SGKeyCombo keyComboWithKeyCode:hideCode modifiers:SRCocoaToCarbonFlags(hideFlags)];
     SGHotKey *hotKey = [[SGHotKey alloc] initWithIdentifier:kGlobalHotKey keyCombo:keyCombo target:self action:@selector(hotKeyPressed:)];
     [[SGHotKeyCenter sharedCenter] registerHotKey:hotKey];
 }
@@ -320,7 +328,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [self registerDefaults];
-    [self setupHotkeys];
+    [self updateHotkeys];
 
     // Explicitly restore autosaved window position, since this doesn't seem to happen by default.
     [self.window setFrameAutosaveName:@"Skronk"];

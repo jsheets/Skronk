@@ -26,6 +26,7 @@
 @property (assign) IBOutlet NSTimer *timer;
 
 - (IBAction)preferencesClicked:(id)sender;
+- (void)updateHotkeys;
 - (IBAction)showHideClicked:(id)sender;
 
 @end
