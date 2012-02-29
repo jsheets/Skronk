@@ -7,6 +7,8 @@
 //
 
 #import "PreferencesController.h"
+#import "SRRecorderControl.h"
+#import "SRCommon.h"
 
 @implementation PreferencesController
 
@@ -91,6 +93,16 @@ NSString *const kLastFmPrefsIdentifer = @"LastFmPrefsIdentifer";
     [NSAnimationContext endGrouping];
 
     [self.lastFmTextField becomeFirstResponder];
+}
+
+
+#pragma mark -
+#pragma mark SRShortcutControl delegate
+
+
+- (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo;
+{
+    NSLog(@"New key combo: %@ (%lu)", SRStringForCocoaModifierFlagsAndKeyCode(newKeyCombo.flags, newKeyCombo.code), newKeyCombo.flags);
 }
 
 @end

@@ -265,6 +265,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
     // Cmd-Opt-Ctrl-l
     NSInteger keyCode = 37;
     NSInteger modifier = cmdKey + optionKey + controlKey;
+    NSLog(@"Modifiers: (%lu)", modifier);
     
     SGKeyCombo *keyCombo = [SGKeyCombo keyComboWithKeyCode:keyCode modifiers:modifier];
     SGHotKey *hotKey = [[SGHotKey alloc] initWithIdentifier:kGlobalHotKey keyCombo:keyCombo target:self action:@selector(hotKeyPressed:)];

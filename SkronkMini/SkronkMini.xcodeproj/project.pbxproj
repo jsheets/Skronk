@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D010A5114F4892900A62136 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D010A4814F4892900A62136 /* SRCommon.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0D010A5214F4892900A62136 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D010A4A14F4892900A62136 /* SRKeyCodeTransformer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0D010A5314F4892900A62136 /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D010A4C14F4892900A62136 /* SRRecorderCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0D010A5414F4892900A62136 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D010A4E14F4892900A62136 /* SRRecorderControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0D010A5514F4892900A62136 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D010A5014F4892900A62136 /* SRValidator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4AE4D714EB3474002596BD /* PreferencesController.m */; };
 		0D4AE4DB14EB362D002596BD /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D4AE4DA14EB362D002596BD /* Preferences.xib */; };
 		0D4AE4DD14EB568B002596BD /* last.fm-icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D4AE4DC14EB568B002596BD /* last.fm-icon-64.png */; };
@@ -42,6 +47,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D010A4714F4892900A62136 /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = "<group>"; };
+		0D010A4814F4892900A62136 /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = "<group>"; };
+		0D010A4914F4892900A62136 /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRKeyCodeTransformer.h; sourceTree = "<group>"; };
+		0D010A4A14F4892900A62136 /* SRKeyCodeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRKeyCodeTransformer.m; sourceTree = "<group>"; };
+		0D010A4B14F4892900A62136 /* SRRecorderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderCell.h; sourceTree = "<group>"; };
+		0D010A4C14F4892900A62136 /* SRRecorderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderCell.m; sourceTree = "<group>"; };
+		0D010A4D14F4892900A62136 /* SRRecorderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderControl.h; sourceTree = "<group>"; };
+		0D010A4E14F4892900A62136 /* SRRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = "<group>"; };
+		0D010A4F14F4892900A62136 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
+		0D010A5014F4892900A62136 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		0D4AE4D614EB3474002596BD /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		0D4AE4D714EB3474002596BD /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		0D4AE4DA14EB362D002596BD /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
@@ -123,6 +138,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D010A4614F4892900A62136 /* ShortcutRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				0D010A4714F4892900A62136 /* SRCommon.h */,
+				0D010A4814F4892900A62136 /* SRCommon.m */,
+				0D010A4914F4892900A62136 /* SRKeyCodeTransformer.h */,
+				0D010A4A14F4892900A62136 /* SRKeyCodeTransformer.m */,
+				0D010A4B14F4892900A62136 /* SRRecorderCell.h */,
+				0D010A4C14F4892900A62136 /* SRRecorderCell.m */,
+				0D010A4D14F4892900A62136 /* SRRecorderControl.h */,
+				0D010A4E14F4892900A62136 /* SRRecorderControl.m */,
+				0D010A4F14F4892900A62136 /* SRValidator.h */,
+				0D010A5014F4892900A62136 /* SRValidator.m */,
+			);
+			name = ShortcutRecorder;
+			path = ../../External/ShortcutRecorder/Source;
+			sourceTree = "<group>";
+		};
 		0DE0240414DDC9FB004E2227 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +204,7 @@
 				0DE0245C14DDF363004E2227 /* Model */,
 				0DE0246D14DF3826004E2227 /* ASIHTTPRequest */,
 				0DE0249014DF65D4004E2227 /* SGHotKeysLib */,
+				0D010A4614F4892900A62136 /* ShortcutRecorder */,
 				0DE0241A14DDC9FB004E2227 /* Supporting Files */,
 			);
 			path = SkronkMini;
@@ -383,6 +417,7 @@
 				0DE0242714DDC9FB004E2227 /* AppDelegate.m in Sources */,
 				0DE0244714DDCC52004E2227 /* NowPlaying.m in Sources */,
 				0DE0245914DDF349004E2227 /* FMJson.m in Sources */,
+				0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */,
 				0DE0248114DF3936004E2227 /* ASIDataCompressor.m in Sources */,
 				0DE0248214DF3936004E2227 /* ASIDataDecompressor.m in Sources */,
 				0DE0248314DF3936004E2227 /* ASIDownloadCache.m in Sources */,
@@ -394,7 +429,11 @@
 				0DE0249A14DF65D4004E2227 /* SGHotKeyCenter.m in Sources */,
 				0DE0249B14DF65D4004E2227 /* SGKeyCodeTranslator.m in Sources */,
 				0DE0249C14DF65D4004E2227 /* SGKeyCombo.m in Sources */,
-				0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */,
+				0D010A5114F4892900A62136 /* SRCommon.m in Sources */,
+				0D010A5214F4892900A62136 /* SRKeyCodeTransformer.m in Sources */,
+				0D010A5314F4892900A62136 /* SRRecorderCell.m in Sources */,
+				0D010A5414F4892900A62136 /* SRRecorderControl.m in Sources */,
+				0D010A5514F4892900A62136 /* SRValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
