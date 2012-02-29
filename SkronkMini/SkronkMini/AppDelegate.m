@@ -28,13 +28,14 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 @synthesize label = _label;
 @synthesize icon = _icon;
 @synthesize progress = _progress;
-@synthesize timer = _timer;
 @synthesize art = _art;
 @synthesize statusMenu = _statusMenu;
-@synthesize statusItem = _statusItem;
 @synthesize showHideMenuItem = _showHideMenuItem;
 @synthesize showHideStatusbarItem = _showHideStatusbarItem;
+@synthesize statusItem = _statusItem;
+@synthesize timer = _timer;
 @synthesize preferencesController = _preferencesController;
+@synthesize isSleeping = _isSleeping;
 
 - (BOOL)alwaysOnTop
 {
@@ -111,6 +112,8 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 // Update window visibility if changed.
 - (void)showWindow:(BOOL)showWindow
 {
+    self.isSleeping = !showWindow;
+
     if (showWindow)
     {
         if (![self windowIsVisible])
@@ -163,6 +166,12 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 
 - (void)updateCurrentTrack
 {
+    if (self.isSleeping)
+    {
+//        NSLog(@"Sleeping...");
+        return;
+    }
+
     BOOL watchLastFm = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceWatchLastFm];
     if (!watchLastFm)
     {
@@ -306,14 +315,12 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 
 - (void)hotKeyPressed:(id)sender
 {
-    NSLog(@"Hot key pressed");
-
+//    NSLog(@"Hot key pressed");
     [self showHideClicked:sender];
 }
 
 - (IBAction)showHideClicked:(id)sender
 {
-    // Show/hide smoothly.
     BOOL wasVisible = [self windowIsVisible];
     [self showWindow:!wasVisible];
 }

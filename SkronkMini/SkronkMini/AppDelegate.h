@@ -13,17 +13,19 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet NSMenu *statusMenu;
-@property (retain) NSStatusItem *statusItem;
+@property (weak) IBOutlet NSMenu *statusMenu;
+@property (strong) NSStatusItem *statusItem;
 @property (weak) IBOutlet NSMenuItem *showHideMenuItem;
 @property (weak) IBOutlet NSMenuItem *showHideStatusbarItem;
-@property (retain) PreferencesController *preferencesController;
+@property (weak) IBOutlet NSTextField *label;
+@property (weak) IBOutlet NSTextField *icon;
+@property (weak) IBOutlet NSImageView *art;
+@property (weak) IBOutlet NSProgressIndicator *progress;
 
-@property (assign) IBOutlet NSTextField *label;
-@property (assign) IBOutlet NSTextField *icon;
-@property (assign) IBOutlet NSImageView *art;
-@property (assign) IBOutlet NSProgressIndicator *progress;
-@property (assign) IBOutlet NSTimer *timer;
+@property (strong) PreferencesController *preferencesController;
+@property (strong) NSTimer *timer;
+
+@property (assign) BOOL isSleeping;
 
 - (IBAction)preferencesClicked:(id)sender;
 - (void)updateHotkeys;
