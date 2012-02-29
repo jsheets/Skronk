@@ -132,6 +132,35 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
     }
 }
 
+- (NSString *)trackDisplayText:(NowPlaying *)nowPlaying
+{
+    NSString *displayText = nil;
+
+    BOOL hasArtist = nowPlaying.artist.length > 0;
+    BOOL hasAlbum = nowPlaying.album.length > 0;
+    BOOL hasTrack = nowPlaying.track.length > 0;
+
+    BOOL hyphenFormat = NO;
+    if (hyphenFormat)
+    {
+        NSMutableArray *fields = [NSMutableArray array];
+        if (hasArtist) [fields addObject:nowPlaying.artist];
+        if (hasAlbum) [fields addObject:nowPlaying.album];
+        if (hasTrack) [fields addObject:nowPlaying.track];
+
+        displayText = [fields componentsJoinedByString:@" - "];
+    }
+    else
+    {
+        NSString *artistText = hasArtist ? [NSString stringWithFormat:@" - by %@", nowPlaying.artist] : @"";
+        NSString *albumText = hasAlbum ? [NSString stringWithFormat:@" - on %@", nowPlaying.album] : @"";
+
+        displayText = [NSString stringWithFormat:@"%@%@%@", nowPlaying.track, artistText, albumText];
+    }
+
+    return displayText;
+}
+
 - (void)updateCurrentTrack
 {
     BOOL watchLastFm = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceWatchLastFm];
@@ -175,12 +204,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
                 NSLog(@"Initial startup, not playing: loading previous track.");
             }
 
-            NSMutableArray *fields = [NSMutableArray array];
-            if (nowPlaying.artist.length > 0) [fields addObject:nowPlaying.artist];
-            if (nowPlaying.album.length > 0) [fields addObject:nowPlaying.album];
-            if (nowPlaying.track.length > 0) [fields addObject:nowPlaying.track];
-
-            displayText = [fields componentsJoinedByString:@" - "];
+            displayText = [self trackDisplayText:nowPlaying];
         }
 
         // Back on main thread...
