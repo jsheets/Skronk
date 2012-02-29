@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class SRRecorderControl;
+
 static NSString *const kPreferenceHideShortcutCode = @"hideShortcutCode";
 static NSString *const kPreferenceHideShortcutFlags = @"hideShortcutFlags";
 
@@ -16,6 +18,7 @@ static NSString *const kPreferenceHideShortcutFlags = @"hideShortcutFlags";
 @property (assign) IBOutlet NSToolbar *bar;
 @property (assign) IBOutlet NSView *generalPreferenceView;
 @property (assign) IBOutlet NSView *lastFmPreferenceView;
+@property (assign) IBOutlet SRRecorderControl *hideShortcutField;
 @property (weak) IBOutlet NSTextField *lastFmTextField;
 
 @property (assign) NSView *currentView;

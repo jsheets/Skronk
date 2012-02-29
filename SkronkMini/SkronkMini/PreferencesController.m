@@ -9,6 +9,7 @@
 #import "PreferencesController.h"
 #import "SRRecorderControl.h"
 #import "AppDelegate.h"
+#import "SGKeyCombo.h"
 
 @implementation PreferencesController
 
@@ -17,6 +18,7 @@
 @synthesize lastFmPreferenceView = _lastFmPreferenceView;
 @synthesize lastFmTextField = _lastFmTextField;
 @synthesize currentView = _currentView;
+@synthesize hideShortcutField = _hideShortcutField;
 
 NSString *const kGeneralPrefsIdentifier = @"GeneralPrefsIdentifier";
 NSString *const kLastFmPrefsIdentifer = @"LastFmPrefsIdentifer";
@@ -39,6 +41,10 @@ NSString *const kLastFmPrefsIdentifer = @"LastFmPrefsIdentifer";
     self.currentView = self.generalPreferenceView;
     [self.bar setSelectedItemIdentifier:@"General"];
 
+    NSInteger hideCode = [[NSUserDefaults standardUserDefaults] integerForKey:kPreferenceHideShortcutCode];
+    NSInteger hideFlags = [[NSUserDefaults standardUserDefaults] integerForKey:kPreferenceHideShortcutFlags];
+    KeyCombo keyCombo = { hideFlags, hideCode };
+    self.hideShortcutField.keyCombo = keyCombo;
 }
 
 - (void)windowDidLoad
