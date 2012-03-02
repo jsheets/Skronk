@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 FourFringe. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
 #import "NowPlaying.h"
 #import "ASIHTTPRequest.h"
@@ -36,6 +37,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 @synthesize timer = _timer;
 @synthesize preferencesController = _preferencesController;
 @synthesize isSleeping = _isSleeping;
+@synthesize serviceIcon = _serviceIcon;
 
 - (BOOL)alwaysOnTop
 {
@@ -165,6 +167,34 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
     return displayText;
 }
 
+- (void)startNetwork
+{
+    // Start spinner.
+    NSLog(@"Starting network spinner...");
+    [self.progress startAnimation:self];
+
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    animation.fromValue = [NSNumber numberWithFloat:1.0];
+    animation.toValue = [NSNumber numberWithFloat:0.0];
+    animation.duration = 0.5f;
+    animation.autoreverses = YES;
+    animation.repeatCount = 10;
+
+    [self.serviceIcon.layer addAnimation:animation forKey:@"opacity"];
+}
+
+- (void)endNetwork
+{
+    // Pause a bit longer for usability.
+    [NSThread sleepForTimeInterval:1.0];
+
+    // Stop spinner.
+    NSLog(@"Stopping network spinner...");
+    [self.progress stopAnimation:self];
+
+    [self.serviceIcon.layer removeAnimationForKey:@"opacity"];
+}
+
 - (void)updateCurrentTrack
 {
     if (self.isSleeping)
@@ -192,9 +222,8 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 
     NSLog(@"Looking up last.fm URL: %@", url);
     
-    // Start spinner.
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.progress startAnimation:self];
+        [self startNetwork];
     });
     
     __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
@@ -237,9 +266,8 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
             // Hide window when not playing and autohide is on.
             BOOL hideWindow = !nowPlaying.isPlaying && hideWhenNotPlaying;
             [self showWindow:!hideWindow];
+            [self endNetwork];
 
-            // Stop spinner.
-            [self.progress stopAnimation:self];
         });
 
         // Fetch album art.

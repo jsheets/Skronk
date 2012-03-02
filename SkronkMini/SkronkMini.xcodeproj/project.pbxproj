@@ -15,6 +15,7 @@
 		0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4AE4D714EB3474002596BD /* PreferencesController.m */; };
 		0D4AE4DB14EB362D002596BD /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D4AE4DA14EB362D002596BD /* Preferences.xib */; };
 		0D4AE4DD14EB568B002596BD /* last.fm-icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D4AE4DC14EB568B002596BD /* last.fm-icon-64.png */; };
+		0D83848B150054FB0024403B /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D83848A150054FB0024403B /* Quartz.framework */; };
 		0DE0241414DDC9FB004E2227 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE0241314DDC9FB004E2227 /* Cocoa.framework */; };
 		0DE0241E14DDC9FB004E2227 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DE0241C14DDC9FB004E2227 /* InfoPlist.strings */; };
 		0DE0242014DDC9FB004E2227 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0241F14DDC9FB004E2227 /* main.m */; };
@@ -61,6 +62,7 @@
 		0D4AE4D714EB3474002596BD /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		0D4AE4DA14EB362D002596BD /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		0D4AE4DC14EB568B002596BD /* last.fm-icon-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "last.fm-icon-64.png"; path = "../../Docs/Lastfm_LogosAndGuidelines/Logos/last.fm-icon-64.png"; sourceTree = "<group>"; };
+		0D83848A150054FB0024403B /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		0DE0240F14DDC9FB004E2227 /* SkronkMini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkronkMini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE0241314DDC9FB004E2227 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0DE0241614DDC9FB004E2227 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -120,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D83848B150054FB0024403B /* Quartz.framework in Frameworks */,
 				0DE0249E14DF72BC004E2227 /* Carbon.framework in Frameworks */,
 				0DE0241414DDC9FB004E2227 /* Cocoa.framework in Frameworks */,
 				0DE0248B14DF3BF8004E2227 /* SystemConfiguration.framework in Frameworks */,
@@ -181,6 +184,7 @@
 				0DE0241314DDC9FB004E2227 /* Cocoa.framework */,
 				0DE0249D14DF72BC004E2227 /* Carbon.framework */,
 				0DE0248A14DF3BF8004E2227 /* SystemConfiguration.framework */,
+				0D83848A150054FB0024403B /* Quartz.framework */,
 				0DE0248814DF3BE8004E2227 /* libz.dylib */,
 				0DE0241514DDC9FB004E2227 /* Other Frameworks */,
 			);
