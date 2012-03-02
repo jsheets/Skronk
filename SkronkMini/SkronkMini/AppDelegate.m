@@ -155,10 +155,11 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
     }
     else
     {
-        NSString *artistText = hasArtist ? [NSString stringWithFormat:@" - by %@", nowPlaying.artist] : @"";
-        NSString *albumText = hasAlbum ? [NSString stringWithFormat:@" - on %@", nowPlaying.album] : @"";
+        NSString *trackText = hasTrack ? [NSString stringWithFormat:@"\"%@\"", nowPlaying.track] : @"";
+        NSString *artistText = hasArtist ? [NSString stringWithFormat:@" by %@", nowPlaying.artist] : @"";
+        NSString *albumText = hasAlbum ? [NSString stringWithFormat:@", on %@", nowPlaying.album] : @"";
 
-        displayText = [NSString stringWithFormat:@"%@%@%@", nowPlaying.track, artistText, albumText];
+        displayText = [NSString stringWithFormat:@"%@%@%@", trackText, artistText, albumText];
     }
 
     return displayText;
