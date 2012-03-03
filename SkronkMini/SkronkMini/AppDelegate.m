@@ -24,6 +24,9 @@ static NSString *const kPreferenceShowInMenubar = @"showInMenubar";
 static NSString *const kPreferenceWatchLastFm = @"watchLastFm";
 static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 
+static CGFloat const kServiceIconMaxAlpha = 0.8f;
+static CGFloat const kServiceIconDimAlpha = 0.3f;
+
 @interface AppDelegate ()
 - (void)updateCurrentTrack;
 @end
@@ -34,7 +37,6 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 @synthesize roundedView = _roundedView;
 @synthesize label = _label;
 @synthesize icon = _icon;
-@synthesize progress = _progress;
 @synthesize art = _art;
 @synthesize statusMenu = _statusMenu;
 @synthesize showHideMenuItem = _showHideMenuItem;
@@ -176,12 +178,8 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 
 - (void)startNetwork
 {
-    // Start spinner.
-//    NSLog(@"Starting network spinner...");
-    [self.progress startAnimation:self];
-
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-    animation.fromValue = [NSNumber numberWithFloat:1.0];
+    animation.fromValue = [NSNumber numberWithFloat:kServiceIconMaxAlpha];
     animation.toValue = [NSNumber numberWithFloat:0.0];
     animation.duration = 0.5f;
     animation.autoreverses = YES;
@@ -195,21 +193,17 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
     // Pause a bit longer for usability.
     [NSThread sleepForTimeInterval:1.0];
 
-    // Stop spinner.
-//    NSLog(@"Stopping network spinner...");
-    [self.progress stopAnimation:self];
-
     [self.serviceIcon.layer removeAnimationForKey:@"opacity"];
 }
 
 - (void)serviceUp
 {
-    self.serviceIcon.alphaValue = 1.0;
+    self.serviceIcon.alphaValue = kServiceIconMaxAlpha;
 }
 
 - (void)serviceDown
 {
-    self.serviceIcon.alphaValue = 0.3;
+    self.serviceIcon.alphaValue = kServiceIconDimAlpha;
 }
 
 - (void)updateCurrentTrack

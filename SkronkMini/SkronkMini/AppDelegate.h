@@ -23,7 +23,6 @@
 @property (weak) IBOutlet NSTextField *icon;
 @property (weak) IBOutlet NSImageView *art;
 @property (weak) IBOutlet NSImageView *serviceIcon;
-@property (weak) IBOutlet NSProgressIndicator *progress;
 
 @property (strong) PreferencesController *preferencesController;
 @property (strong) NSTimer *timer;
