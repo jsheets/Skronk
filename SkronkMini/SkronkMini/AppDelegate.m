@@ -49,6 +49,16 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 @synthesize isSleeping = _isSleeping;
 @synthesize serviceIcon = _serviceIcon;
 
+- (void)resetTimer
+{
+    if (self.timer)
+    {
+        [self.timer invalidate];
+    }
+
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(updateCurrentTrack) userInfo:nil repeats:YES];
+}
+
 - (BOOL)alwaysOnTop
 {
     return self.window.level == NSFloatingWindowLevel;
@@ -137,7 +147,9 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             self.showHideMenuItem.title = @"Hide Skronk";
             self.showHideStatusbarItem.title = @"Hide Skronk";
             [self fadeInWindow];
+
             [self updateCurrentTrack];
+            [self resetTimer];
         }
     }
     else
@@ -389,6 +401,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         if ([keyPath isEqualToString:kPreferenceAutohide] || [keyPath isEqualToString:kPreferenceLastFmUsername])
         {
             [self updateCurrentTrack];
+            [self resetTimer];
             return;
         }
         else if ([keyPath isEqualToString:kPreferenceShowInMenubar])
@@ -411,6 +424,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             if (shouldShowIcon)
             {
                 [self updateCurrentTrack];
+                [self resetTimer];
             }
             else
             {
@@ -505,8 +519,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 //        NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorFullScreenAuxiliary];
 
     [self updateCurrentTrack];
-
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(updateCurrentTrack) userInfo:nil repeats:YES];
+    [self resetTimer];
 
     // If not last.fm username set, bring up Preferences dialog with text field focused.
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
