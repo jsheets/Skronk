@@ -425,14 +425,14 @@
 				<int key="NSWindowStyleMask">8</int>
 				<bool key="NSWindowAllowNontitledResizable">YES</bool>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 390}, {638, 30}}</string>
+				<string key="NSWindowRect">{{335, 390}, {638, 36}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">Skronk</string>
 				<string key="NSWindowClass">RoundedWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMaxSize">{2024, 30}</string>
-				<string key="NSWindowContentMinSize">{350, 30}</string>
+				<string key="NSWindowContentMinSize">{350, 36}</string>
 				<object class="NSView" key="NSWindowView" id="275091113">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -440,7 +440,7 @@
 						<object class="NSTextField" id="823667754">
 							<reference key="NSNextResponder" ref="275091113"/>
 							<int key="NSvFlags">266</int>
-							<string key="NSFrame">{{37, 7}, {562, 17}}</string>
+							<string key="NSFrame">{{38, 10}, {562, 17}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="742916205"/>
@@ -480,10 +480,10 @@
 						<object class="NSTextField" id="474761850">
 							<reference key="NSNextResponder" ref="275091113"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{9, 8}, {20, 17}}</string>
+							<string key="NSFrame">{{13, 10}, {20, 17}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="38449736"/>
+							<reference key="NSNextKeyView" ref="823667754"/>
 							<string key="NSReuseIdentifierKey">_NS:3944</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="755436117">
@@ -517,10 +517,10 @@
 								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
 								<string>NeXT TIFF v4.0 pasteboard type</string>
 							</set>
-							<string key="NSFrame">{{10, 3}, {24, 24}}</string>
+							<string key="NSFrame">{{11, 6}, {24, 24}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="823667754"/>
+							<reference key="NSNextKeyView" ref="474761850"/>
 							<string key="NSReuseIdentifierKey">_NS:2141</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="136044716">
@@ -545,7 +545,7 @@
 								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
 								<string>NeXT TIFF v4.0 pasteboard type</string>
 							</set>
-							<string key="NSFrame">{{611, 4}, {22, 22}}</string>
+							<string key="NSFrame">{{606, 6}, {26, 24}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
@@ -569,13 +569,13 @@
 							<bool key="NSEditable">YES</bool>
 						</object>
 					</array>
-					<string key="NSFrameSize">{638, 30}</string>
+					<string key="NSFrameSize">{638, 36}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView" ref="474761850"/>
+					<reference key="NSNextKeyView" ref="38449736"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
-				<string key="NSMinSize">{350, 30}</string>
+				<string key="NSMinSize">{350, 36}</string>
 				<string key="NSMaxSize">{2024, 30}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -1116,9 +1116,9 @@
 						<int key="objectID">537</int>
 						<reference key="object" ref="275091113"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="38449736"/>
 							<reference ref="474761850"/>
 							<reference ref="823667754"/>
+							<reference ref="38449736"/>
 							<reference ref="742916205"/>
 						</array>
 						<reference key="parent" ref="713271124"/>
@@ -1259,7 +1259,7 @@
 							<reference ref="755436117"/>
 						</array>
 						<reference key="parent" ref="275091113"/>
-						<string key="objectName">Music Icon</string>
+						<string key="objectName">Text Icon</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">555</int>
@@ -1273,7 +1273,7 @@
 							<reference ref="136044716"/>
 						</array>
 						<reference key="parent" ref="275091113"/>
-						<string key="objectName">Playing Art</string>
+						<string key="objectName">Album Art</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">559</int>

@@ -91,7 +91,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 
     // When fade-in is complete, expand the window.
     NSRect newFrame = self.window.frame;
-    newFrame.size.height = 30;
+    newFrame.size.height = 36;
 
     NSDictionary *move = [NSDictionary dictionaryWithObjectsAndKeys:
         self.window, NSViewAnimationTargetKey,
