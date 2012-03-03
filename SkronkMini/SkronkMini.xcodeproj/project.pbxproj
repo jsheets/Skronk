@@ -48,6 +48,7 @@
 		0DEBC4A21501B3CD00D4E1C3 /* RoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEBC4A11501B3CD00D4E1C3 /* RoundedView.m */; };
 		0DEBC4A41501B83600D4E1C3 /* last.fm-icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DEBC4A31501B83600D4E1C3 /* last.fm-icon-64.png */; };
 		0DEBC4A61501B86700D4E1C3 /* last.fm-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DEBC4A51501B86700D4E1C3 /* last.fm-icon-24.png */; };
+		0DEBC4A81501BDDE00D4E1C3 /* concrete-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DEBC4A71501BDDE00D4E1C3 /* concrete-background.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,7 @@
 		0DEBC4A11501B3CD00D4E1C3 /* RoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedView.m; sourceTree = "<group>"; };
 		0DEBC4A31501B83600D4E1C3 /* last.fm-icon-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last.fm-icon-64.png"; sourceTree = "<group>"; };
 		0DEBC4A51501B86700D4E1C3 /* last.fm-icon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last.fm-icon-24.png"; sourceTree = "<group>"; };
+		0DEBC4A71501BDDE00D4E1C3 /* concrete-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "concrete-background.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +271,7 @@
 				0D4AE4DA14EB362D002596BD /* Preferences.xib */,
 				0DEBC4A51501B86700D4E1C3 /* last.fm-icon-24.png */,
 				0DEBC4A31501B83600D4E1C3 /* last.fm-icon-64.png */,
+				0DEBC4A71501BDDE00D4E1C3 /* concrete-background.jpg */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				0D4AE4DB14EB362D002596BD /* Preferences.xib in Resources */,
 				0DEBC4A41501B83600D4E1C3 /* last.fm-icon-64.png in Resources */,
 				0DEBC4A61501B86700D4E1C3 /* last.fm-icon-24.png in Resources */,
+				0DEBC4A81501BDDE00D4E1C3 /* concrete-background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

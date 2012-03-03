@@ -9,10 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 @class PreferencesController;
+@class RoundedView;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet RoundedView *roundedView;
 @property (weak) IBOutlet NSMenu *statusMenu;
 @property (strong) NSStatusItem *statusItem;
 @property (weak) IBOutlet NSMenuItem *showHideMenuItem;

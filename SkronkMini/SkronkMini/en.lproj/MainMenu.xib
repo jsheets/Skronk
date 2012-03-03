@@ -784,6 +784,14 @@
 					<int key="connectionID">636</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">roundedView</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="275091113"/>
+					</object>
+					<int key="connectionID">647</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.autohide</string>
 						<reference key="source" ref="469346641"/>
@@ -1114,7 +1122,7 @@
 							<reference ref="742916205"/>
 						</array>
 						<reference key="parent" ref="713271124"/>
-						<string key="objectName">Main View</string>
+						<string key="objectName">Rounded View</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">561</int>
@@ -1357,7 +1365,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">646</int>
+			<int key="maxID">647</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1383,6 +1391,7 @@
 						<string key="icon">NSTextField</string>
 						<string key="label">NSTextField</string>
 						<string key="progress">NSProgressIndicator</string>
+						<string key="roundedView">RoundedView</string>
 						<string key="serviceIcon">NSImageView</string>
 						<string key="showHideMenuItem">NSMenuItem</string>
 						<string key="showHideStatusbarItem">NSMenuItem</string>
@@ -1405,6 +1414,10 @@
 						<object class="IBToOneOutletInfo" key="progress">
 							<string key="name">progress</string>
 							<string key="candidateClassName">NSProgressIndicator</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="roundedView">
+							<string key="name">roundedView</string>
+							<string key="candidateClassName">RoundedView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="serviceIcon">
 							<string key="name">serviceIcon</string>

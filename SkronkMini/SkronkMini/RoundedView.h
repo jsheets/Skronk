@@ -10,4 +10,6 @@
 
 @interface RoundedView : NSView
 
+@property (strong) NSImage *backgroundImage;
+
 @end

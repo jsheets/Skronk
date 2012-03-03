@@ -10,6 +10,8 @@
 
 @implementation RoundedView
 
+@synthesize backgroundImage = _backgroundImage;
+
 - (id)initWithFrame:(NSRect)frame
 {
     if ((self = [super initWithFrame:frame]))
@@ -27,9 +29,17 @@
 
     [NSGraphicsContext saveGraphicsState];
 
-    [[NSColor darkGrayColor] set];
-    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:[self bounds] xRadius:10 yRadius:10];
-    [path fill];
+    // Clip view to rounded corners.
+    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:self.bounds xRadius:10 yRadius:10];
+    path.lineWidth = 3.0;
+    [path addClip];
+
+    // Concrete background.
+    [self.backgroundImage compositeToPoint:NSZeroPoint fromRect:self.bounds operation:NSCompositeSourceOver];
+
+    // Gray border.
+    [[NSColor grayColor] set];
+    [path stroke];
 
     [NSGraphicsContext restoreGraphicsState];
 }

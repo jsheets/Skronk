@@ -14,6 +14,7 @@
 #import "SGHotKeyCenter.h"
 #import "PreferencesController.h"
 #import "SRCommon.h"
+#import "RoundedView.h"
 
 static NSString *const kGlobalHotKey = @"Global Hot Key";
 
@@ -30,6 +31,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize roundedView = _roundedView;
 @synthesize label = _label;
 @synthesize icon = _icon;
 @synthesize progress = _progress;
@@ -388,6 +390,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 {
     // Hide window so we don't get a jump when we restore the window position.
     [self.window setAlphaValue:0];
+    self.roundedView.backgroundImage = [NSImage imageNamed:@"concrete-background"];
 }
 
 - (void)registerDefaults
