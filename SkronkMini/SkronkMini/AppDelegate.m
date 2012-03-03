@@ -195,6 +195,16 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
     [self.serviceIcon.layer removeAnimationForKey:@"opacity"];
 }
 
+- (void)serviceUp
+{
+    self.serviceIcon.alphaValue = 1.0;
+}
+
+- (void)serviceDown
+{
+    self.serviceIcon.alphaValue = 0.3;
+}
+
 - (void)updateCurrentTrack
 {
     if (self.isSleeping)
@@ -259,6 +269,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
             self.icon.textColor = nowPlaying.isPlaying ? [NSColor alternateSelectedControlColor] : [NSColor controlShadowColor];
 
             [self.art setHidden:!nowPlaying.isPlaying];
+            [self serviceUp];
 
             BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
 //            NSLog(@"Autohide is %@", hideWhenNotPlaying ? @"ON" : @"OFF");
@@ -267,7 +278,6 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
             BOOL hideWindow = !nowPlaying.isPlaying && hideWhenNotPlaying;
             [self showWindow:!hideWindow];
             [self endNetwork];
-
         });
 
         // Fetch album art.
@@ -285,6 +295,10 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
     [request setFailedBlock:^{
         NSError *error = [request error];
         NSLog(@"Error updating last.fm status for user %@: %@", username, [error localizedDescription]);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self endNetwork];
+            [self serviceDown];
+        });
     }];
     
     [request startAsynchronous];
