@@ -545,7 +545,7 @@
 								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
 								<string>NeXT TIFF v4.0 pasteboard type</string>
 							</set>
-							<string key="NSFrame">{{610, 4}, {22, 22}}</string>
+							<string key="NSFrame">{{611, 4}, {22, 22}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
@@ -1470,7 +1470,7 @@
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NSMenuCheckmark">{11, 11}</string>
 			<string key="NSMenuMixedState">{10, 3}</string>
-			<string key="last.fm-icon-24">{24, 24}</string>
+			<string key="last.fm-icon-24">{27, 24}</string>
 		</dictionary>
 	</data>
 </archive>
