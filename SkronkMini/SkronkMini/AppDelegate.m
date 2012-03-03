@@ -80,22 +80,18 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     return self.window.alphaValue == 1.0;
 }
 
-- (void)fadeInWindow
+- (void)performAnimation:(NSDictionary *)properties
 {
-    // Fade in then expand.
-    NSDictionary *newFadeIn = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      self.window, NSViewAnimationTargetKey,
-                                      NSViewAnimationFadeInEffect, NSViewAnimationEffectKey, nil];
+    NSViewAnimation *moveAnimation = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObject:properties]];
+    [moveAnimation setDuration:0.5];
+    [moveAnimation setAnimationBlockingMode:NSAnimationBlocking];
+    [moveAnimation startAnimation];
+}
 
-    // Fade in stripe, then block until fully visible.
-    NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObject:newFadeIn]];
-    [animation setAnimationBlockingMode:NSAnimationBlocking];
-    [animation setDuration:0.5];
-    [animation startAnimation];
-
-    // When fade-in is complete, expand the window.
+- (void)resizeWindowTo:(CGFloat)newHeight
+{
     NSRect newFrame = self.window.frame;
-    newFrame.size.height = 36;
+    newFrame.size.height = newHeight;
 
     NSDictionary *move = [NSDictionary dictionaryWithObjectsAndKeys:
         self.window, NSViewAnimationTargetKey,
@@ -103,22 +99,30 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         [NSValue valueWithRect:newFrame], NSViewAnimationEndFrameKey,
         nil];
 
-//    NSLog(@"Animating fadeIn from %@ to %@", NSStringFromRect(self.window.frame), NSStringFromRect(newFrame));
-    animation = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObject:move]];
-    [animation setDuration:0.5];
-    [animation setAnimationBlockingMode:NSAnimationBlocking];
-    [animation startAnimation];
+    [self performAnimation:move];
+}
 
-//    [self.window setFrame:newFrame display:YES animate:YES];
+- (void)animateWindowFade:(NSString *)fadeEffect
+{
+    NSDictionary *fadeOut = [NSDictionary dictionaryWithObjectsAndKeys:
+        self.window, NSViewAnimationTargetKey,
+        fadeEffect, NSViewAnimationEffectKey, nil];
+
+    [self performAnimation:fadeOut];
+}
+
+- (void)fadeInWindow
+{
+    // Fade in window sliver then expand to normal height.
+    [self animateWindowFade:NSViewAnimationFadeInEffect];
+    [self resizeWindowTo:36];
 }
 
 - (void)fadeOutWindow
 {
-    // Shrink then fade out.
-    NSRect newFrame = [self.window frame];
-    newFrame.size.height = 3;
-    [self.window setFrame:newFrame display:YES animate:YES];
-    [self.window.animator setAlphaValue:0.0];
+    // Shrink the window then fade out.
+    [self resizeWindowTo:3];
+    [self animateWindowFade:NSViewAnimationFadeOutEffect];
 }
 
 // Update window visibility if changed.
@@ -422,13 +426,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
 - (void)updateHotkeys
 {
-    // Modifiers: cmdKey, shiftKey, optionKey, controlKey
-    
-    // Cmd-Opt-Ctrl-l
-//    NSInteger keyCode = 37;
-//    NSInteger modifier = cmdKey + optionKey + controlKey;
-//    NSLog(@"Hard-coded modifiers: (%lu %lu)", keyCode, modifier);
-
     NSInteger hideCode = [[NSUserDefaults standardUserDefaults] integerForKey:kPreferenceHideShortcutCode];
     NSInteger hideFlags = [[NSUserDefaults standardUserDefaults] integerForKey:kPreferenceHideShortcutFlags];
     NSLog(@"Preference modifiers: (%lu %lu)", hideCode, SRCocoaToCarbonFlags(hideFlags));
