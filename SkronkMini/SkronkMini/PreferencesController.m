@@ -77,6 +77,7 @@ NSString *const kLastFmPrefsIdentifer = @"LastFmPrefsIdentifer";
     [NSAnimationContext endGrouping];
 }
 
+// NOT USED YET.
 - (IBAction)lastFmTabClicked:(id)sender
 {
 

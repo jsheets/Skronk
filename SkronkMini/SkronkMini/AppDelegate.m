@@ -22,10 +22,12 @@ static NSString *const kPreferenceAutohide = @"autohide";
 static NSString *const kPreferenceAlwaysOnTop = @"alwaysOnTop";
 static NSString *const kPreferenceShowInMenubar = @"showInMenubar";
 static NSString *const kPreferenceWatchLastFm = @"watchLastFm";
+static NSString *const kPreferenceShowNetworkAvailability = @"showNetworkAvailability";
 static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 
 static CGFloat const kServiceIconMaxAlpha = 0.8f;
 static CGFloat const kServiceIconDimAlpha = 0.3f;
+static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
 @interface AppDelegate ()
 - (void)updateCurrentTrack;
@@ -146,8 +148,10 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
     }
 }
 
-- (void)startNetwork
+- (void)startNetworkAnimation
 {
+//    if (self.serviceIcon.alphaValue == kServiceIconHiddenAlpha) return;
+
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
     animation.fromValue = [NSNumber numberWithFloat:kServiceIconMaxAlpha];
     animation.toValue = [NSNumber numberWithFloat:kServiceIconDimAlpha];
@@ -159,25 +163,27 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
     [self.serviceIcon.layer addAnimation:animation forKey:@"opacity"];
 }
 
-- (void)endNetwork
+- (void)endNetworkAnimation
 {
+//    if (self.serviceIcon.alphaValue == kServiceIconHiddenAlpha) return;
+
     // Pause a bit longer for usability.
     [NSThread sleepForTimeInterval:1.0];
 
     [self.serviceIcon.layer removeAnimationForKey:@"opacity"];
 }
 
-- (void)serviceUp
+- (void)showServiceUp
 {
     self.serviceIcon.alphaValue = kServiceIconMaxAlpha;
 }
 
-- (void)serviceDown
+- (void)showServiceDown
 {
     self.serviceIcon.alphaValue = kServiceIconDimAlpha;
 }
 
-- (NSAttributedString *)trackDisplayText:(NowPlaying *)nowPlaying
+- (NSMutableAttributedString *)trackDisplayText:(NowPlaying *)nowPlaying
 {
     NSMutableAttributedString *displayText = nil;
 
@@ -200,7 +206,7 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
     {
         displayText = [[NSMutableAttributedString alloc] init];
 
-        NSColor *whiteColor = [NSColor colorWithCalibratedWhite:0.9 alpha:1.0];
+        NSColor *whiteColor = nowPlaying.isPlaying ? [NSColor colorWithCalibratedWhite:0.9 alpha:1.0] : [NSColor grayColor];
         NSDictionary *white = [NSDictionary dictionaryWithObject:whiteColor forKey:NSForegroundColorAttributeName];
         NSDictionary *gray = [NSDictionary dictionaryWithObjectsAndKeys:
             [NSFont fontWithName:@"Helvetica" size:13.0], NSFontAttributeName,
@@ -241,6 +247,16 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
     return displayText;
 }
 
+- (NSMutableAttributedString *)grayTrackText
+{
+    NSMutableAttributedString *displayText = [[NSMutableAttributedString alloc] initWithAttributedString:self.label.attributedStringValue];
+
+    NSDictionary *gray = [NSDictionary dictionaryWithObject:[NSColor grayColor] forKey:NSForegroundColorAttributeName];
+    [displayText setAttributes:gray range:NSMakeRange(0, displayText.length)];
+
+    return displayText;
+}
+
 - (void)updateCurrentTrack
 {
     if (self.isSleeping)
@@ -268,17 +284,21 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
 
     NSLog(@"Looking up last.fm URL: %@", url);
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self startNetwork];
-    });
-    
+    BOOL showNetworkAvailability = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowNetworkAvailability];
+    if (showNetworkAvailability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self startNetworkAnimation];
+        });
+    }
+
     __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setCompletionBlock:^{
         // Use when fetching text data
         NSString *responseString = [request responseString];
 //        NSLog(@"Received JSON: %@", responseString);
 
-        NSAttributedString *displayText = nil;
+        NSMutableAttributedString *displayText = nil;
 
         NowPlaying *nowPlaying = [[NowPlaying alloc] initWithJson:responseString];
         BOOL firstTime = [self.label.stringValue isEqualToString:@"Loading..."];
@@ -291,6 +311,15 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
 
             displayText = [self trackDisplayText:nowPlaying];
         }
+        else
+        {
+            // Not playing. Would like to gray out the current text when not playing, but
+            // can't rely on last.fm JSON to still have it. If the current track has not yet
+            // been scrobbled, the text will immediately fall back to the previous track.
+            //
+            // Eh, just gray out whatever text used to be there. Initial track already taken care of above.
+            displayText = [self grayTrackText];
+        }
 
         // Back on main thread...
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -300,20 +329,21 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
                 self.label.attributedStringValue = displayText;
             }
 
-//            self.label.textColor = nowPlaying.isPlaying ? [NSColor textColor] : [NSColor controlShadowColor];
-            self.label.textColor = nowPlaying.isPlaying ? [NSColor highlightColor] : [NSColor controlShadowColor];
-            self.icon.textColor = nowPlaying.isPlaying ? [NSColor alternateSelectedControlColor] : [NSColor controlShadowColor];
-
             [self.art setHidden:!nowPlaying.isPlaying];
-            [self serviceUp];
+            if (showNetworkAvailability)
+            {
+                [self showServiceUp];
+            }
 
             BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
-//            NSLog(@"Autohide is %@", hideWhenNotPlaying ? @"ON" : @"OFF");
 
             // Hide window when not playing and autohide is on.
             BOOL hideWindow = !nowPlaying.isPlaying && hideWhenNotPlaying;
             [self showWindow:!hideWindow];
-            [self endNetwork];
+            if (showNetworkAvailability)
+            {
+                [self endNetworkAnimation];
+            }
         });
 
         // Fetch album art.
@@ -331,10 +361,14 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
     [request setFailedBlock:^{
         NSError *error = [request error];
         NSLog(@"Error updating last.fm status for user %@: %@", username, [error localizedDescription]);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self endNetwork];
-            [self serviceDown];
-        });
+        if (showNetworkAvailability)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.label.attributedStringValue = [self grayTrackText];
+                [self endNetworkAnimation];
+                [self showServiceDown];
+            });
+        }
     }];
     
     [request startAsynchronous];
@@ -364,6 +398,21 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
         {
             // Toggle always on top.
             self.alwaysOnTop = !self.alwaysOnTop;
+            return;
+        }
+        else if ([keyPath isEqualToString:kPreferenceShowNetworkAvailability])
+        {
+            // Toggle showing service icon.
+            BOOL shouldShowIcon = [[change objectForKey:NSKeyValueChangeNewKey] integerValue] == 1;
+            if (shouldShowIcon)
+            {
+                [self updateCurrentTrack];
+            }
+            else
+            {
+                [[self.serviceIcon animator] setAlphaValue:kServiceIconHiddenAlpha];
+            }
+
             return;
         }
     }
@@ -420,6 +469,12 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
     // Hide window so we don't get a jump when we restore the window position.
     [self.window setAlphaValue:0];
     self.roundedView.backgroundImage = [NSImage imageNamed:@"concrete-background"];
+
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowNetworkAvailability])
+    {
+        self.serviceIcon.alphaValue = 0.0f;
+    }
+
 }
 
 - (void)registerDefaults
@@ -430,6 +485,7 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
         [NSNumber numberWithBool:YES], kPreferenceAlwaysOnTop,
         [NSNumber numberWithBool:YES], kPreferenceShowInMenubar,
         [NSNumber numberWithBool:YES], kPreferenceWatchLastFm,
+        [NSNumber numberWithBool:YES], kPreferenceShowNetworkAvailability,
 //        @"woot", kPreferenceLastFmUsername,
         nil
     ];
@@ -447,7 +503,7 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
     BOOL alwaysOnTop = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAlwaysOnTop];
     [self setAlwaysOnTop:alwaysOnTop];
 
-    // Stick to all windows.
+    // Stick to all desktops.
 //    [self.window setCollectionBehavior:NSWindowCollectionBehaviorStationary |
 //        NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorFullScreenAuxiliary];
 
@@ -467,10 +523,11 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
     BOOL shouldShowMenubar = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowInMenubar];
     [self showInMenubar:shouldShowMenubar];
 
-    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAutohide options:(NSKeyValueObservingOptionNew) context:nil];
-    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceShowInMenubar options:(NSKeyValueObservingOptionNew) context:nil];
-    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAlwaysOnTop options:(NSKeyValueObservingOptionNew) context:nil];
-    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceLastFmUsername options:(NSKeyValueObservingOptionNew) context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAutohide options:NSKeyValueObservingOptionNew context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceShowInMenubar options:NSKeyValueObservingOptionNew context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAlwaysOnTop options:NSKeyValueObservingOptionNew context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceLastFmUsername options:NSKeyValueObservingOptionNew context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceShowNetworkAvailability options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
