@@ -40,7 +40,7 @@
     NSBezierPath *insetPath = [NSBezierPath bezierPathWithRoundedRect:insetRect xRadius:8 yRadius:8];
 
     // Slightly darker text background.
-    [[NSColor colorWithDeviceWhite:0.0 alpha:0.15] set];
+    [[NSColor colorWithDeviceWhite:0.0 alpha:0.25] set];
     [insetPath fill];
 
     // Border around text background.
