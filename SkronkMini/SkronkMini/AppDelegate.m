@@ -23,6 +23,10 @@ static NSString *const kPreferenceShowInMenubar = @"showInMenubar";
 static NSString *const kPreferenceWatchLastFm = @"watchLastFm";
 static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 
+@interface AppDelegate ()
+- (void)updateCurrentTrack;
+@end
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -123,6 +127,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
             self.showHideMenuItem.title = @"Hide Skronk";
             self.showHideStatusbarItem.title = @"Hide Skronk";
             [self fadeInWindow];
+            [self updateCurrentTrack];
         }
     }
     else
@@ -170,7 +175,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 - (void)startNetwork
 {
     // Start spinner.
-    NSLog(@"Starting network spinner...");
+//    NSLog(@"Starting network spinner...");
     [self.progress startAnimation:self];
 
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
@@ -189,7 +194,7 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
     [NSThread sleepForTimeInterval:1.0];
 
     // Stop spinner.
-    NSLog(@"Stopping network spinner...");
+//    NSLog(@"Stopping network spinner...");
     [self.progress stopAnimation:self];
 
     [self.serviceIcon.layer removeAnimationForKey:@"opacity"];
