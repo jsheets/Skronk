@@ -412,8 +412,6 @@ static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
     // Explicitly restore autosaved window position, since this doesn't seem to happen by default.
     [self.window setFrameAutosaveName:@"Skronk"];
 
-    [self.window setMovableByWindowBackground:YES];
-
     BOOL alwaysOnTop = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAlwaysOnTop];
     [self setAlwaysOnTop:alwaysOnTop];
 
