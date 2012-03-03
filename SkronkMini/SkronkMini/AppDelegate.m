@@ -146,36 +146,6 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
     }
 }
 
-- (NSString *)trackDisplayText:(NowPlaying *)nowPlaying
-{
-    NSString *displayText = nil;
-
-    BOOL hasArtist = nowPlaying.artist.length > 0;
-    BOOL hasAlbum = nowPlaying.album.length > 0;
-    BOOL hasTrack = nowPlaying.track.length > 0;
-
-    BOOL hyphenFormat = NO;
-    if (hyphenFormat)
-    {
-        NSMutableArray *fields = [NSMutableArray array];
-        if (hasArtist) [fields addObject:nowPlaying.artist];
-        if (hasAlbum) [fields addObject:nowPlaying.album];
-        if (hasTrack) [fields addObject:nowPlaying.track];
-
-        displayText = [fields componentsJoinedByString:@" - "];
-    }
-    else
-    {
-        NSString *trackText = hasTrack ? [NSString stringWithFormat:@"\"%@\"", nowPlaying.track] : @"";
-        NSString *artistText = hasArtist ? [NSString stringWithFormat:@" by %@", nowPlaying.artist] : @"";
-        NSString *albumText = hasAlbum ? [NSString stringWithFormat:@", on %@", nowPlaying.album] : @"";
-
-        displayText = [NSString stringWithFormat:@"%@%@%@", trackText, artistText, albumText];
-    }
-
-    return displayText;
-}
-
 - (void)startNetwork
 {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
@@ -205,6 +175,70 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
 - (void)serviceDown
 {
     self.serviceIcon.alphaValue = kServiceIconDimAlpha;
+}
+
+- (NSAttributedString *)trackDisplayText:(NowPlaying *)nowPlaying
+{
+    NSMutableAttributedString *displayText = nil;
+
+    BOOL hasArtist = nowPlaying.artist.length > 0;
+    BOOL hasAlbum = nowPlaying.album.length > 0;
+    BOOL hasTrack = nowPlaying.track.length > 0;
+
+    BOOL hyphenFormat = NO;
+    if (hyphenFormat)
+    {
+        NSMutableArray *fields = [NSMutableArray array];
+        if (hasArtist) [fields addObject:nowPlaying.artist];
+        if (hasAlbum) [fields addObject:nowPlaying.album];
+        if (hasTrack) [fields addObject:nowPlaying.track];
+
+        NSString *plainString = [fields componentsJoinedByString:@" - "];
+        displayText = [[NSMutableAttributedString alloc] initWithString:plainString];
+    }
+    else
+    {
+        displayText = [[NSMutableAttributedString alloc] init];
+
+        NSColor *whiteColor = [NSColor colorWithCalibratedWhite:0.9 alpha:1.0];
+        NSDictionary *white = [NSDictionary dictionaryWithObject:whiteColor forKey:NSForegroundColorAttributeName];
+        NSDictionary *gray = [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSFont fontWithName:@"Helvetica" size:13.0], NSFontAttributeName,
+            [NSColor grayColor], NSForegroundColorAttributeName,
+            nil];
+
+        NSAttributedString *fancyString;
+
+        // White real text, gray join text, bold artist name.
+        if (hasTrack)
+        {
+//            NSString *plainText = [NSString stringWithFormat:@"\"%@\"", nowPlaying.track];
+            fancyString = [[NSAttributedString alloc] initWithString:nowPlaying.track attributes:white];
+            [displayText appendAttributedString:fancyString];
+        }
+
+        if (hasArtist)
+        {
+            fancyString = [[NSAttributedString alloc] initWithString:@" by " attributes:gray];
+            [displayText appendAttributedString:fancyString];
+
+            fancyString = [[NSAttributedString alloc] initWithString:nowPlaying.artist attributes:white];
+            [displayText appendAttributedString:fancyString];
+        }
+
+        if (hasAlbum)
+        {
+            fancyString = [[NSAttributedString alloc] initWithString:@" on " attributes:
+                gray];
+            [displayText appendAttributedString:fancyString];
+
+            fancyString = [[NSAttributedString alloc] initWithString:nowPlaying.album attributes:
+                white];
+            [displayText appendAttributedString:fancyString];
+        }
+    }
+
+    return displayText;
 }
 
 - (void)updateCurrentTrack
@@ -244,7 +278,7 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
         NSString *responseString = [request responseString];
 //        NSLog(@"Received JSON: %@", responseString);
 
-        NSString *displayText = nil;
+        NSAttributedString *displayText = nil;
 
         NowPlaying *nowPlaying = [[NowPlaying alloc] initWithJson:responseString];
         BOOL firstTime = [self.label.stringValue isEqualToString:@"Loading..."];
@@ -263,7 +297,7 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
             // If we have something new to report, show it.
             if (displayText)
             {
-                self.label.stringValue = displayText;
+                self.label.attributedStringValue = displayText;
             }
 
 //            self.label.textColor = nowPlaying.isPlaying ? [NSColor textColor] : [NSColor controlShadowColor];

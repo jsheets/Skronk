@@ -440,7 +440,7 @@
 						<object class="NSTextField" id="823667754">
 							<reference key="NSNextResponder" ref="275091113"/>
 							<int key="NSvFlags">266</int>
-							<string key="NSFrame">{{38, 10}, {562, 17}}</string>
+							<string key="NSFrame">{{42, 10}, {560, 17}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="742916205"/>
@@ -451,12 +451,13 @@
 								<int key="NSCellFlags2">4196352</int>
 								<string key="NSContents">Loading...</string>
 								<object class="NSFont" key="NSSupport">
-									<string key="NSName">LucidaGrande</string>
-									<double key="NSSize">13</double>
-									<int key="NSfFlags">1044</int>
+									<string key="NSName">Helvetica</string>
+									<double key="NSSize">14</double>
+									<int key="NSfFlags">16</int>
 								</object>
 								<string key="NSCellIdentifier">_NS:3944</string>
 								<reference key="NSControlView" ref="823667754"/>
+								<bool key="NSDrawsBackground">YES</bool>
 								<object class="NSColor" key="NSBackgroundColor" id="679252265">
 									<int key="NSColorSpace">6</int>
 									<string key="NSCatalogName">System</string>
@@ -466,15 +467,7 @@
 										<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 									</object>
 								</object>
-								<object class="NSColor" key="NSTextColor">
-									<int key="NSColorSpace">6</int>
-									<string key="NSCatalogName">System</string>
-									<string key="NSColorName">highlightColor</string>
-									<object class="NSColor" key="NSColor" id="180642307">
-										<int key="NSColorSpace">3</int>
-										<bytes key="NSWhite">MQA</bytes>
-									</object>
-								</object>
+								<reference key="NSTextColor" ref="679252265"/>
 							</object>
 						</object>
 						<object class="NSTextField" id="474761850">
@@ -502,7 +495,10 @@
 									<int key="NSColorSpace">6</int>
 									<string key="NSCatalogName">System</string>
 									<string key="NSColorName">controlHighlightColor</string>
-									<reference key="NSColor" ref="180642307"/>
+									<object class="NSColor" key="NSColor">
+										<int key="NSColorSpace">3</int>
+										<bytes key="NSWhite">MQA</bytes>
+									</object>
 								</object>
 							</object>
 						</object>
@@ -548,7 +544,6 @@
 							<string key="NSFrame">{{606, 6}, {26, 24}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -1390,7 +1385,6 @@
 						<string key="art">NSImageView</string>
 						<string key="icon">NSTextField</string>
 						<string key="label">NSTextField</string>
-						<string key="progress">NSProgressIndicator</string>
 						<string key="roundedView">RoundedView</string>
 						<string key="serviceIcon">NSImageView</string>
 						<string key="showHideMenuItem">NSMenuItem</string>
@@ -1410,10 +1404,6 @@
 						<object class="IBToOneOutletInfo" key="label">
 							<string key="name">label</string>
 							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="progress">
-							<string key="name">progress</string>
-							<string key="candidateClassName">NSProgressIndicator</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="roundedView">
 							<string key="name">roundedView</string>
