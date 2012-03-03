@@ -180,10 +180,11 @@ static CGFloat const kServiceIconDimAlpha = 0.3f;
 {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
     animation.fromValue = [NSNumber numberWithFloat:kServiceIconMaxAlpha];
-    animation.toValue = [NSNumber numberWithFloat:0.0];
+    animation.toValue = [NSNumber numberWithFloat:kServiceIconDimAlpha];
     animation.duration = 0.5f;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     animation.autoreverses = YES;
-    animation.repeatCount = 10;
+    animation.repeatCount = 100;
 
     [self.serviceIcon.layer addAnimation:animation forKey:@"opacity"];
 }
