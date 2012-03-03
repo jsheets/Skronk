@@ -425,14 +425,12 @@
 				<int key="NSWindowStyleMask">8</int>
 				<bool key="NSWindowAllowNontitledResizable">YES</bool>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 390}, {638, 36}}</string>
+				<string key="NSWindowRect">{{335, 390}, {640, 36}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">Skronk</string>
 				<string key="NSWindowClass">RoundedWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMaxSize">{2024, 30}</string>
-				<string key="NSWindowContentMinSize">{350, 36}</string>
 				<object class="NSView" key="NSWindowView" id="275091113">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -440,7 +438,7 @@
 						<object class="NSTextField" id="823667754">
 							<reference key="NSNextResponder" ref="275091113"/>
 							<int key="NSvFlags">266</int>
-							<string key="NSFrame">{{42, 10}, {560, 17}}</string>
+							<string key="NSFrame">{{42, 10}, {562, 17}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="742916205"/>
@@ -541,9 +539,10 @@
 								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
 								<string>NeXT TIFF v4.0 pasteboard type</string>
 							</set>
-							<string key="NSFrame">{{606, 6}, {26, 24}}</string>
+							<string key="NSFrame">{{608, 6}, {26, 24}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -564,14 +563,13 @@
 							<bool key="NSEditable">YES</bool>
 						</object>
 					</array>
-					<string key="NSFrameSize">{638, 36}</string>
+					<string key="NSFrameSize">{640, 36}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="38449736"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
-				<string key="NSMinSize">{350, 36}</string>
-				<string key="NSMaxSize">{2024, 30}</string>
+				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="976324537">
