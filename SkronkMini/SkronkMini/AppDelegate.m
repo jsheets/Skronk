@@ -201,12 +201,12 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
 - (void)showServiceUp
 {
-    self.serviceIcon.alphaValue = kServiceIconMaxAlpha;
+    [[self.serviceIcon animator] setAlphaValue:kServiceIconMaxAlpha];
 }
 
 - (void)showServiceDown
 {
-    self.serviceIcon.alphaValue = kServiceIconDimAlpha;
+    [[self.serviceIcon animator] setAlphaValue:kServiceIconDimAlpha];
 }
 
 - (NSMutableAttributedString *)trackDisplayText:(NowPlaying *)nowPlaying
@@ -287,6 +287,13 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 {
     NSRect newFrame = self.window.frame;
 
+    BOOL showNetworkAvailability = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowNetworkAvailability];
+
+    // Resize text field.
+    CGFloat paddingAroundLabel = showNetworkAvailability ? 80 : 55;
+    NSRect labelRect = self.label.frame;
+    labelRect.size.width = self.window.frame.size.width - paddingAroundLabel;
+
     BOOL autosizeToFit = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutosizeToFit];
     if (autosizeToFit)
     {
@@ -295,7 +302,18 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         NSDictionary *fontAttributes = [NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Helvetica" size:14.0] forKey:NSFontAttributeName];
         NSSize fontSize = [trackText.string sizeWithAttributes:fontAttributes];
 
-        newFrame.size.width = fontSize.width + 90;
+        // If we're showing the service icon, the window should be smaller.
+        CGFloat padding = showNetworkAvailability ? 90 : 60;
+        newFrame.size.width = fontSize.width + padding;
+
+        if (showNetworkAvailability)
+        {
+            [[self.label animator] setFrame:labelRect];
+        }
+        else
+        {
+            self.label.frame = labelRect;
+        }
     }
     else
     {
@@ -472,6 +490,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             {
                 [[self.serviceIcon animator] setAlphaValue:kServiceIconHiddenAlpha];
             }
+
+            [self adjustWindowSize];
 
             return;
         }

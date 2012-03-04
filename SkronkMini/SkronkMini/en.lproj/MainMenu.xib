@@ -382,7 +382,7 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="1001401785">
+					<object class="NSMenuItem" id="344102839">
 						<reference key="NSMenu" ref="481416820"/>
 						<string key="NSTitle">Autosize To Fit</string>
 						<string key="NSKeyEquiv"/>
@@ -446,15 +446,15 @@
 						<object class="NSTextField" id="823667754">
 							<reference key="NSNextResponder" ref="275091113"/>
 							<int key="NSvFlags">266</int>
-							<string key="NSFrame">{{42, 10}, {562, 17}}</string>
+							<string key="NSFrame">{{42, 10}, {560, 17}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="742916205"/>
 							<string key="NSReuseIdentifierKey">_NS:3944</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="1049187089">
-								<int key="NSCellFlags">67239488</int>
-								<int key="NSCellFlags2">4196352</int>
+								<int key="NSCellFlags">68288064</int>
+								<int key="NSCellFlags2">4195328</int>
 								<string key="NSContents">Loading...</string>
 								<object class="NSFont" key="NSSupport">
 									<string key="NSName">Helvetica</string>
@@ -891,10 +891,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.autosizeToFit</string>
-						<reference key="source" ref="1001401785"/>
+						<reference key="source" ref="344102839"/>
 						<reference key="destination" ref="368844928"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="1001401785"/>
+							<reference key="NSSource" ref="344102839"/>
 							<reference key="NSDestination" ref="368844928"/>
 							<string key="NSLabel">value: values.autosizeToFit</string>
 							<string key="NSBinding">value</string>
@@ -1154,7 +1154,7 @@
 							<reference ref="314844566"/>
 							<reference ref="465572816"/>
 							<reference ref="784725684"/>
-							<reference ref="1001401785"/>
+							<reference ref="344102839"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Statusbar Menu</string>
@@ -1314,7 +1314,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">649</int>
-						<reference key="object" ref="1001401785"/>
+						<reference key="object" ref="344102839"/>
 						<reference key="parent" ref="481416820"/>
 					</object>
 				</array>
