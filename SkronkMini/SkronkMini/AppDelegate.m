@@ -98,10 +98,13 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     [moveAnimation startAnimation];
 }
 
-- (void)resizeWindowTo:(CGFloat)newHeight
+- (void)resizeWindowTo:(NSRect)newFrame
 {
-    NSRect newFrame = self.window.frame;
-    newFrame.size.height = newHeight;
+    // If nothing's changed, don't bother animating anything.
+    if (self.window.frame.size.width == newFrame.size.width)
+    {
+        return;
+    }
 
     NSDictionary *move = [NSDictionary dictionaryWithObjectsAndKeys:
         self.window, NSViewAnimationTargetKey,
@@ -125,13 +128,19 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 {
     // Fade in window sliver then expand to normal height.
     [self animateWindowFade:NSViewAnimationFadeInEffect];
-    [self resizeWindowTo:36];
+
+    NSRect newFrame = self.window.frame;
+    newFrame.size.height = 36;
+    [self resizeWindowTo:newFrame];
 }
 
 - (void)fadeOutWindow
 {
     // Shrink the window then fade out.
-    [self resizeWindowTo:3];
+    NSRect newFrame = self.window.frame;
+    newFrame.size.height = 3;
+    [self resizeWindowTo:newFrame];
+
     [self animateWindowFade:NSViewAnimationFadeOutEffect];
 }
 
@@ -273,6 +282,17 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     return displayText;
 }
 
+- (void)adjustWindowSize:(NSAttributedString *)trackText
+{
+    NSDictionary *fontAttributes = [NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Helvetica" size:14.0] forKey:NSFontAttributeName];
+    NSSize fontSize = [trackText.string sizeWithAttributes:fontAttributes];
+//    NSLog(@"Adjusting to fit string (%@): %@", trackText.string, NSStringFromSize(fontSize));
+
+    NSRect newFrame = self.window.frame;
+    newFrame.size.width = fontSize.width + 90;
+    [self resizeWindowTo:newFrame];
+}
+
 - (void)updateCurrentTrack
 {
     if (self.isSleeping)
@@ -343,19 +363,24 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             if (displayText)
             {
                 self.label.attributedStringValue = displayText;
+                [self adjustWindowSize:displayText];
             }
 
+            // Hide album art if not playing.
             [self.art setHidden:!nowPlaying.isPlaying];
+
+            // Update service icon visibility.
             if (showNetworkAvailability)
             {
                 [self showServiceUp];
             }
 
-            BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
-
             // Hide window when not playing and autohide is on.
+            BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
             BOOL hideWindow = !nowPlaying.isPlaying && hideWhenNotPlaying;
             [self showWindow:!hideWindow];
+
+            // Stop pulsing service icon.
             if (showNetworkAvailability)
             {
                 [self endNetworkAnimation];
