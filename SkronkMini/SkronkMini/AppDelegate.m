@@ -22,6 +22,7 @@ static NSString *const kPreferenceAutohide = @"autohide";
 static NSString *const kPreferenceAlwaysOnTop = @"alwaysOnTop";
 static NSString *const kPreferenceShowInMenubar = @"showInMenubar";
 static NSString *const kPreferenceWatchLastFm = @"watchLastFm";
+static NSString *const kPreferenceAutosizeToFit = @"autosizeToFit";
 static NSString *const kPreferenceShowNetworkAvailability = @"showNetworkAvailability";
 static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
 
@@ -282,14 +283,25 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     return displayText;
 }
 
-- (void)adjustWindowSize:(NSAttributedString *)trackText
+- (void)adjustWindowSize
 {
-    NSDictionary *fontAttributes = [NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Helvetica" size:14.0] forKey:NSFontAttributeName];
-    NSSize fontSize = [trackText.string sizeWithAttributes:fontAttributes];
-//    NSLog(@"Adjusting to fit string (%@): %@", trackText.string, NSStringFromSize(fontSize));
-
     NSRect newFrame = self.window.frame;
-    newFrame.size.width = fontSize.width + 90;
+
+    BOOL autosizeToFit = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutosizeToFit];
+    if (autosizeToFit)
+    {
+        NSAttributedString *trackText = self.label.attributedStringValue;
+
+        NSDictionary *fontAttributes = [NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Helvetica" size:14.0] forKey:NSFontAttributeName];
+        NSSize fontSize = [trackText.string sizeWithAttributes:fontAttributes];
+
+        newFrame.size.width = fontSize.width + 90;
+    }
+    else
+    {
+        newFrame.size.width = 640;
+    }
+
     [self resizeWindowTo:newFrame];
 }
 
@@ -363,7 +375,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             if (displayText)
             {
                 self.label.attributedStringValue = displayText;
-                [self adjustWindowSize:displayText];
+                [self adjustWindowSize];
             }
 
             // Hide album art if not playing.
@@ -434,6 +446,11 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             // Toggle menubar.
             BOOL shouldShowMenu = [[change objectForKey:NSKeyValueChangeNewKey] integerValue] == 1;
             [self showInMenubar:shouldShowMenu];
+            return;
+        }
+        else if ([keyPath isEqualToString:kPreferenceAutosizeToFit])
+        {
+            [self adjustWindowSize];
             return;
         }
         else if ([keyPath isEqualToString:kPreferenceAlwaysOnTop])
@@ -519,6 +536,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
         [NSNumber numberWithBool:NO],  kPreferenceAutohide,
         [NSNumber numberWithBool:YES], kPreferenceAlwaysOnTop,
+        [NSNumber numberWithBool:NO], kPreferenceAutosizeToFit,
         [NSNumber numberWithBool:YES], kPreferenceShowInMenubar,
         [NSNumber numberWithBool:YES], kPreferenceWatchLastFm,
         [NSNumber numberWithBool:YES], kPreferenceShowNetworkAvailability,
@@ -561,6 +579,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAutohide options:NSKeyValueObservingOptionNew context:nil];
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceShowInMenubar options:NSKeyValueObservingOptionNew context:nil];
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAlwaysOnTop options:NSKeyValueObservingOptionNew context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAutosizeToFit options:NSKeyValueObservingOptionNew context:nil];
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceLastFmUsername options:NSKeyValueObservingOptionNew context:nil];
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceShowNetworkAvailability options:NSKeyValueObservingOptionNew context:nil];
 }

@@ -382,6 +382,14 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
+					<object class="NSMenuItem" id="1001401785">
+						<reference key="NSMenu" ref="481416820"/>
+						<string key="NSTitle">Autosize To Fit</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
 					<object class="NSMenuItem" id="784725684">
 						<reference key="NSMenu" ref="481416820"/>
 						<bool key="NSIsDisabled">YES</bool>
@@ -880,6 +888,22 @@
 					</object>
 					<int key="connectionID">627</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.autosizeToFit</string>
+						<reference key="source" ref="1001401785"/>
+						<reference key="destination" ref="368844928"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="1001401785"/>
+							<reference key="NSDestination" ref="368844928"/>
+							<string key="NSLabel">value: values.autosizeToFit</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.autosizeToFit</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">651</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -1130,6 +1154,7 @@
 							<reference ref="314844566"/>
 							<reference ref="465572816"/>
 							<reference ref="784725684"/>
+							<reference ref="1001401785"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Statusbar Menu</string>
@@ -1287,6 +1312,11 @@
 						<reference key="object" ref="572877091"/>
 						<reference key="parent" ref="742916205"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">649</int>
+						<reference key="object" ref="1001401785"/>
+						<reference key="parent" ref="481416820"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -1352,13 +1382,14 @@
 				<string key="630.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="634.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="635.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="649.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="92.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">648</int>
+			<int key="maxID">651</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
