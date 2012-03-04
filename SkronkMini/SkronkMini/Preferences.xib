@@ -147,7 +147,7 @@
 				<int key="NSvFlags">266</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="NSButton" id="927447542">
+					<object class="NSButton" id="680301814">
 						<reference key="NSNextResponder" ref="810515379"/>
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{18, 18}, {357, 18}}</string>
@@ -156,20 +156,20 @@
 						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:771</string>
 						<bool key="NSEnabled">YES</bool>
-						<object class="NSButtonCell" key="NSCell" id="786187457">
+						<object class="NSButtonCell" key="NSCell" id="828062440">
 							<int key="NSCellFlags">-2080244224</int>
 							<int key="NSCellFlags2">0</int>
-							<string key="NSContents">Show Skronk in menu bar</string>
+							<string key="NSContents">Show SkronkMini in the menu bar</string>
 							<object class="NSFont" key="NSSupport" id="697142319">
 								<string key="NSName">LucidaGrande</string>
 								<double key="NSSize">13</double>
 								<int key="NSfFlags">1044</int>
 							</object>
 							<string key="NSCellIdentifier">_NS:771</string>
-							<reference key="NSControlView" ref="927447542"/>
+							<reference key="NSControlView" ref="680301814"/>
 							<int key="NSButtonFlags">1211912703</int>
 							<int key="NSButtonFlags2">2</int>
-							<object class="NSCustomResource" key="NSNormalImage" id="974176691">
+							<object class="NSCustomResource" key="NSNormalImage" id="159560585">
 								<string key="NSClassName">NSImage</string>
 								<string key="NSResourceName">NSSwitch</string>
 							</object>
@@ -234,7 +234,7 @@
 										<string key="NSFrame">{{149, 14}, {222, 22}}</string>
 										<reference key="NSSuperview" ref="666754958"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="927447542"/>
+										<reference key="NSNextKeyView" ref="680301814"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<string key="NSClassName">SRRecorderControl</string>
 									</object>
@@ -309,7 +309,7 @@
 											<reference key="NSControlView" ref="693502004"/>
 											<int key="NSButtonFlags">1211912703</int>
 											<int key="NSButtonFlags2">2</int>
-											<reference key="NSNormalImage" ref="974176691"/>
+											<reference key="NSNormalImage" ref="159560585"/>
 											<reference key="NSAlternateImage" ref="879193274"/>
 											<string key="NSAlternateContents"/>
 											<string key="NSKeyEquivalent"/>
@@ -335,7 +335,7 @@
 											<reference key="NSControlView" ref="292524303"/>
 											<int key="NSButtonFlags">1211912703</int>
 											<int key="NSButtonFlags2">2</int>
-											<reference key="NSNormalImage" ref="974176691"/>
+											<reference key="NSNormalImage" ref="159560585"/>
 											<reference key="NSAlternateImage" ref="879193274"/>
 											<string key="NSAlternateContents"/>
 											<string key="NSKeyEquivalent"/>
@@ -361,7 +361,7 @@
 											<reference key="NSControlView" ref="642127005"/>
 											<int key="NSButtonFlags">1211912703</int>
 											<int key="NSButtonFlags2">2</int>
-											<reference key="NSNormalImage" ref="974176691"/>
+											<reference key="NSNormalImage" ref="159560585"/>
 											<reference key="NSAlternateImage" ref="879193274"/>
 											<string key="NSAlternateContents"/>
 											<string key="NSKeyEquivalent"/>
@@ -714,10 +714,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.showInMenubar</string>
-						<reference key="source" ref="927447542"/>
+						<reference key="source" ref="680301814"/>
 						<reference key="destination" ref="1028921630"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="927447542"/>
+							<reference key="NSSource" ref="680301814"/>
 							<reference key="NSDestination" ref="1028921630"/>
 							<string key="NSLabel">value: values.showInMenubar</string>
 							<string key="NSBinding">value</string>
@@ -798,7 +798,7 @@
 							<reference ref="548650511"/>
 							<reference ref="329522203"/>
 							<reference ref="918383945"/>
-							<reference ref="927447542"/>
+							<reference ref="680301814"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">General Settings</string>
@@ -969,17 +969,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">59</int>
-						<reference key="object" ref="927447542"/>
+						<reference key="object" ref="680301814"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="786187457"/>
+							<reference ref="828062440"/>
 						</object>
 						<reference key="parent" ref="810515379"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">60</int>
-						<reference key="object" ref="786187457"/>
-						<reference key="parent" ref="927447542"/>
+						<reference key="object" ref="828062440"/>
+						<reference key="parent" ref="680301814"/>
 					</object>
 				</object>
 			</object>
