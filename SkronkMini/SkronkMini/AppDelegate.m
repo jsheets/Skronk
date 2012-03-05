@@ -158,8 +158,9 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             self.showHideStatusbarItem.title = @"Hide Skronk";
             [self fadeInWindow];
 
-            [self updateCurrentTrack];
-            [self resetTimer];
+            // Don't update here after all. Causes issues with quick hide/show.
+//            [self updateCurrentTrack];
+//            [self resetTimer];
         }
     }
     else
