@@ -374,17 +374,17 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="576219838">
+					<object class="NSMenuItem" id="344102839">
 						<reference key="NSMenu" ref="481416820"/>
-						<string key="NSTitle">Show Network Availability</string>
+						<string key="NSTitle">Autosize To Fit</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="344102839">
+					<object class="NSMenuItem" id="576219838">
 						<reference key="NSMenu" ref="481416820"/>
-						<string key="NSTitle">Autosize To Fit</string>
+						<string key="NSTitle">Show Network Availability</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
