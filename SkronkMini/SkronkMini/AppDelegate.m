@@ -93,16 +93,16 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
 - (void)performAnimation:(NSDictionary *)properties
 {
-    NSViewAnimation *moveAnimation = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObject:properties]];
-    [moveAnimation setDuration:0.5];
-    [moveAnimation setAnimationBlockingMode:NSAnimationBlocking];
-    [moveAnimation startAnimation];
+    NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObject:properties]];
+    [animation setDuration:0.5];
+    [animation setAnimationBlockingMode:NSAnimationBlocking];
+    [animation startAnimation];
 }
 
 - (void)resizeWindowTo:(NSRect)newFrame
 {
     // If nothing's changed, don't bother animating anything.
-    if (self.window.frame.size.width == newFrame.size.width)
+    if (self.window.frame.size.width == newFrame.size.width && self.window.frame.size.height == newFrame.size.height)
     {
         return;
     }
