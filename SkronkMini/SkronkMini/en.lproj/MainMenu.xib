@@ -382,6 +382,14 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
+					<object class="NSMenuItem" id="798684250">
+						<reference key="NSMenu" ref="481416820"/>
+						<string key="NSTitle">Transparent Background</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
 					<object class="NSMenuItem" id="576219838">
 						<reference key="NSMenu" ref="481416820"/>
 						<string key="NSTitle">Show Network Availability</string>
@@ -561,6 +569,7 @@
 							<string key="NSFrame">{{608, 6}, {26, 24}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -914,6 +923,22 @@
 					</object>
 					<int key="connectionID">651</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.transparentBackground</string>
+						<reference key="source" ref="798684250"/>
+						<reference key="destination" ref="368844928"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="798684250"/>
+							<reference key="NSDestination" ref="368844928"/>
+							<string key="NSLabel">value: values.transparentBackground</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.transparentBackground</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">657</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -1165,6 +1190,7 @@
 							<reference ref="465572816"/>
 							<reference ref="784725684"/>
 							<reference ref="344102839"/>
+							<reference ref="798684250"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Statusbar Menu</string>
@@ -1327,6 +1353,11 @@
 						<reference key="object" ref="344102839"/>
 						<reference key="parent" ref="481416820"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">654</int>
+						<reference key="object" ref="798684250"/>
+						<reference key="parent" ref="481416820"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -1396,13 +1427,14 @@
 				<string key="634.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="635.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="649.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="654.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="92.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">651</int>
+			<int key="maxID">657</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

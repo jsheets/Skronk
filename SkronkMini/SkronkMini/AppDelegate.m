@@ -25,6 +25,7 @@ static NSString *const kPreferenceWatchLastFm = @"watchLastFm";
 static NSString *const kPreferenceAutosizeToFit = @"autosizeToFit";
 static NSString *const kPreferenceShowNetworkAvailability = @"showNetworkAvailability";
 static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
+static NSString *const kPreferenceTransparentBackground = @"transparentBackground";
 
 static CGFloat const kServiceIconMaxAlpha = 0.8f;
 static CGFloat const kServiceIconDimAlpha = 0.3f;
@@ -478,6 +479,12 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             self.alwaysOnTop = !self.alwaysOnTop;
             return;
         }
+        else if ([keyPath isEqualToString:kPreferenceTransparentBackground])
+        {
+            // Redraw RoundedView to update background transparency.
+            self.roundedView.needsDisplay = YES;
+            return;
+        }
         else if ([keyPath isEqualToString:kPreferenceShowNetworkAvailability])
         {
             // Toggle showing service icon.
@@ -560,6 +567,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         [NSNumber numberWithBool:NO], kPreferenceAutosizeToFit,
         [NSNumber numberWithBool:YES], kPreferenceShowInMenubar,
         [NSNumber numberWithBool:YES], kPreferenceWatchLastFm,
+        [NSNumber numberWithBool:NO], kPreferenceTransparentBackground,
         [NSNumber numberWithBool:YES], kPreferenceShowNetworkAvailability,
 //        @"woot", kPreferenceLastFmUsername,
         nil
@@ -603,6 +611,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceAutosizeToFit options:NSKeyValueObservingOptionNew context:nil];
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceLastFmUsername options:NSKeyValueObservingOptionNew context:nil];
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceShowNetworkAvailability options:NSKeyValueObservingOptionNew context:nil];
+    [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceTransparentBackground options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification

@@ -34,7 +34,11 @@
     path.lineWidth = 2.0;
 
     // Concrete background.
-    [self.backgroundImage compositeToPoint:NSZeroPoint fromRect:self.bounds operation:NSCompositeSourceOver];
+    BOOL transparentBackground = [[NSUserDefaults standardUserDefaults] boolForKey:@"transparentBackground"];
+    if (!transparentBackground)
+    {
+        [self.backgroundImage compositeToPoint:NSZeroPoint fromRect:self.bounds operation:NSCompositeSourceOver];
+    }
 
     NSRect insetRect = NSInsetRect(self.bounds, 4, 4);
     NSBezierPath *insetPath = [NSBezierPath bezierPathWithRoundedRect:insetRect xRadius:8 yRadius:8];
