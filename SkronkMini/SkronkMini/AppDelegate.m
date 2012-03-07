@@ -244,6 +244,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         NSDictionary *white = [NSDictionary dictionaryWithObject:whiteColor forKey:NSForegroundColorAttributeName];
         NSDictionary *gray = [NSDictionary dictionaryWithObjectsAndKeys:
             [NSFont fontWithName:@"Helvetica" size:13.0], NSFontAttributeName,
+            [NSNumber numberWithFloat:0.9f], NSBaselineOffsetAttributeName,
             [NSColor grayColor], NSForegroundColorAttributeName,
             nil];
 
@@ -340,6 +341,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         labelRect.size.width = 564;
         self.label.frame = labelRect;
     }
+    [self.label sizeToFit];
 
     [self resizeWindowTo:newFrame];
 }
