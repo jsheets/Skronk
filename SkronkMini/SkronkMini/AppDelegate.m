@@ -145,6 +145,9 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     [self resizeWindowTo:newFrame];
 
     [self animateWindowFade:NSViewAnimationFadeOutEffect];
+
+    // Works for hide, but disables shortcut. Nuts.
+//    [[NSRunningApplication currentApplication] hide];
 }
 
 // Update window visibility if changed.
@@ -299,7 +302,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
     CGFloat paddingBeforeText = labelRect.origin.x;  // 42
     CGFloat paddingAfterText = showNetworkAvailability ? 38 : 12; // 38 with 26px service icon, or 12.
-    CGFloat padding = paddingBeforeText + paddingAfterText + 7;
+    CGFloat padding = paddingBeforeText + paddingAfterText + 5;
 
     if (autosizeToFit)
     {
@@ -318,7 +321,12 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
         // Resize text field.
         labelRect.size.width = windowWidth - padding;
-        [[self.label animator] setFrame:labelRect];
+        if (self.label.frame.size.width != labelRect.size.width)
+        {
+            NSLog(@"Resizing text to %@", NSStringFromRect(labelRect));
+            [self.label setFrame:labelRect];
+//            [[self.label animator] setFrame:labelRect];
+        }
 
         // Set new window width.
         newFrame.size.width = windowWidth;
@@ -327,6 +335,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     {
         // Hardcoded window size.
         newFrame.size.width = 640;
+        labelRect.size.width = 564;
+        self.label.frame = labelRect;
     }
 
     [self resizeWindowTo:newFrame];
@@ -399,8 +409,9 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         // Back on main thread...
         dispatch_async(dispatch_get_main_queue(), ^{
             // If we have something new to report, show it.
-            if (displayText)
+            if (displayText && ![displayText.string isEqualToString:self.label.stringValue])
             {
+                NSLog(@"Updating text.");
                 self.label.attributedStringValue = displayText;
                 [self adjustWindowSize];
             }
@@ -489,6 +500,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         else if ([keyPath isEqualToString:kPreferenceTransparentBackground])
         {
             // Redraw RoundedView to update background transparency.
+            self.roundedView.needsDisplay = YES;
             [self adjustWindowSize];
             return;
         }
