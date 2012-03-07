@@ -350,13 +350,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         return;
     }
 
-    BOOL watchLastFm = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceWatchLastFm];
-    if (!watchLastFm)
-    {
-        NSLog(@"Last.fm disabled...skipping update.");
-        return;
-    }
-
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
     if (username == nil)
     {
@@ -585,7 +578,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         [NSNumber numberWithBool:YES], kPreferenceAlwaysOnTop,
         [NSNumber numberWithBool:NO], kPreferenceAutosizeToFit,
         [NSNumber numberWithBool:YES], kPreferenceShowInMenubar,
-        [NSNumber numberWithBool:YES], kPreferenceWatchLastFm,
         [NSNumber numberWithBool:NO], kPreferenceTransparentBackground,
         [NSNumber numberWithBool:YES], kPreferenceShowNetworkAvailability,
 //        @"woot", kPreferenceLastFmUsername,
