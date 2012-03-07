@@ -24,6 +24,7 @@
 @property (weak) IBOutlet NSImageView *art;
 @property (weak) IBOutlet NSImageView *serviceIcon;
 
+@property (assign) CGFloat backgroundWidth;
 @property (strong) PreferencesController *preferencesController;
 @property (strong) NSTimer *timer;
 

@@ -50,6 +50,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 @synthesize preferencesController = _preferencesController;
 @synthesize isSleeping = _isSleeping;
 @synthesize serviceIcon = _serviceIcon;
+@synthesize backgroundWidth = _backgroundWidth;
 
 - (void)resetTimer
 {
@@ -289,36 +290,42 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 {
     NSRect newFrame = self.window.frame;
 
+    // Settings.
     BOOL showNetworkAvailability = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowNetworkAvailability];
-
-    // Resize text field.
-    CGFloat paddingAroundLabel = showNetworkAvailability ? 80 : 55;
-    NSRect labelRect = self.label.frame;
-    labelRect.size.width = self.window.frame.size.width - paddingAroundLabel;
-
+    BOOL transparentBackground = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceTransparentBackground];
     BOOL autosizeToFit = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutosizeToFit];
+
+    NSRect labelRect = self.label.frame;
+
+    CGFloat paddingBeforeText = labelRect.origin.x;  // 42
+    CGFloat paddingAfterText = showNetworkAvailability ? 38 : 12; // 38 with 26px service icon, or 12.
+    CGFloat padding = paddingBeforeText + paddingAfterText + 7;
+
     if (autosizeToFit)
     {
+        // Calculate how wide the text wants to be.
         NSAttributedString *trackText = self.label.attributedStringValue;
-
         NSDictionary *fontAttributes = [NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Helvetica" size:14.0] forKey:NSFontAttributeName];
         NSSize fontSize = [trackText.string sizeWithAttributes:fontAttributes];
 
-        // If we're showing the service icon, the window should be smaller.
-        CGFloat padding = showNetworkAvailability ? 90 : 60;
-        newFrame.size.width = fontSize.width + padding;
+        CGFloat windowWidth = fontSize.width + padding;
 
-        if (showNetworkAvailability)
+        // Clamp window width to the size of the background image, if showing.
+        if (!transparentBackground && windowWidth > self.backgroundWidth)
         {
-            [[self.label animator] setFrame:labelRect];
+            windowWidth = self.backgroundWidth;
         }
-        else
-        {
-            self.label.frame = labelRect;
-        }
+
+        // Resize text field.
+        labelRect.size.width = windowWidth - padding;
+        [[self.label animator] setFrame:labelRect];
+
+        // Set new window width.
+        newFrame.size.width = windowWidth;
     }
     else
     {
+        // Hardcoded window size.
         newFrame.size.width = 640;
     }
 
@@ -482,7 +489,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         else if ([keyPath isEqualToString:kPreferenceTransparentBackground])
         {
             // Redraw RoundedView to update background transparency.
-            self.roundedView.needsDisplay = YES;
+            [self adjustWindowSize];
             return;
         }
         else if ([keyPath isEqualToString:kPreferenceShowNetworkAvailability])
@@ -550,12 +557,12 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     // Hide window so we don't get a jump when we restore the window position.
     [self.window setAlphaValue:0];
     self.roundedView.backgroundImage = [NSImage imageNamed:@"concrete-background"];
+    self.backgroundWidth = self.roundedView.backgroundImage.size.width;
 
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowNetworkAvailability])
     {
         self.serviceIcon.alphaValue = 0.0f;
     }
-
 }
 
 - (void)registerDefaults
