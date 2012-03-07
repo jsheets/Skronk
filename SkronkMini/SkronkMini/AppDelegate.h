@@ -10,6 +10,7 @@
 
 @class PreferencesController;
 @class RoundedView;
+@class NowPlaying;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
@@ -27,11 +28,14 @@
 @property (assign) CGFloat backgroundWidth;
 @property (strong) PreferencesController *preferencesController;
 @property (strong) NSTimer *timer;
+@property (strong) NowPlaying *currentlyPlaying;
 
 @property (assign) BOOL isSleeping;
 
 - (IBAction)preferencesClicked:(id)sender;
-- (void)updateHotkeys;
+- (IBAction)openLastFmClicked:(id)sender;
 - (IBAction)showHideClicked:(id)sender;
+
+- (void)updateHotkeys;
 
 @end

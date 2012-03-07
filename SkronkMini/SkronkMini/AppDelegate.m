@@ -7,6 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import "NowPlaying.h"
 #import "AppDelegate.h"
 #import "NowPlaying.h"
 #import "ASIHTTPRequest.h"
@@ -51,6 +52,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 @synthesize isSleeping = _isSleeping;
 @synthesize serviceIcon = _serviceIcon;
 @synthesize backgroundWidth = _backgroundWidth;
+@synthesize currentlyPlaying = _currentlyPlaying;
 
 - (void)resetTimer
 {
@@ -378,16 +380,16 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
         NSMutableAttributedString *displayText = nil;
 
-        NowPlaying *nowPlaying = [[NowPlaying alloc] initWithJson:responseString];
+        self.currentlyPlaying = [[NowPlaying alloc] initWithJson:responseString];
         BOOL firstTime = [self.label.stringValue isEqualToString:@"Loading..."];
-        if (nowPlaying.isPlaying || firstTime)
+        if (self.currentlyPlaying.isPlaying || firstTime)
         {
             if (firstTime)
             {
                 NSLog(@"Initial startup, not playing: loading previous track.");
             }
 
-            displayText = [self trackDisplayText:nowPlaying];
+            displayText = [self trackDisplayText:self.currentlyPlaying];
         }
         else
         {
@@ -410,7 +412,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             }
 
             // Hide album art if not playing.
-            [self.art setHidden:!nowPlaying.isPlaying];
+            [self.art setHidden:!self.currentlyPlaying.isPlaying];
 
             // Update service icon visibility.
             if (showNetworkAvailability)
@@ -420,7 +422,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
             // Hide window when not playing and autohide is on.
             BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
-            BOOL hideWindow = !nowPlaying.isPlaying && hideWhenNotPlaying;
+            BOOL hideWindow = !self.currentlyPlaying.isPlaying && hideWhenNotPlaying;
             [self showWindow:!hideWindow];
 
             // Stop pulsing service icon.
@@ -432,12 +434,12 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
         // Fetch album art.
         NSImage *albumImage = nil;
-        if (nowPlaying.isPlaying && nowPlaying.artSmallUrl)
+        if (self.currentlyPlaying.isPlaying && self.currentlyPlaying.artSmallUrl)
         {
-            albumImage = [[NSImage alloc] initWithContentsOfURL:nowPlaying.artSmallUrl];
+            albumImage = [[NSImage alloc] initWithContentsOfURL:self.currentlyPlaying.artSmallUrl];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.art setHidden:!nowPlaying.isPlaying];
+            [self.art setHidden:!self.currentlyPlaying.isPlaying];
             self.art.image = albumImage;
         });
     }];
@@ -555,6 +557,17 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     }
 
     [self.preferencesController showWindow:self];
+}
+
+- (IBAction)openLastFmClicked:(id)sender
+{
+    NSString *urlString = [self.currentlyPlaying valueForProperty:@"recenttracks.track[0].url"];
+    if (urlString)
+    {
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSLog(@"Open in last.fm: %@", url);
+        [[NSWorkspace sharedWorkspace] openURL:url];
+    }
 }
 
 - (void)awakeFromNib
