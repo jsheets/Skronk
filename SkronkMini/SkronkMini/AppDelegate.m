@@ -22,7 +22,6 @@ static NSString *const kGlobalHotKey = @"Global Hot Key";
 static NSString *const kPreferenceAutohide = @"autohide";
 static NSString *const kPreferenceAlwaysOnTop = @"alwaysOnTop";
 static NSString *const kPreferenceShowInMenubar = @"showInMenubar";
-static NSString *const kPreferenceWatchLastFm = @"watchLastFm";
 static NSString *const kPreferenceAutosizeToFit = @"autosizeToFit";
 static NSString *const kPreferenceShowNetworkAvailability = @"showNetworkAvailability";
 static NSString *const kPreferenceLastFmUsername = @"lastFmUsername";
@@ -443,7 +442,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                 }
             }
         }
-
     }];
     
     [request setFailedBlock:^{
@@ -470,8 +468,19 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 {
     if (object == [NSUserDefaults standardUserDefaults])
     {
-        if ([keyPath isEqualToString:kPreferenceAutohide] || [keyPath isEqualToString:kPreferenceLastFmUsername])
+        if ([keyPath isEqualToString:kPreferenceAutohide])
         {
+            NSLog(@"Reloading current track after changing %@", keyPath);
+            [self updateCurrentTrack];
+            [self resetTimer];
+            return;
+        }
+        else if ([keyPath isEqualToString:kPreferenceLastFmUsername])
+        {
+            NSLog(@"Reloading current track after changing %@", keyPath);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.label.stringValue = @"Loading...";
+            });
             [self updateCurrentTrack];
             [self resetTimer];
             return;

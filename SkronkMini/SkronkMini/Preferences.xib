@@ -133,10 +133,9 @@
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMinSize">{390, 282}</string>
 				<object class="NSView" key="NSWindowView" id="1006">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<string key="NSFrameSize">{425, 282}</string>
-					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{390, 360}</string>
@@ -154,6 +153,7 @@
 						<string key="NSFrame">{{18, 18}, {357, 18}}</string>
 						<reference key="NSSuperview" ref="810515379"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:771</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="410188668">
@@ -485,10 +485,10 @@
 									<object class="NSTextField" id="631941109">
 										<reference key="NSNextResponder" ref="56985074"/>
 										<int key="NSvFlags">266</int>
-										<string key="NSFrame">{{169, 14}, {168, 22}}</string>
+										<string key="NSFrame">{{164, 14}, {171, 22}}</string>
 										<reference key="NSSuperview" ref="56985074"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="918383945"/>
+										<reference key="NSNextKeyView" ref="249180264"/>
 										<string key="NSReuseIdentifierKey">_NS:903</string>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSTextFieldCell" key="NSCell" id="460791219">
@@ -511,27 +511,24 @@
 									<object class="NSButton" id="249180264">
 										<reference key="NSNextResponder" ref="56985074"/>
 										<int key="NSvFlags">265</int>
-										<string key="NSFrame">{{339, 3}, {39, 38}}</string>
+										<string key="NSFrame">{{341, 8}, {32, 32}}</string>
 										<reference key="NSSuperview" ref="56985074"/>
 										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="918383945"/>
 										<string key="NSReuseIdentifierKey">_NS:1529</string>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSButtonCell" key="NSCell" id="722996256">
 											<int key="NSCellFlags">67239424</int>
 											<int key="NSCellFlags2">134217728</int>
 											<string key="NSContents"/>
-											<object class="NSFont" key="NSSupport">
-												<string key="NSName">LucidaGrande</string>
-												<double key="NSSize">10</double>
-												<int key="NSfFlags">2843</int>
-											</object>
+											<reference key="NSSupport" ref="697142319"/>
 											<string key="NSCellIdentifier">_NS:1529</string>
 											<reference key="NSControlView" ref="249180264"/>
 											<int key="NSButtonFlags">-2033975041</int>
-											<int key="NSButtonFlags2">135</int>
+											<int key="NSButtonFlags2">130</int>
 											<object class="NSCustomResource" key="NSNormalImage">
 												<string key="NSClassName">NSImage</string>
-												<string key="NSResourceName">NSRefreshTemplate</string>
+												<string key="NSResourceName">last.fm-button</string>
 											</object>
 											<string key="NSAlternateContents"/>
 											<string key="NSKeyEquivalent"/>
@@ -1410,15 +1407,15 @@
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>NSPreferencesGeneral</string>
-				<string>NSRefreshTemplate</string>
 				<string>NSSwitch</string>
+				<string>last.fm-button</string>
 				<string>last.fm-icon-64</string>
 			</object>
 			<object class="NSArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{32, 32}</string>
-				<string>{10, 12}</string>
 				<string>{15, 15}</string>
+				<string>{70, 64}</string>
 				<string>{64, 64}</string>
 			</object>
 		</object>

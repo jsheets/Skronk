@@ -14,6 +14,7 @@
 		0D010A5514F4892900A62136 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D010A5014F4892900A62136 /* SRValidator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4AE4D714EB3474002596BD /* PreferencesController.m */; };
 		0D4AE4DB14EB362D002596BD /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D4AE4DA14EB362D002596BD /* Preferences.xib */; };
+		0D6C3749150874030045890A /* last.fm-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D6C3748150874030045890A /* last.fm-button.png */; };
 		0D83848B150054FB0024403B /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D83848A150054FB0024403B /* Quartz.framework */; };
 		0DE0241414DDC9FB004E2227 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE0241314DDC9FB004E2227 /* Cocoa.framework */; };
 		0DE0241E14DDC9FB004E2227 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DE0241C14DDC9FB004E2227 /* InfoPlist.strings */; };
@@ -65,6 +66,7 @@
 		0D4AE4D614EB3474002596BD /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		0D4AE4D714EB3474002596BD /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		0D4AE4DA14EB362D002596BD /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		0D6C3748150874030045890A /* last.fm-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last.fm-button.png"; sourceTree = "<group>"; };
 		0D83848A150054FB0024403B /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		0DE0240F14DDC9FB004E2227 /* SkronkMini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkronkMini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE0241314DDC9FB004E2227 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -271,6 +273,7 @@
 				0D4AE4DA14EB362D002596BD /* Preferences.xib */,
 				0DEBC4A51501B86700D4E1C3 /* last.fm-icon-24.png */,
 				0DEBC4A31501B83600D4E1C3 /* last.fm-icon-64.png */,
+				0D6C3748150874030045890A /* last.fm-button.png */,
 				0DEBC4A71501BDDE00D4E1C3 /* concrete-background.jpg */,
 			);
 			name = UI;
@@ -417,6 +420,7 @@
 				0DEBC4A41501B83600D4E1C3 /* last.fm-icon-64.png in Resources */,
 				0DEBC4A61501B86700D4E1C3 /* last.fm-icon-24.png in Resources */,
 				0DEBC4A81501BDDE00D4E1C3 /* concrete-background.jpg in Resources */,
+				0D6C3749150874030045890A /* last.fm-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
