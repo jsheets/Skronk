@@ -217,7 +217,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     [[self.serviceIcon animator] setAlphaValue:kServiceIconDimAlpha];
 }
 
-- (NSMutableAttributedString *)trackDisplayText:(NowPlaying *)nowPlaying
+- (NSMutableAttributedString *)trackDisplayText:(NowPlaying *)nowPlaying coloredText:(BOOL)colored
 {
     NSMutableAttributedString *displayText = nil;
 
@@ -225,23 +225,12 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     BOOL hasAlbum = nowPlaying.album.length > 0;
     BOOL hasTrack = nowPlaying.track.length > 0;
 
-    BOOL hyphenFormat = NO;
-    if (hyphenFormat)
-    {
-        NSMutableArray *fields = [NSMutableArray array];
-        if (hasArtist) [fields addObject:nowPlaying.artist];
-        if (hasAlbum) [fields addObject:nowPlaying.album];
-        if (hasTrack) [fields addObject:nowPlaying.track];
-
-        NSString *plainString = [fields componentsJoinedByString:@" - "];
-        displayText = [[NSMutableAttributedString alloc] initWithString:plainString];
-    }
-    else
+    if (nowPlaying.isPlaying)
     {
         displayText = [[NSMutableAttributedString alloc] init];
 
-        NSColor *whiteColor = nowPlaying.isPlaying ? [NSColor colorWithCalibratedWhite:0.9 alpha:1.0] : [NSColor grayColor];
-        NSDictionary *white = [NSDictionary dictionaryWithObject:whiteColor forKey:NSForegroundColorAttributeName];
+        NSColor *highlightColor = colored ? [NSColor colorWithCalibratedWhite:0.9 alpha:1.0] : [NSColor grayColor];
+        NSDictionary *white = [NSDictionary dictionaryWithObject:highlightColor forKey:NSForegroundColorAttributeName];
         NSDictionary *gray = [NSDictionary dictionaryWithObjectsAndKeys:
             [NSFont fontWithName:@"Helvetica" size:13.0], NSFontAttributeName,
             [NSNumber numberWithFloat:0.9f], NSBaselineOffsetAttributeName,
@@ -278,16 +267,18 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             [displayText appendAttributedString:fancyString];
         }
     }
+    else
+    {
+        // Gray out current text.
+        displayText = [[NSMutableAttributedString alloc] initWithAttributedString:self.label.attributedStringValue];
 
-    return displayText;
-}
-
-- (NSMutableAttributedString *)grayTrackText
-{
-    NSMutableAttributedString *displayText = [[NSMutableAttributedString alloc] initWithAttributedString:self.label.attributedStringValue];
-
-    NSDictionary *gray = [NSDictionary dictionaryWithObject:[NSColor grayColor] forKey:NSForegroundColorAttributeName];
-    [displayText setAttributes:gray range:NSMakeRange(0, displayText.length)];
+        NSDictionary *gray = [NSDictionary dictionaryWithObjectsAndKeys:
+//            [NSFont fontWithName:@"Helvetica" size:14.0], NSFontAttributeName,
+            [NSColor grayColor], NSForegroundColorAttributeName,
+            nil];
+        NSRange range = NSMakeRange(0, displayText.length);
+        [displayText setAttributes:gray range:range];
+    }
 
     return displayText;
 }
@@ -383,38 +374,18 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         NSMutableAttributedString *displayText = nil;
 
         self.currentlyPlaying = [[NowPlaying alloc] initWithJson:responseString];
-        BOOL firstTime = [self.label.stringValue isEqualToString:@"Loading..."];
-        if (self.currentlyPlaying.isPlaying || firstTime)
-        {
-            if (firstTime)
-            {
-                NSLog(@"Initial startup, not playing: loading previous track.");
-            }
 
-            displayText = [self trackDisplayText:self.currentlyPlaying];
-        }
-        else
-        {
-            // Not playing. Would like to gray out the current text when not playing, but
-            // can't rely on last.fm JSON to still have it. If the current track has not yet
-            // been scrobbled, the text will immediately fall back to the previous track.
-            //
-            // Eh, just gray out whatever text used to be there. Initial track already taken care of above.
-            displayText = [self grayTrackText];
-        }
+        displayText = [self trackDisplayText:self.currentlyPlaying coloredText:self.currentlyPlaying.isPlaying];
 
         // Back on main thread...
         dispatch_async(dispatch_get_main_queue(), ^{
             // If we have something new to report, show it.
-            if (displayText && ![displayText.string isEqualToString:self.label.stringValue])
+            if (displayText /*&& ![displayText.string isEqualToString:self.label.stringValue]*/)
             {
                 NSLog(@"Updating text.");
                 self.label.attributedStringValue = displayText;
                 [self adjustWindowSize];
             }
-
-            // Hide album art if not playing.
-            [self.art setHidden:!self.currentlyPlaying.isPlaying];
 
             // Update service icon visibility.
             if (showNetworkAvailability)
@@ -434,25 +405,27 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             }
         });
 
-        // Fetch album art.
+        // Fetch album art, synchronously, while the above block also executes.
         NSImage *albumImage = nil;
         if (self.currentlyPlaying.isPlaying && self.currentlyPlaying.artSmallUrl)
         {
             albumImage = [[NSImage alloc] initWithContentsOfURL:self.currentlyPlaying.artSmallUrl];
         }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.art setHidden:!self.currentlyPlaying.isPlaying];
-            self.art.image = albumImage;
-        });
+        if (albumImage)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.art.image = albumImage;
+            });
+        }
     }];
     
     [request setFailedBlock:^{
         NSError *error = [request error];
         NSLog(@"Error updating last.fm status for user %@: %@", username, [error localizedDescription]);
+
         if (showNetworkAvailability)
         {
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.label.attributedStringValue = [self grayTrackText];
                 [self endNetworkAnimation];
                 [self showServiceDown];
             });
