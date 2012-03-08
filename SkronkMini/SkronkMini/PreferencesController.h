@@ -25,5 +25,6 @@ static NSString *const kPreferenceHideShortcutFlags = @"hideShortcutFlags";
 
 - (IBAction)generalTabClicked:(id)sender;
 - (IBAction)lastFmTabClicked:(id)sender;
+- (IBAction)showLastFmHomePage:(id)sender;
 
 @end

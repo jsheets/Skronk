@@ -102,6 +102,18 @@ NSString *const kLastFmPrefsIdentifer = @"LastFmPrefsIdentifer";
     [self.lastFmTextField becomeFirstResponder];
 }
 
+- (IBAction)showLastFmHomePage:(id)sender
+{
+    // Open the username in the text field as a last.fm home page.
+    NSString *username = self.lastFmTextField.stringValue;
+    if ([username length])
+    {
+        NSString *urlString = [NSString stringWithFormat:@"http://www.last.fm/user/%@", username];
+        NSURL *url = [NSURL URLWithString:urlString];
+        [[NSWorkspace sharedWorkspace] openURL:url];
+    }
+}
+
 
 #pragma mark -
 #pragma mark SRShortcutControl delegate
