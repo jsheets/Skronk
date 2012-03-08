@@ -226,7 +226,10 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     BOOL hasAlbum = nowPlaying.album.length > 0;
     BOOL hasTrack = nowPlaying.track.length > 0;
 
-    if (nowPlaying.isPlaying)
+    // If we don't already have track text (not "Loading..."), load the last track played previously.
+    BOOL firstLoad = [self.label.stringValue isEqualToString:@"Loading..."];
+
+    if (firstLoad || nowPlaying.isPlaying)
     {
         displayText = [[NSMutableAttributedString alloc] init];
 
@@ -270,8 +273,10 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     }
     else
     {
-        // Gray out current text.
-        displayText = [[NSMutableAttributedString alloc] initWithAttributedString:self.label.attributedStringValue];
+        // Gray out current text. If we don't already have track text (not "Loading...")
+        // load the last track played previously.s
+        NSAttributedString *labelText = self.label.attributedStringValue;
+        displayText = [[NSMutableAttributedString alloc] initWithAttributedString:labelText];
 
         NSDictionary *gray = [NSDictionary dictionaryWithObjectsAndKeys:
 //            [NSFont fontWithName:@"Helvetica" size:14.0], NSFontAttributeName,
@@ -408,23 +413,37 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
         // Fetch album art, synchronously, while the above block also executes.
         // Only update if we're currently playing, and the image URL has changed to something new.
-        BOOL shouldUpdateArt = self.currentlyPlaying.isPlaying && self.currentlyPlaying.artSmallUrl &&
-            ![self.currentAlbumArtURL isEqual:self.currentlyPlaying.artSmallUrl];
-        if (shouldUpdateArt)
+        // But if currentlyPlaying has nil URL, we want to clear out the image.
+        if (self.currentlyPlaying.isPlaying)
         {
-            NSLog(@"Downloading new album art...");
-            NSImage *albumImage = [[NSImage alloc] initWithContentsOfURL:self.currentlyPlaying.artSmallUrl];
-            if (albumImage)
+            if (self.currentlyPlaying.artSmallUrl == nil)
             {
-                // Only valid art counts.
-                self.currentAlbumArtURL = self.currentlyPlaying.artSmallUrl;
-
-                // Update album image back on main thread.
+                // Have a live track, with no art.
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.art.image = albumImage;
+                    self.art.image = nil;
                 });
             }
+            else
+            {
+                BOOL shouldUpdateArt = ![self.currentAlbumArtURL isEqual:self.currentlyPlaying.artSmallUrl];
+                if (shouldUpdateArt)
+                {
+                    NSLog(@"Downloading new album art...");
+                    NSImage *albumImage = [[NSImage alloc] initWithContentsOfURL:self.currentlyPlaying.artSmallUrl];
+                    if (albumImage)
+                    {
+                        // Only valid art counts.
+                        self.currentAlbumArtURL = self.currentlyPlaying.artSmallUrl;
+
+                        // Update album image back on main thread.
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            self.art.image = albumImage;
+                        });
+                    }
+                }
+            }
         }
+
     }];
     
     [request setFailedBlock:^{
