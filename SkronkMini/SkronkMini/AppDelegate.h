@@ -29,6 +29,7 @@
 @property (strong) PreferencesController *preferencesController;
 @property (strong) NSTimer *timer;
 @property (strong) NowPlaying *currentlyPlaying;
+@property (strong) NSURL *currentAlbumArtURL;
 
 @property (assign) BOOL isSleeping;
 

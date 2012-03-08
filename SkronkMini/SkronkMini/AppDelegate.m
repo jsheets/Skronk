@@ -53,6 +53,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 @synthesize serviceIcon = _serviceIcon;
 @synthesize backgroundWidth = _backgroundWidth;
 @synthesize currentlyPlaying = _currentlyPlaying;
+@synthesize currentAlbumArtURL = _currentAlbumArtURL;
 
 - (void)resetTimer
 {
@@ -406,16 +407,23 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         });
 
         // Fetch album art, synchronously, while the above block also executes.
-        NSImage *albumImage = nil;
-        if (self.currentlyPlaying.isPlaying && self.currentlyPlaying.artSmallUrl)
+        // Only update if we're currently playing, and the image URL has changed to something new.
+        BOOL shouldUpdateArt = self.currentlyPlaying.isPlaying && self.currentlyPlaying.artSmallUrl &&
+            ![self.currentAlbumArtURL isEqual:self.currentlyPlaying.artSmallUrl];
+        if (shouldUpdateArt)
         {
-            albumImage = [[NSImage alloc] initWithContentsOfURL:self.currentlyPlaying.artSmallUrl];
-        }
-        if (albumImage)
-        {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.art.image = albumImage;
-            });
+            NSLog(@"Downloading new album art...");
+            NSImage *albumImage = [[NSImage alloc] initWithContentsOfURL:self.currentlyPlaying.artSmallUrl];
+            if (albumImage)
+            {
+                // Only valid art counts.
+                self.currentAlbumArtURL = self.currentlyPlaying.artSmallUrl;
+
+                // Update album image back on main thread.
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.art.image = albumImage;
+                });
+            }
         }
     }];
     
