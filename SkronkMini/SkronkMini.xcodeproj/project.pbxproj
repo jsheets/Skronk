@@ -63,6 +63,7 @@
 		0D010A4E14F4892900A62136 /* SRRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = "<group>"; };
 		0D010A4F14F4892900A62136 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		0D010A5014F4892900A62136 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
+		0D2B5ECC150B19130036A25A /* SkronkMini.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SkronkMini.entitlements; sourceTree = "<group>"; };
 		0D4AE4D614EB3474002596BD /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		0D4AE4D714EB3474002596BD /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		0D4AE4DA14EB362D002596BD /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
@@ -216,6 +217,7 @@
 		0DE0241914DDC9FB004E2227 /* SkronkMini */ = {
 			isa = PBXGroup;
 			children = (
+				0D2B5ECC150B19130036A25A /* SkronkMini.entitlements */,
 				0DE0245B14DDF35C004E2227 /* UI */,
 				0DE0245C14DDF363004E2227 /* Model */,
 				0DE0246D14DF3826004E2227 /* ASIHTTPRequest */,
@@ -563,6 +565,8 @@
 		0DE0242E14DDC9FC004E2227 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SkronkMini/SkronkMini.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkronkMini/SkronkMini-Prefix.pch";
 				INFOPLIST_FILE = "SkronkMini/SkronkMini-Info.plist";
@@ -574,6 +578,8 @@
 		0DE0242F14DDC9FC004E2227 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SkronkMini/SkronkMini.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkronkMini/SkronkMini-Prefix.pch";
 				INFOPLIST_FILE = "SkronkMini/SkronkMini-Info.plist";
