@@ -38,5 +38,6 @@
 - (IBAction)showHideClicked:(id)sender;
 
 - (void)updateHotkeys;
+- (BOOL)windowIsVisible;
 
 @end

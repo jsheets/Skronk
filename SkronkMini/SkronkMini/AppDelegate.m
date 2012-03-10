@@ -556,7 +556,14 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 - (IBAction)showHideClicked:(id)sender
 {
     BOOL wasVisible = [self windowIsVisible];
-    [self showWindow:!wasVisible];
+    
+    // Skip toggling show/hide if already hidden and clicked Close menu again.
+    // Don't want Close to show the window.
+    BOOL alreadyClosed = !wasVisible && [sender respondsToSelector:@selector(title)] && [[sender title] isEqualToString:@"Close"];
+    if (!alreadyClosed)
+    {
+        [self showWindow:!wasVisible];
+    }
 }
 
 - (IBAction)preferencesClicked:(id)sender
