@@ -272,7 +272,7 @@
 								</object>
 								<object class="NSMenuItem" id="434309535">
 									<reference key="NSMenu" ref="466310130"/>
-									<string key="NSTitle">Show Network Availability</string>
+									<string key="NSTitle">Show Music Source</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -371,7 +371,7 @@
 					</object>
 					<object class="NSMenuItem" id="576219838">
 						<reference key="NSMenu" ref="481416820"/>
-						<string key="NSTitle">Show Network Availability</string>
+						<string key="NSTitle">Show Music Source</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -656,6 +656,14 @@
 					<int key="connectionID">367</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">performClose:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="640297676"/>
+					</object>
+					<int key="connectionID">685</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">window</string>
 						<reference key="source" ref="976324537"/>
@@ -763,14 +771,6 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">showHideClicked:</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="640297676"/>
-					</object>
-					<int key="connectionID">672</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">showHideClicked:</string>
-						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="388672064"/>
 					</object>
 					<int key="connectionID">674</int>
@@ -814,22 +814,6 @@
 						</object>
 					</object>
 					<int key="connectionID">579</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: windowIsVisible</string>
-						<reference key="source" ref="640297676"/>
-						<reference key="destination" ref="976324537"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="640297676"/>
-							<reference key="NSDestination" ref="976324537"/>
-							<string key="NSLabel">enabled: windowIsVisible</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">windowIsVisible</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">683</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -1436,7 +1420,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">683</int>
+			<int key="maxID">685</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
