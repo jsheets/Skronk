@@ -3,9 +3,33 @@
     <Documents>
         <Document ID="3">
             <Title>App Store Notes</Title>
+            <Text>Mac App Store Info:
+
+Bundle Id: com.fourfringe.Skronk.SkronkMini
+App Id: B62E77E9R3.com.fourfringe.SkronkMini
+
+JAMF 15” Laptop UDID: 6B977EFC-886F-58BD-8B55-8771CB25329A
+
+Sign installer with Mac Submission Certificate “Mac Installer”
+Set the Code Signing Identity build setting to “3rd Party Mac Developer Application”
+
+To test the final install package:
+sudo installer -store -pkg path-to-package -target /
+
+
+
+</Text>
         </Document>
         <Document ID="4">
             <Title>Release Notes</Title>
+        </Document>
+        <Document ID="5">
+            <Title>Screenshots</Title>
+            <Text>Initial concrete:
+#
+After concrete background resize:
+
+</Text>
         </Document>
     </Documents>
 </SearchIndexes>
