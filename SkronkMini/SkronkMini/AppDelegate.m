@@ -53,6 +53,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 @synthesize backgroundWidth = _backgroundWidth;
 @synthesize currentlyPlaying = _currentlyPlaying;
 @synthesize currentAlbumArtURL = _currentAlbumArtURL;
+@synthesize currentAlbumArt = _currentAlbumArt;
+@synthesize missingArt = _missingArt;
 
 - (void)resetTimer
 {
@@ -419,7 +421,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             {
                 // Have a live track, with no art.
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.art.image = nil;
+                    self.art.image = self.missingArt;
                 });
             }
             else
@@ -428,17 +430,17 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                 if (shouldUpdateArt)
                 {
                     NSLog(@"Downloading new album art...");
-                    NSImage *albumImage = [[NSImage alloc] initWithContentsOfURL:self.currentlyPlaying.artSmallUrl];
-                    if (albumImage)
+                    self.currentAlbumArt = [[NSImage alloc] initWithContentsOfURL:self.currentlyPlaying.artSmallUrl];
+                    if (self.currentAlbumArt)
                     {
                         // Only valid art counts.
                         self.currentAlbumArtURL = self.currentlyPlaying.artSmallUrl;
-
-                        // Update album image back on main thread.
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            self.art.image = albumImage;
-                        });
                     }
+
+                    // Update album image back on main thread.
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        self.art.image = self.currentAlbumArt ? self.currentAlbumArt : self.missingArt;
+                    });
                 }
             }
         }
@@ -594,6 +596,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     [self.window setAlphaValue:0];
     self.roundedView.backgroundImage = [NSImage imageNamed:@"concrete-background"];
     self.backgroundWidth = self.roundedView.backgroundImage.size.width;
+    self.missingArt = [NSImage imageNamed:@"album-art-missing.png"];
 
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowNetworkAvailability])
     {
@@ -632,6 +635,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 //    [self.window setCollectionBehavior:NSWindowCollectionBehaviorStationary |
 //        NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorFullScreenAuxiliary];
 
+    self.art.image = self.missingArt;
     [self updateCurrentTrack];
     [self resetTimer];
 

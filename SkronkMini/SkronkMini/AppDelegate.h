@@ -30,6 +30,8 @@
 @property (strong) NSTimer *timer;
 @property (strong) NowPlaying *currentlyPlaying;
 @property (strong) NSURL *currentAlbumArtURL;
+@property (strong) NSImage *currentAlbumArt;
+@property (strong) NSImage *missingArt;
 
 @property (assign) BOOL isSleeping;
 
