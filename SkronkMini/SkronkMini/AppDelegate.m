@@ -82,9 +82,9 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     {
         self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
         self.statusItem.menu = self.statusMenu;
-        self.statusItem.title = @"π";
+//        self.statusItem.title = @"π";
         self.statusItem.highlightMode = YES;
-//    self.statusItem.image = nil;
+        self.statusItem.image = [NSImage imageNamed:@"menubar-icon-playing.png"];
     }
     else if (self.statusItem)
     {
@@ -440,9 +440,15 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                     // Update album image back on main thread.
                     dispatch_async(dispatch_get_main_queue(), ^{
                         self.art.image = self.currentAlbumArt ? self.currentAlbumArt : self.missingArt;
+                        self.statusItem.image = [NSImage imageNamed:@"menubar-icon-playing.png"];
                     });
                 }
             }
+        }
+        else
+        {
+            self.statusItem.image = [NSImage imageNamed:@"menubar-icon.png"];
+
         }
     }];
     

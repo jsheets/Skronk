@@ -14,6 +14,8 @@
 		0D010A5514F4892900A62136 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D010A5014F4892900A62136 /* SRValidator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0D2B5ED0150C45080036A25A /* album-art-missing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ECF150C45080036A25A /* album-art-missing.png */; };
 		0D2B5ED2150C455D0036A25A /* SkronkMini.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED1150C455D0036A25A /* SkronkMini.icns */; };
+		0D2B5ED6150C70460036A25A /* menubar-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED5150C70460036A25A /* menubar-icon.png */; };
+		0D2B5ED8150C710D0036A25A /* menubar-icon-playing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED7150C710D0036A25A /* menubar-icon-playing.png */; };
 		0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4AE4D714EB3474002596BD /* PreferencesController.m */; };
 		0D4AE4DB14EB362D002596BD /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D4AE4DA14EB362D002596BD /* Preferences.xib */; };
 		0D6C3749150874030045890A /* last.fm-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D6C3748150874030045890A /* last.fm-button.png */; };
@@ -68,6 +70,8 @@
 		0D2B5ECC150B19130036A25A /* SkronkMini.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SkronkMini.entitlements; sourceTree = "<group>"; };
 		0D2B5ECF150C45080036A25A /* album-art-missing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album-art-missing.png"; sourceTree = "<group>"; };
 		0D2B5ED1150C455D0036A25A /* SkronkMini.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SkronkMini.icns; sourceTree = SOURCE_ROOT; };
+		0D2B5ED5150C70460036A25A /* menubar-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-icon.png"; sourceTree = "<group>"; };
+		0D2B5ED7150C710D0036A25A /* menubar-icon-playing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-icon-playing.png"; sourceTree = "<group>"; };
 		0D4AE4D614EB3474002596BD /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		0D4AE4D714EB3474002596BD /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		0D4AE4DA14EB362D002596BD /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
@@ -278,6 +282,8 @@
 				0D4AE4D614EB3474002596BD /* PreferencesController.h */,
 				0D4AE4D714EB3474002596BD /* PreferencesController.m */,
 				0D4AE4DA14EB362D002596BD /* Preferences.xib */,
+				0D2B5ED5150C70460036A25A /* menubar-icon.png */,
+				0D2B5ED7150C710D0036A25A /* menubar-icon-playing.png */,
 				0D2B5ECF150C45080036A25A /* album-art-missing.png */,
 				0DEBC4A51501B86700D4E1C3 /* last.fm-icon-24.png */,
 				0DEBC4A31501B83600D4E1C3 /* last.fm-icon-64.png */,
@@ -431,6 +437,8 @@
 				0D6C3749150874030045890A /* last.fm-button.png in Resources */,
 				0D2B5ED0150C45080036A25A /* album-art-missing.png in Resources */,
 				0D2B5ED2150C455D0036A25A /* SkronkMini.icns in Resources */,
+				0D2B5ED6150C70460036A25A /* menubar-icon.png in Resources */,
+				0D2B5ED8150C710D0036A25A /* menubar-icon-playing.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
