@@ -1,6 +1,6 @@
 //
 //  RoundedView.m
-//  SkronkMini
+//  SkronkFM
 //
 //  Created by John Sheets on 3/2/12.
 //  Copyright (c) 2012 FourFringe. All rights reserved.

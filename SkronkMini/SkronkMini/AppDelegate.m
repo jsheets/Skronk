@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  SkronkMini
+//  SkronkFM
 //
 //  Created by John Sheets on 2/4/12.
 //  Copyright (c) 2012 FourFringe. All rights reserved.
@@ -163,8 +163,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     {
         if (![self windowIsVisible])
         {
-            self.showHideMenuItem.title = @"Hide Skronk";
-            self.showHideStatusbarItem.title = @"Hide Skronk";
+            self.showHideMenuItem.title = @"Hide SkronkFM";
+            self.showHideStatusbarItem.title = @"Hide SkronkFM";
             [self fadeInWindow];
 
             // Don't update here after all. Causes issues with quick hide/show.
@@ -177,8 +177,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         // If window is still visible, hide it.
         if ([self windowIsVisible])
         {
-            self.showHideMenuItem.title = @"Show Skronk";
-            self.showHideStatusbarItem.title = @"Show Skronk";
+            self.showHideMenuItem.title = @"Show SkronkFM";
+            self.showHideStatusbarItem.title = @"Show SkronkFM";
             [self fadeOutWindow];
         }
     }

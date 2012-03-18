@@ -72,23 +72,23 @@
 		0D2B5ED1150C455D0036A25A /* SkronkMini.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SkronkMini.icns; sourceTree = SOURCE_ROOT; };
 		0D2B5ED5150C70460036A25A /* menubar-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-icon.png"; sourceTree = "<group>"; };
 		0D2B5ED7150C710D0036A25A /* menubar-icon-playing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-icon-playing.png"; sourceTree = "<group>"; };
-		0D4AE4D614EB3474002596BD /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
-		0D4AE4D714EB3474002596BD /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		0D4AE4D614EB3474002596BD /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PreferencesController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		0D4AE4D714EB3474002596BD /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PreferencesController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0D4AE4DA14EB362D002596BD /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		0D6C3748150874030045890A /* last.fm-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last.fm-button.png"; sourceTree = "<group>"; };
 		0D83848A150054FB0024403B /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
-		0DE0240F14DDC9FB004E2227 /* SkronkMini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkronkMini.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DE0240F14DDC9FB004E2227 /* SkronkFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkronkFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE0241314DDC9FB004E2227 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0DE0241614DDC9FB004E2227 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		0DE0241714DDC9FB004E2227 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0DE0241814DDC9FB004E2227 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0DE0241B14DDC9FB004E2227 /* SkronkMini-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkronkMini-Info.plist"; sourceTree = "<group>"; };
 		0DE0241D14DDC9FB004E2227 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0DE0241F14DDC9FB004E2227 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0DE0242114DDC9FB004E2227 /* SkronkMini-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SkronkMini-Prefix.pch"; sourceTree = "<group>"; };
+		0DE0241F14DDC9FB004E2227 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		0DE0242114DDC9FB004E2227 /* SkronkMini-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "SkronkMini-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0DE0242314DDC9FB004E2227 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		0DE0242514DDC9FB004E2227 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0DE0242614DDC9FB004E2227 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0DE0242514DDC9FB004E2227 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		0DE0242614DDC9FB004E2227 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0DE0242914DDC9FC004E2227 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0DE0243514DDCC18004E2227 /* Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE0243914DDCC18004E2227 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
@@ -96,10 +96,10 @@
 		0DE0243D14DDCC18004E2227 /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
 		0DE0243E14DDCC18004E2227 /* Specs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Specs.h; sourceTree = "<group>"; };
 		0DE0243F14DDCC18004E2227 /* Specs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Specs.m; sourceTree = "<group>"; };
-		0DE0244414DDCC52004E2227 /* NowPlaying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NowPlaying.h; sourceTree = "<group>"; };
-		0DE0244514DDCC52004E2227 /* NowPlaying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NowPlaying.m; sourceTree = "<group>"; };
-		0DE0245614DDF349004E2227 /* FMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMJson.h; sourceTree = "<group>"; };
-		0DE0245714DDF349004E2227 /* FMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMJson.m; sourceTree = "<group>"; };
+		0DE0244414DDCC52004E2227 /* NowPlaying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NowPlaying.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		0DE0244514DDCC52004E2227 /* NowPlaying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NowPlaying.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		0DE0245614DDF349004E2227 /* FMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FMJson.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		0DE0245714DDF349004E2227 /* FMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FMJson.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0DE0246F14DF3936004E2227 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = "../../External/asi-http-request/Classes/ASICacheDelegate.h"; sourceTree = "<group>"; };
 		0DE0247014DF3936004E2227 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataCompressor.h; path = "../../External/asi-http-request/Classes/ASIDataCompressor.h"; sourceTree = "<group>"; };
 		0DE0247114DF3936004E2227 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDataCompressor.m; path = "../../External/asi-http-request/Classes/ASIDataCompressor.m"; sourceTree = "<group>"; };
@@ -129,10 +129,10 @@
 		0DE0249714DF65D4004E2227 /* SGKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKeyCombo.h; sourceTree = "<group>"; };
 		0DE0249814DF65D4004E2227 /* SGKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKeyCombo.m; sourceTree = "<group>"; };
 		0DE0249D14DF72BC004E2227 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		0DEBC49C1501AFDC00D4E1C3 /* RoundedWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedWindow.h; sourceTree = "<group>"; };
-		0DEBC49D1501AFDC00D4E1C3 /* RoundedWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedWindow.m; sourceTree = "<group>"; };
-		0DEBC4A01501B3CD00D4E1C3 /* RoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedView.h; sourceTree = "<group>"; };
-		0DEBC4A11501B3CD00D4E1C3 /* RoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedView.m; sourceTree = "<group>"; };
+		0DEBC49C1501AFDC00D4E1C3 /* RoundedWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RoundedWindow.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		0DEBC49D1501AFDC00D4E1C3 /* RoundedWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RoundedWindow.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		0DEBC4A01501B3CD00D4E1C3 /* RoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RoundedView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		0DEBC4A11501B3CD00D4E1C3 /* RoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RoundedView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0DEBC4A31501B83600D4E1C3 /* last.fm-icon-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last.fm-icon-64.png"; sourceTree = "<group>"; };
 		0DEBC4A51501B86700D4E1C3 /* last.fm-icon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last.fm-icon-24.png"; sourceTree = "<group>"; };
 		0DEBC4A71501BDDE00D4E1C3 /* concrete-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "concrete-background.jpg"; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 		0DE0241014DDC9FB004E2227 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0DE0240F14DDC9FB004E2227 /* SkronkMini.app */,
+				0DE0240F14DDC9FB004E2227 /* SkronkFM.app */,
 				0DE0243514DDCC18004E2227 /* Specs.framework */,
 			);
 			name = Products;
@@ -360,9 +360,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0DE0240E14DDC9FB004E2227 /* SkronkMini */ = {
+		0DE0240E14DDC9FB004E2227 /* SkronkFM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0DE0242D14DDC9FC004E2227 /* Build configuration list for PBXNativeTarget "SkronkMini" */;
+			buildConfigurationList = 0DE0242D14DDC9FC004E2227 /* Build configuration list for PBXNativeTarget "SkronkFM" */;
 			buildPhases = (
 				0DE0240B14DDC9FB004E2227 /* Sources */,
 				0DE0240C14DDC9FB004E2227 /* Frameworks */,
@@ -372,9 +372,9 @@
 			);
 			dependencies = (
 			);
-			name = SkronkMini;
+			name = SkronkFM;
 			productName = SkronkMini;
-			productReference = 0DE0240F14DDC9FB004E2227 /* SkronkMini.app */;
+			productReference = 0DE0240F14DDC9FB004E2227 /* SkronkFM.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0DE0243414DDCC18004E2227 /* Specs */ = {
@@ -416,7 +416,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0DE0240E14DDC9FB004E2227 /* SkronkMini */,
+				0DE0240E14DDC9FB004E2227 /* SkronkFM */,
 				0DE0243414DDCC18004E2227 /* Specs */,
 			);
 		};
@@ -644,7 +644,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0DE0242D14DDC9FC004E2227 /* Build configuration list for PBXNativeTarget "SkronkMini" */ = {
+		0DE0242D14DDC9FC004E2227 /* Build configuration list for PBXNativeTarget "SkronkFM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DE0242E14DDC9FC004E2227 /* Debug */,

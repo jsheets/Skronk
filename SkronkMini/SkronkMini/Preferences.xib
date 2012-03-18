@@ -159,7 +159,7 @@
 						<object class="NSButtonCell" key="NSCell" id="410188668">
 							<int key="NSCellFlags">-2080244224</int>
 							<int key="NSCellFlags2">0</int>
-							<string key="NSContents">Show SkronkMini in the menu bar</string>
+							<string key="NSContents">Show SkronkFM in the menu bar</string>
 							<object class="NSFont" key="NSSupport" id="697142319">
 								<string key="NSName">LucidaGrande</string>
 								<double key="NSSize">13</double>
@@ -195,7 +195,7 @@
 									<object class="NSTextField" id="562922954">
 										<reference key="NSNextResponder" ref="666754958"/>
 										<int key="NSvFlags">268</int>
-										<string key="NSFrame">{{15, 17}, {121, 17}}</string>
+										<string key="NSFrame">{{15, 17}, {139, 17}}</string>
 										<reference key="NSSuperview" ref="666754958"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="854610365"/>
@@ -204,7 +204,7 @@
 										<object class="NSTextFieldCell" key="NSCell" id="624645386">
 											<int key="NSCellFlags">68288064</int>
 											<int key="NSCellFlags2">272630784</int>
-											<string key="NSContents">Show/Hide Skronk</string>
+											<string key="NSContents">Show/Hide SkronkFM</string>
 											<reference key="NSSupport" ref="697142319"/>
 											<string key="NSCellIdentifier">_NS:3944</string>
 											<reference key="NSControlView" ref="562922954"/>
@@ -231,7 +231,7 @@
 									<object class="NSCustomView" id="854610365">
 										<reference key="NSNextResponder" ref="666754958"/>
 										<int key="NSvFlags">266</int>
-										<string key="NSFrame">{{149, 14}, {222, 22}}</string>
+										<string key="NSFrame">{{159, 14}, {212, 22}}</string>
 										<reference key="NSSuperview" ref="666754958"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="150703310"/>
@@ -438,7 +438,7 @@
 						<object class="NSTextFieldCell" key="NSTitleCell">
 							<int key="NSCellFlags">67239424</int>
 							<int key="NSCellFlags2">0</int>
-							<string key="NSContents">Skronk</string>
+							<string key="NSContents">SkronkFM</string>
 							<reference key="NSSupport" ref="26"/>
 							<reference key="NSBackgroundColor" ref="224221161"/>
 							<object class="NSColor" key="NSTextColor">
