@@ -13,7 +13,7 @@
 		0D010A5414F4892900A62136 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D010A4E14F4892900A62136 /* SRRecorderControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0D010A5514F4892900A62136 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D010A5014F4892900A62136 /* SRValidator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0D2B5ED0150C45080036A25A /* album-art-missing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ECF150C45080036A25A /* album-art-missing.png */; };
-		0D2B5ED2150C455D0036A25A /* SkronkMini.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED1150C455D0036A25A /* SkronkMini.icns */; };
+		0D2B5ED2150C455D0036A25A /* SkronkFM.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED1150C455D0036A25A /* SkronkFM.icns */; };
 		0D2B5ED6150C70460036A25A /* menubar-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED5150C70460036A25A /* menubar-icon.png */; };
 		0D2B5ED8150C710D0036A25A /* menubar-icon-playing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED7150C710D0036A25A /* menubar-icon-playing.png */; };
 		0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4AE4D714EB3474002596BD /* PreferencesController.m */; };
@@ -67,9 +67,9 @@
 		0D010A4E14F4892900A62136 /* SRRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = "<group>"; };
 		0D010A4F14F4892900A62136 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		0D010A5014F4892900A62136 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
-		0D2B5ECC150B19130036A25A /* SkronkMini.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SkronkMini.entitlements; sourceTree = "<group>"; };
+		0D2B5ECC150B19130036A25A /* SkronkFM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SkronkFM.entitlements; sourceTree = "<group>"; };
 		0D2B5ECF150C45080036A25A /* album-art-missing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album-art-missing.png"; sourceTree = "<group>"; };
-		0D2B5ED1150C455D0036A25A /* SkronkMini.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SkronkMini.icns; sourceTree = SOURCE_ROOT; };
+		0D2B5ED1150C455D0036A25A /* SkronkFM.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SkronkFM.icns; sourceTree = SOURCE_ROOT; };
 		0D2B5ED5150C70460036A25A /* menubar-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-icon.png"; sourceTree = "<group>"; };
 		0D2B5ED7150C710D0036A25A /* menubar-icon-playing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-icon-playing.png"; sourceTree = "<group>"; };
 		0D4AE4D614EB3474002596BD /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PreferencesController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -82,10 +82,10 @@
 		0DE0241614DDC9FB004E2227 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		0DE0241714DDC9FB004E2227 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0DE0241814DDC9FB004E2227 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		0DE0241B14DDC9FB004E2227 /* SkronkMini-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkronkMini-Info.plist"; sourceTree = "<group>"; };
+		0DE0241B14DDC9FB004E2227 /* SkronkFM-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkronkFM-Info.plist"; sourceTree = "<group>"; };
 		0DE0241D14DDC9FB004E2227 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0DE0241F14DDC9FB004E2227 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		0DE0242114DDC9FB004E2227 /* SkronkMini-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "SkronkMini-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		0DE0242114DDC9FB004E2227 /* SkronkFM-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "SkronkFM-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0DE0242314DDC9FB004E2227 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		0DE0242514DDC9FB004E2227 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		0DE0242614DDC9FB004E2227 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -238,12 +238,12 @@
 		0DE0241A14DDC9FB004E2227 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0D2B5ED1150C455D0036A25A /* SkronkMini.icns */,
-				0D2B5ECC150B19130036A25A /* SkronkMini.entitlements */,
-				0DE0241B14DDC9FB004E2227 /* SkronkMini-Info.plist */,
+				0D2B5ED1150C455D0036A25A /* SkronkFM.icns */,
+				0D2B5ECC150B19130036A25A /* SkronkFM.entitlements */,
+				0DE0241B14DDC9FB004E2227 /* SkronkFM-Info.plist */,
 				0DE0241C14DDC9FB004E2227 /* InfoPlist.strings */,
 				0DE0241F14DDC9FB004E2227 /* main.m */,
-				0DE0242114DDC9FB004E2227 /* SkronkMini-Prefix.pch */,
+				0DE0242114DDC9FB004E2227 /* SkronkFM-Prefix.pch */,
 				0DE0242214DDC9FB004E2227 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -404,7 +404,7 @@
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = FourFringe;
 			};
-			buildConfigurationList = 0DE0240914DDC9FB004E2227 /* Build configuration list for PBXProject "SkronkMini" */;
+			buildConfigurationList = 0DE0240914DDC9FB004E2227 /* Build configuration list for PBXProject "SkronkFM" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -436,7 +436,7 @@
 				0DEBC4A81501BDDE00D4E1C3 /* concrete-background.jpg in Resources */,
 				0D6C3749150874030045890A /* last.fm-button.png in Resources */,
 				0D2B5ED0150C45080036A25A /* album-art-missing.png in Resources */,
-				0D2B5ED2150C455D0036A25A /* SkronkMini.icns in Resources */,
+				0D2B5ED2150C455D0036A25A /* SkronkFM.icns in Resources */,
 				0D2B5ED6150C70460036A25A /* menubar-icon.png in Resources */,
 				0D2B5ED8150C710D0036A25A /* menubar-icon-playing.png in Resources */,
 			);
@@ -581,11 +581,11 @@
 		0DE0242E14DDC9FC004E2227 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = SkronkMini/SkronkMini.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SkronkMini/SkronkFM.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SkronkMini/SkronkMini-Prefix.pch";
-				INFOPLIST_FILE = "SkronkMini/SkronkMini-Info.plist";
+				GCC_PREFIX_HEADER = "SkronkMini/SkronkFM-Prefix.pch";
+				INFOPLIST_FILE = "SkronkMini/SkronkFM-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -594,11 +594,11 @@
 		0DE0242F14DDC9FC004E2227 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = SkronkMini/SkronkMini.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SkronkMini/SkronkFM.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SkronkMini/SkronkMini-Prefix.pch";
-				INFOPLIST_FILE = "SkronkMini/SkronkMini-Info.plist";
+				GCC_PREFIX_HEADER = "SkronkMini/SkronkFM-Prefix.pch";
+				INFOPLIST_FILE = "SkronkMini/SkronkFM-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -635,7 +635,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0DE0240914DDC9FB004E2227 /* Build configuration list for PBXProject "SkronkMini" */ = {
+		0DE0240914DDC9FB004E2227 /* Build configuration list for PBXProject "SkronkFM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DE0242B14DDC9FC004E2227 /* Debug */,
