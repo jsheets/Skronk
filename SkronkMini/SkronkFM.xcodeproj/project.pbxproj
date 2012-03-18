@@ -183,7 +183,7 @@
 		0DE0240414DDC9FB004E2227 = {
 			isa = PBXGroup;
 			children = (
-				0DE0241914DDC9FB004E2227 /* SkronkMini */,
+				0DE0241914DDC9FB004E2227 /* SkronkFM */,
 				0DE0243714DDCC18004E2227 /* Specs */,
 				0DE0241214DDC9FB004E2227 /* Frameworks */,
 				0DE0241014DDC9FB004E2227 /* Products */,
@@ -222,7 +222,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		0DE0241914DDC9FB004E2227 /* SkronkMini */ = {
+		0DE0241914DDC9FB004E2227 /* SkronkFM */ = {
 			isa = PBXGroup;
 			children = (
 				0DE0245B14DDF35C004E2227 /* UI */,
@@ -232,7 +232,7 @@
 				0D010A4614F4892900A62136 /* ShortcutRecorder */,
 				0DE0241A14DDC9FB004E2227 /* Supporting Files */,
 			);
-			path = SkronkMini;
+			path = SkronkFM;
 			sourceTree = "<group>";
 		};
 		0DE0241A14DDC9FB004E2227 /* Supporting Files */ = {
@@ -581,11 +581,11 @@
 		0DE0242E14DDC9FC004E2227 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = SkronkMini/SkronkFM.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SkronkFM/SkronkFM.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SkronkMini/SkronkFM-Prefix.pch";
-				INFOPLIST_FILE = "SkronkMini/SkronkFM-Info.plist";
+				GCC_PREFIX_HEADER = "SkronkFM/SkronkFM-Prefix.pch";
+				INFOPLIST_FILE = "SkronkFM/SkronkFM-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -594,11 +594,11 @@
 		0DE0242F14DDC9FC004E2227 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = SkronkMini/SkronkFM.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SkronkFM/SkronkFM.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SkronkMini/SkronkFM-Prefix.pch";
-				INFOPLIST_FILE = "SkronkMini/SkronkFM-Info.plist";
+				GCC_PREFIX_HEADER = "SkronkFM/SkronkFM-Prefix.pch";
+				INFOPLIST_FILE = "SkronkFM/SkronkFM-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
