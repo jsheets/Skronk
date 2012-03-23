@@ -16,6 +16,7 @@
 		0D2B5ED2150C455D0036A25A /* SkronkFM.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED1150C455D0036A25A /* SkronkFM.icns */; };
 		0D2B5ED6150C70460036A25A /* menubar-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED5150C70460036A25A /* menubar-icon.png */; };
 		0D2B5ED8150C710D0036A25A /* menubar-icon-playing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED7150C710D0036A25A /* menubar-icon-playing.png */; };
+		0D3437D9151A56F100C710A7 /* menubar-icon-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D3437D8151A56F100C710A7 /* menubar-icon-alt.png */; };
 		0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4AE4D714EB3474002596BD /* PreferencesController.m */; };
 		0D4AE4DB14EB362D002596BD /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D4AE4DA14EB362D002596BD /* Preferences.xib */; };
 		0D6C3749150874030045890A /* last.fm-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D6C3748150874030045890A /* last.fm-button.png */; };
@@ -72,6 +73,7 @@
 		0D2B5ED1150C455D0036A25A /* SkronkFM.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SkronkFM.icns; sourceTree = SOURCE_ROOT; };
 		0D2B5ED5150C70460036A25A /* menubar-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-icon.png"; sourceTree = "<group>"; };
 		0D2B5ED7150C710D0036A25A /* menubar-icon-playing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-icon-playing.png"; sourceTree = "<group>"; };
+		0D3437D8151A56F100C710A7 /* menubar-icon-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-icon-alt.png"; sourceTree = "<group>"; };
 		0D4AE4D614EB3474002596BD /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PreferencesController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		0D4AE4D714EB3474002596BD /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PreferencesController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0D4AE4DA14EB362D002596BD /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				0D4AE4DA14EB362D002596BD /* Preferences.xib */,
 				0D2B5ED5150C70460036A25A /* menubar-icon.png */,
 				0D2B5ED7150C710D0036A25A /* menubar-icon-playing.png */,
+				0D3437D8151A56F100C710A7 /* menubar-icon-alt.png */,
 				0D2B5ECF150C45080036A25A /* album-art-missing.png */,
 				0DEBC4A51501B86700D4E1C3 /* last.fm-icon-24.png */,
 				0DEBC4A31501B83600D4E1C3 /* last.fm-icon-64.png */,
@@ -439,6 +442,7 @@
 				0D2B5ED2150C455D0036A25A /* SkronkFM.icns in Resources */,
 				0D2B5ED6150C70460036A25A /* menubar-icon.png in Resources */,
 				0D2B5ED8150C710D0036A25A /* menubar-icon-playing.png in Resources */,
+				0D3437D9151A56F100C710A7 /* menubar-icon-alt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

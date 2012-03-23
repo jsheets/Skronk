@@ -85,6 +85,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 //        self.statusItem.title = @"π";
         self.statusItem.highlightMode = YES;
         self.statusItem.image = [NSImage imageNamed:@"menubar-icon-playing.png"];
+        self.statusItem.alternateImage = [NSImage imageNamed:@"menubar-icon-alt.png"];
     }
     else if (self.statusItem)
     {
@@ -440,14 +441,14 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                     // Update album image back on main thread.
                     dispatch_async(dispatch_get_main_queue(), ^{
                         self.art.image = self.currentAlbumArt ? self.currentAlbumArt : self.missingArt;
-                        self.statusItem.image = [NSImage imageNamed:@"menubar-icon-playing.png"];
+//                        self.statusItem.image = [NSImage imageNamed:@"menubar-icon-playing.png"];
                     });
                 }
             }
         }
         else
         {
-            self.statusItem.image = [NSImage imageNamed:@"menubar-icon.png"];
+//            self.statusItem.image = [NSImage imageNamed:@"menubar-icon.png"];
 
         }
     }];
