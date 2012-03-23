@@ -20,8 +20,43 @@ sudo installer -store -pkg path-to-package -target /
 
 </Text>
         </Document>
+        <Document ID="6">
+            <Title>iTunes Connect</Title>
+            <Text>John Sheets|1244508918
+
+I previously set up an iTunes Connect account with tax info for an LLC partnership company (Apple ID: mobilemethod, EIN 26-4584272). That company is closing down, and I would like to start selling apps under a different company (Apple ID: john@fourfringe.com, EIN 26-0835223). The two companies have different Federal EINs, but share the same street address (my home address, 11552 Able St NE, Blaine, MN, 55434).
+
+My banking info is already set up in iTunes Connect for the new company, but it will not let me set up the Tax Info. It is giving me the following error message:
+
+"An account corresponding to your name/address and/or Taxpayer Identification Number has already been created. If you believe you are reaching this message in error, you may Contact Us."
+
+The EINs are different, so I assume the problem is the street address. I would like to revoke the tax info (and whatever else I need to) for mobilemethod and use the john@fourfringe.com account instead for iTunes Connect.
+
+How should I proceed?</Text>
+        </Document>
         <Document ID="4">
             <Title>Release Notes</Title>
+        </Document>
+        <Document ID="7">
+            <Title>Icons</Title>
+            <Text>http://mrgan.tumblr.com/post/708404794/ios-app-icon-sizes
+Let’s walk through all the different sizes and how they’re used:
+	1.	57 px, iPhone – Good ol’ classic.
+	2.	114 px, Retina iPhone
+	3.	72 px, iPad
+	4.	144 px, Retina iPad
+	5.	29 px, iPhone Settings/Spotlight, iPad Settings – Used in these table views. Minor, but still important!
+	6.	58 px, iPhone 4 Settings/Spotlight/Notifications – That’s right, you have to make both 57 and 58 px versions of your icon – d’oh! Good luck aligning this if there’s a line running down the middle of the icon.
+	7.	48 px, iPad Spotlight – Yup, the iPad uses a different size for Spotlight and Settings. This size is controversial! Apple’s docs actually say the icon is 50 px, but then there’s this note: The final visual size of this icon is 48 x 48 pixels. iPhone OS trims 1 pixel from each side of your artwork and adds a drop shadow. Be sure to take this into account as you design your icon. How weird!
+	8.	96 px, Retina iPad Spotlight. See note 7 above, and remember the edge will be trimmed by 2 px on each side.
+	9.	22 x 29 px document icon, iPhone
+	10.	44 x 58 px document icon, Retina iPhone
+	11.	64 px document icon, iPad
+	12.	320 px document icon, iPad
+	13.	640 px document icon, Retina iPad
+	14.	512 px, iTunes – Used in iTunes and in the App Store, where it’s sized down to 175 px. Sadly, you can’t provide the 175 px version directly.
+	15.	1024 px, Retina iTunes
+</Text>
         </Document>
         <Document ID="5">
             <Title>Screenshots</Title>
