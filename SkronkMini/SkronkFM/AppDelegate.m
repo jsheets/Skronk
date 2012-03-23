@@ -584,6 +584,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     }
 
     [self.preferencesController showWindow:self];
+    [NSApp activateIgnoringOtherApps:YES];
+    [self.preferencesController.window makeKeyAndOrderFront:self];
 }
 
 - (IBAction)openLastFmClicked:(id)sender
