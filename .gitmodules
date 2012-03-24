@@ -19,3 +19,6 @@
 [submodule "External/yrk-spinning-progress-indicator"]
 	path = External/yrk-spinning-progress-indicator
 	url = https://github.com/kelan/yrk-spinning-progress-indicator.git
+[submodule "External/ValidateStoreReceipt"]
+	path = External/ValidateStoreReceipt
+	url = https://github.com/roddi/ValidateStoreReceipt.git
