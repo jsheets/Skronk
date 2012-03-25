@@ -59,11 +59,11 @@ NSString *const kLastFmPrefsIdentifer = @"LastFmPrefsIdentifer";
 
     if (self.currentView == self.generalPreferenceView)
     {
-        NSLog(@"Already in General tab");
+//        NSLog(@"Already in General tab");
         return;
     }
 
-    NSLog(@"Switching to General tab");
+//    NSLog(@"Switching to General tab");
 
     [self.bar setSelectedItemIdentifier:@"General"];
 
@@ -83,11 +83,11 @@ NSString *const kLastFmPrefsIdentifer = @"LastFmPrefsIdentifer";
 
     if (self.currentView == self.lastFmPreferenceView)
     {
-        NSLog(@"Already in last.fm tab");
+//        NSLog(@"Already in last.fm tab");
         return;
     }
 
-    NSLog(@"Switching to last.fm tab");
+//    NSLog(@"Switching to last.fm tab");
 
     [self.bar setSelectedItemIdentifier:@"last.fm"];
 
@@ -121,7 +121,7 @@ NSString *const kLastFmPrefsIdentifer = @"LastFmPrefsIdentifer";
 
 - (void)shortcutRecorder:(SRRecorderControl *)aRecorder keyComboDidChange:(KeyCombo)newKeyCombo;
 {
-    NSLog(@"New key combo: %@ (%lu)", SRStringForCocoaModifierFlagsAndKeyCode(newKeyCombo.flags, newKeyCombo.code), newKeyCombo.flags);
+//    NSLog(@"New key combo: %@ (%lu)", SRStringForCocoaModifierFlagsAndKeyCode(newKeyCombo.flags, newKeyCombo.code), newKeyCombo.flags);
     [[NSUserDefaults standardUserDefaults] setInteger:newKeyCombo.code forKey:kPreferenceHideShortcutCode];
     [[NSUserDefaults standardUserDefaults] setInteger:newKeyCombo.flags forKey:kPreferenceHideShortcutFlags];
 

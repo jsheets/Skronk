@@ -325,7 +325,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         labelRect.size.width = windowWidth - padding;
         if (self.label.frame.size.width != labelRect.size.width)
         {
-            NSLog(@"Resizing text to %@", NSStringFromRect(labelRect));
+//            NSLog(@"Resizing text to %@", NSStringFromRect(labelRect));
             [self.label setFrame:labelRect];
 //            [[self.label animator] setFrame:labelRect];
         }
@@ -356,14 +356,14 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
     if (username == nil)
     {
-        NSLog(@"Username not set...skipping update.");
+//        NSLog(@"Username not set...skipping update.");
         return;
     }
 
     NSString *urlString = [NSString stringWithFormat:@"http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=3a36e88356d8d90aee7a012c6abccae1&limit=2&user=%@&format=json", username];
     NSURL *url = [NSURL URLWithString:urlString];
 
-    NSLog(@"Looking up last.fm URL: %@", url);
+//    NSLog(@"Looking up last.fm URL: %@", url);
     
     BOOL showNetworkAvailability = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowNetworkAvailability];
     if (showNetworkAvailability)
@@ -390,7 +390,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             // If we have something new to report, show it.
             if (displayText /*&& ![displayText.string isEqualToString:self.label.stringValue]*/)
             {
-                NSLog(@"Updating text.");
                 self.label.attributedStringValue = displayText;
                 [self adjustWindowSize];
             }
@@ -430,7 +429,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                 BOOL shouldUpdateArt = ![self.currentAlbumArtURL isEqual:self.currentlyPlaying.artSmallUrl];
                 if (shouldUpdateArt)
                 {
-                    NSLog(@"Downloading new album art...");
+//                    NSLog(@"Downloading new album art...");
                     self.currentAlbumArt = [[NSImage alloc] initWithContentsOfURL:self.currentlyPlaying.artSmallUrl];
                     if (self.currentAlbumArt)
                     {
@@ -479,14 +478,14 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     {
         if ([keyPath isEqualToString:kPreferenceAutohide])
         {
-            NSLog(@"Reloading current track after changing %@", keyPath);
+//            NSLog(@"Reloading current track after changing %@", keyPath);
             [self updateCurrentTrack];
             [self resetTimer];
             return;
         }
         else if ([keyPath isEqualToString:kPreferenceLastFmUsername])
         {
-            NSLog(@"Reloading current track after changing %@", keyPath);
+//            NSLog(@"Reloading current track after changing %@", keyPath);
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.label.stringValue = @"Loading...";
             });
@@ -546,7 +545,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 {
     NSInteger hideCode = [[NSUserDefaults standardUserDefaults] integerForKey:kPreferenceHideShortcutCode];
     NSInteger hideFlags = [[NSUserDefaults standardUserDefaults] integerForKey:kPreferenceHideShortcutFlags];
-    NSLog(@"Preference modifiers: (%lu %lu)", hideCode, SRCocoaToCarbonFlags(hideFlags));
+//    NSLog(@"Preference modifiers: (%lu %lu)", hideCode, SRCocoaToCarbonFlags(hideFlags));
 
     SGHotKey *oldHotKey = [[SGHotKeyCenter sharedCenter] hotKeyWithIdentifier:kGlobalHotKey];
     [[SGHotKeyCenter sharedCenter] unregisterHotKey:oldHotKey];
@@ -582,7 +581,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
 - (IBAction)preferencesClicked:(id)sender
 {
-    NSLog(@"Preferences clicked.");
     if (self.preferencesController == nil)
     {
         self.preferencesController = [[PreferencesController alloc] init];
@@ -599,7 +597,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     if (urlString)
     {
         NSURL *url = [NSURL URLWithString:urlString];
-        NSLog(@"Open in last.fm: %@", url);
+//        NSLog(@"Open in last.fm: %@", url);
         [[NSWorkspace sharedWorkspace] openURL:url];
     }
 }
