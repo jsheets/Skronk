@@ -6,6 +6,21 @@
             <MetaData>
                 <IncludeInCompile>Yes</IncludeInCompile>
             </MetaData>
+            <CorkboardAndOutliner>
+                <SelectedSubdocumentIDs>10</SelectedSubdocumentIDs>
+                <CorkboardSettings>
+                    <FreeformMode>No</FreeformMode>
+                    <FreeformCorkboardDocuments>
+                        <IndexCardBinderID Position="0.063333,0.066667" TimeStamp="2012-03-25 12:57:17 -0500">3</IndexCardBinderID>
+                        <IndexCardBinderID Position="1.133333,0.73" TimeStamp="2012-03-25 12:57:17 -0500">5</IndexCardBinderID>
+                        <IndexCardBinderID Position="2.247018,0.060417" TimeStamp="2012-03-25 12:57:22 -0500">10</IndexCardBinderID>
+                        <IndexCardBinderID Position="2.12,0.716667" TimeStamp="2012-03-25 12:57:17 -0500">6</IndexCardBinderID>
+                        <IndexCardBinderID Position="1.13,0.04" TimeStamp="2012-03-25 12:57:17 -0500">4</IndexCardBinderID>
+                        <IndexCardBinderID Position="0.07,0.723333" TimeStamp="2012-03-25 12:57:17 -0500">9</IndexCardBinderID>
+                        <IndexCardBinderID Position="0.133333,1.37" TimeStamp="2012-03-25 12:57:17 -0500">7</IndexCardBinderID>
+                    </FreeformCorkboardDocuments>
+                </CorkboardSettings>
+            </CorkboardAndOutliner>
             <Children>
                 <BinderItem ID="3" Type="Text" Created="2012-03-05 09:56:09 -0600" Modified="2012-03-09 22:47:02 -0600">
                     <Title>App Store Notes</Title>
@@ -14,17 +29,37 @@
                         <NotesTextSelection>0,0</NotesTextSelection>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>411,0</TextSelection>
+                        <TextSelection>73,10</TextSelection>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="4" Type="Text" Created="2012-03-05 09:56:22 -0600" Modified="2012-03-05 09:56:26 -0600">
-                    <Title>Release Notes</Title>
+                <BinderItem ID="4" Type="Text" Created="2012-03-05 09:56:22 -0600" Modified="2012-03-25 14:10:49 -0500">
+                    <Title>iTunes Connect</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
                         <NotesTextSelection>0,0</NotesTextSelection>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>0,0</TextSelection>
+                        <TextSelection>1469,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="10" Type="Text" Created="2012-03-25 12:08:04 -0500" Modified="2012-03-25 14:18:11 -0500">
+                    <Title>Web Site</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>482,65</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem ID="9" Type="Text" Created="2012-03-24 17:12:41 -0500" Modified="2012-03-24 17:25:05 -0500">
+                    <Title>FAQ</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,1930</TextSelection>
                     </TextSettings>
                 </BinderItem>
                 <BinderItem ID="5" Type="Text" Created="2012-03-08 09:14:27 -0600" Modified="2012-03-08 09:15:22 -0600">
@@ -37,8 +72,8 @@
                         <TextSelection>55,0</TextSelection>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="6" Type="Text" Created="2012-03-22 19:26:28 -0500" Modified="2012-03-22 19:31:00 -0500">
-                    <Title>iTunes Connect</Title>
+                <BinderItem ID="6" Type="Text" Created="2012-03-22 19:26:28 -0500" Modified="2012-03-23 19:53:21 -0500">
+                    <Title>Help Ticket</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
                         <NotesTextSelection>0,0</NotesTextSelection>
@@ -47,14 +82,14 @@
                         <TextSelection>1034,0</TextSelection>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="7" Type="Text" Created="2012-03-22 23:24:07 -0500" Modified="2012-03-22 23:24:23 -0500">
-                    <Title>Icons</Title>
+                <BinderItem ID="7" Type="Text" Created="2012-03-22 23:24:07 -0500" Modified="2012-03-24 17:26:20 -0500">
+                    <Title>Icon Sizes</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
                         <NotesTextSelection>0,0</NotesTextSelection>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>57,0</TextSelection>
+                        <TextSelection>67,0</TextSelection>
                     </TextSettings>
                 </BinderItem>
             </Children>
@@ -70,6 +105,18 @@
             <MetaData>
                 <IncludeInCompile>Yes</IncludeInCompile>
             </MetaData>
+            <Children>
+                <BinderItem ID="8" Type="Text" Created="2012-03-23 19:53:02 -0500" Modified="2012-03-23 19:53:02 -0500">
+                    <Title>Untitled</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                        <NotesTextSelection>0,0</NotesTextSelection>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>0,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
         </BinderItem>
     </Binder>
     <Collections>
@@ -104,7 +151,7 @@
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2012-03-05 09:56:09 -0600" IgnoreDeadline="Yes">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="Yes" ResetType="Midnight" DeterminedFromDeadline="No" WritingDays="" CanWriteOnDeadlineDate="No">0</SessionTarget>
-        <PreviousSession Words="442" Characters="2449" Date="2012-03-22 23:24:02 -0500"></PreviousSession>
+        <PreviousSession Words="875" Characters="5198" Date="2012-03-24 13:37:03 -0500"></PreviousSession>
     </ProjectTargets>
     <PrintSettings PaperSize="612.0,792.0" LeftMargin="72.0" RightMargin="72.0" TopMargin="90.0" BottomMargin="90.0" PaperType="na-letter" Orientation="Portrait" HorizontalPagination="Clip" VerticalPagination="Auto" ScaleFactor="1.0" HorizontallyCentered="Yes" VerticallyCentered="Yes" Collates="Yes" PagesAcross="1" PagesDown="1"></PrintSettings>
 </ScrivenerProject>

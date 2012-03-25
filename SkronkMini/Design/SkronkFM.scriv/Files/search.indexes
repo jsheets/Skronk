@@ -21,7 +21,7 @@ sudo installer -store -pkg path-to-package -target /
 </Text>
         </Document>
         <Document ID="6">
-            <Title>iTunes Connect</Title>
+            <Title>Help Ticket</Title>
             <Text>John Sheets|1244508918
 
 I previously set up an iTunes Connect account with tax info for an LLC partnership company (Apple ID: mobilemethod, EIN 26-4584272). That company is closing down, and I would like to start selling apps under a different company (Apple ID: john@fourfringe.com, EIN 26-0835223). The two companies have different Federal EINs, but share the same street address (my home address, 11552 Able St NE, Blaine, MN, 55434).
@@ -35,10 +35,42 @@ The EINs are different, so I assume the problem is the street address. I would l
 How should I proceed?</Text>
         </Document>
         <Document ID="4">
-            <Title>Release Notes</Title>
+            <Title>iTunes Connect</Title>
+            <Text>Default Language: English
+App Name: SkronkFM Music Tracker
+SKU Number: 0001
+Bundle ID: com.fourfringe.SkronkFM
+
+Price Tier: Tier 2
+
+Version: 1.0
+Copyright: 2012 John Sheets
+Primary Category: Music
+Secondary Category: ??? (Entertainment?)
+
+Review Notes:
+Additional information about your app and/or In-App Purchases that may assist our review, such as the details of any test accounts that we may use to test them (including user names, passwords, access codes, and so on). If you are requesting entitlements for application sandboxing, you must explain how your app will use this functionality. Review Notes cannot be longer than 4000 bytes.
+
+Description (4000 max):
+
+
+Keywords:
+One or more keywords that describe the app you are adding. When users search the App Store, the terms they enter are matched with keywords to return more accurate results. Separate multiple keywords with commas. Keywords cannot be edited once your binary is in review and cannot be longer than 100 bytes.
+music,last.fm,track,watch,album,artist,song,status,menubar,scrobble,listen
+
+Support Email Address:
+skronk@fourfringe.com
+
+Support URL:
+http://fourfringe.com
+
+Marketing URL (optional):
+
+
+Screenshots (1280x800 or 1440x900)</Text>
         </Document>
         <Document ID="7">
-            <Title>Icons</Title>
+            <Title>Icon Sizes</Title>
             <Text>http://mrgan.tumblr.com/post/708404794/ios-app-icon-sizes
 Let’s walk through all the different sizes and how they’re used:
 	1.	57 px, iPhone – Good ol’ classic.
