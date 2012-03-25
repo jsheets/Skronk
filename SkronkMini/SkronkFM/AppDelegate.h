@@ -38,6 +38,7 @@
 - (IBAction)preferencesClicked:(id)sender;
 - (IBAction)openLastFmClicked:(id)sender;
 - (IBAction)showHideClicked:(id)sender;
+- (IBAction)showHelpClicked:(id)sender;
 
 - (void)updateHotkeys;
 - (BOOL)windowIsVisible;

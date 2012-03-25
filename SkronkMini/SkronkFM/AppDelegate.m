@@ -575,6 +575,11 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     }
 }
 
+- (IBAction)showHelpClicked:(id)sender
+{
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://fourfringe.com"]];
+}
+
 - (IBAction)preferencesClicked:(id)sender
 {
     NSLog(@"Preferences clicked.");
