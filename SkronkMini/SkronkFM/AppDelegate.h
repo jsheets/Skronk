@@ -37,6 +37,7 @@
 
 - (IBAction)preferencesClicked:(id)sender;
 - (IBAction)openLastFmClicked:(id)sender;
+- (IBAction)openUserClicked:(id)sender;
 - (IBAction)showHideClicked:(id)sender;
 - (IBAction)showHelpClicked:(id)sender;
 

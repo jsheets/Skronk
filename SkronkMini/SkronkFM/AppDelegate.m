@@ -164,8 +164,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     {
         if (![self windowIsVisible])
         {
-            self.showHideMenuItem.title = @"Hide SkronkFM";
-            self.showHideStatusbarItem.title = @"Hide SkronkFM";
+            self.showHideMenuItem.title = @"Conceal SkronkFM";
+            self.showHideStatusbarItem.title = @"Conceal SkronkFM";
             [self fadeInWindow];
 
             // Don't update here after all. Causes issues with quick hide/show.
@@ -178,8 +178,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         // If window is still visible, hide it.
         if ([self windowIsVisible])
         {
-            self.showHideMenuItem.title = @"Show SkronkFM";
-            self.showHideStatusbarItem.title = @"Show SkronkFM";
+            self.showHideMenuItem.title = @"Reveal SkronkFM";
+            self.showHideStatusbarItem.title = @"Reveal SkronkFM";
             [self fadeOutWindow];
         }
     }
@@ -594,6 +594,18 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 - (IBAction)openLastFmClicked:(id)sender
 {
     NSString *urlString = [self.currentlyPlaying valueForProperty:@"recenttracks.track[0].url"];
+    if (urlString)
+    {
+        NSURL *url = [NSURL URLWithString:urlString];
+//        NSLog(@"Open in last.fm: %@", url);
+        [[NSWorkspace sharedWorkspace] openURL:url];
+    }
+}
+
+- (IBAction)openUserClicked:(id)sender
+{
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.last.fm/user/%@", username];
     if (urlString)
     {
         NSURL *url = [NSURL URLWithString:urlString];
