@@ -488,9 +488,11 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 //            NSLog(@"Reloading current track after changing %@", keyPath);
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.label.stringValue = @"Loading...";
+                self.art.image = self.missingArt;
+
+                [self updateCurrentTrack];
+                [self resetTimer];
             });
-            [self updateCurrentTrack];
-            [self resetTimer];
             return;
         }
         else if ([keyPath isEqualToString:kPreferenceShowInMenubar])
