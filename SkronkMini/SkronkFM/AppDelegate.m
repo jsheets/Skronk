@@ -164,8 +164,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     {
         if (![self windowIsVisible])
         {
-            self.showHideMenuItem.title = @"Conceal SkronkFM";
-            self.showHideStatusbarItem.title = @"Conceal SkronkFM";
+            self.showHideMenuItem.title = @"Sleep SkronkFM";
+            self.showHideStatusbarItem.title = @"Sleep SkronkFM";
             [self fadeInWindow];
 
             // Don't update here after all. Causes issues with quick hide/show.
@@ -178,8 +178,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         // If window is still visible, hide it.
         if ([self windowIsVisible])
         {
-            self.showHideMenuItem.title = @"Reveal SkronkFM";
-            self.showHideStatusbarItem.title = @"Reveal SkronkFM";
+            self.showHideMenuItem.title = @"Wake SkronkFM";
+            self.showHideStatusbarItem.title = @"Wake SkronkFM";
             [self fadeOutWindow];
         }
     }

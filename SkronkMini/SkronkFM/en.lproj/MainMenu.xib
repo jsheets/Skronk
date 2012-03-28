@@ -187,19 +187,19 @@
 						<object class="NSMenu" key="NSSubmenu" id="442534445">
 							<string key="NSTitle">File</string>
 							<array class="NSMutableArray" key="NSMenuItems">
-								<object class="NSMenuItem" id="937090702">
+								<object class="NSMenuItem" id="173697636">
 									<reference key="NSMenu" ref="442534445"/>
-									<string key="NSTitle">Open User on last.fm</string>
-									<string key="NSKeyEquiv">u</string>
+									<string key="NSTitle">Open Song on last.fm</string>
+									<string key="NSKeyEquiv">o</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="173697636">
+								<object class="NSMenuItem" id="937090702">
 									<reference key="NSMenu" ref="442534445"/>
-									<string key="NSTitle">Open Song on last.fm</string>
-									<string key="NSKeyEquiv">o</string>
+									<string key="NSTitle">Open User on last.fm</string>
+									<string key="NSKeyEquiv">u</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -624,7 +624,7 @@
 							<array class="NSMutableArray" key="NSMenuItems">
 								<object class="NSMenuItem" id="388672064">
 									<reference key="NSMenu" ref="466310130"/>
-									<string key="NSTitle">Conceal SkronkFM</string>
+									<string key="NSTitle">Sleep SkronkFM</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -707,15 +707,17 @@
 				<array class="NSMutableArray" key="NSMenuItems">
 					<object class="NSMenuItem" id="212155742">
 						<reference key="NSMenu" ref="481416820"/>
-						<string key="NSTitle">Conceal SkronkFM</string>
+						<string key="NSTitle">Sleep SkronkFM</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="637967187">
+					<object class="NSMenuItem" id="144061970">
 						<reference key="NSMenu" ref="481416820"/>
-						<string key="NSTitle">Open User on last.fm</string>
+						<bool key="NSIsDisabled">YES</bool>
+						<bool key="NSIsSeparator">YES</bool>
+						<string key="NSTitle"/>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -724,6 +726,14 @@
 					<object class="NSMenuItem" id="790798918">
 						<reference key="NSMenu" ref="481416820"/>
 						<string key="NSTitle">Open Song on last.fm</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="637967187">
+						<reference key="NSMenu" ref="481416820"/>
+						<string key="NSTitle">Open User on last.fm</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -943,7 +953,6 @@
 							<string key="NSFrame">{{608, 6}, {26, 24}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -1783,8 +1792,9 @@
 							<reference ref="344102839"/>
 							<reference ref="798684250"/>
 							<reference ref="790798918"/>
-							<reference ref="637967187"/>
 							<reference ref="212155742"/>
+							<reference ref="637967187"/>
+							<reference ref="144061970"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Statusbar Menu</string>
@@ -2278,6 +2288,11 @@
 						<reference key="object" ref="937090702"/>
 						<reference key="parent" ref="442534445"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">777</int>
+						<reference key="object" ref="144061970"/>
+						<reference key="parent" ref="481416820"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -2394,12 +2409,13 @@
 				<string key="765.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="768.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="770.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="777.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">776</int>
+			<int key="maxID">777</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
