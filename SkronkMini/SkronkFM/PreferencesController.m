@@ -54,6 +54,12 @@ NSString *const kLastFmPrefsIdentifer = @"LastFmPrefsIdentifer";
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
 
+- (void)windowDidResignKey:(NSNotification *)notification
+{
+    // Force text field flush.
+    [self.window makeFirstResponder:nil];
+}
+
 - (IBAction)generalTabClicked:(id)sender
 {
 
