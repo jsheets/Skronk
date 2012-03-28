@@ -47,7 +47,7 @@ sudo installer -store -pkg path-to-package -target /
         <Document ID="4">
             <Title>iTunes Connect</Title>
             <Text>Default Language: English
-App Name: SkronkFM Music Tracker
+App Name: SkronkFM Music Watcher
 SKU Number: 0001
 Bundle ID: com.fourfringe.SkronkFM
 
@@ -71,7 +71,7 @@ The only info you’ll need for testing is the username of a last.fm user. The a
 
 Description (4000 max):
 
-SkronkFM Music Tracking Software
+SkronkFM Music Watcher
 
 Watch your music from the comfort of your own desktop.
 
@@ -176,7 +176,7 @@ How should I proceed?</Text>
         </Document>
         <Document ID="10">
             <Title>Web Site</Title>
-            <Text>SkronkFM Music Tracking Software
+            <Text>SkronkFM Music Watching Software
 
 Watch your music from the comfort of your own desktop.
 
