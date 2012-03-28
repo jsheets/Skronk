@@ -230,8 +230,15 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
     // If we don't already have track text (not "Loading..."), load the last track played previously.
     BOOL firstLoad = [self.label.stringValue isEqualToString:@"Loading..."];
+    
+    BOOL errorLoading = nowPlaying.error != nil;
 
-    if (firstLoad || nowPlaying.isPlaying)
+    if (errorLoading)
+    {
+        NSString *message = [NSString stringWithFormat:@"last.fm Error: %@", nowPlaying.error];
+        displayText = [[NSMutableAttributedString alloc] initWithString:message];
+    }
+    else if (firstLoad || nowPlaying.isPlaying)
     {
         displayText = [[NSMutableAttributedString alloc] init];
 
