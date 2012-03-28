@@ -1,0 +1,27 @@
+#header {
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-top: 15%;
+	margin-bottom: 15%;
+	
+	text-align: center;
+}
+
+img#appicon {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+body {
+	text-shadow: 1px 0px #818181;
+	font-family: sans-serif;
+}
+h1 {
+}
+
+h2 {
+}
+
+p {
+}
