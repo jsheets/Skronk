@@ -32,24 +32,24 @@
                         <TextSelection>73,10</TextSelection>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="4" Type="Text" Created="2012-03-05 09:56:22 -0600" Modified="2012-03-26 20:21:01 -0500">
+                <BinderItem ID="4" Type="Text" Created="2012-03-05 09:56:22 -0600" Modified="2012-03-29 17:57:21 -0500">
                     <Title>iTunes Connect</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
                         <NotesTextSelection>0,0</NotesTextSelection>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>58,0</TextSelection>
+                        <TextSelection>1932,0</TextSelection>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="10" Type="Text" Created="2012-03-25 12:08:04 -0500" Modified="2012-03-26 20:23:04 -0500">
+                <BinderItem ID="10" Type="Text" Created="2012-03-25 12:08:04 -0500" Modified="2012-03-29 17:57:15 -0500">
                     <Title>Web Site</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
                         <NotesTextSelection>0,0</NotesTextSelection>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>20,0</TextSelection>
+                        <TextSelection>5087,0</TextSelection>
                     </TextSettings>
                 </BinderItem>
                 <BinderItem ID="9" Type="Text" Created="2012-03-24 17:12:41 -0500" Modified="2012-03-24 17:25:05 -0500">
@@ -151,7 +151,7 @@
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2012-03-05 09:56:09 -0600" IgnoreDeadline="Yes">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="Yes" ResetType="Midnight" DeterminedFromDeadline="No" WritingDays="" CanWriteOnDeadlineDate="No">0</SessionTarget>
-        <PreviousSession Words="0" Characters="0" Date="2012-03-27 09:35:54 -0500"></PreviousSession>
+        <PreviousSession Words="-2" Characters="-26" Date="2012-03-29 17:56:44 -0500"></PreviousSession>
     </ProjectTargets>
     <PrintSettings PaperSize="612.0,792.0" LeftMargin="72.0" RightMargin="72.0" TopMargin="90.0" BottomMargin="90.0" PaperType="na-letter" Orientation="Portrait" HorizontalPagination="Clip" VerticalPagination="Auto" ScaleFactor="1.0" HorizontallyCentered="Yes" VerticallyCentered="Yes" Collates="Yes" PagesAcross="1" PagesDown="1"></PrintSettings>
 </ScrivenerProject>
