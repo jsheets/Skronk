@@ -1,215 +1,242 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>FourFringe</title>
+  <title>FourFringe</title>
+  <link href="stylesheets/style.css" rel="stylesheet" type="text/css" >
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" ></script>
 </head>
-<body>
-	
-	<div id="header">
-		<h1>
-			SkronkFM Music Watching Software 
-		</h1>
-		<p>
-			Watch your music from the comfort of your own desktop. 
-		</p>
-		<img style="border-width: 0px;" src="images/skronkfm-icon.png" width="128" height="128" alt="SkronkFM application icon" /> 
-		<p>
-			Keep an eye on what’s playing in last.fm, even when you’re not
-			looking. SkronkFM stays out of your way, but is always there
-			when you need it. It doesn’t matter if you’re playing music on
-			your Mac, on your phone, on a media center in the next room, or
-			even across town. As long as your music player can update
-			last.fm, your currently playing track will show up on your
-			desktop. 
-		</p>
-	</div>
 
-	<div id="features">
-		<h2>
-			Features:
-		</h2>
-		<ul>
-			<li>Keep track of what’s currently playing on your last.fm account</li>
-			<li>Convenient menubar access</li>
-			<li>Always on Top so SkronkFM doesn’t get lost on your desktop</li>
-			<li>Autosizes to fit track length</li>
-			<li>Choose between opaque or transparent background</li>
-			<li>Shows album art if available.</li>
-			<li>Configurable global keyboard shortcut to show/hide</li>
-			<li>Quick link to open the current song in your default browser</li>
-		</ul>
-		<p>
-			Requires a free last.fm account.
-		</p>
-		[ Mac App Store banner ] 
-	</div>
+  <body>
+    <script type="text/javascript">
+      jQuery(document).ready(function(){
+        // One section open at a tile.
+        $('#sections').accordion({ active: false, collapsible: true });
 
-	<div id="getting-started">
-		<h2>
-			Getting Started:
-		</h2>
-		<p>
-			The first time you start up SkronkFM, it will ask you to enter a
-			last.fm account name to watch. Since we’re just looking at
-			public last.fm info and not updating anything, you don’t need to
-			authenticate with last.fm.
-		</p>
-		￼ <img style="border-width: 0px;" src="images/screenshot-prompt.png" width="685" height="87" alt="SkronkFM prompting for last.fm user account name" /> 
-		<p>
-			Enter your last.fm user name in the Preferences window and hit
-			the return key. The entry field should already be selected for
-			you. If you’re not sure you have the correct user account name,
-			you can click the last.fm icon beside the entry field and that
-			user’s last.fm page should open in your default browser.
-		</p>
-		<p>
-			You can take this opportunity to experiment with SkronkFM’s
-			settings, or close the Preferences window and get right into it.
-		</p>
-		￼<img style="border-width: 0px;" src="images/screenshot-preferences.png" width="539" height="543" alt="SkronkFM Preferences window" /> 
-	</div>
+/*
+        // Toggle multiple sections.
+        $('#sections div').click(function() {
+          $(this).next().toggle('slow');
+          return false;
+        }).next().hide();
+*/
+      });
+    </script>
+  
+    <div id="header">
+      <h1>SkronkFM</h1>
+      <h2>Music Watching Software</h2>
 
-	<div id="watching-music">
-		<h2>
-			Watching Your Music:
-		</h2>
-		<p>
-			SkronkFM should immediately load your current or most recent
-			last.fm track. The last.fm icon at the right will flash each
-			time SkronkFM updates its status from last.fm.
-		</p>
-		<img style="border-width: 0px;" src="images/screenshot-opaque.png" width="668" height="64" alt="SkronkFM playing" /> 
-		<p>
-			If you’re not listening to last.fm right now, SkronkFM will load
-			your most recently played track, but gray it out to make it
-			clear that it doesn’t see music playing.
-		</p>
-		<img style="border-width: 0px;" src="images/screenshot-opaque-notplaying.png" width="668" height="64" alt="SkronkFM not playing" /> 
-		<p>
-			Turn on Transparent Background in Preferences if you want to see
-			through to the desktop or other windows behind SkronkFM.
-		</p>
-		<img style="border-width: 0px;" src="images/screenshot-transparent.png" width="626" height="74" alt="SkronkFM with transparent background" /> 
-		<p>
-			By default, SkronkFM keeps a constant width, and will truncate
-			longer song titles. Turn on Autosize To Fit to shrink and expand
-			to perfectly fit the title size. This comes in handy if you have
-			a very long track title:
-		</p>
-		<img style="border-width: 0px;" src="images/screenshot-opaque-long.png" width="1046" height="64" alt="SkronkFM with very long song track title" /> 
-		<p>
-			If last.fm doesn’t have album info for a given track, it will
-			show a placeholder image for the album art. See the FAQ for why
-			this might happen. 
-		</p>
-		<img style="border-width: 0px;" src="images/screenshot-opaque-no-artist.png" width="368" height="74" alt="SkronkFM with no album info" /> 
-		<p>
-			If you don’t feel like opening up the Preferences window every
-			time you need to make a change, you can set most of the same
-			options from the optional SkronkFM menu bar. 
-		</p>
-		<img style="border-width: 0px;" src="images/screenshot-menubar.png" width="447" height="270" alt="SkronkFM menu bar" /> 
-		<p>
-			Have fun watching your music! If you have any questions or find
-			any bugs, please send us an email at
-			<a href="mailto:skronk@fourfringe.com">skronk@fourfringe.com</a>. 
-		</p>
-	</div>
+      <img style="border-width: 0px;" src="images/skronkfm-icon.png" width="128" height="128" alt="SkronkFM application icon" /> 
 
-	<div id="faq">
-		<h2>
-			FAQ:
-		</h2>
-		<p>
-			I'm listening to music but SkronkFM is not updating. How often
-			does SkronkFM check my last.fm playing status? 
-		</p>
-		<p>
-			Every fifteen seconds. Checking it more often typically won't
-			result in faster updates, since many of the music services like
-			Mog and Rdio don't scrobble songs until they've been playing for
-			a certain length, for example 25% completed. Commonly this
-			translates into 30-60 seconds into a song before last.fm first
-			sees the new song. For longer songs it may take even more time
-			to scrobble. 
-		</p>
-		<p>
-			Why does it take each service (Spotify, Mog) so long to update
-			my playing status? 
-		</p>
-		<p>
-			See previous answer. Different music services have different
-			rules on how often they send last.fm updates. Some scrobbling
-			applications may allow you to customize their scrobbling rules. 
-		</p>
-		<p>
-			Why does SkronkFM keep saying my music has stopped? 
-		</p>
-		<p>
-			SkronkFM can only report what last.fm tells it. If a scrobbling
-			application or service does not send an update to last.fm after
-			restarting a paused song, last.fm will not be able to see that
-			the song is playing again. When the next song begins, last.fm
-			should get a fresh update. 
-		</p>
-		<p>
-			Where's my album? Where's my album art? 
-		</p>
-		<p>
-			If last.fm doesn't recognize the song you're scrobbling, it
-			won't be able to associate it with an album. Sometimes small
-			differences in the song name will throw things off, like missing
-			punctuation or alternate spellings. When in doubt, look it up on
-			last.fm by selecting "Open Song on last.fm" from the SkronkFM
-			menu. 
-		</p>
-		<p>
-			That flashing icon is distracting. How do I get rid of it? 
-		</p>
-		<p>
-			Turn off the option "Show Music Source" in Preferences or in the
-			menu bar menu. 
-		</p>
-		<p>
-			Does SkronkFM update in the background? 
-		</p>
-		<p>
-			SkronkFM only checks the network when it's showing. If you hide
-			it, SkronkFM will cease network activity until you show it
-			again. 
-		</p>
-		<p>
-			Scrobble? 
-		</p>
-		<p>
-			"Scrobble" is last.fm's term for sending song updates from your
-			local playlist to last.fm. 
-		</p>
-		<p>
-			What if I don’t have a question? 
-		</p>
-		<p>
-			Feel free to ask it anyway. Send all your non-questions to
-			<a href="mailto:skronk@fourfringe.com">skronk@fourfringe.com</a>. 
-		</p>
-	</div>
+      <p>
+        Watch your music from the comfort of your own desktop. 
+      </p>
+    </div>
+  
+    <div id="main">
+      <div id="features">
+        <p>
+          Keep an eye on what's playing in last.fm, even when you're not
+          looking. SkronkFM stays out of your way, but is always there
+          when you need it. It doesn't matter if you're playing music on
+          your Mac, on your phone, on a media center in the next room, or
+          even across town. As long as your music player can update
+          last.fm, your currently playing track will show up on your
+          desktop. 
+        </p>
+    
+        <h2>Features:</h2>
+        <ul>
+          <li>Keep track of what's currently playing on your last.fm account</li>
+          <li>Convenient menubar access</li>
+          <li>Always on Top so SkronkFM doesn't get lost on your desktop</li>
+          <li>Autosizes to fit track length</li>
+          <li>Choose between opaque or transparent background</li>
+          <li>Shows album art if available.</li>
+          <li>Configurable global keyboard shortcut to show/hide</li>
+          <li>Quick link to open the current song in your default browser</li>
+        </ul>
+        <p>
+          Requires a free last.fm account.
+        </p>
+        [ Mac App Store banner ] 
+      </div>
+    
 
-	<div id="coming-soon">
-		<h2>
-			Coming Soon:
-		</h2>
-		<p>
-			Here are some ideas that we’re working on for upcoming releases
-			of SkronkFM. We can’t guarantee when these new features will be
-			ready, but they should give you a picture of where we’re headed. 
-		</p>
-		<ul>
-			<li>More song info</li>
-			<li>Detect current track directly from local music players</li>
-			<li>Growl support</li>
-			<li>iCloud syncing</li>
-			<li>Song history</li>
-		</ul>
-	</div>
-</body>
+      <div id="sections">
+
+        <h2>Getting Started:</h2>
+        <div id="getting-started">
+          <p>
+            The first time you start up SkronkFM, it will ask you to enter a
+            last.fm account name to watch. Since we're just looking at
+            public last.fm info and not updating anything, you don't need to
+            authenticate with last.fm.
+          </p>
+          <img style="border-width: 0px;" src="images/screenshot-prompt.png" width="685" height="87" alt="SkronkFM prompting for last.fm user account name" />
+          <p>
+            Enter your last.fm user name in the Preferences window and hit
+            the return key. The entry field should already be selected for
+            you. If you're not sure you have the correct user account name,
+            you can click the last.fm icon beside the entry field and that
+            user's last.fm page should open in your default browser.
+          </p>
+          <p>
+            You can take this opportunity to experiment with SkronkFM's
+            settings, or close the Preferences window and get right into it.
+          </p>
+          <img style="border-width: 0px;" src="images/screenshot-preferences.png" width="539" height="543" alt="SkronkFM Preferences window" /> 
+        </div>
+      
+        <h2>Watching Your Music:</h2>
+        <div id="watching-music">
+          <p>
+            SkronkFM should immediately load your current or most recent
+            last.fm track. The last.fm icon at the right will flash each
+            time SkronkFM updates its status from last.fm.
+          </p>
+          <img style="border-width: 0px;" src="images/screenshot-opaque.png" width="668" height="64" alt="SkronkFM playing" /> 
+          <p>
+            If you're not listening to last.fm right now, SkronkFM will load
+            your most recently played track, but gray it out to make it
+            clear that it doesn't see music playing.
+          </p>
+          <img style="border-width: 0px;" src="images/screenshot-opaque-notplaying.png" width="668" height="64" alt="SkronkFM not playing" /> 
+          <p>
+            Turn on Transparent Background in Preferences if you want to see
+            through to the desktop or other windows behind SkronkFM.
+          </p>
+          <img style="border-width: 0px;" src="images/screenshot-transparent.png" width="626" height="74" alt="SkronkFM with transparent background" /> 
+          <p>
+            By default, SkronkFM keeps a constant width, and will truncate
+            longer song titles. Turn on Autosize To Fit to shrink and expand
+            to perfectly fit the title size. This comes in handy if you have
+            a very long track title:
+          </p>
+          <img style="border-width: 0px;" src="images/screenshot-opaque-long.png" width="1046" height="64" alt="SkronkFM with very long song track title" /> 
+          <p>
+            If last.fm doesn't have album info for a given track, it will
+            show a placeholder image for the album art. See the FAQ for why
+            this might happen. 
+          </p>
+          <img style="border-width: 0px;" src="images/screenshot-opaque-no-artist.png" width="368" height="74" alt="SkronkFM with no album info" /> 
+          <p>
+            If you don't feel like opening up the Preferences window every
+            time you need to make a change, you can set most of the same
+            options from the optional SkronkFM menu bar. 
+          </p>
+          <img style="border-width: 0px;" src="images/screenshot-menubar.png" width="447" height="270" alt="SkronkFM menu bar" /> 
+          <p>
+            Have fun watching your music! If you have any questions or find
+            any bugs, please send us an email at
+            <a href="mailto:skronk@fourfringe.com">skronk@fourfringe.com</a>. 
+          </p>
+        </div>
+      
+        <h2>FAQ:</h2>
+        <div id="faq">
+          <p class="question">
+            I'm listening to music but SkronkFM is not updating. How often
+            does SkronkFM check my last.fm playing status? 
+          </p>
+          <p class="answer">
+            Every fifteen seconds. Checking it more often typically won't
+            result in faster updates, since many of the music services like
+            Mog and Rdio don't scrobble songs until they've been playing for
+            a certain length, for example 25% completed. Commonly this
+            translates into 30-60 seconds into a song before last.fm first
+            sees the new song. For longer songs it may take even more time
+            to scrobble. 
+          </p>
+
+          <p class="question">
+            Why does it take each service (Spotify, Mog) so long to update
+            my playing status? 
+          </p>
+          <p class="answer">
+            See previous answer. Different music services have different
+            rules on how often they send last.fm updates. Some scrobbling
+            applications may allow you to customize their scrobbling rules. 
+          </p>
+
+          <p class="question">
+            Why does SkronkFM keep saying my music has stopped? 
+          </p>
+          <p class="answer">
+            SkronkFM can only report what last.fm tells it. If a scrobbling
+            application or service does not send an update to last.fm after
+            restarting a paused song, last.fm will not be able to see that
+            the song is playing again. When the next song begins, last.fm
+            should get a fresh update. 
+          </p>
+
+          <p class="question">
+            Where's my album? Where's my album art? 
+          </p>
+          <p class="answer">
+            If last.fm doesn't recognize the song you're scrobbling, it
+            won't be able to associate it with an album. Sometimes small
+            differences in the song name will throw things off, like missing
+            punctuation or alternate spellings. When in doubt, look it up on
+            last.fm by selecting "Open Song on last.fm" from the SkronkFM
+            menu. 
+          </p>
+
+          <p class="question">
+            That flashing icon is distracting. How do I get rid of it? 
+          </p>
+          <p class="answer">
+            Turn off the option "Show Music Source" in Preferences or in the
+            menu bar menu. 
+          </p>
+
+          <p class="question">
+            Does SkronkFM update in the background? 
+          </p>
+          <p class="answer">
+            SkronkFM only checks the network when it's showing. If you hide
+            it, SkronkFM will cease network activity until you show it
+            again. 
+          </p>
+
+          <p class="question">
+            Scrobble? 
+          </p>
+          <p class="answer">
+            "Scrobble" is last.fm's term for sending song updates from your
+            local playlist to last.fm. 
+          </p>
+
+          <p class="question">
+            What if I don't have a question? 
+          </p>
+          <p class="answer">
+            Feel free to ask it anyway. Send all your non-questions to
+            <a href="mailto:skronk@fourfringe.com">skronk@fourfringe.com</a>. 
+          </p>
+        </div>
+
+      </div>
+
+
+      <div id="coming-soon">
+        <h2>Coming Soon:</h2>
+
+        <p>
+          Here are some ideas that we're working on for upcoming releases
+          of SkronkFM. We can't guarantee when these new features will be
+          ready, but they should give you a picture of where we're headed. 
+        </p>
+
+        <ul>
+          <li>More song info</li>
+          <li>Detect current track directly from local music players</li>
+          <li>Growl support</li>
+          <li>iCloud syncing</li>
+          <li>Song history</li>
+        </ul>
+      </div>
+    </div>
+  </body>
 </html>
