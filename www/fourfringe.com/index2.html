@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FourFringe</title>
-  <link href="stylesheets/style.css" rel="stylesheet" type="text/css" >
+  <title>SkronkFM Music Matching Software</title>
+  <link href="style.css" rel="stylesheet" type="text/css" >
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" ></script>
 </head>
@@ -11,7 +11,7 @@
     <script type="text/javascript">
       jQuery(document).ready(function(){
         // One section open at a tile.
-        $('#sections').accordion({ active: false, collapsible: true });
+/*         $('#sections').accordion({ active: false, collapsible: true }); */
 
 /*
         // Toggle multiple sections.
@@ -24,29 +24,33 @@
     </script>
   
     <div id="header">
-      <h1>SkronkFM</h1>
-      <h2>Music Watching Software</h2>
-
-      <img style="border-width: 0px;" src="images/skronkfm-icon.png" width="128" height="128" alt="SkronkFM application icon" /> 
-
-      <p>
-        Watch your music from the comfort of your own desktop. 
-      </p>
+      <img class="imgcenter" src="images/banner-main.png" alt="SkronkFM. Music Matching Software."/>
+      <img class="imgcenter" src="images/banner-tagline.png" alt="Watch your music from the comfort of your own desktop."/>
     </div>
   
-    <div id="main">
+    <div id="navigation">
+    </div>
+
+    <div id="content">
       <div id="features">
-        <p>
+        <p class="left">
           Keep an eye on what's playing in last.fm, even when you're not
           looking. SkronkFM stays out of your way, but is always there
-          when you need it. It doesn't matter if you're playing music on
+          when you need it.
+        </p>
+        <p class="right">
+          It doesn't matter if you're playing music on
           your Mac, on your phone, on a media center in the next room, or
           even across town. As long as your music player can update
           last.fm, your currently playing track will show up on your
           desktop. 
         </p>
+        <div class="clear"></div>
+
+        <img class="imgcenter" src="images/screenshot-main-app.png" alt="Skronk application screenshot."/>
     
-        <h2>Features:</h2>
+        <img class="imgcenter" src="images/header-features.png" alt="Features"/>
+<!--         <h2 class="headerfeature">Features:</h2> -->
         <ul>
           <li>Keep track of what's currently playing on your last.fm account</li>
           <li>Convenient menubar access</li>
@@ -57,10 +61,7 @@
           <li>Configurable global keyboard shortcut to show/hide</li>
           <li>Quick link to open the current song in your default browser</li>
         </ul>
-        <p>
-          Requires a free last.fm account.
-        </p>
-        [ Mac App Store banner ] 
+
       </div>
     
 
@@ -86,7 +87,7 @@
             You can take this opportunity to experiment with SkronkFM's
             settings, or close the Preferences window and get right into it.
           </p>
-          <img style="border-width: 0px;" src="images/screenshot-preferences.png" width="539" height="543" alt="SkronkFM Preferences window" /> 
+          <img class="imgcenter" style="border-width: 0px;" src="images/screenshot-preferences.png" width="539" height="543" alt="SkronkFM Preferences window" /> 
         </div>
       
         <h2>Watching Your Music:</h2>
@@ -111,10 +112,12 @@
           <p>
             By default, SkronkFM keeps a constant width, and will truncate
             longer song titles. Turn on Autosize To Fit to shrink and expand
-            to perfectly fit the title size. This comes in handy if you have
+            to perfectly fit the title size. <!--
+This comes in handy if you have
             a very long track title:
+-->
           </p>
-          <img style="border-width: 0px;" src="images/screenshot-opaque-long.png" width="1046" height="64" alt="SkronkFM with very long song track title" /> 
+<!--           <img style="border-width: 0px;" src="images/screenshot-opaque-long.png" width="1046" height="64" alt="SkronkFM with very long song track title" />  -->
           <p>
             If last.fm doesn't have album info for a given track, it will
             show a placeholder image for the album art. See the FAQ for why
@@ -221,7 +224,8 @@
 
 
       <div id="coming-soon">
-        <h2>Coming Soon:</h2>
+<!--         <h2>Coming Soon:</h2> -->
+        <img class="imgcenter" src="images/header-comingsoon.png" alt="Coming Soon…"/>
 
         <p>
           Here are some ideas that we're working on for upcoming releases
@@ -237,6 +241,7 @@
           <li>Song history</li>
         </ul>
       </div>
+
     </div>
   </body>
 </html>
