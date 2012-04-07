@@ -305,7 +305,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     // Settings.
     BOOL showNetworkAvailability = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowNetworkAvailability];
     BOOL transparentBackground = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceTransparentBackground];
-    BOOL autosizeToFit = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutosizeToFit];
+    BOOL autosizeToFit = YES; //[[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutosizeToFit];
 
     NSRect labelRect = self.label.frame;
 
@@ -643,7 +643,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
         [NSNumber numberWithBool:NO],  kPreferenceAutohide,
         [NSNumber numberWithBool:YES], kPreferenceAlwaysOnTop,
-        [NSNumber numberWithBool:NO], kPreferenceAutosizeToFit,
+        [NSNumber numberWithBool:YES], kPreferenceAutosizeToFit,
         [NSNumber numberWithBool:YES], kPreferenceShowInMenubar,
         [NSNumber numberWithBool:NO], kPreferenceTransparentBackground,
         [NSNumber numberWithBool:YES], kPreferenceShowNetworkAvailability,

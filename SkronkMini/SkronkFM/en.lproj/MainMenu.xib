@@ -648,14 +648,6 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="738336901">
-									<reference key="NSMenu" ref="466310130"/>
-									<string key="NSTitle">Autosize To Fit</string>
-									<string key="NSKeyEquiv"/>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="35465992"/>
-									<reference key="NSMixedImage" ref="502551668"/>
-								</object>
 								<object class="NSMenuItem" id="928046840">
 									<reference key="NSMenu" ref="466310130"/>
 									<string key="NSTitle">Transparent Background</string>
@@ -666,7 +658,7 @@
 								</object>
 								<object class="NSMenuItem" id="434309535">
 									<reference key="NSMenu" ref="466310130"/>
-									<string key="NSTitle">Show Music Source</string>
+									<string key="NSTitle">Show Watcher Icon</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -757,14 +749,6 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="344102839">
-						<reference key="NSMenu" ref="481416820"/>
-						<string key="NSTitle">Autosize To Fit</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="35465992"/>
-						<reference key="NSMixedImage" ref="502551668"/>
-					</object>
 					<object class="NSMenuItem" id="798684250">
 						<reference key="NSMenu" ref="481416820"/>
 						<string key="NSTitle">Transparent Background</string>
@@ -775,7 +759,7 @@
 					</object>
 					<object class="NSMenuItem" id="576219838">
 						<reference key="NSMenu" ref="481416820"/>
-						<string key="NSTitle">Show Music Source</string>
+						<string key="NSTitle">Show Watcher Icon</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -953,6 +937,7 @@
 							<string key="NSFrame">{{608, 6}, {26, 24}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -1500,22 +1485,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.autosizeToFit</string>
-						<reference key="source" ref="344102839"/>
-						<reference key="destination" ref="368844928"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="344102839"/>
-							<reference key="NSDestination" ref="368844928"/>
-							<string key="NSLabel">value: values.autosizeToFit</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.autosizeToFit</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">651</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.transparentBackground</string>
 						<reference key="source" ref="798684250"/>
 						<reference key="destination" ref="368844928"/>
@@ -1529,22 +1498,6 @@
 						</object>
 					</object>
 					<int key="connectionID">657</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.autosizeToFit</string>
-						<reference key="source" ref="738336901"/>
-						<reference key="destination" ref="368844928"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="738336901"/>
-							<reference key="NSDestination" ref="368844928"/>
-							<string key="NSLabel">value: values.autosizeToFit</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.autosizeToFit</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">666</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -1719,7 +1672,6 @@
 						<reference key="object" ref="466310130"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="10731766"/>
-							<reference ref="738336901"/>
 							<reference ref="928046840"/>
 							<reference ref="434309535"/>
 							<reference ref="388672064"/>
@@ -1789,7 +1741,6 @@
 							<reference ref="314844566"/>
 							<reference ref="465572816"/>
 							<reference ref="784725684"/>
-							<reference ref="344102839"/>
 							<reference ref="798684250"/>
 							<reference ref="790798918"/>
 							<reference ref="212155742"/>
@@ -1924,11 +1875,6 @@
 						<reference key="parent" ref="742916205"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">649</int>
-						<reference key="object" ref="344102839"/>
-						<reference key="parent" ref="481416820"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">654</int>
 						<reference key="object" ref="798684250"/>
 						<reference key="parent" ref="481416820"/>
@@ -1937,11 +1883,6 @@
 						<int key="objectID">658</int>
 						<reference key="object" ref="637967187"/>
 						<reference key="parent" ref="481416820"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">663</int>
-						<reference key="object" ref="738336901"/>
-						<reference key="parent" ref="466310130"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">664</int>
@@ -2350,10 +2291,8 @@
 				<string key="626.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="634.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="635.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="649.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="654.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="658.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="663.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="664.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="665.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="669.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
