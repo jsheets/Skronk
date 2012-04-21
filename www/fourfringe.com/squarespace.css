@@ -1,0 +1,111 @@
+/*
+
+Template: Usonian
+Style: Dark Horse
+Copyright: Squarespace Inc. All rights reserved.
+Usage: NOT FOR USE OUTSIDE THE SQUARESPACE PLATFORM
+
+*/
+
+
+
+/* Global Styles
+------------------------------------------------------- */
+
+/* Clear page body div */
+#pageBody { overflow: hidden; }
+
+/* Ensures images and text areas fit content areas */
+.full-image-block img,
+.full-image-inline img,
+.full-image-float-left img,
+.full-image-float-right img,
+textarea { max-width: 100%; }
+
+/* Standardizes all form button styles cross-browser */
+input.button,
+input.button[disabled] { width: auto; border: 0px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-transition-property: background-color; -webkit-transition-property: background-color; }
+input.button:focus,
+input.button:hover { cursor: pointer; }
+
+/* Overrides system width on comment buttons */
+#createPostButton,
+#previewPostButton { width: auto !important; }
+
+/* Makes contact form widget button full-width */
+.widget-type-sendemailv2 .submit-button,
+.widget-type-sendemailv2 .submit-button[disabled] { width: 100%; }
+
+/* Ensures search buttons do not wrap in sidebar, search and faq (temporary) */
+#sidebar1 .content-passthrough .search-form-pt .queryField,
+#sidebar2 .content-passthrough .search-form-pt .queryField { height: 2.2em; }
+#sidebar1 .content-passthrough .search-form-pt .queryButton,
+#sidebar2 .content-passthrough .search-form-pt .queryButton { height: 2.5em; width: 30px; padding: 0px !important; }
+
+#content .search-form .queryField { height: 1.8em; } /* search page input */
+#content .search-form-inline .queryField { height: 2.2em; } /* faq page input */
+
+/* Creates space between multiple widgets within the same section */
+.widget-wrapper { margin-top: 0px; } /* removes margin on widget top */
+.widget-wrapper + .widget-wrapper { margin-top: 20px; } /* adds margin to following widgets */
+
+
+
+/* Template Specific Styles
+--------------------------------------------------- */
+
+
+/* Layout */
+
+/* makes header/footer/topMenuBars full-canvas-width */
+#pageHeaderWrapper, #pageFooterWrapper  { margin-left:-$ContentPaddingExternal$; width:$CanvasWidth$; }
+.horizontalNavigationBar, #pageFooter { padding-left:$ContentPaddingExternal$; padding-right:$ContentPaddingExternal$; width:$(CanvasWidth-ContentPaddingExternal-ContentPaddingExternal)$; }
+
+/* full width banner image */
+#bannerWrapper { width:$CanvasWidth$; }
+
+/* adds padding to title area when banner is not in use */
+#siteTitle, #siteSubtitle { padding-left:$ContentPaddingExternal$; }
+
+
+/* Navigation */
+
+/* removes border from first navigation item */
+#navigationTop .horizontalNavigationBar .content-navigation .module:first-child a,
+#navigationBottom .horizontalNavigationBar .content-navigation .module:first-child a { border-left:0; }
+
+/* puts the border back on folder items */
+#navigationTop .horizontalNavigationBar .content-navigation .folder:first-child a,
+#navigationBottom .horizontalNavigationBar .content-navigation .folder:first-child a { border-left:inherit; }
+
+
+/* post type styles */
+.post-data-link .title { margin-bottom:25px; }
+.post-data-link .title a { -moz-border-radius:8px; -webkit-border-radius:8px; }
+.post-data-link .title a:hover { opacity:.7; filter: alpha(opacity=70); }
+
+
+/* Sidebar */
+
+/* makes sidebar links full-width, increases usability */
+.section ul li a { display:block; } 
+.section ul.archive-item-list-pt li a { display:inline; } 
+
+/* hides folder icons */
+.verticalNavigationBar .folder-closed a.folder-link, 
+.verticalNavigationBar .folder-open a.folder-link { background-image:none; } 
+
+/* second level folders (in sidebar menus) */
+.verticalNavigationBar ul li ul li ul li a span { padding-left:2em; }
+
+
+
+/* Add your custom CSS below this line
+------------------------------------------------------- */
+
+
+
+
+
+
+
