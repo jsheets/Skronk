@@ -75,7 +75,9 @@ SkronkFM Music Watcher
 
 Watch your music from the comfort of your own desktop.
 
-Keep an eye on what’s playing in last.fm, even when you’re not looking. SkronkFM stays out of your way, but is always there when you need it. It doesn’t matter if you’re playing music on your Mac, on your phone, on a media center in the next room, or even across town. As long as your music player can update last.fm, your currently playing track will show up on your desktop.
+Keep an eye on what’s playing in last.fm, even when you’re not looking. SkronkFM stays out of your way, but is always there when you need it.
+
+It doesn’t matter if you’re playing music on your Mac, on your phone, on a media center in the next room, or even across town. As long as your music player can update last.fm, your currently playing track will show up on your desktop.
 
 Features:
 * Keep track of what’s currently playing on your last.fm account
@@ -87,16 +89,11 @@ Features:
 * Configurable global keyboard shortcut to show/hide
 * Quick link to open the current song in your default browser
 
-Requires a free last.fm account.
-
 Coming Soon:
-* More song info
-* Detect current track directly from local music players
-* Growl support
-* iCloud syncing
+* Detect local music players
+* Track info
 * Song history
-
-Note, SkronkFM is not perfect. It is currently limited to songs reported by last.fm. Also, songs that last.fm does not recognize may lack album info, but will still appear in SkronkFM.
+* Growl support
 
 
 
@@ -138,7 +135,7 @@ Where's my album? Where's my album art?
 If last.fm doesn't recognize the song you're scrobbling, it won't be able to associate it with an album. Sometimes small differences in the song name will throw things off, like missing punctuation or alternate spellings. When in doubt, look it up on last.fm by selecting "Open Song on last.fm" from the SkronkFM menu.
 
 That flashing icon is distracting. How do I get rid of it?
-Turn off the option "Show Music Source" in Preferences or in the menu bar menu.
+Turn off the option "Show Watcher Icon“ in Preferences or in the menu bar menu.
 
 Does SkronkFM update in the background?
 SkronkFM only checks the network when it's showing. If you hide it, SkronkFM will cease network activity until you show it again.
@@ -181,7 +178,9 @@ Watch your music from the comfort of your own desktop.
 
 #
 
-Keep an eye on what’s playing in last.fm, even when you’re not looking. SkronkFM stays out of your way, but is always there when you need it. It doesn’t matter if you’re playing music on your Mac, on your phone, on a media center in the next room, or even across town. As long as your music player can update last.fm, your currently playing track will show up on your desktop.
+Keep an eye on what’s playing in last.fm, even when you’re not looking. SkronkFM stays out of your way, but is always there when you need it.
+
+It doesn’t matter if you’re playing music on your Mac, on your phone, on a media center in the next room, or even across town. As long as your music player can update last.fm, your currently playing track will show up on your desktop.
 
 Features:
 
@@ -200,7 +199,7 @@ Requires a free last.fm account.
 
 Getting Started:
 
-The first time you start up SkronkFM, it will ask you to enter a last.fm account name to watch. Since we’re just looking at public last.fm info and not updating anything, you don’t need to authenticate with last.fm.
+The first time you start up SkronkFM, it will ask you to enter a last.fm account name. Since we’re watching public last.fm info and not updating anything, you don’t need to authenticate with last.fm.
 ￼
 
 Enter your last.fm user name in the Preferences window and hit the return key. The entry field should already be selected for you. If you’re not sure you have the correct user account name, you can click the last.fm icon beside the entry field and that user’s last.fm page should open in your default browser.
@@ -274,17 +273,14 @@ What if I don’t have a question?
 Feel free to ask it anyway. Send all your non-questions to skronk@fourfringe.com.
 
 
-Coming Soon:
+Futures:
 
-Here are some ideas that we’re working on for upcoming releases of SkronkFM. We can’t guarantee when these new features will be ready, but they should give you a picture of where we’re headed.
+Here are some ideas we’re thinking about for upcoming releases of SkronkFM.
 
-* More song info
-* Detect current track directly from local music players
+* Detect local music players
 * Growl support
 * iCloud syncing
 * Song history
-
-
 </Text>
         </Document>
     </Documents>
