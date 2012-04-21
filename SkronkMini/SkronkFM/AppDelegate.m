@@ -585,7 +585,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
 - (IBAction)showHelpClicked:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://fourfringe.com"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.skronkapp.com/help"]];
 }
 
 - (IBAction)preferencesClicked:(id)sender
