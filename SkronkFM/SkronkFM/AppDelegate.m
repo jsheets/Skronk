@@ -427,6 +427,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             if (self.currentlyPlaying.artSmallUrl == nil)
             {
                 // Have a live track, with no art.
+                self.currentAlbumArtURL = nil;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.art.image = self.missingArt;
                 });
