@@ -12,6 +12,7 @@
 		0D010A5314F4892900A62136 /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D010A4C14F4892900A62136 /* SRRecorderCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0D010A5414F4892900A62136 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D010A4E14F4892900A62136 /* SRRecorderControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0D010A5514F4892900A62136 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D010A5014F4892900A62136 /* SRValidator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0D09C5F915433F120031C154 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D09C5F815433F120031C154 /* ScriptingBridge.framework */; };
 		0D2B5ED0150C45080036A25A /* album-art-missing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ECF150C45080036A25A /* album-art-missing.png */; };
 		0D2B5ED2150C455D0036A25A /* SkronkFM.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED1150C455D0036A25A /* SkronkFM.icns */; };
 		0D2B5ED6150C70460036A25A /* menubar-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED5150C70460036A25A /* menubar-icon.png */; };
@@ -68,6 +69,12 @@
 		0D010A4E14F4892900A62136 /* SRRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = "<group>"; };
 		0D010A4F14F4892900A62136 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		0D010A5014F4892900A62136 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
+		0D09C5F215433AD20031C154 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		0D09C5F315433AD20031C154 /* Last.fm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Last.fm.h; sourceTree = "<group>"; };
+		0D09C5F415433AD20031C154 /* Mog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mog.h; sourceTree = "<group>"; };
+		0D09C5F515433AD20031C154 /* Rdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rdio.h; sourceTree = "<group>"; };
+		0D09C5F615433AD20031C154 /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
+		0D09C5F815433F120031C154 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		0D2B5ECC150B19130036A25A /* SkronkFM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SkronkFM.entitlements; sourceTree = "<group>"; };
 		0D2B5ECF150C45080036A25A /* album-art-missing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album-art-missing.png"; sourceTree = "<group>"; };
 		0D2B5ED1150C455D0036A25A /* SkronkFM.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SkronkFM.icns; sourceTree = SOURCE_ROOT; };
@@ -149,6 +156,7 @@
 				0DE0249E14DF72BC004E2227 /* Carbon.framework in Frameworks */,
 				0DE0241414DDC9FB004E2227 /* Cocoa.framework in Frameworks */,
 				0DE0248B14DF3BF8004E2227 /* SystemConfiguration.framework in Frameworks */,
+				0D09C5F915433F120031C154 /* ScriptingBridge.framework in Frameworks */,
 				0DE0248914DF3BE8004E2227 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,9 +190,22 @@
 			path = ../../External/ShortcutRecorder/Source;
 			sourceTree = "<group>";
 		};
+		0D09C5F115433AD20031C154 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				0D09C5F215433AD20031C154 /* iTunes.h */,
+				0D09C5F315433AD20031C154 /* Last.fm.h */,
+				0D09C5F415433AD20031C154 /* Mog.h */,
+				0D09C5F515433AD20031C154 /* Rdio.h */,
+				0D09C5F615433AD20031C154 /* Spotify.h */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
 		0DE0240414DDC9FB004E2227 = {
 			isa = PBXGroup;
 			children = (
+				0D09C5F815433F120031C154 /* ScriptingBridge.framework */,
 				0DE0241914DDC9FB004E2227 /* SkronkFM */,
 				0DE0243714DDCC18004E2227 /* Specs */,
 				0DE0241214DDC9FB004E2227 /* Frameworks */,
@@ -229,6 +250,7 @@
 			children = (
 				0DE0245B14DDF35C004E2227 /* UI */,
 				0DE0245C14DDF363004E2227 /* Model */,
+				0D09C5F115433AD20031C154 /* Bridge */,
 				0DE0246D14DF3826004E2227 /* ASIHTTPRequest */,
 				0DE0249014DF65D4004E2227 /* SGHotKeysLib */,
 				0D010A4614F4892900A62136 /* ShortcutRecorder */,

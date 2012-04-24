@@ -461,15 +461,20 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     
     [request setFailedBlock:^{
         NSError *error = [request error];
-        NSLog(@"Error updating last.fm status for user %@: %@", username, [error localizedDescription]);
+        NSString *errString = [NSString stringWithFormat:@"Error updating last.fm status: %@", [error localizedDescription]];
+        NSLog(@"%@", errString);
 
-        if (showNetworkAvailability)
-        {
-            dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Display error text in UI.
+            NSAttributedString *displayString = [[NSAttributedString alloc] initWithString:errString];
+            self.label.attributedStringValue = displayString;
+            
+            if (showNetworkAvailability)
+            {
                 [self endNetworkAnimation];
                 [self showServiceDown];
-            });
-        }
+            }
+        });
     }];
     
     [request startAsynchronous];
@@ -653,6 +658,38 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 
+- (void)checkApplications
+{
+    NSLog(@"Scanning for applications.");
+
+    iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+    iTunes.delegate = self;
+    if ([iTunes isRunning])
+    {
+        iTunesTrack *currentTrack = iTunes.currentTrack;
+        if ([currentTrack exists])
+        {
+            NSLog(@"iTunes is currently playing '%@' by '%@' on '%@'.", 
+                  currentTrack.name, currentTrack.artist, currentTrack.album);
+        }
+        else
+        {
+            NSLog(@"iTunes is running but not playing anything.");
+        }
+    }
+    else
+    {
+        NSLog(@"iTunes is not running...skipping iTunes check.");
+        
+    }
+}
+
+- (id)eventDidFail:(const AppleEvent *)event withError:(NSError *)error
+{
+    NSLog(@"AppleScript error: %@", [error localizedDescription]);
+    return nil;
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [self registerDefaults];
@@ -691,6 +728,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceLastFmUsername options:NSKeyValueObservingOptionNew context:nil];
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceShowNetworkAvailability options:NSKeyValueObservingOptionNew context:nil];
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceTransparentBackground options:NSKeyValueObservingOptionNew context:nil];
+    
+    [self checkApplications];
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification

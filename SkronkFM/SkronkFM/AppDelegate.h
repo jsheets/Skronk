@@ -7,12 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "iTunes.h"
 
 @class PreferencesController;
 @class RoundedView;
 @class NowPlaying;
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, SBApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet RoundedView *roundedView;

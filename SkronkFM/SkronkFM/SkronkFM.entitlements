@@ -8,5 +8,13 @@
 	<true/>
 	<key>com.apple.security.network.server</key>
 	<true/>
+	<key>com.apple.security.temporary-exception.apple-events</key>
+	<array>
+	    <string>com.apple.iTunes</string>
+	    <string>com.mog.desktop</string>
+	    <string>com.rdio.desktop</string>
+	    <string>com.spotify.client</string>
+	    <string>fm.last.Last.fm</string>
+	</array>
 </dict>
 </plist>
