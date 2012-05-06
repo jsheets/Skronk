@@ -32,14 +32,14 @@
                         <TextSelection>73,10</TextSelection>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="4" Type="Text" Created="2012-03-05 09:56:22 -0600" Modified="2012-04-13 10:36:01 -0500">
+                <BinderItem ID="4" Type="Text" Created="2012-03-05 09:56:22 -0600" Modified="2012-05-04 09:21:50 -0500">
                     <Title>iTunes Connect</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
                         <NotesTextSelection>0,0</NotesTextSelection>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>1778,0</TextSelection>
+                        <TextSelection>0,2552</TextSelection>
                     </TextSettings>
                 </BinderItem>
                 <BinderItem ID="10" Type="Text" Created="2012-03-25 12:08:04 -0500" Modified="2012-04-11 22:52:58 -0500">
@@ -151,7 +151,7 @@
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2012-03-05 09:56:09 -0600" IgnoreDeadline="Yes">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="Yes" ResetType="Midnight" DeterminedFromDeadline="No" WritingDays="" CanWriteOnDeadlineDate="No">0</SessionTarget>
-        <PreviousSession Words="-5" Characters="-38" Date="2012-04-13 10:34:41 -0500"></PreviousSession>
+        <PreviousSession Words="0" Characters="-1" Date="2012-05-03 18:55:21 -0500"></PreviousSession>
     </ProjectTargets>
     <PrintSettings PaperSize="612.0,792.0" LeftMargin="72.0" RightMargin="72.0" TopMargin="90.0" BottomMargin="90.0" PaperType="na-letter" Orientation="Portrait" HorizontalPagination="Clip" VerticalPagination="Auto" ScaleFactor="1.0" HorizontallyCentered="Yes" VerticallyCentered="Yes" Collates="Yes" PagesAcross="1" PagesDown="1"></PrintSettings>
 </ScrivenerProject>
