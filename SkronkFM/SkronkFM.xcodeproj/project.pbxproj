@@ -205,7 +205,6 @@
 		0DE0240414DDC9FB004E2227 = {
 			isa = PBXGroup;
 			children = (
-				0D09C5F815433F120031C154 /* ScriptingBridge.framework */,
 				0DE0241914DDC9FB004E2227 /* SkronkFM */,
 				0DE0243714DDCC18004E2227 /* Specs */,
 				0DE0241214DDC9FB004E2227 /* Frameworks */,
@@ -229,6 +228,7 @@
 				0DE0249D14DF72BC004E2227 /* Carbon.framework */,
 				0DE0248A14DF3BF8004E2227 /* SystemConfiguration.framework */,
 				0D83848A150054FB0024403B /* Quartz.framework */,
+				0D09C5F815433F120031C154 /* ScriptingBridge.framework */,
 				0DE0248814DF3BE8004E2227 /* libz.dylib */,
 				0DE0241514DDC9FB004E2227 /* Other Frameworks */,
 			);
@@ -621,11 +621,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SkronkFM/SkronkFM.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkronkFM/SkronkFM-Prefix.pch";
 				INFOPLIST_FILE = "SkronkFM/SkronkFM-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -661,6 +661,12 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 - (void)checkApplications
 {
     NSLog(@"Scanning for applications.");
+    
+    NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
+    NSLog(@"iTunes path: %@", [workspace fullPathForApplication:@"iTunes"]);
+    NSLog(@"Console path: %@", [workspace fullPathForApplication:@"Console"]);
+    NSLog(@"SkronkFM path: %@", [workspace fullPathForApplication:@"SkronkFM"]);
+    NSLog(@"Bad app path: %@", [workspace fullPathForApplication:@"com.apple.iTunesxx"]);
 
     iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
     iTunes.delegate = self;

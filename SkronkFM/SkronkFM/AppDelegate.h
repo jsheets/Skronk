@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 #import "iTunes.h"
+#import "Spotify.h"
+#import "Mog.h"
+#import "Rdio.h"
+#import "Last.fm.h"
 
 @class PreferencesController;
 @class RoundedView;
