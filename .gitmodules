@@ -22,3 +22,6 @@
 [submodule "External/ValidateStoreReceipt"]
 	path = External/ValidateStoreReceipt
 	url = https://github.com/roddi/ValidateStoreReceipt.git
+[submodule "FringeFM"]
+	path = FringeFM
+	url = git@github.com:jsheets/FringeFM.git
