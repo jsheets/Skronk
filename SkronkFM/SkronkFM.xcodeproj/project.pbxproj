@@ -560,6 +560,10 @@
 				0DE0242014DDC9FB004E2227 /* main.m in Sources */,
 				0DE0242714DDC9FB004E2227 /* AppDelegate.m in Sources */,
 				0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */,
+				0DEBC49E1501AFDC00D4E1C3 /* RoundedWindow.m in Sources */,
+				0DEBC4A21501B3CD00D4E1C3 /* RoundedView.m in Sources */,
+				0DA9F86B1560599F00A110A9 /* FMJson.m in Sources */,
+				0DA9F86C1560599F00A110A9 /* NowPlaying.m in Sources */,
 				0DE0249914DF65D4004E2227 /* SGHotKey.m in Sources */,
 				0DE0249A14DF65D4004E2227 /* SGHotKeyCenter.m in Sources */,
 				0DE0249B14DF65D4004E2227 /* SGKeyCodeTranslator.m in Sources */,
@@ -569,8 +573,6 @@
 				0D010A5314F4892900A62136 /* SRRecorderCell.m in Sources */,
 				0D010A5414F4892900A62136 /* SRRecorderControl.m in Sources */,
 				0D010A5514F4892900A62136 /* SRValidator.m in Sources */,
-				0DEBC49E1501AFDC00D4E1C3 /* RoundedWindow.m in Sources */,
-				0DEBC4A21501B3CD00D4E1C3 /* RoundedView.m in Sources */,
 				0DA9F841156056D500A110A9 /* ASIDataCompressor.m in Sources */,
 				0DA9F844156056D500A110A9 /* ASIDataDecompressor.m in Sources */,
 				0DA9F847156056D500A110A9 /* ASIDownloadCache.m in Sources */,
@@ -578,8 +580,6 @@
 				0DA9F84D156056D500A110A9 /* ASIHTTPRequest.m in Sources */,
 				0DA9F852156056D500A110A9 /* ASIInputStream.m in Sources */,
 				0DA9F855156056D500A110A9 /* ASINetworkQueue.m in Sources */,
-				0DA9F86B1560599F00A110A9 /* FMJson.m in Sources */,
-				0DA9F86C1560599F00A110A9 /* NowPlaying.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
