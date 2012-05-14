@@ -15,7 +15,7 @@
 
 @class PreferencesController;
 @class RoundedView;
-@class NowPlaying;
+@class FFMLastFmJson;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, SBApplicationDelegate>
 
@@ -33,7 +33,7 @@
 @property (assign) CGFloat backgroundWidth;
 @property (strong) PreferencesController *preferencesController;
 @property (strong) NSTimer *timer;
-@property (strong) NowPlaying *currentlyPlaying;
+@property (strong) FFMLastFmJson *currentlyPlaying;
 @property (strong) NSURL *currentAlbumArtURL;
 @property (strong) NSImage *currentAlbumArt;
 @property (strong) NSImage *missingArt;

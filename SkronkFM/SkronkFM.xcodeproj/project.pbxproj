@@ -47,8 +47,8 @@
 		0DA9F855156056D500A110A9 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F83D156056D500A110A9 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0DA9F856156056D500A110A9 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F83D156056D500A110A9 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0DA9F857156056D500A110A9 /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA9F83E156056D500A110A9 /* ASIProgressDelegate.h */; };
-		0DA9F86B1560599F00A110A9 /* FMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F8681560599F00A110A9 /* FMJson.m */; };
-		0DA9F86C1560599F00A110A9 /* NowPlaying.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F86A1560599F00A110A9 /* NowPlaying.m */; };
+		0DA9F86B1560599F00A110A9 /* FFMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F8681560599F00A110A9 /* FFMJson.m */; };
+		0DA9F86C1560599F00A110A9 /* FFMLastFmJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F86A1560599F00A110A9 /* FFMLastFmJson.m */; };
 		0DE0241414DDC9FB004E2227 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE0241314DDC9FB004E2227 /* Cocoa.framework */; };
 		0DE0241E14DDC9FB004E2227 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DE0241C14DDC9FB004E2227 /* InfoPlist.strings */; };
 		0DE0242014DDC9FB004E2227 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0241F14DDC9FB004E2227 /* main.m */; };
@@ -135,10 +135,10 @@
 		0DA9F83C156056D500A110A9 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = "../../FringeFM/External/asi-http-request/Classes/ASINetworkQueue.h"; sourceTree = "<group>"; };
 		0DA9F83D156056D500A110A9 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = "../../FringeFM/External/asi-http-request/Classes/ASINetworkQueue.m"; sourceTree = "<group>"; };
 		0DA9F83E156056D500A110A9 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../../FringeFM/External/asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = "<group>"; };
-		0DA9F8671560599F00A110A9 /* FMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMJson.h; path = ../../FringeFM/FringeFM/FMJson.h; sourceTree = "<group>"; };
-		0DA9F8681560599F00A110A9 /* FMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMJson.m; path = ../../FringeFM/FringeFM/FMJson.m; sourceTree = "<group>"; };
-		0DA9F8691560599F00A110A9 /* NowPlaying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NowPlaying.h; path = ../../FringeFM/FringeFM/NowPlaying.h; sourceTree = "<group>"; };
-		0DA9F86A1560599F00A110A9 /* NowPlaying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NowPlaying.m; path = ../../FringeFM/FringeFM/NowPlaying.m; sourceTree = "<group>"; };
+		0DA9F8671560599F00A110A9 /* FFMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; name = FFMJson.h; path = ../../FringeFM/FringeFM/FFMJson.h; sourceTree = "<group>"; };
+		0DA9F8681560599F00A110A9 /* FFMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMJson.m; path = ../../FringeFM/FringeFM/FFMJson.m; sourceTree = "<group>"; };
+		0DA9F8691560599F00A110A9 /* FFMLastFmJson.h */ = {isa = PBXFileReference; fileEncoding = 4; name = FFMLastFmJson.h; path = ../../FringeFM/FringeFM/FFMLastFmJson.h; sourceTree = "<group>"; };
+		0DA9F86A1560599F00A110A9 /* FFMLastFmJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMLastFmJson.m; path = ../../FringeFM/FringeFM/FFMLastFmJson.m; sourceTree = "<group>"; };
 		0DA9F86D15605A6B00A110A9 /* FringeFM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FringeFM.xcodeproj; path = ../FringeFM/FringeFM.xcodeproj; sourceTree = "<group>"; };
 		0DE0240F14DDC9FB004E2227 /* SkronkFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkronkFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE0241314DDC9FB004E2227 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -237,10 +237,10 @@
 		0DA9F8661560596A00A110A9 /* FringeFM */ = {
 			isa = PBXGroup;
 			children = (
-				0DA9F8671560599F00A110A9 /* FMJson.h */,
-				0DA9F8681560599F00A110A9 /* FMJson.m */,
-				0DA9F8691560599F00A110A9 /* NowPlaying.h */,
-				0DA9F86A1560599F00A110A9 /* NowPlaying.m */,
+				0DA9F8671560599F00A110A9 /* FFMJson.h */,
+				0DA9F8681560599F00A110A9 /* FFMJson.m */,
+				0DA9F8691560599F00A110A9 /* FFMLastFmJson.h */,
+				0DA9F86A1560599F00A110A9 /* FFMLastFmJson.m */,
 			);
 			name = FringeFM;
 			sourceTree = "<group>";
@@ -562,8 +562,8 @@
 				0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */,
 				0DEBC49E1501AFDC00D4E1C3 /* RoundedWindow.m in Sources */,
 				0DEBC4A21501B3CD00D4E1C3 /* RoundedView.m in Sources */,
-				0DA9F86B1560599F00A110A9 /* FMJson.m in Sources */,
-				0DA9F86C1560599F00A110A9 /* NowPlaying.m in Sources */,
+				0DA9F86B1560599F00A110A9 /* FFMJson.m in Sources */,
+				0DA9F86C1560599F00A110A9 /* FFMLastFmJson.m in Sources */,
 				0DE0249914DF65D4004E2227 /* SGHotKey.m in Sources */,
 				0DE0249A14DF65D4004E2227 /* SGHotKeyCenter.m in Sources */,
 				0DE0249B14DF65D4004E2227 /* SGKeyCodeTranslator.m in Sources */,

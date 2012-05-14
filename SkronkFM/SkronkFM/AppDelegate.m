@@ -7,9 +7,9 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "NowPlaying.h"
+#import "FFMLastFmJson.h"
 #import "AppDelegate.h"
-#import "NowPlaying.h"
+#import "FFMLastFmJson.h"
 #import "ASIHTTPRequest.h"
 #import "SGHotKey.h"
 #import "SGHotKeyCenter.h"
@@ -220,7 +220,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     [[self.serviceIcon animator] setAlphaValue:kServiceIconDimAlpha];
 }
 
-- (NSMutableAttributedString *)trackDisplayText:(NowPlaying *)nowPlaying coloredText:(BOOL)colored
+- (NSMutableAttributedString *)trackDisplayText:(FFMLastFmJson *)nowPlaying coloredText:(BOOL)colored
 {
     NSMutableAttributedString *displayText = nil;
 
@@ -388,7 +388,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
         NSMutableAttributedString *displayText = nil;
 
-        self.currentlyPlaying = [[NowPlaying alloc] initWithJson:responseString];
+        self.currentlyPlaying = [[FFMLastFmJson alloc] initWithJson:responseString];
 
         displayText = [self trackDisplayText:self.currentlyPlaying coloredText:self.currentlyPlaying.isPlaying];
 
