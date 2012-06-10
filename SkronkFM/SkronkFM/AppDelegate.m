@@ -10,6 +10,7 @@
 #import "FFMLastFmJson.h"
 #import "AppDelegate.h"
 #import "FFMLastFmJson.h"
+#import "FFMSong.h"
 #import "ASIHTTPRequest.h"
 #import "SGHotKey.h"
 #import "SGHotKeyCenter.h"
@@ -224,21 +225,21 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 {
     NSMutableAttributedString *displayText = nil;
 
-    BOOL hasArtist = nowPlaying.artist.length > 0;
-    BOOL hasAlbum = nowPlaying.album.length > 0;
-    BOOL hasTrack = nowPlaying.track.length > 0;
+    BOOL hasArtist = nowPlaying.song.artist.length > 0;
+    BOOL hasAlbum = nowPlaying.song.album.length > 0;
+    BOOL hasTrack = nowPlaying.song.track.length > 0;
 
     // If we don't already have track text (not "Loading..."), load the last track played previously.
     BOOL firstLoad = [self.label.stringValue isEqualToString:@"Loading..."];
     
-    BOOL errorLoading = nowPlaying.error != nil;
+    BOOL errorLoading = nowPlaying.song.error != nil;
 
     if (errorLoading)
     {
-        NSString *message = [NSString stringWithFormat:@"last.fm Error: %@", nowPlaying.error];
+        NSString *message = [NSString stringWithFormat:@"last.fm Error: %@", nowPlaying.song.error];
         displayText = [[NSMutableAttributedString alloc] initWithString:message];
     }
-    else if (firstLoad || nowPlaying.isPlaying)
+    else if (firstLoad || nowPlaying.song.isPlaying)
     {
         displayText = [[NSMutableAttributedString alloc] init];
 
@@ -256,7 +257,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         if (hasTrack)
         {
 //            NSString *plainText = [NSString stringWithFormat:@"\"%@\"", nowPlaying.track];
-            fancyString = [[NSAttributedString alloc] initWithString:nowPlaying.track attributes:white];
+            fancyString = [[NSAttributedString alloc] initWithString:nowPlaying.song.track attributes:white];
             [displayText appendAttributedString:fancyString];
         }
 
@@ -265,7 +266,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             fancyString = [[NSAttributedString alloc] initWithString:@" by " attributes:gray];
             [displayText appendAttributedString:fancyString];
 
-            fancyString = [[NSAttributedString alloc] initWithString:nowPlaying.artist attributes:white];
+            fancyString = [[NSAttributedString alloc] initWithString:nowPlaying.song.artist attributes:white];
             [displayText appendAttributedString:fancyString];
         }
 
@@ -275,7 +276,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                 gray];
             [displayText appendAttributedString:fancyString];
 
-            fancyString = [[NSAttributedString alloc] initWithString:nowPlaying.album attributes:
+            fancyString = [[NSAttributedString alloc] initWithString:nowPlaying.song.album attributes:
                 white];
             [displayText appendAttributedString:fancyString];
         }
@@ -390,7 +391,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
         self.currentlyPlaying = [[FFMLastFmJson alloc] initWithJson:responseString];
 
-        displayText = [self trackDisplayText:self.currentlyPlaying coloredText:self.currentlyPlaying.isPlaying];
+        displayText = [self trackDisplayText:self.currentlyPlaying coloredText:self.currentlyPlaying.song.isPlaying];
 
         // Back on main thread...
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -409,7 +410,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
             // Hide window when not playing and autohide is on.
             BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
-            BOOL hideWindow = !self.currentlyPlaying.isPlaying && hideWhenNotPlaying;
+            BOOL hideWindow = !self.currentlyPlaying.song.isPlaying && hideWhenNotPlaying;
             [self showWindow:!hideWindow];
 
             // Stop pulsing service icon.
@@ -422,9 +423,9 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         // Fetch album art, synchronously, while the above block also executes.
         // Only update if we're currently playing, and the image URL has changed to something new.
         // But if currentlyPlaying has nil URL, we want to clear out the image.
-        if (self.currentlyPlaying.isPlaying)
+        if (self.currentlyPlaying.song.isPlaying)
         {
-            if (self.currentlyPlaying.artSmallUrl == nil)
+            if (self.currentlyPlaying.song.artSmallUrl == nil)
             {
                 // Have a live track, with no art.
                 self.currentAlbumArtURL = nil;
@@ -434,15 +435,15 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             }
             else
             {
-                BOOL shouldUpdateArt = ![self.currentAlbumArtURL isEqual:self.currentlyPlaying.artSmallUrl];
+                BOOL shouldUpdateArt = ![self.currentAlbumArtURL isEqual:self.currentlyPlaying.song.artSmallUrl];
                 if (shouldUpdateArt)
                 {
 //                    NSLog(@"Downloading new album art...");
-                    self.currentAlbumArt = [[NSImage alloc] initWithContentsOfURL:self.currentlyPlaying.artSmallUrl];
+                    self.currentAlbumArt = [[NSImage alloc] initWithContentsOfURL:self.currentlyPlaying.song.artSmallUrl];
                     if (self.currentAlbumArt)
                     {
                         // Only valid art counts.
-                        self.currentAlbumArtURL = self.currentlyPlaying.artSmallUrl;
+                        self.currentAlbumArtURL = self.currentlyPlaying.song.artSmallUrl;
                     }
 
                     // Update album image back on main thread.

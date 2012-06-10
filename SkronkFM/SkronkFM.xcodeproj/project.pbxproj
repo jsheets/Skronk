@@ -49,6 +49,12 @@
 		0DA9F857156056D500A110A9 /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA9F83E156056D500A110A9 /* ASIProgressDelegate.h */; };
 		0DA9F86B1560599F00A110A9 /* FFMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F8681560599F00A110A9 /* FFMJson.m */; };
 		0DA9F86C1560599F00A110A9 /* FFMLastFmJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F86A1560599F00A110A9 /* FFMLastFmJson.m */; };
+		0DB3535D158548EF00857A92 /* FFMLastFMUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB35359158548EF00857A92 /* FFMLastFMUpdater.h */; };
+		0DB3535E158548EF00857A92 /* FFMLastFMUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3535A158548EF00857A92 /* FFMLastFMUpdater.m */; };
+		0DB3535F158548EF00857A92 /* FFMLastFMUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3535A158548EF00857A92 /* FFMLastFMUpdater.m */; };
+		0DB35360158548EF00857A92 /* FFMSong.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB3535B158548EF00857A92 /* FFMSong.h */; };
+		0DB35361158548EF00857A92 /* FFMSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3535C158548EF00857A92 /* FFMSong.m */; };
+		0DB35362158548EF00857A92 /* FFMSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3535C158548EF00857A92 /* FFMSong.m */; };
 		0DE0241414DDC9FB004E2227 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE0241314DDC9FB004E2227 /* Cocoa.framework */; };
 		0DE0241E14DDC9FB004E2227 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DE0241C14DDC9FB004E2227 /* InfoPlist.strings */; };
 		0DE0242014DDC9FB004E2227 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0241F14DDC9FB004E2227 /* main.m */; };
@@ -135,11 +141,15 @@
 		0DA9F83C156056D500A110A9 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = "../../FringeFM/External/asi-http-request/Classes/ASINetworkQueue.h"; sourceTree = "<group>"; };
 		0DA9F83D156056D500A110A9 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = "../../FringeFM/External/asi-http-request/Classes/ASINetworkQueue.m"; sourceTree = "<group>"; };
 		0DA9F83E156056D500A110A9 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../../FringeFM/External/asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = "<group>"; };
-		0DA9F8671560599F00A110A9 /* FFMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; name = FFMJson.h; path = ../../FringeFM/FringeFM/FFMJson.h; sourceTree = "<group>"; };
+		0DA9F8671560599F00A110A9 /* FFMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMJson.h; path = ../../FringeFM/FringeFM/FFMJson.h; sourceTree = "<group>"; };
 		0DA9F8681560599F00A110A9 /* FFMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMJson.m; path = ../../FringeFM/FringeFM/FFMJson.m; sourceTree = "<group>"; };
-		0DA9F8691560599F00A110A9 /* FFMLastFmJson.h */ = {isa = PBXFileReference; fileEncoding = 4; name = FFMLastFmJson.h; path = ../../FringeFM/FringeFM/FFMLastFmJson.h; sourceTree = "<group>"; };
+		0DA9F8691560599F00A110A9 /* FFMLastFmJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMLastFmJson.h; path = ../../FringeFM/FringeFM/FFMLastFmJson.h; sourceTree = "<group>"; };
 		0DA9F86A1560599F00A110A9 /* FFMLastFmJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMLastFmJson.m; path = ../../FringeFM/FringeFM/FFMLastFmJson.m; sourceTree = "<group>"; };
 		0DA9F86D15605A6B00A110A9 /* FringeFM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FringeFM.xcodeproj; path = ../FringeFM/FringeFM.xcodeproj; sourceTree = "<group>"; };
+		0DB35359158548EF00857A92 /* FFMLastFMUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMLastFMUpdater.h; path = ../../FringeFM/FringeFM/FFMLastFMUpdater.h; sourceTree = "<group>"; };
+		0DB3535A158548EF00857A92 /* FFMLastFMUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMLastFMUpdater.m; path = ../../FringeFM/FringeFM/FFMLastFMUpdater.m; sourceTree = "<group>"; };
+		0DB3535B158548EF00857A92 /* FFMSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMSong.h; path = ../../FringeFM/FringeFM/FFMSong.h; sourceTree = "<group>"; };
+		0DB3535C158548EF00857A92 /* FFMSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMSong.m; path = ../../FringeFM/FringeFM/FFMSong.m; sourceTree = "<group>"; };
 		0DE0240F14DDC9FB004E2227 /* SkronkFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkronkFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE0241314DDC9FB004E2227 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0DE0241614DDC9FB004E2227 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -241,6 +251,10 @@
 				0DA9F8681560599F00A110A9 /* FFMJson.m */,
 				0DA9F8691560599F00A110A9 /* FFMLastFmJson.h */,
 				0DA9F86A1560599F00A110A9 /* FFMLastFmJson.m */,
+				0DB35359158548EF00857A92 /* FFMLastFMUpdater.h */,
+				0DB3535A158548EF00857A92 /* FFMLastFMUpdater.m */,
+				0DB3535B158548EF00857A92 /* FFMSong.h */,
+				0DB3535C158548EF00857A92 /* FFMSong.m */,
 			);
 			name = FringeFM;
 			sourceTree = "<group>";
@@ -430,6 +444,8 @@
 				0DA9F851156056D500A110A9 /* ASIInputStream.h in Headers */,
 				0DA9F854156056D500A110A9 /* ASINetworkQueue.h in Headers */,
 				0DA9F857156056D500A110A9 /* ASIProgressDelegate.h in Headers */,
+				0DB3535D158548EF00857A92 /* FFMLastFMUpdater.h in Headers */,
+				0DB35360158548EF00857A92 /* FFMSong.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +596,8 @@
 				0DA9F84D156056D500A110A9 /* ASIHTTPRequest.m in Sources */,
 				0DA9F852156056D500A110A9 /* ASIInputStream.m in Sources */,
 				0DA9F855156056D500A110A9 /* ASINetworkQueue.m in Sources */,
+				0DB3535E158548EF00857A92 /* FFMLastFMUpdater.m in Sources */,
+				0DB35361158548EF00857A92 /* FFMSong.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +613,8 @@
 				0DA9F84E156056D500A110A9 /* ASIHTTPRequest.m in Sources */,
 				0DA9F853156056D500A110A9 /* ASIInputStream.m in Sources */,
 				0DA9F856156056D500A110A9 /* ASINetworkQueue.m in Sources */,
+				0DB3535F158548EF00857A92 /* FFMLastFMUpdater.m in Sources */,
+				0DB35362158548EF00857A92 /* FFMSong.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
