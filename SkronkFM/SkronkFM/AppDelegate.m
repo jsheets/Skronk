@@ -56,6 +56,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 @synthesize currentAlbumArtURL = _currentAlbumArtURL;
 @synthesize currentAlbumArt = _currentAlbumArt;
 @synthesize missingArt = _missingArt;
+@synthesize currentSong = _currentSong;
 
 - (void)resetTimer
 {
@@ -368,11 +369,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         return;
     }
 
-    NSString *urlString = [NSString stringWithFormat:@"http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=3a36e88356d8d90aee7a012c6abccae1&limit=2&user=%@&format=json", username];
-    NSURL *url = [NSURL URLWithString:urlString];
-
-//    NSLog(@"Looking up last.fm URL: %@", url);
-    
     BOOL showNetworkAvailability = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowNetworkAvailability];
     if (showNetworkAvailability)
     {
@@ -381,7 +377,12 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         });
     }
 
+    NSString *urlString = [NSString stringWithFormat:@"http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=3a36e88356d8d90aee7a012c6abccae1&limit=2&user=%@&format=json", username];
+    NSURL *url = [NSURL URLWithString:urlString];
+
+//    NSLog(@"Looking up last.fm URL: %@", url);
     __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+
     [request setCompletionBlock:^{
         // Use when fetching text data
         NSString *responseString = [request responseString];
@@ -390,6 +391,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         NSMutableAttributedString *displayText = nil;
 
         self.currentlyPlaying = [[FFMLastFmJson alloc] initWithJson:responseString];
+        self.currentSong = self.currentlyPlaying.song;
 
         displayText = [self trackDisplayText:self.currentlyPlaying coloredText:self.currentlyPlaying.song.isPlaying];
 
@@ -410,7 +412,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
             // Hide window when not playing and autohide is on.
             BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
-            BOOL hideWindow = !self.currentlyPlaying.song.isPlaying && hideWhenNotPlaying;
+            BOOL hideWindow = !self.currentSong.isPlaying && hideWhenNotPlaying;
             [self showWindow:!hideWindow];
 
             // Stop pulsing service icon.
@@ -423,9 +425,9 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         // Fetch album art, synchronously, while the above block also executes.
         // Only update if we're currently playing, and the image URL has changed to something new.
         // But if currentlyPlaying has nil URL, we want to clear out the image.
-        if (self.currentlyPlaying.song.isPlaying)
+        if (self.currentSong.isPlaying)
         {
-            if (self.currentlyPlaying.song.artSmallUrl == nil)
+            if (self.currentSong.artSmallUrl == nil)
             {
                 // Have a live track, with no art.
                 self.currentAlbumArtURL = nil;
@@ -435,15 +437,15 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             }
             else
             {
-                BOOL shouldUpdateArt = ![self.currentAlbumArtURL isEqual:self.currentlyPlaying.song.artSmallUrl];
+                BOOL shouldUpdateArt = ![self.currentAlbumArtURL isEqual:self.currentSong.artSmallUrl];
                 if (shouldUpdateArt)
                 {
 //                    NSLog(@"Downloading new album art...");
-                    self.currentAlbumArt = [[NSImage alloc] initWithContentsOfURL:self.currentlyPlaying.song.artSmallUrl];
+                    self.currentAlbumArt = [[NSImage alloc] initWithContentsOfURL:self.currentSong.artSmallUrl];
                     if (self.currentAlbumArt)
                     {
                         // Only valid art counts.
-                        self.currentAlbumArtURL = self.currentlyPlaying.song.artSmallUrl;
+                        self.currentAlbumArtURL = self.currentSong.artSmallUrl;
                     }
 
                     // Update album image back on main thread.
