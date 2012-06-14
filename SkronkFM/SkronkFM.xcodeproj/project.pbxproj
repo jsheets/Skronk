@@ -55,6 +55,13 @@
 		0DB35360158548EF00857A92 /* FFMSong.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB3535B158548EF00857A92 /* FFMSong.h */; };
 		0DB35361158548EF00857A92 /* FFMSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3535C158548EF00857A92 /* FFMSong.m */; };
 		0DB35362158548EF00857A92 /* FFMSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3535C158548EF00857A92 /* FFMSong.m */; };
+		0DCA3A5A15899F3B005C1270 /* FFMITunesUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA3A4F15899F3B005C1270 /* FFMITunesUpdater.m */; };
+		0DCA3A5B15899F3B005C1270 /* FFMLastFmAppUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA3A5115899F3B005C1270 /* FFMLastFmAppUpdater.m */; };
+		0DCA3A5C15899F3B005C1270 /* FFMMogUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA3A5315899F3B005C1270 /* FFMMogUpdater.m */; };
+		0DCA3A5D15899F3B005C1270 /* FFMRdioUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA3A5515899F3B005C1270 /* FFMRdioUpdater.m */; };
+		0DCA3A5E15899F3B005C1270 /* FFMSongUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA3A5715899F3B005C1270 /* FFMSongUpdater.m */; };
+		0DCA3A5F15899F3B005C1270 /* FFMSpotifyUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA3A5915899F3B005C1270 /* FFMSpotifyUpdater.m */; };
+		0DCA3A611589A98A005C1270 /* itunes-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DCA3A601589A98A005C1270 /* itunes-icon-24.png */; };
 		0DE0241414DDC9FB004E2227 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE0241314DDC9FB004E2227 /* Cocoa.framework */; };
 		0DE0241E14DDC9FB004E2227 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DE0241C14DDC9FB004E2227 /* InfoPlist.strings */; };
 		0DE0242014DDC9FB004E2227 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE0241F14DDC9FB004E2227 /* main.m */; };
@@ -150,6 +157,19 @@
 		0DB3535A158548EF00857A92 /* FFMLastFMUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMLastFMUpdater.m; path = ../../FringeFM/FringeFM/FFMLastFMUpdater.m; sourceTree = "<group>"; };
 		0DB3535B158548EF00857A92 /* FFMSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMSong.h; path = ../../FringeFM/FringeFM/FFMSong.h; sourceTree = "<group>"; };
 		0DB3535C158548EF00857A92 /* FFMSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMSong.m; path = ../../FringeFM/FringeFM/FFMSong.m; sourceTree = "<group>"; };
+		0DCA3A4E15899F3B005C1270 /* FFMITunesUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMITunesUpdater.h; path = ../../FringeFM/FringeFM/FFMITunesUpdater.h; sourceTree = "<group>"; };
+		0DCA3A4F15899F3B005C1270 /* FFMITunesUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMITunesUpdater.m; path = ../../FringeFM/FringeFM/FFMITunesUpdater.m; sourceTree = "<group>"; };
+		0DCA3A5015899F3B005C1270 /* FFMLastFmAppUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMLastFmAppUpdater.h; path = ../../FringeFM/FringeFM/FFMLastFmAppUpdater.h; sourceTree = "<group>"; };
+		0DCA3A5115899F3B005C1270 /* FFMLastFmAppUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMLastFmAppUpdater.m; path = ../../FringeFM/FringeFM/FFMLastFmAppUpdater.m; sourceTree = "<group>"; };
+		0DCA3A5215899F3B005C1270 /* FFMMogUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMMogUpdater.h; path = ../../FringeFM/FringeFM/FFMMogUpdater.h; sourceTree = "<group>"; };
+		0DCA3A5315899F3B005C1270 /* FFMMogUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMMogUpdater.m; path = ../../FringeFM/FringeFM/FFMMogUpdater.m; sourceTree = "<group>"; };
+		0DCA3A5415899F3B005C1270 /* FFMRdioUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMRdioUpdater.h; path = ../../FringeFM/FringeFM/FFMRdioUpdater.h; sourceTree = "<group>"; };
+		0DCA3A5515899F3B005C1270 /* FFMRdioUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMRdioUpdater.m; path = ../../FringeFM/FringeFM/FFMRdioUpdater.m; sourceTree = "<group>"; };
+		0DCA3A5615899F3B005C1270 /* FFMSongUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMSongUpdater.h; path = ../../FringeFM/FringeFM/FFMSongUpdater.h; sourceTree = "<group>"; };
+		0DCA3A5715899F3B005C1270 /* FFMSongUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMSongUpdater.m; path = ../../FringeFM/FringeFM/FFMSongUpdater.m; sourceTree = "<group>"; };
+		0DCA3A5815899F3B005C1270 /* FFMSpotifyUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMSpotifyUpdater.h; path = ../../FringeFM/FringeFM/FFMSpotifyUpdater.h; sourceTree = "<group>"; };
+		0DCA3A5915899F3B005C1270 /* FFMSpotifyUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMSpotifyUpdater.m; path = ../../FringeFM/FringeFM/FFMSpotifyUpdater.m; sourceTree = "<group>"; };
+		0DCA3A601589A98A005C1270 /* itunes-icon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "itunes-icon-24.png"; sourceTree = "<group>"; };
 		0DE0240F14DDC9FB004E2227 /* SkronkFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkronkFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE0241314DDC9FB004E2227 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0DE0241614DDC9FB004E2227 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -244,19 +264,31 @@
 			path = Bridge;
 			sourceTree = "<group>";
 		};
-		0DA9F8661560596A00A110A9 /* FringeFM */ = {
+		0DA9F8661560596A00A110A9 /* FringeFM Import */ = {
 			isa = PBXGroup;
 			children = (
 				0DA9F8671560599F00A110A9 /* FFMJson.h */,
 				0DA9F8681560599F00A110A9 /* FFMJson.m */,
 				0DA9F8691560599F00A110A9 /* FFMLastFmJson.h */,
 				0DA9F86A1560599F00A110A9 /* FFMLastFmJson.m */,
-				0DB35359158548EF00857A92 /* FFMLastFMUpdater.h */,
-				0DB3535A158548EF00857A92 /* FFMLastFMUpdater.m */,
 				0DB3535B158548EF00857A92 /* FFMSong.h */,
 				0DB3535C158548EF00857A92 /* FFMSong.m */,
+				0DB35359158548EF00857A92 /* FFMLastFMUpdater.h */,
+				0DB3535A158548EF00857A92 /* FFMLastFMUpdater.m */,
+				0DCA3A4E15899F3B005C1270 /* FFMITunesUpdater.h */,
+				0DCA3A4F15899F3B005C1270 /* FFMITunesUpdater.m */,
+				0DCA3A5015899F3B005C1270 /* FFMLastFmAppUpdater.h */,
+				0DCA3A5115899F3B005C1270 /* FFMLastFmAppUpdater.m */,
+				0DCA3A5215899F3B005C1270 /* FFMMogUpdater.h */,
+				0DCA3A5315899F3B005C1270 /* FFMMogUpdater.m */,
+				0DCA3A5415899F3B005C1270 /* FFMRdioUpdater.h */,
+				0DCA3A5515899F3B005C1270 /* FFMRdioUpdater.m */,
+				0DCA3A5615899F3B005C1270 /* FFMSongUpdater.h */,
+				0DCA3A5715899F3B005C1270 /* FFMSongUpdater.m */,
+				0DCA3A5815899F3B005C1270 /* FFMSpotifyUpdater.h */,
+				0DCA3A5915899F3B005C1270 /* FFMSpotifyUpdater.m */,
 			);
-			name = FringeFM;
+			name = "FringeFM Import";
 			sourceTree = "<group>";
 		};
 		0DA9F86E15605A6B00A110A9 /* Products */ = {
@@ -317,7 +349,7 @@
 			children = (
 				0DE0245B14DDF35C004E2227 /* UI */,
 				0D09C5F115433AD20031C154 /* Bridge */,
-				0DA9F8661560596A00A110A9 /* FringeFM */,
+				0DA9F8661560596A00A110A9 /* FringeFM Import */,
 				0DE0246D14DF3826004E2227 /* ASIHTTPRequest */,
 				0DE0249014DF65D4004E2227 /* SGHotKeysLib */,
 				0D010A4614F4892900A62136 /* ShortcutRecorder */,
@@ -380,6 +412,7 @@
 				0DEBC4A51501B86700D4E1C3 /* last.fm-icon-24.png */,
 				0DEBC4A31501B83600D4E1C3 /* last.fm-icon-64.png */,
 				0D6C3748150874030045890A /* last.fm-button.png */,
+				0DCA3A601589A98A005C1270 /* itunes-icon-24.png */,
 				0DEBC4A71501BDDE00D4E1C3 /* concrete-background.jpg */,
 			);
 			name = UI;
@@ -555,6 +588,7 @@
 				0D2B5ED6150C70460036A25A /* menubar-icon.png in Resources */,
 				0D2B5ED8150C710D0036A25A /* menubar-icon-playing.png in Resources */,
 				0D3437D9151A56F100C710A7 /* menubar-icon-alt.png in Resources */,
+				0DCA3A611589A98A005C1270 /* itunes-icon-24.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +632,12 @@
 				0DA9F855156056D500A110A9 /* ASINetworkQueue.m in Sources */,
 				0DB3535E158548EF00857A92 /* FFMLastFMUpdater.m in Sources */,
 				0DB35361158548EF00857A92 /* FFMSong.m in Sources */,
+				0DCA3A5A15899F3B005C1270 /* FFMITunesUpdater.m in Sources */,
+				0DCA3A5B15899F3B005C1270 /* FFMLastFmAppUpdater.m in Sources */,
+				0DCA3A5C15899F3B005C1270 /* FFMMogUpdater.m in Sources */,
+				0DCA3A5D15899F3B005C1270 /* FFMRdioUpdater.m in Sources */,
+				0DCA3A5E15899F3B005C1270 /* FFMSongUpdater.m in Sources */,
+				0DCA3A5F15899F3B005C1270 /* FFMSpotifyUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +752,7 @@
 				GCC_PREFIX_HEADER = "SkronkFM/SkronkFM-Prefix.pch";
 				INFOPLIST_FILE = "SkronkFM/SkronkFM-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
