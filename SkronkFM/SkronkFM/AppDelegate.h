@@ -17,6 +17,8 @@
 @class RoundedView;
 @class FFMSong;
 @class FFMLastFmJson;
+@class FFMLastFMUpdater;
+@class FFMITunesUpdater;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, SBApplicationDelegate>
 
@@ -35,6 +37,8 @@
 @property (strong) PreferencesController *preferencesController;
 @property (strong) NSTimer *timer;
 @property (strong) FFMSong *currentSong;
+@property (strong) FFMLastFMUpdater *lastFmUpdater;
+@property (strong) FFMITunesUpdater *iTunesUpdater;
 @property (strong) FFMLastFmJson *currentlyPlaying;
 @property (strong) NSURL *currentAlbumArtURL;
 @property (strong) NSImage *currentAlbumArt;

@@ -7,15 +7,19 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "FFMLastFmJson.h"
-#import "AppDelegate.h"
-#import "FFMLastFmJson.h"
-#import "FFMSong.h"
-#import "ASIHTTPRequest.h"
+
+#import "FFMLastFMUpdater.h"
+#import "FFMITunesUpdater.h"
 #import "SGHotKey.h"
 #import "SGHotKeyCenter.h"
-#import "PreferencesController.h"
+#import "ASIHTTPRequest.h"
 #import "SRCommon.h"
+
+#import "FFMLastFmJson.h"
+#import "FFMSong.h"
+
+#import "AppDelegate.h"
+#import "PreferencesController.h"
 #import "RoundedView.h"
 
 static NSString *const kGlobalHotKey = @"Global Hot Key";
@@ -57,6 +61,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 @synthesize currentAlbumArt = _currentAlbumArt;
 @synthesize missingArt = _missingArt;
 @synthesize currentSong = _currentSong;
+@synthesize lastFmUpdater = _lastFmUpdater;
+@synthesize iTunesUpdater = _iTunesUpdater;
 
 - (void)resetTimer
 {
@@ -222,25 +228,25 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     [[self.serviceIcon animator] setAlphaValue:kServiceIconDimAlpha];
 }
 
-- (NSMutableAttributedString *)trackDisplayText:(FFMLastFmJson *)nowPlaying coloredText:(BOOL)colored
+- (NSMutableAttributedString *)trackDisplayText:(FFMSong *)currentSong coloredText:(BOOL)colored
 {
     NSMutableAttributedString *displayText = nil;
 
-    BOOL hasArtist = nowPlaying.song.artist.length > 0;
-    BOOL hasAlbum = nowPlaying.song.album.length > 0;
-    BOOL hasTrack = nowPlaying.song.track.length > 0;
+    BOOL hasArtist = currentSong.artist.length > 0;
+    BOOL hasAlbum = currentSong.album.length > 0;
+    BOOL hasTrack = currentSong.track.length > 0;
 
     // If we don't already have track text (not "Loading..."), load the last track played previously.
     BOOL firstLoad = [self.label.stringValue isEqualToString:@"Loading..."];
     
-    BOOL errorLoading = nowPlaying.song.error != nil;
+    BOOL errorLoading = currentSong.errorText != nil;
 
     if (errorLoading)
     {
-        NSString *message = [NSString stringWithFormat:@"last.fm Error: %@", nowPlaying.song.error];
+        NSString *message = [NSString stringWithFormat:@"last.fm Error: %@", currentSong.errorText];
         displayText = [[NSMutableAttributedString alloc] initWithString:message];
     }
-    else if (firstLoad || nowPlaying.song.isPlaying)
+    else if (firstLoad || currentSong.isPlaying)
     {
         displayText = [[NSMutableAttributedString alloc] init];
 
@@ -258,7 +264,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         if (hasTrack)
         {
 //            NSString *plainText = [NSString stringWithFormat:@"\"%@\"", nowPlaying.track];
-            fancyString = [[NSAttributedString alloc] initWithString:nowPlaying.song.track attributes:white];
+            fancyString = [[NSAttributedString alloc] initWithString:currentSong.track attributes:white];
             [displayText appendAttributedString:fancyString];
         }
 
@@ -267,7 +273,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             fancyString = [[NSAttributedString alloc] initWithString:@" by " attributes:gray];
             [displayText appendAttributedString:fancyString];
 
-            fancyString = [[NSAttributedString alloc] initWithString:nowPlaying.song.artist attributes:white];
+            fancyString = [[NSAttributedString alloc] initWithString:currentSong.artist attributes:white];
             [displayText appendAttributedString:fancyString];
         }
 
@@ -277,7 +283,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                 gray];
             [displayText appendAttributedString:fancyString];
 
-            fancyString = [[NSAttributedString alloc] initWithString:nowPlaying.song.album attributes:
+            fancyString = [[NSAttributedString alloc] initWithString:currentSong.album attributes:
                 white];
             [displayText appendAttributedString:fancyString];
         }
@@ -377,111 +383,104 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         });
     }
 
-    NSString *urlString = [NSString stringWithFormat:@"http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=3a36e88356d8d90aee7a012c6abccae1&limit=2&user=%@&format=json", username];
-    NSURL *url = [NSURL URLWithString:urlString];
+    // Run in background.
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        // Grab the current song from last.fm.
+        // TODO: Auto-detect best service and pull from that one instead.
 
-//    NSLog(@"Looking up last.fm URL: %@", url);
-    __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+        NSLog(@"Fetching current song.");
+        self.currentSong = [self.lastFmUpdater fetchCurrentSong];
 
-    [request setCompletionBlock:^{
-        // Use when fetching text data
-        NSString *responseString = [request responseString];
-//        NSLog(@"Received JSON: %@", responseString);
-
-        NSMutableAttributedString *displayText = nil;
-
-        self.currentlyPlaying = [[FFMLastFmJson alloc] initWithJson:responseString];
-        self.currentSong = self.currentlyPlaying.song;
-
-        displayText = [self trackDisplayText:self.currentlyPlaying coloredText:self.currentlyPlaying.song.isPlaying];
-
-        // Back on main thread...
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // If we have something new to report, show it.
-            if (displayText /*&& ![displayText.string isEqualToString:self.label.stringValue]*/)
-            {
-                self.label.attributedStringValue = displayText;
-                [self adjustWindowSize];
-            }
-
-            // Update service icon visibility.
-            if (showNetworkAvailability)
-            {
-                [self showServiceUp];
-            }
-
-            // Hide window when not playing and autohide is on.
-            BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
-            BOOL hideWindow = !self.currentSong.isPlaying && hideWhenNotPlaying;
-            [self showWindow:!hideWindow];
-
-            // Stop pulsing service icon.
-            if (showNetworkAvailability)
-            {
-                [self endNetworkAnimation];
-            }
-        });
-
-        // Fetch album art, synchronously, while the above block also executes.
-        // Only update if we're currently playing, and the image URL has changed to something new.
-        // But if currentlyPlaying has nil URL, we want to clear out the image.
-        if (self.currentSong.isPlaying)
+        if (self.currentSong.errorText == nil)
         {
-            if (self.currentSong.artSmallUrl == nil)
+            // Succeeded, got a song.
+            NSMutableAttributedString *displayText = [self trackDisplayText:self.currentSong coloredText:self.currentSong.isPlaying];
+
+            // Back on main thread...
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // If we have something new to report, show it.
+                if (displayText /*&& ![displayText.string isEqualToString:self.label.stringValue]*/)
+                {
+                    self.label.attributedStringValue = displayText;
+                    [self adjustWindowSize];
+                }
+
+                // Update service icon visibility.
+                if (showNetworkAvailability)
+                {
+                    [self showServiceUp];
+                }
+
+                // Hide window when not playing and autohide is on.
+                BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
+                BOOL hideWindow = !self.currentSong.isPlaying && hideWhenNotPlaying;
+                [self showWindow:!hideWindow];
+
+                // Stop pulsing service icon.
+                if (showNetworkAvailability)
+                {
+                    [self endNetworkAnimation];
+                }
+            });
+
+            // Fetch album art, synchronously, while the above block also executes.
+            // Only update if we're currently playing, and the image URL has changed to something new.
+            // But if currentlyPlaying has nil URL, we want to clear out the image.
+            if (self.currentSong && self.currentSong.isPlaying)
             {
-                // Have a live track, with no art.
-                self.currentAlbumArtURL = nil;
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.art.image = self.missingArt;
-                });
+                if (self.currentSong.artSmallUrl == nil)
+                {
+                    // Have a live track, with no art.
+                    self.currentAlbumArtURL = nil;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        self.art.image = self.missingArt;
+                    });
+                }
+                else
+                {
+                    BOOL shouldUpdateArt = ![self.currentAlbumArtURL isEqual:self.currentSong.artSmallUrl];
+                    if (shouldUpdateArt)
+                    {
+//                    NSLog(@"Downloading new album art...");
+                        self.currentAlbumArt = [[NSImage alloc] initWithContentsOfURL:self.currentSong.artSmallUrl];
+                        if (self.currentAlbumArt)
+                        {
+                            // Only valid art counts.
+                            self.currentAlbumArtURL = self.currentSong.artSmallUrl;
+                        }
+
+                        // Update album image back on main thread.
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            self.art.image = self.currentAlbumArt ? self.currentAlbumArt : self.missingArt;
+//                        self.statusItem.image = [NSImage imageNamed:@"menubar-icon-playing.png"];
+                        });
+                    }
+                }
             }
             else
             {
-                BOOL shouldUpdateArt = ![self.currentAlbumArtURL isEqual:self.currentSong.artSmallUrl];
-                if (shouldUpdateArt)
-                {
-//                    NSLog(@"Downloading new album art...");
-                    self.currentAlbumArt = [[NSImage alloc] initWithContentsOfURL:self.currentSong.artSmallUrl];
-                    if (self.currentAlbumArt)
-                    {
-                        // Only valid art counts.
-                        self.currentAlbumArtURL = self.currentSong.artSmallUrl;
-                    }
-
-                    // Update album image back on main thread.
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        self.art.image = self.currentAlbumArt ? self.currentAlbumArt : self.missingArt;
-//                        self.statusItem.image = [NSImage imageNamed:@"menubar-icon-playing.png"];
-                    });
-                }
+//            self.statusItem.image = [NSImage imageNamed:@"menubar-icon.png"];
             }
         }
         else
         {
-//            self.statusItem.image = [NSImage imageNamed:@"menubar-icon.png"];
+            // Something bad happened, probably network.
+            NSString *errString = [NSString stringWithFormat:@"Error updating last.fm status: %@", self.currentSong.errorText];
+            NSLog(@"%@", errString);
 
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Display error text in UI.
+                NSAttributedString *displayString = [[NSAttributedString alloc] initWithString:errString];
+                self.label.attributedStringValue = displayString;
+
+                if (showNetworkAvailability)
+                {
+                    [self endNetworkAnimation];
+                    [self showServiceDown];
+                }
+            });
         }
-    }];
-    
-    [request setFailedBlock:^{
-        NSError *error = [request error];
-        NSString *errString = [NSString stringWithFormat:@"Error updating last.fm status: %@", [error localizedDescription]];
-        NSLog(@"%@", errString);
-
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // Display error text in UI.
-            NSAttributedString *displayString = [[NSAttributedString alloc] initWithString:errString];
-            self.label.attributedStringValue = displayString;
-            
-            if (showNetworkAvailability)
-            {
-                [self endNetworkAnimation];
-                [self showServiceDown];
-            }
-        });
-    }];
-    
-    [request startAsynchronous];
+    });
 }
 
 // Watch preferences for changes.
@@ -665,33 +664,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 - (void)checkApplications
 {
     NSLog(@"Scanning for applications.");
-    
-    NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-    NSLog(@"iTunes path: %@", [workspace fullPathForApplication:@"iTunes"]);
-    NSLog(@"Console path: %@", [workspace fullPathForApplication:@"Console"]);
-    NSLog(@"SkronkFM path: %@", [workspace fullPathForApplication:@"SkronkFM"]);
-    NSLog(@"Bad app path: %@", [workspace fullPathForApplication:@"com.apple.iTunesxx"]);
-
-    iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
-    iTunes.delegate = self;
-    if ([iTunes isRunning])
-    {
-        iTunesTrack *currentTrack = iTunes.currentTrack;
-        if ([currentTrack exists])
-        {
-            NSLog(@"iTunes is currently playing '%@' by '%@' on '%@'.", 
-                  currentTrack.name, currentTrack.artist, currentTrack.album);
-        }
-        else
-        {
-            NSLog(@"iTunes is running but not playing anything.");
-        }
-    }
-    else
-    {
-        NSLog(@"iTunes is not running...skipping iTunes check.");
-        
-    }
 }
 
 - (id)eventDidFail:(const AppleEvent *)event withError:(NSError *)error
@@ -715,12 +687,16 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 //    [self.window setCollectionBehavior:NSWindowCollectionBehaviorStationary |
 //        NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorFullScreenAuxiliary];
 
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
+
+    self.lastFmUpdater = [[FFMLastFMUpdater alloc] initWithUserName:username apiKey:@"3a36e88356d8d90aee7a012c6abccae1"];
+    self.iTunesUpdater = [[FFMITunesUpdater alloc] init];
+
     self.art.image = self.missingArt;
     [self updateCurrentTrack];
     [self resetTimer];
 
     // If not last.fm username set, bring up Preferences dialog with text field focused.
-    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
     if (username == nil)
     {
         self.label.stringValue = @"Please enter a last.fm user name to continue...";
