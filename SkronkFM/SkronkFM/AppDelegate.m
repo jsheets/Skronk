@@ -472,6 +472,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                 // Display error text in UI.
                 NSAttributedString *displayString = [[NSAttributedString alloc] initWithString:errString];
                 self.label.attributedStringValue = displayString;
+                [self adjustWindowSize];
 
                 if (showNetworkAvailability)
                 {
