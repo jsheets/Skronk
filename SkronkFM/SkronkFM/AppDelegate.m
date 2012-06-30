@@ -433,34 +433,39 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             // But if currentlyPlaying has nil URL, we want to clear out the image.
             if (self.currentSong && self.currentSong.isPlaying)
             {
-                if (self.currentSong.artSmallUrl == nil)
+                NSImage *albumImage = nil;
+                if (self.currentSong.albumImage)
+                {
+                    albumImage = self.currentSong.albumImage;
+                }
+                else if (self.currentSong.artSmallUrl == nil)
                 {
                     // Have a live track, with no art.
                     self.currentAlbumArtURL = nil;
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        self.art.image = self.missingArt;
-                    });
+                    albumImage = self.missingArt;
                 }
                 else
                 {
                     BOOL shouldUpdateArt = ![self.currentAlbumArtURL isEqual:self.currentSong.artSmallUrl];
                     if (shouldUpdateArt)
                     {
-//                    NSLog(@"Downloading new album art...");
-                        self.currentAlbumArt = [[NSImage alloc] initWithContentsOfURL:self.currentSong.artSmallUrl];
+//                        NSLog(@"Downloading new album art...");
+                        NSURL *artUrl = self.currentSong.artSmallUrl;
+                        self.currentAlbumArt = [[NSImage alloc] initWithContentsOfURL:artUrl];
                         if (self.currentAlbumArt)
                         {
                             // Only valid art counts.
                             self.currentAlbumArtURL = self.currentSong.artSmallUrl;
                         }
-
-                        // Update album image back on main thread.
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            self.art.image = self.currentAlbumArt ? self.currentAlbumArt : self.missingArt;
-//                        self.statusItem.image = [NSImage imageNamed:@"menubar-icon-playing.png"];
-                        });
+                        albumImage = self.currentAlbumArt ? self.currentAlbumArt : self.missingArt;
                     }
                 }
+
+                // Update album image back on main thread.
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.art.image = albumImage;
+                });
+
             }
             else
             {
