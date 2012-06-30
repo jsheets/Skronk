@@ -17,9 +17,13 @@
 @class RoundedView;
 @class FFMSong;
 @class FFMLastFmJson;
-@class FFMLastFMUpdater;
-@class FFMITunesUpdater;
 @class FFMSongUpdater;
+@class FFMITunesUpdater;
+@class FFMLastFMUpdater;
+@class FFMLastFmAppUpdater;
+@class FFMMogUpdater;
+@class FFMRdioUpdater;
+@class FFMSpotifyUpdater;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, SBApplicationDelegate>
 
@@ -37,12 +41,19 @@
 @property (assign) CGFloat backgroundWidth;
 @property (strong) PreferencesController *preferencesController;
 @property (strong) NSTimer *timer;
-@property (strong) FFMSong *currentSong;
-@property (strong) FFMSongUpdater *songUpdater;
-@property (strong) FFMLastFmJson *currentlyPlaying;
 @property (strong) NSURL *currentAlbumArtURL;
 @property (strong) NSImage *currentAlbumArt;
 @property (strong) NSImage *missingArt;
+@property (strong) FFMSong *currentSong;
+@property (strong) FFMLastFmJson *currentlyPlaying;
+
+@property (weak) FFMSongUpdater *currentSongUpdater;
+@property (strong) FFMITunesUpdater *iTunesUpdater;
+@property (strong) FFMLastFMUpdater *lastFmUpdater;
+@property (strong) FFMLastFmAppUpdater *lastFmAppUpdater;
+@property (strong) FFMMogUpdater *mogUpdater;
+@property (strong) FFMRdioUpdater *rdioUpdater;
+@property (strong) FFMSpotifyUpdater *spotifyUpdater;
 
 @property (assign) BOOL isSleeping;
 

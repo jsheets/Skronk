@@ -8,20 +8,24 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-#import "FFMLastFMUpdater.h"
-#import "FFMSpotifyUpdater.h"
-#import "FFMITunesUpdater.h"
+#import "AppDelegate.h"
+
 #import "SGHotKey.h"
 #import "SGHotKeyCenter.h"
 #import "ASIHTTPRequest.h"
 #import "SRCommon.h"
-
 #import "FFMLastFmJson.h"
 #import "FFMSong.h"
 
-#import "AppDelegate.h"
 #import "PreferencesController.h"
 #import "RoundedView.h"
+#import "FFMSongUpdater.h"
+#import "FFMITunesUpdater.h"
+#import "FFMLastFMUpdater.h"
+#import "FFMLastFMAppUpdater.h"
+#import "FFMMogUpdater.h"
+#import "FFMRdioUpdater.h"
+#import "FFMSpotifyUpdater.h"
 
 static NSString *const kGlobalHotKey = @"Global Hot Key";
 
@@ -62,7 +66,14 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 @synthesize currentAlbumArt = _currentAlbumArt;
 @synthesize missingArt = _missingArt;
 @synthesize currentSong = _currentSong;
-@synthesize songUpdater = _songUpdater;
+
+@synthesize currentSongUpdater = _currentSongUpdater;
+@synthesize iTunesUpdater = _iTunesUpdater;
+@synthesize lastFmUpdater = _lastFmUpdater;
+@synthesize lastFmAppUpdater = _lastFmAppUpdater;
+@synthesize mogUpdater = _mogUpdater;
+@synthesize rdioUpdater = _rdioUpdater;
+@synthesize spotifyUpdater = _spotifyUpdater;
 
 - (void)resetTimer
 {
@@ -72,12 +83,9 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     }
 
     // Get the update interval from the song updater.
-    if (self.songUpdater)
-    {
-        NSTimeInterval timeout = self.songUpdater.updateFrequency;
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:timeout
-            target:self selector:@selector(updateCurrentTrack) userInfo:nil repeats:YES];
-    }
+    NSTimeInterval timeout = self.currentSongUpdater.updateFrequency;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:timeout
+        target:self selector:@selector(updateCurrentTrack) userInfo:nil repeats:YES];
 }
 
 - (BOOL)alwaysOnTop
@@ -373,13 +381,18 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         return;
     }
 
-    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
-    if (username == nil)
+    // Make sure we have the current best music service.
+    [self checkServices];
+
+    // TODO: Move last.fm username lookup to checkServices (skip last.fm).
+    NSString *lastFmUsername = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
+    if (lastFmUsername == nil)
     {
 //        NSLog(@"Username not set...skipping update.");
         return;
     }
 
+    // TODO: Move network check to checkServices (skip last.fm).
     BOOL showNetworkAvailability = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowNetworkAvailability];
     if (showNetworkAvailability)
     {
@@ -391,10 +404,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     // Run in background.
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // Grab the current song from the current music service.
-        // TODO: Auto-detect best service and pull from that one instead.
-
         NSLog(@"Fetching current song.");
-        self.currentSong = [self.songUpdater fetchCurrentSong];
+        self.currentSong = [self.currentSongUpdater fetchCurrentSong];
 
         if (self.currentSong.errorText == nil)
         {
@@ -683,6 +694,56 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     return nil;
 }
 
+- (void)checkServices
+{
+    FFMSongUpdater *oldUpdater = self.currentSongUpdater;
+
+    // Determine which music service we should be watching. Herein lies the magic.
+    // If a local app is playing, always pick that. However, if a local app is running
+    // but not playing, but last.fm is, go with that.
+
+    if (self.spotifyUpdater.isServiceAvailable && self.spotifyUpdater.isServicePlaying)
+    {
+        self.currentSongUpdater = self.spotifyUpdater;
+    }
+    else
+    {
+        self.currentSongUpdater = self.lastFmUpdater;
+    }
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.currentSongUpdater != oldUpdater)
+        {
+            // Switched to a different service. Clear out old service junk.
+            self.art.image = self.missingArt;
+        }
+        self.serviceIcon.image = self.currentSongUpdater.icon;
+    });
+}
+
+- (void)initMusicServices:(NSString *)lastFmUsername
+{
+    self.lastFmUpdater = [[FFMLastFMUpdater alloc] initWithUserName:lastFmUsername apiKey:@"3a36e88356d8d90aee7a012c6abccae1"];
+    self.lastFmUpdater.icon = [NSImage imageNamed:@"last.fm-service"];
+
+    self.iTunesUpdater = [[FFMITunesUpdater alloc] init];
+    self.iTunesUpdater.icon = [NSImage imageNamed:@"iTunes-service"];
+
+    self.lastFmAppUpdater = [[FFMLastFmAppUpdater alloc] init];
+    self.lastFmAppUpdater.icon = [NSImage imageNamed:@"audioscrobbler-service"];
+
+    self.mogUpdater = [[FFMMogUpdater alloc] init];
+    self.mogUpdater.icon = [NSImage imageNamed:@"Mog-service"];
+
+    self.rdioUpdater = [[FFMRdioUpdater alloc] init];
+    self.rdioUpdater.icon = [NSImage imageNamed:@"Rdio-service"];
+
+    self.spotifyUpdater = [[FFMSpotifyUpdater alloc] init];
+    self.spotifyUpdater.icon = [NSImage imageNamed:@"Spotify-service"];
+
+    [self checkServices];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [self registerDefaults];
@@ -700,9 +761,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
 
-//    self.songUpdater = [[FFMLastFMUpdater alloc] initWithUserName:username apiKey:@"3a36e88356d8d90aee7a012c6abccae1"];
-//    self.songUpdater = [[FFMITunesUpdater alloc] init];
-    self.songUpdater = [[FFMSpotifyUpdater alloc] init];
+    [self initMusicServices:username];
 
     self.art.image = self.missingArt;
     [self updateCurrentTrack];
