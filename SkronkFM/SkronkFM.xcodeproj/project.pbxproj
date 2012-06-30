@@ -21,6 +21,12 @@
 		0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4AE4D714EB3474002596BD /* PreferencesController.m */; };
 		0D4AE4DB14EB362D002596BD /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D4AE4DA14EB362D002596BD /* Preferences.xib */; };
 		0D6C3749150874030045890A /* last.fm-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D6C3748150874030045890A /* last.fm-button.png */; };
+		0D704B76159F7E4D00519C28 /* audioscrobbler-service.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D704B70159F7E4D00519C28 /* audioscrobbler-service.png */; };
+		0D704B77159F7E4D00519C28 /* iTunes-service.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D704B71159F7E4D00519C28 /* iTunes-service.png */; };
+		0D704B78159F7E4D00519C28 /* last.fm-service.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D704B72159F7E4D00519C28 /* last.fm-service.png */; };
+		0D704B79159F7E4D00519C28 /* Mog-service.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D704B73159F7E4D00519C28 /* Mog-service.png */; };
+		0D704B7A159F7E4D00519C28 /* Rdio-service.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D704B74159F7E4D00519C28 /* Rdio-service.png */; };
+		0D704B7B159F7E4D00519C28 /* Spotify-service.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D704B75159F7E4D00519C28 /* Spotify-service.png */; };
 		0D83848B150054FB0024403B /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D83848A150054FB0024403B /* Quartz.framework */; };
 		0DA9F83F156056D500A110A9 /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA9F82D156056D500A110A9 /* ASICacheDelegate.h */; };
 		0DA9F840156056D500A110A9 /* ASIDataCompressor.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA9F82E156056D500A110A9 /* ASIDataCompressor.h */; };
@@ -129,6 +135,12 @@
 		0D4AE4D714EB3474002596BD /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PreferencesController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0D4AE4DA14EB362D002596BD /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		0D6C3748150874030045890A /* last.fm-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last.fm-button.png"; sourceTree = "<group>"; };
+		0D704B70159F7E4D00519C28 /* audioscrobbler-service.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audioscrobbler-service.png"; sourceTree = "<group>"; };
+		0D704B71159F7E4D00519C28 /* iTunes-service.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunes-service.png"; sourceTree = "<group>"; };
+		0D704B72159F7E4D00519C28 /* last.fm-service.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last.fm-service.png"; sourceTree = "<group>"; };
+		0D704B73159F7E4D00519C28 /* Mog-service.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mog-service.png"; sourceTree = "<group>"; };
+		0D704B74159F7E4D00519C28 /* Rdio-service.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rdio-service.png"; sourceTree = "<group>"; };
+		0D704B75159F7E4D00519C28 /* Spotify-service.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotify-service.png"; sourceTree = "<group>"; };
 		0D83848A150054FB0024403B /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		0DA9F82D156056D500A110A9 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = "../../FringeFM/External/asi-http-request/Classes/ASICacheDelegate.h"; sourceTree = "<group>"; };
 		0DA9F82E156056D500A110A9 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataCompressor.h; path = "../../FringeFM/External/asi-http-request/Classes/ASIDataCompressor.h"; sourceTree = "<group>"; };
@@ -264,7 +276,35 @@
 			path = Bridge;
 			sourceTree = "<group>";
 		};
-		0DA9F8661560596A00A110A9 /* FringeFM Import */ = {
+		0D704B6F159F7E2B00519C28 /* Service Icons */ = {
+			isa = PBXGroup;
+			children = (
+				0D704B70159F7E4D00519C28 /* audioscrobbler-service.png */,
+				0D704B71159F7E4D00519C28 /* iTunes-service.png */,
+				0D704B72159F7E4D00519C28 /* last.fm-service.png */,
+				0D704B73159F7E4D00519C28 /* Mog-service.png */,
+				0D704B74159F7E4D00519C28 /* Rdio-service.png */,
+				0D704B75159F7E4D00519C28 /* Spotify-service.png */,
+			);
+			name = "Service Icons";
+			sourceTree = "<group>";
+		};
+		0D8E491F159F80F700F1B5A2 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				0D2B5ED5150C70460036A25A /* menubar-icon.png */,
+				0D2B5ED7150C710D0036A25A /* menubar-icon-playing.png */,
+				0D3437D8151A56F100C710A7 /* menubar-icon-alt.png */,
+				0D2B5ECF150C45080036A25A /* album-art-missing.png */,
+				0DEBC4A51501B86700D4E1C3 /* last.fm-icon-24.png */,
+				0DEBC4A31501B83600D4E1C3 /* last.fm-icon-64.png */,
+				0D6C3748150874030045890A /* last.fm-button.png */,
+				0DCA3A601589A98A005C1270 /* itunes-icon-24.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		0DA9F8661560596A00A110A9 /* FringeFM */ = {
 			isa = PBXGroup;
 			children = (
 				0DA9F8671560599F00A110A9 /* FFMJson.h */,
@@ -288,7 +328,7 @@
 				0DCA3A5815899F3B005C1270 /* FFMSpotifyUpdater.h */,
 				0DCA3A5915899F3B005C1270 /* FFMSpotifyUpdater.m */,
 			);
-			name = "FringeFM Import";
+			name = FringeFM;
 			sourceTree = "<group>";
 		};
 		0DA9F86E15605A6B00A110A9 /* Products */ = {
@@ -349,7 +389,7 @@
 			children = (
 				0DE0245B14DDF35C004E2227 /* UI */,
 				0D09C5F115433AD20031C154 /* Bridge */,
-				0DA9F8661560596A00A110A9 /* FringeFM Import */,
+				0DA9F8661560596A00A110A9 /* FringeFM */,
 				0DE0246D14DF3826004E2227 /* ASIHTTPRequest */,
 				0DE0249014DF65D4004E2227 /* SGHotKeysLib */,
 				0D010A4614F4892900A62136 /* ShortcutRecorder */,
@@ -395,6 +435,8 @@
 		0DE0245B14DDF35C004E2227 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0D704B6F159F7E2B00519C28 /* Service Icons */,
+				0D8E491F159F80F700F1B5A2 /* Icons */,
 				0DE0242514DDC9FB004E2227 /* AppDelegate.h */,
 				0DE0242614DDC9FB004E2227 /* AppDelegate.m */,
 				0DE0242814DDC9FC004E2227 /* MainMenu.xib */,
@@ -405,14 +447,6 @@
 				0D4AE4D614EB3474002596BD /* PreferencesController.h */,
 				0D4AE4D714EB3474002596BD /* PreferencesController.m */,
 				0D4AE4DA14EB362D002596BD /* Preferences.xib */,
-				0D2B5ED5150C70460036A25A /* menubar-icon.png */,
-				0D2B5ED7150C710D0036A25A /* menubar-icon-playing.png */,
-				0D3437D8151A56F100C710A7 /* menubar-icon-alt.png */,
-				0D2B5ECF150C45080036A25A /* album-art-missing.png */,
-				0DEBC4A51501B86700D4E1C3 /* last.fm-icon-24.png */,
-				0DEBC4A31501B83600D4E1C3 /* last.fm-icon-64.png */,
-				0D6C3748150874030045890A /* last.fm-button.png */,
-				0DCA3A601589A98A005C1270 /* itunes-icon-24.png */,
 				0DEBC4A71501BDDE00D4E1C3 /* concrete-background.jpg */,
 			);
 			name = UI;
@@ -589,6 +623,12 @@
 				0D2B5ED8150C710D0036A25A /* menubar-icon-playing.png in Resources */,
 				0D3437D9151A56F100C710A7 /* menubar-icon-alt.png in Resources */,
 				0DCA3A611589A98A005C1270 /* itunes-icon-24.png in Resources */,
+				0D704B76159F7E4D00519C28 /* audioscrobbler-service.png in Resources */,
+				0D704B77159F7E4D00519C28 /* iTunes-service.png in Resources */,
+				0D704B78159F7E4D00519C28 /* last.fm-service.png in Resources */,
+				0D704B79159F7E4D00519C28 /* Mog-service.png in Resources */,
+				0D704B7A159F7E4D00519C28 /* Rdio-service.png in Resources */,
+				0D704B7B159F7E4D00519C28 /* Spotify-service.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
