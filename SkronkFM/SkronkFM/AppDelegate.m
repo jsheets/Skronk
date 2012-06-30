@@ -9,6 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "FFMLastFMUpdater.h"
+#import "FFMSpotifyUpdater.h"
 #import "FFMITunesUpdater.h"
 #import "SGHotKey.h"
 #import "SGHotKeyCenter.h"
@@ -61,8 +62,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 @synthesize currentAlbumArt = _currentAlbumArt;
 @synthesize missingArt = _missingArt;
 @synthesize currentSong = _currentSong;
-@synthesize lastFmUpdater = _lastFmUpdater;
-@synthesize iTunesUpdater = _iTunesUpdater;
+@synthesize songUpdater = _songUpdater;
 
 - (void)resetTimer
 {
@@ -243,8 +243,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
     if (errorLoading)
     {
-        NSString *message = [NSString stringWithFormat:@"last.fm Error: %@", currentSong.errorText];
-        displayText = [[NSMutableAttributedString alloc] initWithString:message];
+        displayText = [[NSMutableAttributedString alloc] initWithString:currentSong.errorText];
     }
     else if (firstLoad || currentSong.isPlaying)
     {
@@ -385,11 +384,11 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
     // Run in background.
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        // Grab the current song from last.fm.
+        // Grab the current song from the current music service.
         // TODO: Auto-detect best service and pull from that one instead.
 
         NSLog(@"Fetching current song.");
-        self.currentSong = [self.lastFmUpdater fetchCurrentSong];
+        self.currentSong = [self.songUpdater fetchCurrentSong];
 
         if (self.currentSong.errorText == nil)
         {
@@ -465,7 +464,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         else
         {
             // Something bad happened, probably network.
-            NSString *errString = [NSString stringWithFormat:@"Error updating last.fm status: %@", self.currentSong.errorText];
+            __weak NSString *errString = self.currentSong.errorText;
             NSLog(@"%@", errString);
 
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -690,8 +689,9 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
 
-    self.lastFmUpdater = [[FFMLastFMUpdater alloc] initWithUserName:username apiKey:@"3a36e88356d8d90aee7a012c6abccae1"];
-    self.iTunesUpdater = [[FFMITunesUpdater alloc] init];
+//    self.songUpdater = [[FFMLastFMUpdater alloc] initWithUserName:username apiKey:@"3a36e88356d8d90aee7a012c6abccae1"];
+//    self.songUpdater = [[FFMITunesUpdater alloc] init];
+    self.songUpdater = [[FFMSpotifyUpdater alloc] init];
 
     self.art.image = self.missingArt;
     [self updateCurrentTrack];
