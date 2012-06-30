@@ -71,7 +71,13 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         [self.timer invalidate];
     }
 
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(updateCurrentTrack) userInfo:nil repeats:YES];
+    // Get the update interval from the song updater.
+    if (self.songUpdater)
+    {
+        NSTimeInterval timeout = self.songUpdater.updateFrequency;
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:timeout
+            target:self selector:@selector(updateCurrentTrack) userInfo:nil repeats:YES];
+    }
 }
 
 - (BOOL)alwaysOnTop
