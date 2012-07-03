@@ -304,6 +304,27 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
+		0D8E4920159FBC3500F1B5A2 /* Updaters */ = {
+			isa = PBXGroup;
+			children = (
+				0DCA3A5615899F3B005C1270 /* FFMSongUpdater.h */,
+				0DCA3A5715899F3B005C1270 /* FFMSongUpdater.m */,
+				0DCA3A4E15899F3B005C1270 /* FFMITunesUpdater.h */,
+				0DCA3A4F15899F3B005C1270 /* FFMITunesUpdater.m */,
+				0DB35359158548EF00857A92 /* FFMLastFMUpdater.h */,
+				0DB3535A158548EF00857A92 /* FFMLastFMUpdater.m */,
+				0DCA3A5015899F3B005C1270 /* FFMLastFmAppUpdater.h */,
+				0DCA3A5115899F3B005C1270 /* FFMLastFmAppUpdater.m */,
+				0DCA3A5215899F3B005C1270 /* FFMMogUpdater.h */,
+				0DCA3A5315899F3B005C1270 /* FFMMogUpdater.m */,
+				0DCA3A5415899F3B005C1270 /* FFMRdioUpdater.h */,
+				0DCA3A5515899F3B005C1270 /* FFMRdioUpdater.m */,
+				0DCA3A5815899F3B005C1270 /* FFMSpotifyUpdater.h */,
+				0DCA3A5915899F3B005C1270 /* FFMSpotifyUpdater.m */,
+			);
+			name = Updaters;
+			sourceTree = "<group>";
+		};
 		0DA9F8661560596A00A110A9 /* FringeFM */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,20 +334,7 @@
 				0DA9F86A1560599F00A110A9 /* FFMLastFmJson.m */,
 				0DB3535B158548EF00857A92 /* FFMSong.h */,
 				0DB3535C158548EF00857A92 /* FFMSong.m */,
-				0DB35359158548EF00857A92 /* FFMLastFMUpdater.h */,
-				0DB3535A158548EF00857A92 /* FFMLastFMUpdater.m */,
-				0DCA3A4E15899F3B005C1270 /* FFMITunesUpdater.h */,
-				0DCA3A4F15899F3B005C1270 /* FFMITunesUpdater.m */,
-				0DCA3A5015899F3B005C1270 /* FFMLastFmAppUpdater.h */,
-				0DCA3A5115899F3B005C1270 /* FFMLastFmAppUpdater.m */,
-				0DCA3A5215899F3B005C1270 /* FFMMogUpdater.h */,
-				0DCA3A5315899F3B005C1270 /* FFMMogUpdater.m */,
-				0DCA3A5415899F3B005C1270 /* FFMRdioUpdater.h */,
-				0DCA3A5515899F3B005C1270 /* FFMRdioUpdater.m */,
-				0DCA3A5615899F3B005C1270 /* FFMSongUpdater.h */,
-				0DCA3A5715899F3B005C1270 /* FFMSongUpdater.m */,
-				0DCA3A5815899F3B005C1270 /* FFMSpotifyUpdater.h */,
-				0DCA3A5915899F3B005C1270 /* FFMSpotifyUpdater.m */,
+				0D8E4920159FBC3500F1B5A2 /* Updaters */,
 			);
 			name = FringeFM;
 			sourceTree = "<group>";

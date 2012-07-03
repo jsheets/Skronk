@@ -702,12 +702,29 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     // If a local app is playing, always pick that. However, if a local app is running
     // but not playing, but last.fm is, go with that.
 
-    if (self.spotifyUpdater.isServiceAvailable && self.spotifyUpdater.isServicePlaying)
+    if (self.iTunesUpdater.isServiceAvailable && self.iTunesUpdater.isServicePlaying)
+    {
+        self.currentSongUpdater = self.iTunesUpdater;
+    }
+    else if (self.spotifyUpdater.isServiceAvailable && self.spotifyUpdater.isServicePlaying)
     {
         self.currentSongUpdater = self.spotifyUpdater;
     }
+    else if (self.mogUpdater.isServiceAvailable && self.mogUpdater.isServicePlaying)
+    {
+        self.currentSongUpdater = self.mogUpdater;
+    }
+    else if (self.rdioUpdater.isServiceAvailable && self.rdioUpdater.isServicePlaying)
+    {
+        self.currentSongUpdater = self.rdioUpdater;
+    }
+    else if (self.lastFmAppUpdater.isServiceAvailable && self.lastFmAppUpdater.isServicePlaying)
+    {
+        self.currentSongUpdater = self.lastFmAppUpdater;
+    }
     else
     {
+        // Fall back on last.fm web service.
         self.currentSongUpdater = self.lastFmUpdater;
     }
 
