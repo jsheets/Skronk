@@ -89,6 +89,7 @@
 		0DEBC4A41501B83600D4E1C3 /* last.fm-icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DEBC4A31501B83600D4E1C3 /* last.fm-icon-64.png */; };
 		0DEBC4A61501B86700D4E1C3 /* last.fm-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DEBC4A51501B86700D4E1C3 /* last.fm-icon-24.png */; };
 		0DEBC4A81501BDDE00D4E1C3 /* concrete-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DEBC4A71501BDDE00D4E1C3 /* concrete-background.jpg */; };
+		0DF5156A15A4AE18005F7BC4 /* FFMLocalSongUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5156915A4AE18005F7BC4 /* FFMLocalSongUpdater.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +220,8 @@
 		0DF5155E15A3EF85005F7BC4 /* Mog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mog.h; sourceTree = "<group>"; };
 		0DF5155F15A3EF85005F7BC4 /* Rdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rdio.h; sourceTree = "<group>"; };
 		0DF5156015A3EF85005F7BC4 /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
+		0DF5156815A4AE18005F7BC4 /* FFMLocalSongUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMLocalSongUpdater.h; path = ../../FringeFM/FringeFM/FFMLocalSongUpdater.h; sourceTree = "<group>"; };
+		0DF5156915A4AE18005F7BC4 /* FFMLocalSongUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMLocalSongUpdater.m; path = ../../FringeFM/FringeFM/FFMLocalSongUpdater.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +300,8 @@
 			children = (
 				0DCA3A5615899F3B005C1270 /* FFMSongUpdater.h */,
 				0DCA3A5715899F3B005C1270 /* FFMSongUpdater.m */,
+				0DF5156815A4AE18005F7BC4 /* FFMLocalSongUpdater.h */,
+				0DF5156915A4AE18005F7BC4 /* FFMLocalSongUpdater.m */,
 				0DCA3A4E15899F3B005C1270 /* FFMITunesUpdater.h */,
 				0DCA3A4F15899F3B005C1270 /* FFMITunesUpdater.m */,
 				0DB35359158548EF00857A92 /* FFMLastFMUpdater.h */,
@@ -687,6 +692,7 @@
 				0DCA3A5D15899F3B005C1270 /* FFMRdioUpdater.m in Sources */,
 				0DCA3A5E15899F3B005C1270 /* FFMSongUpdater.m in Sources */,
 				0DCA3A5F15899F3B005C1270 /* FFMSpotifyUpdater.m in Sources */,
+				0DF5156A15A4AE18005F7BC4 /* FFMLocalSongUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
