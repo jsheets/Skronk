@@ -254,11 +254,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
 - (void)endNetworkAnimation
 {
-//    if (self.serviceIcon.alphaValue == kServiceIconHiddenAlpha) return;
-
-    // Pause a bit longer for usability.
-    [NSThread sleepForTimeInterval:1.0];
-
     [self.serviceIcon.layer removeAnimationForKey:@"opacity"];
 }
 
