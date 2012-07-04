@@ -408,12 +408,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
 - (void)updateCurrentTrack
 {
-    if (self.isSleeping)
-    {
-//        NSLog(@"Sleeping...");
-        return;
-    }
-
     // Make sure we have the current best music service.
     [self checkServices];
 
