@@ -732,21 +732,23 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     {
         self.currentSongUpdater = self.spotifyUpdater;
     }
-    else if (self.mogUpdater.isServiceAvailable && self.mogUpdater.isServicePlaying)
-    {
-        self.currentSongUpdater = self.mogUpdater;
-    }
     else if (self.rdioUpdater.isServiceAvailable && self.rdioUpdater.isServicePlaying)
     {
         self.currentSongUpdater = self.rdioUpdater;
     }
-    else if (self.lastFmAppUpdater.isServiceAvailable && self.lastFmAppUpdater.isServicePlaying)
+    else if (self.mogUpdater.isServiceAvailable && self.mogUpdater.isServicePlaying)
     {
-        self.currentSongUpdater = self.lastFmAppUpdater;
+        // Pause not supported, so lower priority.
+        self.currentSongUpdater = self.mogUpdater;
     }
+//    else if (self.lastFmAppUpdater.isServiceAvailable && self.lastFmAppUpdater.isServicePlaying)
+//    {
+//        // Pause not supported, so lower priority.
+//        self.currentSongUpdater = self.lastFmAppUpdater;
+//    }
     else
     {
-        // Fall back on last.fm web service.
+        // Fall back last on remote last.fm web service.
         self.currentSongUpdater = self.lastFmUpdater;
     }
 
