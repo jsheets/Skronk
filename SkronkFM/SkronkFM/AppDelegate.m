@@ -505,10 +505,12 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                 }
 
                 // Update album image back on main thread.
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.art.image = albumImage;
-                });
-
+                if (albumImage)
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        self.art.image = albumImage;
+                    });
+                }
             }
             else
             {
