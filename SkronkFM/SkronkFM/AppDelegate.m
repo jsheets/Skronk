@@ -74,19 +74,52 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 @synthesize mogUpdater = _mogUpdater;
 @synthesize rdioUpdater = _rdioUpdater;
 @synthesize spotifyUpdater = _spotifyUpdater;
+@synthesize timerCounter = _timerCounter;
+
+- (id)init
+{
+    if ((self = [super init]))
+    {
+        // Ping the timer once every second for the life of the application.
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1
+            target:self selector:@selector(pingTimer) userInfo:nil repeats:YES];
+    }
+
+    return self;
+}
+
+- (void)dealloc
+{
+    [self.timer invalidate];
+    self.timer = nil;
+}
 
 - (void)resetTimer
 {
-    if (self.timer)
+    self.timerCounter = 1;
+    // Get the update interval from the song updater.
+//    NSTimeInterval timeout = self.currentSongUpdater.updateFrequency;
+}
+
+// Hit once per second for the life of the application. Filter pings depending on the
+// updater, or sleepedness.
+- (void)pingTimer
+{
+    if (!self.isSleeping && self.currentSongUpdater.updateFrequency > 0 &&
+        (self.timerCounter % self.currentSongUpdater.updateFrequency) == 0)
     {
-        [self.timer invalidate];
+        // Safe to update.
+//        NSLog(@"PING!! (%lu)", self.timerCounter);
+        [self updateCurrentTrack];
+    }
+    else
+    {
+//        NSLog(@"Skipping ping (%lu).", self.timerCounter);
     }
 
-    // Get the update interval from the song updater.
-    NSTimeInterval timeout = self.currentSongUpdater.updateFrequency;
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:timeout
-        target:self selector:@selector(updateCurrentTrack) userInfo:nil repeats:YES];
+    self.timerCounter += 1;
 }
+
 
 - (BOOL)alwaysOnTop
 {
@@ -404,7 +437,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     // Run in background.
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // Grab the current song from the current music service.
-        NSLog(@"Fetching current song.");
         self.currentSong = [self.currentSongUpdater fetchCurrentSong];
 
         if (self.currentSong.errorText == nil)
@@ -733,6 +765,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         {
             // Switched to a different service. Clear out old service junk.
             self.art.image = self.missingArt;
+            [self resetTimer];
         }
         self.serviceIcon.image = self.currentSongUpdater.icon;
     });
