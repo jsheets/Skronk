@@ -239,22 +239,26 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
 - (void)startNetworkAnimation
 {
-//    if (self.serviceIcon.alphaValue == kServiceIconHiddenAlpha) return;
+    if (self.currentSongUpdater.isServiceRemote)
+    {
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+        animation.fromValue = [NSNumber numberWithFloat:kServiceIconMaxAlpha];
+        animation.toValue = [NSNumber numberWithFloat:kServiceIconDimAlpha];
+        animation.duration = 0.5f;
+        animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        animation.autoreverses = YES;
+        animation.repeatCount = 100;
 
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-    animation.fromValue = [NSNumber numberWithFloat:kServiceIconMaxAlpha];
-    animation.toValue = [NSNumber numberWithFloat:kServiceIconDimAlpha];
-    animation.duration = 0.5f;
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    animation.autoreverses = YES;
-    animation.repeatCount = 100;
-
-    [self.serviceIcon.layer addAnimation:animation forKey:@"opacity"];
+        [self.serviceIcon.layer addAnimation:animation forKey:@"opacity"];
+    }
 }
 
 - (void)endNetworkAnimation
 {
-    [self.serviceIcon.layer removeAnimationForKey:@"opacity"];
+    if (self.currentSongUpdater.isServiceRemote)
+    {
+        [self.serviceIcon.layer removeAnimationForKey:@"opacity"];
+    }
 }
 
 - (void)showServiceUp
