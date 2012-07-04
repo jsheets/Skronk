@@ -767,20 +767,21 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     self.lastFmUpdater = [[FFMLastFMUpdater alloc] initWithUserName:lastFmUsername apiKey:@"3a36e88356d8d90aee7a012c6abccae1"];
     self.lastFmUpdater.icon = [NSImage imageNamed:@"last.fm-service"];
 
+    // Set up local music players. Get application icon by default, but fall back on local bundled icons.
     self.iTunesUpdater = [[FFMITunesUpdater alloc] init];
-    self.iTunesUpdater.icon = [NSImage imageNamed:@"iTunes-service"];
+    if (self.iTunesUpdater.icon == nil) self.iTunesUpdater.icon = [NSImage imageNamed:@"iTunes-service"];
 
     self.lastFmAppUpdater = [[FFMLastFmAppUpdater alloc] init];
-    self.lastFmAppUpdater.icon = [NSImage imageNamed:@"audioscrobbler-service"];
+    if (self.lastFmAppUpdater.icon == nil) self.lastFmAppUpdater.icon = [NSImage imageNamed:@"audioscrobbler-service"];
 
     self.mogUpdater = [[FFMMogUpdater alloc] init];
-    self.mogUpdater.icon = [NSImage imageNamed:@"Mog-service"];
+    if (self.mogUpdater.icon == nil) self.mogUpdater.icon = [NSImage imageNamed:@"Mog-service"];
 
     self.rdioUpdater = [[FFMRdioUpdater alloc] init];
-    self.rdioUpdater.icon = [NSImage imageNamed:@"Rdio-service"];
+    if (self.rdioUpdater.icon == nil) self.rdioUpdater.icon = [NSImage imageNamed:@"Rdio-service"];
 
     self.spotifyUpdater = [[FFMSpotifyUpdater alloc] init];
-    self.spotifyUpdater.icon = [NSImage imageNamed:@"Spotify-service"];
+    if (self.spotifyUpdater.icon == nil) self.spotifyUpdater.icon = [NSImage imageNamed:@"Spotify-service"];
 
     [self checkServices];
 }
