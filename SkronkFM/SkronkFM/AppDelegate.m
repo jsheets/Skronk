@@ -96,9 +96,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
 - (void)resetTimer
 {
-    self.timerCounter = 1;
-    // Get the update interval from the song updater.
-//    NSTimeInterval timeout = self.currentSongUpdater.updateFrequency;
+    self.timerCounter = 0;
 }
 
 // Hit once per second for the life of the application. Filter pings depending on the
@@ -224,8 +222,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             [self fadeInWindow];
 
             // Don't update here after all. Causes issues with quick hide/show.
-//            [self updateCurrentTrack];
-//            [self resetTimer];
+            [self resetTimer];
         }
     }
     else
@@ -544,7 +541,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         if ([keyPath isEqualToString:kPreferenceAutohide])
         {
 //            NSLog(@"Reloading current track after changing %@", keyPath);
-            [self updateCurrentTrack];
             [self resetTimer];
             return;
         }
@@ -555,7 +551,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                 self.label.stringValue = @"Loading...";
                 self.art.image = self.missingArt;
 
-                [self updateCurrentTrack];
                 [self resetTimer];
             });
             return;
@@ -591,7 +586,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             BOOL shouldShowIcon = [[change objectForKey:NSKeyValueChangeNewKey] integerValue] == 1;
             if (shouldShowIcon)
             {
-                [self updateCurrentTrack];
                 [self resetTimer];
             }
             else
@@ -815,7 +809,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     [self initMusicServices:username];
 
     self.art.image = self.missingArt;
-    [self updateCurrentTrack];
     [self resetTimer];
 
     // If not last.fm username set, bring up Preferences dialog with text field focused.
