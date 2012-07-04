@@ -778,18 +778,23 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
     self.iTunesUpdater = [[FFMITunesUpdater alloc] init];
     self.iTunesUpdater.icon = [NSImage imageNamed:@"iTunes-service"];
+    self.iTunesUpdater.updateFrequency = 5;
 
     self.lastFmAppUpdater = [[FFMLastFmAppUpdater alloc] init];
     self.lastFmAppUpdater.icon = [NSImage imageNamed:@"audioscrobbler-service"];
+    self.lastFmAppUpdater.updateFrequency = 5;
 
     self.mogUpdater = [[FFMMogUpdater alloc] init];
     self.mogUpdater.icon = [NSImage imageNamed:@"Mog-service"];
+    self.mogUpdater.updateFrequency = 5;
 
     self.rdioUpdater = [[FFMRdioUpdater alloc] init];
     self.rdioUpdater.icon = [NSImage imageNamed:@"Rdio-service"];
+    self.rdioUpdater.updateFrequency = 5;
 
     self.spotifyUpdater = [[FFMSpotifyUpdater alloc] init];
     self.spotifyUpdater.icon = [NSImage imageNamed:@"Spotify-service"];
+    self.spotifyUpdater.updateFrequency = 5;
 
     [self checkServices];
 }
