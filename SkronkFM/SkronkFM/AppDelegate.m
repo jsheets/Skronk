@@ -771,17 +771,17 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     self.iTunesUpdater = [[FFMITunesUpdater alloc] init];
     if (self.iTunesUpdater.icon == nil) self.iTunesUpdater.icon = [NSImage imageNamed:@"iTunes-service"];
 
-    self.lastFmAppUpdater = [[FFMLastFmAppUpdater alloc] init];
-    if (self.lastFmAppUpdater.icon == nil) self.lastFmAppUpdater.icon = [NSImage imageNamed:@"audioscrobbler-service"];
-
-    self.mogUpdater = [[FFMMogUpdater alloc] init];
-    if (self.mogUpdater.icon == nil) self.mogUpdater.icon = [NSImage imageNamed:@"Mog-service"];
+    self.spotifyUpdater = [[FFMSpotifyUpdater alloc] init];
+    if (self.spotifyUpdater.icon == nil) self.spotifyUpdater.icon = [NSImage imageNamed:@"Spotify-service"];
 
     self.rdioUpdater = [[FFMRdioUpdater alloc] init];
     if (self.rdioUpdater.icon == nil) self.rdioUpdater.icon = [NSImage imageNamed:@"Rdio-service"];
 
-    self.spotifyUpdater = [[FFMSpotifyUpdater alloc] init];
-    if (self.spotifyUpdater.icon == nil) self.spotifyUpdater.icon = [NSImage imageNamed:@"Spotify-service"];
+    self.mogUpdater = [[FFMMogUpdater alloc] init];
+    if (self.mogUpdater.icon == nil) self.mogUpdater.icon = [NSImage imageNamed:@"Mog-service"];
+
+    self.lastFmAppUpdater = [[FFMLastFmAppUpdater alloc] init];
+    if (self.lastFmAppUpdater.icon == nil) self.lastFmAppUpdater.icon = [NSImage imageNamed:@"audioscrobbler-service"];
 
     [self checkServices];
 }
