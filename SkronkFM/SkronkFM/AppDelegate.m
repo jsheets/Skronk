@@ -26,6 +26,7 @@
 #import "FFMMogUpdater.h"
 #import "FFMRdioUpdater.h"
 #import "FFMSpotifyUpdater.h"
+#import "NoPlayerSongUpdater.h"
 
 static NSString *const kGlobalHotKey = @"Global Hot Key";
 
@@ -75,6 +76,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 @synthesize rdioUpdater = _rdioUpdater;
 @synthesize spotifyUpdater = _spotifyUpdater;
 @synthesize timerCounter = _timerCounter;
+@synthesize emptyUpdater = _emptyUpdater;
 
 - (id)init
 {
@@ -723,6 +725,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     // If a local app is playing, always pick that. However, if a local app is running
     // but not playing, but last.fm is, go with that.
 
+    NSString *lastFmUsername = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
+
     if (self.iTunesUpdater.isServiceAvailable && self.iTunesUpdater.isServicePlaying)
     {
         self.currentSongUpdater = self.iTunesUpdater;
@@ -745,10 +749,15 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 //        // Pause not supported, so lower priority.
 //        self.currentSongUpdater = self.lastFmAppUpdater;
 //    }
+    else if (lastFmUsername)
+    {
+        // Fall back last on remote last.fm web service, but only if we have a last.fm user.
+        self.currentSongUpdater = self.lastFmUpdater;
+    }
     else
     {
-        // Fall back last on remote last.fm web service.
-        self.currentSongUpdater = self.lastFmUpdater;
+        // Nothing. Go home and cry.
+        self.currentSongUpdater = self.emptyUpdater;
     }
 
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -764,6 +773,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
 - (void)initMusicServices:(NSString *)lastFmUsername
 {
+    self.emptyUpdater = [[NoPlayerSongUpdater alloc] init];
     self.lastFmUpdater = [[FFMLastFMUpdater alloc] initWithUserName:lastFmUsername apiKey:@"3a36e88356d8d90aee7a012c6abccae1"];
     self.lastFmUpdater.icon = [NSImage imageNamed:@"last.fm-service"];
 

@@ -24,6 +24,7 @@
 @class FFMMogUpdater;
 @class FFMRdioUpdater;
 @class FFMSpotifyUpdater;
+@class NoPlayerSongUpdater;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, SBApplicationDelegate>
 
@@ -55,12 +56,15 @@
 @property (strong) FFMMogUpdater *mogUpdater;
 @property (strong) FFMRdioUpdater *rdioUpdater;
 @property (strong) FFMSpotifyUpdater *spotifyUpdater;
+@property (strong) NoPlayerSongUpdater *emptyUpdater;
 
 @property (assign) BOOL isSleeping;
 
 - (IBAction)preferencesClicked:(id)sender;
 - (IBAction)openLastFmClicked:(id)sender;
 - (IBAction)openUserClicked:(id)sender;
+- (void)checkServices;
+
 - (IBAction)showHideClicked:(id)sender;
 - (IBAction)showHelpClicked:(id)sender;
 
