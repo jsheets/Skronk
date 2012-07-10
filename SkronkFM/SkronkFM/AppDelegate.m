@@ -559,8 +559,12 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
             self.lastFmUpdater.userName = lastFmUsername;
 
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.label.stringValue = @"Loading...";
-                self.art.image = self.missingArt;
+                // Only display loading message if we're currently using the last.fm updater.
+                if (self.currentSongUpdater == self.lastFmUpdater)
+                {
+                    self.label.stringValue = @"Loading...";
+                    self.art.image = self.missingArt;
+                }
 
                 [self resetTimer];
             });
