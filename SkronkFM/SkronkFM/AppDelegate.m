@@ -425,7 +425,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         return;
     }
 
-    // TODO: Move network check to checkServices (skip last.fm).
     BOOL showNetworkAvailability = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowNetworkAvailability];
     if (showNetworkAvailability)
     {
@@ -555,7 +554,10 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         }
         else if ([keyPath isEqualToString:kPreferenceLastFmUsername])
         {
-//            NSLog(@"Reloading current track after changing %@", keyPath);
+            NSString *lastFmUsername = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
+//            NSLog(@"Reloading current track after changing %@ to %@", keyPath, lastFmUsername);
+            self.lastFmUpdater.userName = lastFmUsername;
+
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.label.stringValue = @"Loading...";
                 self.art.image = self.missingArt;
