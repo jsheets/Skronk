@@ -825,14 +825,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
     self.art.image = self.missingArt;
     [self resetTimer];
-
-    // If not last.fm username set, bring up Preferences dialog with text field focused.
-    if (username == nil)
-    {
-        self.label.stringValue = @"Please enter a last.fm user name to continue...";
-        [self preferencesClicked:self];
-        [self.preferencesController.window makeFirstResponder:self.preferencesController.lastFmTextField];
-    }
     
     BOOL shouldShowMenubar = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowInMenubar];
     [self showInMenubar:shouldShowMenubar];
