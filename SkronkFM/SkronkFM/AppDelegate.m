@@ -409,11 +409,19 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     // Make sure we have the current best music service.
     [self checkServices];
 
-    // TODO: Move last.fm username lookup to checkServices (skip last.fm).
-    NSString *lastFmUsername = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
-    if (lastFmUsername == nil)
+    if (self.currentSongUpdater == self.emptyUpdater)
     {
-//        NSLog(@"Username not set...skipping update.");
+//        NSLog(@"No music services found. Uh oh.");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *message = @"No music players found.";
+            NSColor *highlightColor = [NSColor colorWithCalibratedWhite:0.9 alpha:1.0];
+            NSDictionary *white = [NSDictionary dictionaryWithObject:highlightColor forKey:NSForegroundColorAttributeName];
+            NSAttributedString *fancyString = [[NSAttributedString alloc] initWithString:message attributes:white];
+
+            self.label.attributedStringValue = fancyString;
+            [self adjustWindowSize];
+        });
+
         return;
     }
 
