@@ -1,0 +1,39 @@
+## Watch your music from the comfort of your own desktop.
+
+&nbsp;
+
+### *[Now in the Mac App Store!](http://bit.ly/skronkfm_macappstore)*
+
+&nbsp;
+
+Always know which song you're currently playing on [last.fm](http://last.fm/), even when your player isn't visible. No need to keep switching back to your music application to look.
+
+![](http://fourfringe.squarespace.com/storage/skronk-main.png?__SQUARESPACE_CACHEVERSION=1334198200802)
+
+Works great with the [last.fm web player](http://www.last.fm/listen), with [Spotify](http://www.spotify.com/), [Rdio](http://www.rdio.com/), and [Mog](http://mog.com) on desktop or mobile, and with any other last.fm scrobbling player. It doesn’t matter if you’re playing music on your Mac, on your phone, on a media center in the next room, or even across town. Whatever last.fm sees, SkronkFM sees.
+
+&nbsp;
+
+## FEATURES:
+
+* Keep track of what’s currently playing on your last.fm account
+* Convenient menubar access
+* Always on Top so SkronkFM doesn’t get lost on your desktop
+* Autosizes to fit track length
+* Choose between opaque or transparent background
+* Shows album art if available.
+* Configurable global keyboard shortcut to show/hide
+* Quick link to open the current song in your default browser
+
+&nbsp;
+
+## FUTURES:
+
+Here are some ideas we’re thinking about for upcoming releases of SkronkFM.
+
+* Sync with local music players
+* More track info
+* Song history
+* Growl support
+* iOS application
+

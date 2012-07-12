@@ -1,0 +1,43 @@
+## Frequently Asked Questions
+
+### How does SkronkFM decide which music player to show?
+
+### Why doesn't SkronkFM notice when I pause the desktop Mog application?
+
+### I'm listening to music but SkronkFM is not updating. How often does SkronkFM check my last.fm playing status?
+
+> Every fifteen seconds. Checking it more often typically won't result in faster updates, since many of the music services like Mog and Rdio don't scrobble songs until they've been playing for a certain length, for example 25% completed. Commonly this translates into 30-60 seconds into a song before last.fm first sees the new song. For longer songs it may take even more time to scrobble.
+
+### Why does it take each service (Spotify, Mog) so long to update my playing status?
+
+> See previous answer. Different music services have different rules on how often they send last.fm updates. Some scrobbling applications may allow you to customize their scrobbling rules.
+
+### Why does SkronkFM keep saying my music has stopped?
+
+> SkronkFM can only report what last.fm tells it. If a scrobbling application or service does not send an update to last.fm after restarting a paused song, last.fm will not be able to see that the song is playing again. When the next song begins, last.fm should get a fresh update.
+
+### Do I need a last.fm account to use SkronkFM?
+
+> For now, yes. The initial release of SkronkFM uses last.fm as its sole music source. Future versions of SkronkFM will add support for watching additional music players. At that point, last.fm will be optional.
+
+### Where's my album? Where's my album art?
+
+> If last.fm doesn't recognize the song you're scrobbling, it won't be able to associate it with an album. Sometimes small differences in the song name will throw things off, like missing punctuation or alternate spellings. When in doubt, look it up on last.fm by selecting "Open Song on last.fm" from the SkronkFM menu.
+
+### That flashing icon is distracting. How do I get rid of it?
+
+> Turn off the option "Show Watcher Icon" in Preferences or in the menu bar menu.
+
+### Does SkronkFM update in the background?
+
+> SkronkFM only checks the network when it's awake. If you sleep it with the menu or shortcut key, SkronkFM will cease network activity until you wake it again.
+
+### Scrobble?
+
+> "Scrobble" is last.fm's term for sending song updates from your local playlist to last.fm.
+
+### What if I don’t have a question?
+
+> Feel free to ask it anyway. Send all your non-questions to skronk@fourfringe.com.
+
+ 

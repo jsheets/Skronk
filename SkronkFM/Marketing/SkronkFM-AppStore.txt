@@ -1,0 +1,45 @@
+Watch your music from the comfort of your own desktop.
+
+*** Low Introductory Price! ***
+
+Always know which song you're currently playing on last.fm, even when your player isn't visible. No need to keep switching back to your music application to look.
+
+Works great with the last.fm web player, with Spotify, Rdio, and Mog on desktop or mobile, and with any other last.fm scrobbling player. It doesn’t matter if you’re playing music on your Mac, on your phone, on a media center in the next room, or even across town. Whatever last.fm sees, SkronkFM sees.
+
+Features:
+
+* Keep track of what’s currently playing on your last.fm account
+* Convenient menubar access
+* Always on Top so SkronkFM doesn’t get lost on your desktop
+* Autosizes to fit track length
+* Choose between opaque or transparent background
+* Shows album art if available.
+* Configurable global keyboard shortcut to show/hide
+* Quick link to open the current song in your default browser
+
+---
+
+## Keywords:
+
+skronk,fm,last.fm,track,watch,album,albums,artist,artists,song,songs,menubar,scrobble
+
+## Contact:
+
+Support Email Address:
+skronk@fourfringe.com
+
+Support URL:
+http://skronkapp.com
+
+Marketing URL (optional):
+None
+
+## Screenshots (1280x800 or 1440x900)
+
+1. User prompt, preferences
+2. Transparent, service icon, album art, menubar
+3. Concrete, no album art, no album, no service icon
+
+---
+
+Version 1.1:
