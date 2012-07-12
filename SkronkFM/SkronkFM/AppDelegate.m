@@ -758,11 +758,11 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         // Pause not supported, so lower priority.
         self.currentSongUpdater = self.mogUpdater;
     }
-//    else if (self.lastFmAppUpdater.isServiceAvailable && self.lastFmAppUpdater.isServicePlaying)
-//    {
-//        // Pause not supported, so lower priority.
-//        self.currentSongUpdater = self.lastFmAppUpdater;
-//    }
+    else if (self.lastFmAppUpdater.isServiceAvailable && self.lastFmAppUpdater.isServicePlaying)
+    {
+        // Pause not supported, so lower priority.
+        self.currentSongUpdater = self.lastFmAppUpdater;
+    }
     else if (lastFmUsername)
     {
         // Fall back last on remote last.fm web service, but only if we have a last.fm user.
