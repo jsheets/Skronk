@@ -31,6 +31,7 @@
 		0D704B7A159F7E4D00519C28 /* Rdio-service.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D704B74159F7E4D00519C28 /* Rdio-service.png */; };
 		0D704B7B159F7E4D00519C28 /* Spotify-service.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D704B75159F7E4D00519C28 /* Spotify-service.png */; };
 		0D83848B150054FB0024403B /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D83848A150054FB0024403B /* Quartz.framework */; };
+		0DA2020115B0D9AA004A1B03 /* no-service.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DA2020015B0D9AA004A1B03 /* no-service.png */; };
 		0DA9F83F156056D500A110A9 /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA9F82D156056D500A110A9 /* ASICacheDelegate.h */; };
 		0DA9F840156056D500A110A9 /* ASIDataCompressor.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA9F82E156056D500A110A9 /* ASIDataCompressor.h */; };
 		0DA9F841156056D500A110A9 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F82F156056D500A110A9 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -143,6 +144,7 @@
 		0D704B74159F7E4D00519C28 /* Rdio-service.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rdio-service.png"; sourceTree = "<group>"; };
 		0D704B75159F7E4D00519C28 /* Spotify-service.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spotify-service.png"; sourceTree = "<group>"; };
 		0D83848A150054FB0024403B /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		0DA2020015B0D9AA004A1B03 /* no-service.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-service.png"; sourceTree = "<group>"; };
 		0DA9F82D156056D500A110A9 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = "../../FringeFM/External/asi-http-request/Classes/ASICacheDelegate.h"; sourceTree = "<group>"; };
 		0DA9F82E156056D500A110A9 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataCompressor.h; path = "../../FringeFM/External/asi-http-request/Classes/ASIDataCompressor.h"; sourceTree = "<group>"; };
 		0DA9F82F156056D500A110A9 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDataCompressor.m; path = "../../FringeFM/External/asi-http-request/Classes/ASIDataCompressor.m"; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				0D704B73159F7E4D00519C28 /* Mog-service.png */,
 				0D704B74159F7E4D00519C28 /* Rdio-service.png */,
 				0D704B75159F7E4D00519C28 /* Spotify-service.png */,
+				0DA2020015B0D9AA004A1B03 /* no-service.png */,
 			);
 			name = "Service Icons";
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				0D704B79159F7E4D00519C28 /* Mog-service.png in Resources */,
 				0D704B7A159F7E4D00519C28 /* Rdio-service.png in Resources */,
 				0D704B7B159F7E4D00519C28 /* Spotify-service.png in Resources */,
+				0DA2020115B0D9AA004A1B03 /* no-service.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

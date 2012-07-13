@@ -414,6 +414,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 //        NSLog(@"No music services found. Uh oh.");
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString *message = @"No music players found.";
+            self.serviceIcon.image = self.emptyUpdater.icon;
             NSColor *highlightColor = [NSColor colorWithCalibratedWhite:0.9 alpha:1.0];
             NSDictionary *white = [NSDictionary dictionaryWithObject:highlightColor forKey:NSForegroundColorAttributeName];
             NSAttributedString *fancyString = [[NSAttributedString alloc] initWithString:message attributes:white];
@@ -697,11 +698,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     self.roundedView.backgroundImage = [NSImage imageNamed:@"concrete-background"];
     self.backgroundWidth = self.roundedView.backgroundImage.size.width;
     self.missingArt = [NSImage imageNamed:@"album-art-missing.png"];
-
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowNetworkAvailability])
-    {
-        self.serviceIcon.alphaValue = 0.0f;
-    }
 }
 
 - (void)registerDefaults
@@ -718,11 +714,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         nil
     ];
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
-}
-
-- (void)checkApplications
-{
-    NSLog(@"Scanning for applications.");
 }
 
 - (id)eventDidFail:(const AppleEvent *)event withError:(NSError *)error
@@ -788,6 +779,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 - (void)initMusicServices:(NSString *)lastFmUsername
 {
     self.emptyUpdater = [[NoPlayerSongUpdater alloc] init];
+    self.emptyUpdater.icon = [NSImage imageNamed:@"no-service"];
+    
     self.lastFmUpdater = [[FFMLastFMUpdater alloc] initWithUserName:lastFmUsername apiKey:@"3a36e88356d8d90aee7a012c6abccae1"];
     self.lastFmUpdater.icon = [NSImage imageNamed:@"last.fm-service"];
 
@@ -828,8 +821,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:kPreferenceLastFmUsername];
 
     [self initMusicServices:username];
-
-    self.art.image = self.missingArt;
     [self resetTimer];
     
     BOOL shouldShowMenubar = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceShowInMenubar];
@@ -842,8 +833,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceLastFmUsername options:NSKeyValueObservingOptionNew context:nil];
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceShowNetworkAvailability options:NSKeyValueObservingOptionNew context:nil];
     [[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:kPreferenceTransparentBackground options:NSKeyValueObservingOptionNew context:nil];
-    
-    [self checkApplications];
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
