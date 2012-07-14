@@ -521,7 +521,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         {
             // Something bad happened, probably network.
             __weak NSString *errString = self.currentSong.errorText;
-            NSLog(@"%@", errString);
+//            NSLog(@"Track error: %@ (%@)", errString, self.currentSongUpdater);
 
             dispatch_async(dispatch_get_main_queue(), ^{
                 // Display error text in UI.
