@@ -33,9 +33,16 @@
     [path addClip];
     path.lineWidth = 2.0;
 
+    CGFloat alphaOffset = 0;
+    
     // Concrete background.
     BOOL transparentBackground = [[NSUserDefaults standardUserDefaults] boolForKey:@"transparentBackground"];
-    if (!transparentBackground)
+    if (transparentBackground)
+    {
+        // Set the background a little darker if we're transparent.
+        alphaOffset = 0.35;
+    }
+    else
     {
         [self.backgroundImage compositeToPoint:NSZeroPoint fromRect:self.bounds operation:NSCompositeSourceOver];
     }
@@ -44,11 +51,11 @@
     NSBezierPath *insetPath = [NSBezierPath bezierPathWithRoundedRect:insetRect xRadius:8 yRadius:8];
 
     // Slightly darker text background.
-    [[NSColor colorWithDeviceWhite:0.0 alpha:0.25] set];
+    [[NSColor colorWithDeviceWhite:0.0 alpha:0.15 + alphaOffset] set];
     [insetPath fill];
 
     // Border around text background.
-    [[NSColor colorWithDeviceWhite:0.0 alpha:0.4] set];
+    [[NSColor colorWithDeviceWhite:0.0 alpha:0.4 + alphaOffset] set];
     [insetPath stroke];
 
     // Outer border.
