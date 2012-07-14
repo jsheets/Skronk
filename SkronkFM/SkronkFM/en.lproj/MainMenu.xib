@@ -759,7 +759,7 @@
 					</object>
 					<object class="NSMenuItem" id="576219838">
 						<reference key="NSMenu" ref="481416820"/>
-						<string key="NSTitle">Show Watcher Icon</string>
+						<string key="NSTitle">Show Music Source</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -823,6 +823,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{42, 10}, {560, 17}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="742916205"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<object class="NSShadow" key="NSViewShadow">
@@ -866,6 +867,7 @@
 							<int key="NSvFlags">-2147483380</int>
 							<string key="NSFrame">{{13, 10}, {20, 17}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="823667754"/>
 							<string key="NSReuseIdentifierKey">_NS:3944</string>
 							<bool key="NSEnabled">YES</bool>
@@ -906,6 +908,7 @@
 							</set>
 							<string key="NSFrame">{{11, 6}, {24, 24}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="474761850"/>
 							<string key="NSReuseIdentifierKey">_NS:2141</string>
 							<bool key="NSEnabled">YES</bool>
@@ -935,6 +938,7 @@
 							</set>
 							<string key="NSFrame">{{608, 6}, {26, 24}}</string>
 							<reference key="NSSuperview" ref="275091113"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -958,6 +962,7 @@
 					</array>
 					<string key="NSFrameSize">{640, 36}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="38449736"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
@@ -2353,7 +2358,112 @@
 			<nil key="sourceID"/>
 			<int key="maxID">777</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">AppDelegate</string>
+					<string key="superclassName">NSObject</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="openLastFmClicked:">id</string>
+						<string key="openUserClicked:">id</string>
+						<string key="preferencesClicked:">id</string>
+						<string key="showHelpClicked:">id</string>
+						<string key="showHideClicked:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="openLastFmClicked:">
+							<string key="name">openLastFmClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="openUserClicked:">
+							<string key="name">openUserClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="preferencesClicked:">
+							<string key="name">preferencesClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="showHelpClicked:">
+							<string key="name">showHelpClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="showHideClicked:">
+							<string key="name">showHideClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="art">NSImageView</string>
+						<string key="icon">NSTextField</string>
+						<string key="label">NSTextField</string>
+						<string key="roundedView">RoundedView</string>
+						<string key="serviceIcon">NSImageView</string>
+						<string key="showHideMenuItem">NSMenuItem</string>
+						<string key="showHideStatusbarItem">NSMenuItem</string>
+						<string key="statusMenu">NSMenu</string>
+						<string key="window">NSWindow</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="art">
+							<string key="name">art</string>
+							<string key="candidateClassName">NSImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="icon">
+							<string key="name">icon</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="label">
+							<string key="name">label</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="roundedView">
+							<string key="name">roundedView</string>
+							<string key="candidateClassName">RoundedView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="serviceIcon">
+							<string key="name">serviceIcon</string>
+							<string key="candidateClassName">NSImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="showHideMenuItem">
+							<string key="name">showHideMenuItem</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="showHideStatusbarItem">
+							<string key="name">showHideStatusbarItem</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="statusMenu">
+							<string key="name">statusMenu</string>
+							<string key="candidateClassName">NSMenu</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="window">
+							<string key="name">window</string>
+							<string key="candidateClassName">NSWindow</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AppDelegate.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">RoundedView</string>
+					<string key="superclassName">NSView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/RoundedView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">RoundedWindow</string>
+					<string key="superclassName">NSWindow</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/RoundedWindow.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
@@ -2361,7 +2471,7 @@
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NSMenuCheckmark">{11, 11}</string>
 			<string key="NSMenuMixedState">{10, 3}</string>
-			<string key="no-service">{16, 16}</string>
+			<string key="no-service">{24, 24}</string>
 		</dictionary>
 	</data>
 </archive>
