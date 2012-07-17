@@ -2,15 +2,19 @@
 
 ### How does SkronkFM decide which music player to show?
 
+> SkronkFM always prefers locally running music applications over the remote last.fm web service. If no local apps are playing, SkronkFM will then check for songs on last.fm. It doesn't matter if the music apps are running in the background; SkronkFM only registers local apps when they are currently playing music.
+
 ### Why doesn't SkronkFM notice when I pause the desktop Mog application?
+
+> Different music applications provide different levels of support for remote control. In the case of the Mog desktop application, Mog.app does not report when a song is paused, only when the next song starts.
+> 
+> If Mog is paused and you are trying to access your last.fm updates, you can quit Mog.app to remove it from the list that SkronkFM will check.
 
 ### I'm listening to music but SkronkFM is not updating. How often does SkronkFM check my last.fm playing status?
 
 > Every fifteen seconds. Checking it more often typically won't result in faster updates, since many of the music services like Mog and Rdio don't scrobble songs until they've been playing for a certain length, for example 25% completed. Commonly this translates into 30-60 seconds into a song before last.fm first sees the new song. For longer songs it may take even more time to scrobble.
-
-### Why does it take each service (Spotify, Mog) so long to update my playing status?
-
-> See previous answer. Different music services have different rules on how often they send last.fm updates. Some scrobbling applications may allow you to customize their scrobbling rules.
+> 
+> If you're running SkronkFM on the same Mac as your music applications, SkronkFM can talk to them more directly, without going through last.fm. If that's the case, the application's icon should show up in the Skronk window.
 
 ### Why does SkronkFM keep saying my music has stopped?
 

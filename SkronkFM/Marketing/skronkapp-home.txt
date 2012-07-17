@@ -2,21 +2,28 @@
 
 &nbsp;
 
-### *[Now in the Mac App Store!](http://bit.ly/skronkfm_macappstore)*
+> **skronk**: "To produce a raw and discordant sound with electric guitars" - [Wiktionary](https://en.wiktionary.org/wiki/skronk)
 
 &nbsp;
 
-Always know which song you're currently playing on [last.fm](http://last.fm/), even when your player isn't visible. No need to keep switching back to your music application to look.
+Always know which song you're currently playing. SkronkFM talks directly to local music player applications like iTunes, [Spotify](http://www.spotify.com/), [Rdio](http://www.rdio.com/), and [Mog](http://mog.com) for quick and accurate song updates.
 
-![](http://fourfringe.squarespace.com/storage/skronk-main.png?__SQUARESPACE_CACHEVERSION=1334198200802)
+![](http://fourfringe.squarespace.com/storage/skronkfm-itunes.png)
 
-Works great with the [last.fm web player](http://www.last.fm/listen), with [Spotify](http://www.spotify.com/), [Rdio](http://www.rdio.com/), and [Mog](http://mog.com) on desktop or mobile, and with any other last.fm scrobbling player. It doesn’t matter if you’re playing music on your Mac, on your phone, on a media center in the next room, or even across town. Whatever last.fm sees, SkronkFM sees.
+Within seconds of each song change, SkronkFM will update to show the current track, artist, and album. To change from one music application to another, simply start playing in the new one. SkronkFM will automatically detect the switch.
+
+It also syncs up with the [last.fm music service](http://www.last.fm/listen) so you can track music from remote sources, including mobile apps, media servers, and web streaming players.
+
+![](http://fourfringe.squarespace.com/storage/skronk-main.png)
+
+For more details on using and setting up SkronkFM with the supported music players, see the [Getting Started page](http://www.skronkapp.com/getting-started/) and the [Music Players page](http://www.skronkapp.com/players/).
 
 &nbsp;
 
 ## FEATURES:
 
 * Keep track of what’s currently playing on your last.fm account
+* Sync with local music applications: Spotify, Mog, Rdio, and iTunes
 * Convenient menubar access
 * Always on Top so SkronkFM doesn’t get lost on your desktop
 * Autosizes to fit track length
@@ -24,6 +31,7 @@ Works great with the [last.fm web player](http://www.last.fm/listen), with [Spot
 * Shows album art if available.
 * Configurable global keyboard shortcut to show/hide
 * Quick link to open the current song in your default browser
+* Ready for Mountain Lion
 
 &nbsp;
 
@@ -31,9 +39,10 @@ Works great with the [last.fm web player](http://www.last.fm/listen), with [Spot
 
 Here are some ideas we’re thinking about for upcoming releases of SkronkFM.
 
-* Sync with local music players
-* More track info
-* Song history
+* Artist and album details
+* Song lyrics
+* Play history
 * Growl support
+* Player control
+* Internet radio
 * iOS application
-

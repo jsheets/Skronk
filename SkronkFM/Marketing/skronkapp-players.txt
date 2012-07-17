@@ -1,0 +1,37 @@
+## Music Applications
+
+SkronkFM is able to detect the currently playing song and its album artwork from the desktop music applications iTunes, Spotify, Rdio, and Mog. All applications except for iTunes also support last.fm updates, in case SkronkFM is not running on the same system as the music apps.
+
+### How does SkronkFM decide which music player to show?
+
+> SkronkFM always prefers locally running music applications over the remote last.fm web service. If no music apps are currently playing music on the same Mac as SkronkFM, it will then check for songs on last.fm.
+
+### How often does SkronkFM update in the background?
+
+> SkronkFM checks for local music application updates every 5 seconds, using each application's AppleScript interface. If no local apps are playing, it will contact the last.fm web service every 15 seconds. You can put SkronkFM to sleep from the *View* menu or the shortcut key, and SkronkFM will cease network activity until you wake it again.
+
+## iTunes
+
+SkronkFM supports local song detection from the iTunes application.
+
+> *Note, an AppleScript issue in iTunes 10.6.3 may prevent SkronkFM from properly communicating with iTunes on Mountain Lion, 10.8. We are hoping this will be fixed in the next release of iTunes.*
+
+## Spotify
+
+Spotify's Mac desktop application works well with SkronkFM, supporting both local updates and remote last.fm.
+
+## Rdio
+
+Rdio's Mac desktop application works well with SkronkFM, supporting both local updates and remote last.fm.
+
+## Mog
+
+Mog's Mac desktop application allows both local updates and remote last.fm, but does not offer play/pause info.
+
+### Why doesn't SkronkFM notice when I pause the desktop Mog application?
+
+> Different music applications provide different levels of support for remote control. In the case of the Mog desktop application, Mog.app does not report when a song is paused, only when the next song starts.
+> 
+> If Mog is paused and you are trying to access your last.fm updates, you can quit Mog.app to remove it from the list that SkronkFM will check.
+
+

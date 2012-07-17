@@ -1,0 +1,45 @@
+## Getting Started
+
+As soon as one of the supported music applications starts playing, SkronkFM should immediately load your current music track. The music source icon at the right will show which player SkronkFM is watching.
+
+![](http://fourfringe.squarespace.com/storage/skronkfm-spotify.png)
+
+SkronkFM autosizes to fit each track's title. This comes in handy if you have a very long track title:
+
+![](http://fourfringe.squarespace.com/storage/skronkfm-long-clipped.png)
+
+For more information on how each of the supported music player applications interacts with SkronkFM, check out the [Music Players page](http://www.skronkapp.com/players/).
+
+&nbsp;
+
+### Preferences
+
+You can open the Preferences window by typing Command-, or by  selecting *Preferences...* from the *SkronkFM* menu. Here you can set your last.fm user name or customize how SkronkFM looks and behaves.
+
+![](http://fourfringe.squarespace.com/storage/skronkfm-preferences.png)
+
+*Always On Top* allows the SkronkFM window to float above other applications window, so you can always see it. The *Show Music Source* setting will show or hide the music player icon on the right side of SkronkFM.
+
+Turn on *Transparent Background* if you want to see through to the desktop or other windows behind SkronkFM.
+
+&nbsp;
+
+![](http://fourfringe.squarespace.com/storage/skronkfm-trans-eagle.png)
+
+&nbsp;
+
+If you want to be able to show and hide SkronkFM with a global key stroke, you can assign a keyboard shortcut with *Sleep/Wake SkronkFM*.
+
+If you don’t feel like opening up the Preferences window every time you need to make a change, you can set most of the same options from the optional SkronkFM menu bar, if that's enabled in the Preferences window.
+
+&nbsp;
+
+![](http://fourfringe.squarespace.com/storage/desktop-menubar-dark.png)
+
+&nbsp;
+
+---
+
+&nbsp;
+
+Have fun watching your music! If you have any questions or find any bugs, please send us an email at skronk@fourfringe.com.

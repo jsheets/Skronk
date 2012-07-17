@@ -2,26 +2,29 @@ Watch your music from the comfort of your own desktop.
 
 *** Low Introductory Price! ***
 
-Always know which song you're currently playing on last.fm, even when your player isn't visible. No need to keep switching back to your music application to look.
+Always know which song you're currently playing. SkronkFM talks directly to local music player applications like iTunes, Spotify, Rdio, and Mog for quick and accurate song updates.
 
-Works great with the last.fm web player, with Spotify, Rdio, and Mog on desktop or mobile, and with any other last.fm scrobbling player. It doesn’t matter if you’re playing music on your Mac, on your phone, on a media center in the next room, or even across town. Whatever last.fm sees, SkronkFM sees.
+Within seconds of each song change, SkronkFM will update to show the current track, artist, and album. To change from one music application to another, simply start playing in the new one. SkronkFM will automatically detect the switch.
+
+It also syncs up with the last.fm music service so you can track music from remote sources, including mobile apps, media servers, and web streaming players.
 
 Features:
 
 * Keep track of what’s currently playing on your last.fm account
+* Sync with local music applications: Spotify, Mog, Rdio, and iTunes
 * Convenient menubar access
 * Always on Top so SkronkFM doesn’t get lost on your desktop
 * Autosizes to fit track length
 * Choose between opaque or transparent background
-* Shows album art if available.
 * Configurable global keyboard shortcut to show/hide
 * Quick link to open the current song in your default browser
+* Ready for Mountain Lion
 
 ---
 
 ## Keywords:
 
-skronk,fm,last.fm,track,watch,album,albums,artist,artists,song,songs,menubar,scrobble
+skronk,fm,last.fm,music,spotify,mog,rdio,track,album,artist,song,menubar,scrobble
 
 ## Contact:
 
@@ -43,3 +46,19 @@ None
 ---
 
 Version 1.1:
+
+Now directly supports local players for faster updates and more accurate song reporting:
+
+* Spotify
+* Rdio
+* Mog
+* iTunes
+
+Other Improvements:
+
+* Darker background while transparent to improve readability
+* Fix blocking while fetching slow album art
+* Bug fixes and optimizations
+* Ready for Mountain Lion 10.8
+
+[Note: an AppleScript issue in iTunes 10.6.3 may prevent SkronkFM from discovering the current song. We are hoping this will be fixed in the next release of iTunes.]

@@ -1,0 +1,34 @@
+### Connecting to last.fm
+
+To start using SkronkFM with your last.fm account, enter your last.fm user name in the Preferences window and hit the return key. The Skronk window should immediately update with your current or most recent song track, and the white last.fm icon should appear at the right of the Skronk window.
+
+If a local music application is playing, SkronkFM will prefer that over last.fm, since it's quicker and doesn't have to connect to the Internet. As soon as the local player stops, the last.fm track should appear.
+
+If last.fm doesn’t have album info for a given track, it will show a placeholder image for the album art. See the FAQ for why this might happen.
+
+![](http://fourfringe.squarespace.com/storage/skronkfm-noalbum.png)
+
+If you’re not listening to last.fm right now, SkronkFM will load your most recently played track, but gray it out to make it clear that it doesn’t see music playing.
+
+### Do I need a last.fm account to use SkronkFM?
+
+> A last.fm account is optional. Without a last.fm account, SkronkFM will only be able to detect locally running music applications. If you want SkronkFM to follow music that you're playing on other computers, in your web browser, or on your mobile phone, you'll need a last.fm account.
+
+### I'm listening to music but SkronkFM is not updating. How often does SkronkFM check my last.fm playing status?
+
+> Every fifteen seconds. Checking it more often typically won't result in faster updates, since many of the music services like Mog and Rdio don't scrobble songs until they've been playing for a certain length, for example 25% completed. Commonly this translates into 30-60 seconds into a song before last.fm first sees the new song. For longer songs it may take even more time to scrobble.
+> 
+> If you're running SkronkFM on the same Mac as your music applications, SkronkFM can talk to them more directly, without going through last.fm. If that's the case, the music application's icon should show up in the right side of the Skronk window.
+
+### Why does SkronkFM keep saying my last.fm music has stopped?
+
+> SkronkFM can only report what last.fm tells it. If a scrobbling application or service does not send an update to last.fm after restarting a paused song, last.fm will not be able to see that the song is playing again. When the next song begins, last.fm should get a fresh update.
+
+### Where's my album? Where's my album art?
+
+> If last.fm doesn't recognize the song you're scrobbling, it won't be able to associate it with an album. Sometimes small differences in the song name will throw things off, like missing punctuation or alternate spellings. When in doubt, look it up on last.fm by selecting "Open Song on last.fm" from the SkronkFM menu.
+
+### Scrobble?
+
+> "Scrobble" is last.fm's term for sending song updates from your local music player to last.fm.
+
