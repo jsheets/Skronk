@@ -24,6 +24,7 @@
 @class FFMMogUpdater;
 @class FFMRdioUpdater;
 @class FFMSpotifyUpdater;
+@class FFMRadiumUpdater;
 @class NoPlayerSongUpdater;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, SBApplicationDelegate>
@@ -56,6 +57,7 @@
 @property (strong) FFMMogUpdater *mogUpdater;
 @property (strong) FFMRdioUpdater *rdioUpdater;
 @property (strong) FFMSpotifyUpdater *spotifyUpdater;
+@property (strong) FFMRadiumUpdater *radiumUpdater;
 @property (strong) NoPlayerSongUpdater *emptyUpdater;
 
 @property (assign) BOOL isSleeping;

@@ -20,6 +20,7 @@
 		0D3437D9151A56F100C710A7 /* menubar-icon-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D3437D8151A56F100C710A7 /* menubar-icon-alt.png */; };
 		0D4AE4D814EB3474002596BD /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4AE4D714EB3474002596BD /* PreferencesController.m */; };
 		0D4AE4DB14EB362D002596BD /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D4AE4DA14EB362D002596BD /* Preferences.xib */; };
+		0D5907F715C6DA8E008B4D29 /* FFMRadiumUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5907F615C6DA8E008B4D29 /* FFMRadiumUpdater.m */; };
 		0D6C3749150874030045890A /* last.fm-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D6C3748150874030045890A /* last.fm-button.png */; };
 		0D6D259C15A7CF1000F0EE8F /* NoPlayerSongUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D6D259A15A7CF1000F0EE8F /* NoPlayerSongUpdater.h */; };
 		0D6D259D15A7CF1000F0EE8F /* NoPlayerSongUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6D259B15A7CF1000F0EE8F /* NoPlayerSongUpdater.m */; };
@@ -134,6 +135,9 @@
 		0D4AE4D614EB3474002596BD /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PreferencesController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		0D4AE4D714EB3474002596BD /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PreferencesController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0D4AE4DA14EB362D002596BD /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		0D5907F415C6DA79008B4D29 /* Radium.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Radium.h; sourceTree = "<group>"; };
+		0D5907F515C6DA8E008B4D29 /* FFMRadiumUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMRadiumUpdater.h; path = ../../FringeFM/FringeFM/FFMRadiumUpdater.h; sourceTree = "<group>"; };
+		0D5907F615C6DA8E008B4D29 /* FFMRadiumUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMRadiumUpdater.m; path = ../../FringeFM/FringeFM/FFMRadiumUpdater.m; sourceTree = "<group>"; };
 		0D6C3748150874030045890A /* last.fm-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last.fm-button.png"; sourceTree = "<group>"; };
 		0D6D259A15A7CF1000F0EE8F /* NoPlayerSongUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoPlayerSongUpdater.h; sourceTree = "<group>"; };
 		0D6D259B15A7CF1000F0EE8F /* NoPlayerSongUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoPlayerSongUpdater.m; sourceTree = "<group>"; };
@@ -322,6 +326,8 @@
 				0DCA3A5515899F3B005C1270 /* FFMRdioUpdater.m */,
 				0DCA3A5815899F3B005C1270 /* FFMSpotifyUpdater.h */,
 				0DCA3A5915899F3B005C1270 /* FFMSpotifyUpdater.m */,
+				0D5907F515C6DA8E008B4D29 /* FFMRadiumUpdater.h */,
+				0D5907F615C6DA8E008B4D29 /* FFMRadiumUpdater.m */,
 			);
 			name = Updaters;
 			sourceTree = "<group>";
@@ -512,6 +518,7 @@
 				0DF5155E15A3EF85005F7BC4 /* Mog.h */,
 				0DF5155F15A3EF85005F7BC4 /* Rdio.h */,
 				0DF5156015A3EF85005F7BC4 /* Spotify.h */,
+				0D5907F415C6DA79008B4D29 /* Radium.h */,
 			);
 			name = Bridge;
 			path = ../../FringeFM/Bridge;
@@ -706,6 +713,7 @@
 				0DCA3A5F15899F3B005C1270 /* FFMSpotifyUpdater.m in Sources */,
 				0DF5156A15A4AE18005F7BC4 /* FFMLocalSongUpdater.m in Sources */,
 				0D6D259D15A7CF1000F0EE8F /* NoPlayerSongUpdater.m in Sources */,
+				0D5907F715C6DA8E008B4D29 /* FFMRadiumUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

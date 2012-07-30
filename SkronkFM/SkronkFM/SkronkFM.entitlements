@@ -10,11 +10,12 @@
 	<true/>
 	<key>com.apple.security.temporary-exception.apple-events</key>
 	<array>
-	    <string>com.apple.iTunes</string>
-	    <string>com.mog.desktop</string>
-	    <string>com.rdio.desktop</string>
-	    <string>com.spotify.client</string>
-	    <string>fm.last.Last.fm</string>
+		<string>com.apple.iTunes</string>
+		<string>com.mog.desktop</string>
+		<string>com.catpigstudios.radium</string>
+		<string>com.rdio.desktop</string>
+		<string>com.spotify.client</string>
+		<string>fm.last.last.fm</string>
 	</array>
 </dict>
 </plist>

@@ -26,6 +26,7 @@
 #import "FFMMogUpdater.h"
 #import "FFMRdioUpdater.h"
 #import "FFMSpotifyUpdater.h"
+#import "FFMRadiumUpdater.h"
 #import "NoPlayerSongUpdater.h"
 
 static NSString *const kGlobalHotKey = @"Global Hot Key";
@@ -75,6 +76,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 @synthesize mogUpdater = _mogUpdater;
 @synthesize rdioUpdater = _rdioUpdater;
 @synthesize spotifyUpdater = _spotifyUpdater;
+@synthesize radiumUpdater = _radiumUpdater;
 @synthesize timerCounter = _timerCounter;
 @synthesize emptyUpdater = _emptyUpdater;
 
@@ -744,6 +746,10 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     {
         self.currentSongUpdater = self.rdioUpdater;
     }
+    else if (self.radiumUpdater.isServiceAvailable && self.radiumUpdater.isServicePlaying)
+    {
+        self.currentSongUpdater = self.radiumUpdater;
+    }
     else if (self.mogUpdater.isServiceAvailable && self.mogUpdater.isServicePlaying)
     {
         // Pause not supported, so lower priority.
@@ -793,6 +799,9 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
     self.rdioUpdater = [[FFMRdioUpdater alloc] init];
     if (self.rdioUpdater.icon == nil) self.rdioUpdater.icon = [NSImage imageNamed:@"Rdio-service"];
+    
+    self.radiumUpdater = [[FFMRadiumUpdater alloc] init];
+//    if (self.radiumUpdater.icon == nil) self.rdioUpdater.icon = [NSImage imageNamed:@"Radium-service"];
 
     self.mogUpdater = [[FFMMogUpdater alloc] init];
     if (self.mogUpdater.icon == nil) self.mogUpdater.icon = [NSImage imageNamed:@"Mog-service"];
