@@ -10,7 +10,7 @@
 	<true/>
 	<key>com.apple.security.temporary-exception.apple-events</key>
 	<array>
-		<string>com.apple.iTunes</string>
+		<string>com.apple.itunes</string>
 		<string>com.mog.desktop</string>
 		<string>com.catpigstudios.radium</string>
 		<string>com.rdio.desktop</string>
