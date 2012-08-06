@@ -2,22 +2,21 @@ Watch your music from the comfort of your own desktop.
 
 *** Low Introductory Price! ***
 
-Always know which song you're currently playing. SkronkFM talks directly to local music player applications like iTunes, Spotify, Rdio, and Mog for quick and accurate song updates.
+Always know which song you're currently playing. SkronkFM talks directly to local music player applications like iTunes, Spotify, Rdio, Mog, and Radium for quick and accurate song updates.
 
 Within seconds of each song change, SkronkFM will update to show the current track, artist, and album. To change from one music application to another, simply start playing in the new one. SkronkFM will automatically detect the switch.
 
-It also syncs up with the last.fm music service so you can track music from remote sources, including mobile apps, media servers, and web streaming players.
+SkronkFM also syncs up with the last.fm music service so you can track music from remote sources, including mobile apps, media servers, and web streaming players.
 
 Features:
 
-* Keep track of what’s currently playing on your last.fm account
-* Sync with local music applications: Spotify, Mog, Rdio, and iTunes
+* Shows songs playing on local music applications: iTunes, Spotify, Rdio, Mog, and Radium
+* Also keeps track of what’s currently playing on your last.fm account
 * Convenient menubar access
 * Always on Top so SkronkFM doesn’t get lost on your desktop
 * Autosizes to fit track length
 * Choose between opaque or transparent background
 * Configurable global keyboard shortcut to show/hide
-* Quick link to open the current song in your default browser
 * Ready for Mountain Lion
 
 ---
@@ -49,10 +48,12 @@ Version 1.1:
 
 Now directly supports local players for faster updates and more accurate song reporting:
 
+* iTunes
 * Spotify
 * Rdio
 * Mog
-* iTunes
+* Radium
+* last.fm Audioscrobbler Beta
 
 Other Improvements:
 
@@ -60,5 +61,3 @@ Other Improvements:
 * Fix blocking while fetching slow album art
 * Bug fixes and optimizations
 * Ready for Mountain Lion 10.8
-
-[Note: an AppleScript issue in iTunes 10.6.3 may prevent SkronkFM from discovering the current song. We are hoping this will be fixed in the next release of iTunes.]
