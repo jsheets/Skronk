@@ -10,21 +10,23 @@ SkronkFM is able to detect the currently playing song and its album artwork from
 
 > SkronkFM checks for local music application updates every 5 seconds, using each application's AppleScript interface. If no local apps are playing, it will contact the last.fm web service every 15 seconds. You can put SkronkFM to sleep from the *View* menu or the shortcut key, and SkronkFM will cease network activity until you wake it again.
 
-## iTunes
+## [iTunes](http://bit.ly/itunes_skronkfm_ita)
 
 SkronkFM supports local song detection from the iTunes application.
 
-> *Note, an AppleScript issue in iTunes 10.6.3 may prevent SkronkFM from properly communicating with iTunes on Mountain Lion, 10.8. We are hoping this will be fixed in the next release of iTunes.*
-
-## Spotify
+## [Spotify](http://bit.ly/spotify_skronkfm_ita)
 
 Spotify's Mac desktop application works well with SkronkFM, supporting both local updates and remote last.fm.
 
-## Rdio
+## [Rdio](http://bit.ly/rdio_skronkfm_ita)
 
 Rdio's Mac desktop application works well with SkronkFM, supporting both local updates and remote last.fm.
 
-## Mog
+## [Radium](http://bit.ly/radium_skronkfm_ita)
+
+Radium is an Internet radio player that lives in your menubar. SkronkFM will display the currently playing song and the radio station it's playing on.
+
+## [Mog](http://bit.ly/mog_skronkfm_ita)
 
 Mog's Mac desktop application allows both local updates and remote last.fm, but does not offer play/pause info.
 
@@ -32,6 +34,10 @@ Mog's Mac desktop application allows both local updates and remote last.fm, but 
 
 > Different music applications provide different levels of support for remote control. In the case of the Mog desktop application, Mog.app does not report when a song is paused, only when the next song starts.
 > 
-> If Mog is paused and you are trying to access your last.fm updates, you can quit Mog.app to remove it from the list that SkronkFM will check.
+> If Mog is paused and you are trying to access updates from another music player, you can quit Mog.app to remove it from the list that SkronkFM will check.
 
+## [Audioscrobbler Beta](http://bit.ly/audioscrobbler_skronkfm_ita)
 
+Last.fm recently released a new beta version of its Mac desktop app. SkronkFM has preliminary support for reading song info directly from that app.
+
+While the song info will be identical to what you would see through the last.fm web service, when you use the last.fm desktop app, updates will be much quicker. Also, you won't need to set your last.fm user name in the SkronkFM preferences, since the last.fm app will take care of that.

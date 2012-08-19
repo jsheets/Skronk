@@ -2,6 +2,8 @@ Watch your music from the comfort of your own desktop.
 
 *** Low Introductory Price! ***
 
+SkronkFM is a status bar for your music.
+
 Always know which song you're currently playing. SkronkFM talks directly to local music player applications like iTunes, Spotify, Rdio, Mog, and Radium for quick and accurate song updates.
 
 Within seconds of each song change, SkronkFM will update to show the current track, artist, and album. To change from one music application to another, simply start playing in the new one. SkronkFM will automatically detect the switch.

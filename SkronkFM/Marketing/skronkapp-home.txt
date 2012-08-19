@@ -6,7 +6,9 @@
 
 &nbsp;
 
-Always know which song you're currently playing. SkronkFM talks directly to local music player applications like iTunes, [Spotify](http://www.spotify.com/), [Rdio](http://www.rdio.com/), and [Mog](http://mog.com) for quick and accurate song updates.
+SkronkFM is a status bar for your music.
+
+Always know which song you're currently playing. SkronkFM talks directly to local music player applications like [iTunes](http://bit.ly/itunes_skronkfm_ita), [Spotify](http://bit.ly/spotify_skronkfm_ita), [Rdio](http://bit.ly/rdio_skronkfm_ita), [Mog](http://bit.ly/mog_skronkfm_ita), and [Radium](http://bit.ly/radium_skronkfm_ita) for quick and accurate song updates.
 
 ![](http://fourfringe.squarespace.com/storage/skronkfm-itunes.png)
 
@@ -16,14 +18,14 @@ It also syncs up with the [last.fm music service](http://www.last.fm/listen) so 
 
 ![](http://fourfringe.squarespace.com/storage/skronk-main.png)
 
-For more details on using and setting up SkronkFM with the supported music players, see the [Getting Started page](http://www.skronkapp.com/getting-started/) and the [Music Players page](http://www.skronkapp.com/players/).
+For more details on using and setting up SkronkFM with the supported music players, see the [Getting Started page](http://www.skronkapp.com/help/) and the [Music Players page](http://www.skronkapp.com/players/).
 
 &nbsp;
 
 ## FEATURES:
 
 * Keep track of what’s currently playing on your last.fm account
-* Sync with local music applications: Spotify, Mog, Rdio, and iTunes
+* Sync with local music applications: iTunes, Spotify, Mog, Rdio, and Radium
 * Convenient menubar access
 * Always on Top so SkronkFM doesn’t get lost on your desktop
 * Autosizes to fit track length
@@ -40,9 +42,9 @@ For more details on using and setting up SkronkFM with the supported music playe
 Here are some ideas we’re thinking about for upcoming releases of SkronkFM.
 
 * Artist and album details
-* Song lyrics
-* Play history
+* Play/pause controls for local players
 * Growl support
-* Player control
+* Song lyrics
 * Internet radio
+* Play history
 * iOS application
