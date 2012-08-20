@@ -697,6 +697,14 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     }
 }
 
+- (NSMenu *)applicationDockMenu:(id) sender
+{
+    NSMenu *dockMenu = [[NSMenu alloc] init];
+    [dockMenu addItemWithTitle:self.currentPlayingMenuItem.title action:nil keyEquivalent:@""];
+
+    return dockMenu;
+}
+
 - (void)awakeFromNib
 {
     // Hide window so we don't get a jump when we restore the window position.
