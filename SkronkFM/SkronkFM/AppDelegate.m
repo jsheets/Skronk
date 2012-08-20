@@ -451,6 +451,10 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                 // If we have something new to report, show it.
                 if (displayText /*&& ![displayText.string isEqualToString:self.label.stringValue]*/)
                 {
+                    self.currentPlayingMenuItem.title = self.currentSong.isPlaying ?
+                        [NSString stringWithFormat:@"Now Playing: %@", displayText.mutableString] :
+                        @"No Song Playing";
+                    
                     self.label.attributedStringValue = displayText;
                     [self adjustWindowSize];
                 }

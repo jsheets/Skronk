@@ -39,6 +39,7 @@
 @property (weak) IBOutlet NSTextField *icon;
 @property (weak) IBOutlet NSImageView *art;
 @property (weak) IBOutlet NSImageView *serviceIcon;
+@property (weak) IBOutlet NSMenuItem *currentPlayingMenuItem;
 
 @property (assign) CGFloat backgroundWidth;
 @property (strong) PreferencesController *preferencesController;
