@@ -444,8 +444,12 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                 // If we have something new to report, show it.
                 if (displayText /*&& ![displayText.string isEqualToString:self.label.stringValue]*/)
                 {
+                    // Might want to force a resize.
+                    self.currentPlayingMenuItem.image = self.currentSongUpdater.icon;
+//                    self.currentPlayingMenuItem.image = self.currentSong.albumImage;
+                    
                     self.currentPlayingMenuItem.title = self.currentSong.isPlaying ?
-                        [NSString stringWithFormat:@"Now Playing: %@", displayText.mutableString] :
+                        displayText.mutableString :
                         @"No Song Playing";
                     
                     self.label.attributedStringValue = displayText;
@@ -694,6 +698,9 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 {
     NSMenu *dockMenu = [[NSMenu alloc] init];
     [dockMenu addItemWithTitle:self.currentPlayingMenuItem.title action:nil keyEquivalent:@""];
+    
+    // Not supported for dock menus?
+    //dockMenuItem.image = self.currentSongUpdater.icon;
 
     return dockMenu;
 }
