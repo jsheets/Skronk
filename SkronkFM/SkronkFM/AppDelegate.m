@@ -340,13 +340,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         // load the last track played previously.s
         NSAttributedString *labelText = self.label.attributedStringValue;
         displayText = [[NSMutableAttributedString alloc] initWithAttributedString:labelText];
-
-        NSDictionary *gray = [NSDictionary dictionaryWithObjectsAndKeys:
-//            [NSFont fontWithName:@"Helvetica" size:14.0], NSFontAttributeName,
-            [NSColor grayColor], NSForegroundColorAttributeName,
-            nil];
-        NSRange range = NSMakeRange(0, displayText.length);
-        [displayText setAttributes:gray range:range];
     }
 
     return displayText;
