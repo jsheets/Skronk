@@ -408,7 +408,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     {
 //        NSLog(@"No music services found. Uh oh.");
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSString *message = @"No music players found.";
+            NSString *message = @"Waiting for a music player....";
             self.serviceIcon.image = self.emptyUpdater.icon;
             NSColor *highlightColor = [NSColor colorWithCalibratedWhite:0.9 alpha:1.0];
             NSDictionary *white = [NSDictionary dictionaryWithObject:highlightColor forKey:NSForegroundColorAttributeName];
