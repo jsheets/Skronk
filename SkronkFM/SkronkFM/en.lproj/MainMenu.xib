@@ -850,7 +850,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="1049187089">
 								<int key="NSCellFlags">68157504</int>
 								<int key="NSCellFlags2">4195328</int>
-								<string key="NSContents">Loading...</string>
+								<string key="NSContents">Waiting for a music player....</string>
 								<object class="NSFont" key="NSSupport">
 									<string key="NSName">Helvetica</string>
 									<double key="NSSize">14</double>
@@ -1446,6 +1446,14 @@
 						<reference key="destination" ref="212155742"/>
 					</object>
 					<int key="connectionID">786</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">showHideStatusbarItem</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="759219546"/>
+					</object>
+					<int key="connectionID">787</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2413,7 +2421,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">786</int>
+			<int key="maxID">787</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
