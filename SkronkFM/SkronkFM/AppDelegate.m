@@ -107,8 +107,12 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 // updater, or sleepedness.
 - (void)pingTimer
 {
-    if (!self.isSleeping && self.currentSongUpdater.updateFrequency > 0 &&
-        (self.timerCounter % self.currentSongUpdater.updateFrequency) == 0)
+    // If we are autohiding, then we have to keep checking play status, even when hidden.
+    BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
+
+    if ((hideWhenNotPlaying || !self.isSleeping) &&
+        (self.currentSongUpdater.updateFrequency > 0 &&
+        (self.timerCounter % self.currentSongUpdater.updateFrequency) == 0))
     {
         // Safe to update.
 //        NSLog(@"PING!! (%lu)", self.timerCounter);
@@ -153,6 +157,11 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 - (BOOL)windowIsVisible
 {
     return self.window.alphaValue == 1.0;
+}
+
+- (BOOL)windowHasHeight
+{
+    return self.window.frame.size.height > 3;
 }
 
 - (void)performAnimation:(NSDictionary *)properties
@@ -219,7 +228,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
     if (showWindow)
     {
-        if (![self windowIsVisible])
+        if (!self.windowIsVisible || !self.windowHasHeight)
         {
             self.showHideMenuItem.title = @"Sleep SkronkFM";
             self.showHideStatusbarItem.title = @"Sleep SkronkFM";
@@ -232,7 +241,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     else
     {
         // If window is still visible, hide it.
-        if ([self windowIsVisible])
+        if (self.windowIsVisible || self.windowHasHeight)
         {
             self.showHideMenuItem.title = @"Wake SkronkFM";
             self.showHideStatusbarItem.title = @"Wake SkronkFM";
@@ -347,6 +356,11 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
 - (void)adjustWindowSize
 {
+    if (!self.windowIsVisible)
+    {
+        return;
+    }
+    
     NSRect newFrame = self.window.frame;
 
     // Settings.
@@ -404,7 +418,10 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     // Make sure we have the current best music service.
     [self checkServices];
 
-    if (self.currentSongUpdater == self.emptyUpdater)
+    // If we are autohiding, then we have to keep checking play status, even when hidden.
+    BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
+
+    if (!hideWhenNotPlaying && self.currentSongUpdater == self.emptyUpdater)
     {
 //        NSLog(@"No music services found. Uh oh.");
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -463,7 +480,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                 }
 
                 // Hide window when not playing and autohide is on.
-                BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
                 BOOL hideWindow = !self.currentSong.isPlaying && hideWhenNotPlaying;
                 [self showWindow:!hideWindow];
 
@@ -522,7 +538,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         }
         else
         {
-            // Something bad happened, probably network.
+            // Explicit error. Something bad happened, probably network.
             __weak NSString *errString = self.currentSong.errorText;
 //            NSLog(@"Track error: %@ (%@)", errString, self.currentSongUpdater);
 
@@ -859,7 +875,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
 {
     // Briefly unhide if we gain focus.
-    [self showWindow:YES];
+//    [self showWindow:YES];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
