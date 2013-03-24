@@ -95,6 +95,7 @@
 		0DEBC4A61501B86700D4E1C3 /* last.fm-icon-24.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DEBC4A51501B86700D4E1C3 /* last.fm-icon-24.png */; };
 		0DEBC4A81501BDDE00D4E1C3 /* concrete-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DEBC4A71501BDDE00D4E1C3 /* concrete-background.jpg */; };
 		0DF5156A15A4AE18005F7BC4 /* FFMLocalSongUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5156915A4AE18005F7BC4 /* FFMLocalSongUpdater.m */; };
+		55FE6FCF8CE5429CA6BA6B9B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFCB33A2D6E4A8096DDC5AA /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +234,8 @@
 		0DF5156015A3EF85005F7BC4 /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
 		0DF5156815A4AE18005F7BC4 /* FFMLocalSongUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMLocalSongUpdater.h; path = ../../FringeFM/FringeFM/FFMLocalSongUpdater.h; sourceTree = "<group>"; };
 		0DF5156915A4AE18005F7BC4 /* FFMLocalSongUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMLocalSongUpdater.m; path = ../../FringeFM/FringeFM/FFMLocalSongUpdater.m; sourceTree = "<group>"; };
+		9BFCB33A2D6E4A8096DDC5AA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A01662D94F9E4E3C969A7BE2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +249,7 @@
 				0DE0248B14DF3BF8004E2227 /* SystemConfiguration.framework in Frameworks */,
 				0D09C5F915433F120031C154 /* ScriptingBridge.framework in Frameworks */,
 				0DE0248914DF3BE8004E2227 /* libz.dylib in Frameworks */,
+				55FE6FCF8CE5429CA6BA6B9B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +367,7 @@
 				0DE0243714DDCC18004E2227 /* Specs */,
 				0DE0241214DDC9FB004E2227 /* Frameworks */,
 				0DE0241014DDC9FB004E2227 /* Products */,
+				A01662D94F9E4E3C969A7BE2 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -385,6 +390,7 @@
 				0D09C5F815433F120031C154 /* ScriptingBridge.framework */,
 				0DE0248814DF3BE8004E2227 /* libz.dylib */,
 				0DE0241514DDC9FB004E2227 /* Other Frameworks */,
+				9BFCB33A2D6E4A8096DDC5AA /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -558,6 +564,7 @@
 				0DE0240B14DDC9FB004E2227 /* Sources */,
 				0DE0240C14DDC9FB004E2227 /* Frameworks */,
 				0DE0240D14DDC9FB004E2227 /* Resources */,
+				6F11F5C056D247E6863BD5D3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -674,6 +681,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F11F5C056D247E6863BD5D3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DE0240B14DDC9FB004E2227 /* Sources */ = {
@@ -822,6 +846,7 @@
 		};
 		0DE0242E14DDC9FC004E2227 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A01662D94F9E4E3C969A7BE2 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SkronkFM/SkronkFM.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -829,6 +854,7 @@
 				GCC_PREFIX_HEADER = "SkronkFM/SkronkFM-Prefix.pch";
 				INFOPLIST_FILE = "SkronkFM/SkronkFM-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -836,9 +862,10 @@
 		};
 		0DE0242F14DDC9FC004E2227 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A01662D94F9E4E3C969A7BE2 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SkronkFM/SkronkFM.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkronkFM/SkronkFM-Prefix.pch";
 				INFOPLIST_FILE = "SkronkFM/SkronkFM-Info.plist";
