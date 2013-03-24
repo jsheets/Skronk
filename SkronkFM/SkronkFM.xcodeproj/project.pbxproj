@@ -865,7 +865,7 @@
 			baseConfigurationReference = A01662D94F9E4E3C969A7BE2 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SkronkFM/SkronkFM.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkronkFM/SkronkFM-Prefix.pch";
 				INFOPLIST_FILE = "SkronkFM/SkronkFM-Info.plist";
