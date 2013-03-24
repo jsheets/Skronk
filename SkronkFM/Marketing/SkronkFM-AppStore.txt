@@ -1,21 +1,19 @@
 Watch your music from the comfort of your own desktop.
 
-*** Low Introductory Price! ***
+SkronkBar is a status bar for your music.
 
-SkronkFM is a status bar for your music.
+Always know which song you're currently playing. SkronkBar talks directly to local music player applications like iTunes, Spotify, Rdio, Mog, and Radium for quick and accurate song updates.
 
-Always know which song you're currently playing. SkronkFM talks directly to local music player applications like iTunes, Spotify, Rdio, Mog, and Radium for quick and accurate song updates.
+Within seconds of each song change, SkronkBar will update to show the current track, artist, and album. To change from one music application to another, simply start playing in the new one. SkronkBar will automatically detect the switch.
 
-Within seconds of each song change, SkronkFM will update to show the current track, artist, and album. To change from one music application to another, simply start playing in the new one. SkronkFM will automatically detect the switch.
-
-SkronkFM also syncs up with the last.fm music service so you can track music from remote sources, including mobile apps, media servers, and web streaming players.
+SkronkBar also syncs up with the last.fm music service so you can track music from remote sources, including mobile apps, media servers, and web streaming players.
 
 Features:
 
 * Shows songs playing on local music applications: iTunes, Spotify, Rdio, Mog, and Radium
 * Also keeps track of what’s currently playing on your last.fm account
 * Convenient menubar access
-* Always on Top so SkronkFM doesn’t get lost on your desktop
+* Always on Top so SkronkBar doesn’t get lost on your desktop
 * Autosizes to fit track length
 * Choose between opaque or transparent background
 * Configurable global keyboard shortcut to show/hide
@@ -25,7 +23,7 @@ Features:
 
 ## Keywords:
 
-skronk,fm,last.fm,music,spotify,mog,rdio,track,album,artist,song,menubar,scrobble
+skronk,fm,last.fm,lastfm,music,spotify,mog,rdio,radium,track,album,artist,song,menubar,scrobble
 
 ## Contact:
 
@@ -63,3 +61,11 @@ Other Improvements:
 * Fix blocking while fetching slow album art
 * Bug fixes and optimizations
 * Ready for Mountain Lion 10.8
+
+---
+
+Version 1.2:
+
+* Also display current track in menu icon and dock menu.
+* Fixed a last.fm bug that would stall updates.
+* Improved last.fm song detection.
