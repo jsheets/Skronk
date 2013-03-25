@@ -14,7 +14,7 @@
 		0D010A5514F4892900A62136 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D010A5014F4892900A62136 /* SRValidator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0D09C5F915433F120031C154 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D09C5F815433F120031C154 /* ScriptingBridge.framework */; };
 		0D2B5ED0150C45080036A25A /* album-art-missing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ECF150C45080036A25A /* album-art-missing.png */; };
-		0D2B5ED2150C455D0036A25A /* SkronkFM.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED1150C455D0036A25A /* SkronkFM.icns */; };
+		0D2B5ED2150C455D0036A25A /* SkronkBar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED1150C455D0036A25A /* SkronkBar.icns */; };
 		0D2B5ED6150C70460036A25A /* menubar-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED5150C70460036A25A /* menubar-icon.png */; };
 		0D2B5ED8150C710D0036A25A /* menubar-icon-playing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2B5ED7150C710D0036A25A /* menubar-icon-playing.png */; };
 		0D3437D9151A56F100C710A7 /* menubar-icon-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D3437D8151A56F100C710A7 /* menubar-icon-alt.png */; };
@@ -127,9 +127,9 @@
 		0D010A4F14F4892900A62136 /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
 		0D010A5014F4892900A62136 /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		0D09C5F815433F120031C154 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
-		0D2B5ECC150B19130036A25A /* SkronkFM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SkronkFM.entitlements; sourceTree = "<group>"; };
+		0D2B5ECC150B19130036A25A /* SkronkBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SkronkBar.entitlements; sourceTree = "<group>"; };
 		0D2B5ECF150C45080036A25A /* album-art-missing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album-art-missing.png"; sourceTree = "<group>"; };
-		0D2B5ED1150C455D0036A25A /* SkronkFM.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SkronkFM.icns; sourceTree = SOURCE_ROOT; };
+		0D2B5ED1150C455D0036A25A /* SkronkBar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SkronkBar.icns; sourceTree = SOURCE_ROOT; };
 		0D2B5ED5150C70460036A25A /* menubar-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-icon.png"; sourceTree = "<group>"; };
 		0D2B5ED7150C710D0036A25A /* menubar-icon-playing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-icon-playing.png"; sourceTree = "<group>"; };
 		0D3437D8151A56F100C710A7 /* menubar-icon-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-icon-alt.png"; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 		0D5907F515C6DA8E008B4D29 /* FFMRadiumUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMRadiumUpdater.h; path = ../../FringeFM/FringeFM/FFMRadiumUpdater.h; sourceTree = "<group>"; };
 		0D5907F615C6DA8E008B4D29 /* FFMRadiumUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMRadiumUpdater.m; path = ../../FringeFM/FringeFM/FFMRadiumUpdater.m; sourceTree = "<group>"; };
 		0D6C3748150874030045890A /* last.fm-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last.fm-button.png"; sourceTree = "<group>"; };
-		0D6D259A15A7CF1000F0EE8F /* NoPlayerSongUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoPlayerSongUpdater.h; sourceTree = "<group>"; };
-		0D6D259B15A7CF1000F0EE8F /* NoPlayerSongUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoPlayerSongUpdater.m; sourceTree = "<group>"; };
+		0D6D259A15A7CF1000F0EE8F /* NoPlayerSongUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NoPlayerSongUpdater.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		0D6D259B15A7CF1000F0EE8F /* NoPlayerSongUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NoPlayerSongUpdater.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0D704B70159F7E4D00519C28 /* audioscrobbler-service.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audioscrobbler-service.png"; sourceTree = "<group>"; };
 		0D704B71159F7E4D00519C28 /* iTunes-service.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunes-service.png"; sourceTree = "<group>"; };
 		0D704B72159F7E4D00519C28 /* last.fm-service.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "last.fm-service.png"; sourceTree = "<group>"; };
@@ -168,10 +168,10 @@
 		0DA9F83C156056D500A110A9 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = "../../FringeFM/External/asi-http-request/Classes/ASINetworkQueue.h"; sourceTree = "<group>"; };
 		0DA9F83D156056D500A110A9 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = "../../FringeFM/External/asi-http-request/Classes/ASINetworkQueue.m"; sourceTree = "<group>"; };
 		0DA9F83E156056D500A110A9 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../../FringeFM/External/asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = "<group>"; };
-		0DA9F8671560599F00A110A9 /* FFMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMJson.h; path = ../../FringeFM/FringeFM/FFMJson.h; sourceTree = "<group>"; };
-		0DA9F8681560599F00A110A9 /* FFMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMJson.m; path = ../../FringeFM/FringeFM/FFMJson.m; sourceTree = "<group>"; };
-		0DA9F8691560599F00A110A9 /* FFMLastFmJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMLastFmJson.h; path = ../../FringeFM/FringeFM/FFMLastFmJson.h; sourceTree = "<group>"; };
-		0DA9F86A1560599F00A110A9 /* FFMLastFmJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMLastFmJson.m; path = ../../FringeFM/FringeFM/FFMLastFmJson.m; sourceTree = "<group>"; };
+		0DA9F8671560599F00A110A9 /* FFMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = FFMJson.h; path = ../../FringeFM/FringeFM/FFMJson.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		0DA9F8681560599F00A110A9 /* FFMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FFMJson.m; path = ../../FringeFM/FringeFM/FFMJson.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		0DA9F8691560599F00A110A9 /* FFMLastFmJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = FFMLastFmJson.h; path = ../../FringeFM/FringeFM/FFMLastFmJson.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		0DA9F86A1560599F00A110A9 /* FFMLastFmJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FFMLastFmJson.m; path = ../../FringeFM/FringeFM/FFMLastFmJson.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0DA9F86D15605A6B00A110A9 /* FringeFM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FringeFM.xcodeproj; path = ../FringeFM/FringeFM.xcodeproj; sourceTree = "<group>"; };
 		0DB35359158548EF00857A92 /* FFMLastFMUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMLastFMUpdater.h; path = ../../FringeFM/FringeFM/FFMLastFMUpdater.h; sourceTree = "<group>"; };
 		0DB3535A158548EF00857A92 /* FFMLastFMUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMLastFMUpdater.m; path = ../../FringeFM/FringeFM/FFMLastFMUpdater.m; sourceTree = "<group>"; };
@@ -190,15 +190,15 @@
 		0DCA3A5815899F3B005C1270 /* FFMSpotifyUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFMSpotifyUpdater.h; path = ../../FringeFM/FringeFM/FFMSpotifyUpdater.h; sourceTree = "<group>"; };
 		0DCA3A5915899F3B005C1270 /* FFMSpotifyUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFMSpotifyUpdater.m; path = ../../FringeFM/FringeFM/FFMSpotifyUpdater.m; sourceTree = "<group>"; };
 		0DCA3A601589A98A005C1270 /* itunes-icon-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "itunes-icon-24.png"; sourceTree = "<group>"; };
-		0DE0240F14DDC9FB004E2227 /* SkronkFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkronkFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DE0240F14DDC9FB004E2227 /* SkronkBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkronkBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE0241314DDC9FB004E2227 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0DE0241614DDC9FB004E2227 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		0DE0241714DDC9FB004E2227 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0DE0241814DDC9FB004E2227 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		0DE0241B14DDC9FB004E2227 /* SkronkFM-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkronkFM-Info.plist"; sourceTree = "<group>"; };
+		0DE0241B14DDC9FB004E2227 /* SkronkBar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkronkBar-Info.plist"; sourceTree = "<group>"; };
 		0DE0241D14DDC9FB004E2227 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0DE0241F14DDC9FB004E2227 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		0DE0242114DDC9FB004E2227 /* SkronkFM-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "SkronkFM-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		0DE0242114DDC9FB004E2227 /* SkronkBar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "SkronkBar-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0DE0242314DDC9FB004E2227 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		0DE0242514DDC9FB004E2227 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		0DE0242614DDC9FB004E2227 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -374,7 +374,7 @@
 		0DE0241014DDC9FB004E2227 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0DE0240F14DDC9FB004E2227 /* SkronkFM.app */,
+				0DE0240F14DDC9FB004E2227 /* SkronkBar.app */,
 				0DE0243514DDCC18004E2227 /* Specs.framework */,
 			);
 			name = Products;
@@ -422,12 +422,12 @@
 		0DE0241A14DDC9FB004E2227 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0D2B5ED1150C455D0036A25A /* SkronkFM.icns */,
-				0D2B5ECC150B19130036A25A /* SkronkFM.entitlements */,
-				0DE0241B14DDC9FB004E2227 /* SkronkFM-Info.plist */,
+				0D2B5ED1150C455D0036A25A /* SkronkBar.icns */,
+				0D2B5ECC150B19130036A25A /* SkronkBar.entitlements */,
+				0DE0241B14DDC9FB004E2227 /* SkronkBar-Info.plist */,
 				0DE0241C14DDC9FB004E2227 /* InfoPlist.strings */,
 				0DE0241F14DDC9FB004E2227 /* main.m */,
-				0DE0242114DDC9FB004E2227 /* SkronkFM-Prefix.pch */,
+				0DE0242114DDC9FB004E2227 /* SkronkBar-Prefix.pch */,
 				0DE0242214DDC9FB004E2227 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -557,9 +557,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0DE0240E14DDC9FB004E2227 /* SkronkFM */ = {
+		0DE0240E14DDC9FB004E2227 /* SkronkBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0DE0242D14DDC9FC004E2227 /* Build configuration list for PBXNativeTarget "SkronkFM" */;
+			buildConfigurationList = 0DE0242D14DDC9FC004E2227 /* Build configuration list for PBXNativeTarget "SkronkBar" */;
 			buildPhases = (
 				0DE0240B14DDC9FB004E2227 /* Sources */,
 				0DE0240C14DDC9FB004E2227 /* Frameworks */,
@@ -570,9 +570,9 @@
 			);
 			dependencies = (
 			);
-			name = SkronkFM;
+			name = SkronkBar;
 			productName = SkronkMini;
-			productReference = 0DE0240F14DDC9FB004E2227 /* SkronkFM.app */;
+			productReference = 0DE0240F14DDC9FB004E2227 /* SkronkBar.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0DE0243414DDCC18004E2227 /* Specs */ = {
@@ -599,7 +599,7 @@
 		0DE0240614DDC9FB004E2227 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = FourFringe;
 			};
 			buildConfigurationList = 0DE0240914DDC9FB004E2227 /* Build configuration list for PBXProject "SkronkFM" */;
@@ -620,7 +620,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				0DE0240E14DDC9FB004E2227 /* SkronkFM */,
+				0DE0240E14DDC9FB004E2227 /* SkronkBar */,
 				0DE0243414DDCC18004E2227 /* Specs */,
 			);
 		};
@@ -657,7 +657,7 @@
 				0DEBC4A81501BDDE00D4E1C3 /* concrete-background.jpg in Resources */,
 				0D6C3749150874030045890A /* last.fm-button.png in Resources */,
 				0D2B5ED0150C45080036A25A /* album-art-missing.png in Resources */,
-				0D2B5ED2150C455D0036A25A /* SkronkFM.icns in Resources */,
+				0D2B5ED2150C455D0036A25A /* SkronkBar.icns in Resources */,
 				0D2B5ED6150C70460036A25A /* menubar-icon.png in Resources */,
 				0D2B5ED8150C710D0036A25A /* menubar-icon-playing.png in Resources */,
 				0D3437D9151A56F100C710A7 /* menubar-icon-alt.png in Resources */,
@@ -803,6 +803,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -817,6 +821,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
@@ -830,6 +835,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -838,6 +847,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
@@ -848,11 +858,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A01662D94F9E4E3C969A7BE2 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = SkronkFM/SkronkFM.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SkronkFM/SkronkBar.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SkronkFM/SkronkFM-Prefix.pch";
-				INFOPLIST_FILE = "SkronkFM/SkronkFM-Info.plist";
+				GCC_PREFIX_HEADER = "SkronkFM/SkronkBar-Prefix.pch";
+				INFOPLIST_FILE = "SkronkFM/SkronkBar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -864,11 +875,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A01662D94F9E4E3C969A7BE2 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = SkronkFM/SkronkFM.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_ENTITLEMENTS = SkronkFM/SkronkBar.entitlements;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SkronkFM/SkronkFM-Prefix.pch";
-				INFOPLIST_FILE = "SkronkFM/SkronkFM-Info.plist";
+				GCC_PREFIX_HEADER = "SkronkFM/SkronkBar-Prefix.pch";
+				INFOPLIST_FILE = "SkronkFM/SkronkBar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -878,6 +890,7 @@
 		0DE0244214DDCC18004E2227 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -892,6 +905,7 @@
 		0DE0244314DDCC18004E2227 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -915,7 +929,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0DE0242D14DDC9FC004E2227 /* Build configuration list for PBXNativeTarget "SkronkFM" */ = {
+		0DE0242D14DDC9FC004E2227 /* Build configuration list for PBXNativeTarget "SkronkBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DE0242E14DDC9FC004E2227 /* Debug */,

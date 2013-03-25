@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'SkronkFM' target in the 'SkronkFM' project
-//
-
-#ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-#endif
