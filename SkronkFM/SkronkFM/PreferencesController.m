@@ -1,6 +1,6 @@
 //
 //  PreferencesController.m
-//  SkronkFM
+//  SkronkBar
 //
 //  Created by John Sheets on 2/14/12.
 //  Copyright (c) 2012 FourFringe. All rights reserved.

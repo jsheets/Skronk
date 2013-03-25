@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  SkronkFM
+//  SkronkBar
 //
 //  Created by John Sheets on 2/4/12.
 //  Copyright (c) 2012 FourFringe. All rights reserved.
@@ -107,8 +107,12 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 // updater, or sleepedness.
 - (void)pingTimer
 {
-    if (!self.isSleeping && self.currentSongUpdater.updateFrequency > 0 &&
-        (self.timerCounter % self.currentSongUpdater.updateFrequency) == 0)
+    // If we are autohiding, then we have to keep checking play status, even when hidden.
+    BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
+
+    if ((hideWhenNotPlaying || !self.isSleeping) &&
+        (self.currentSongUpdater.updateFrequency > 0 &&
+        (self.timerCounter % self.currentSongUpdater.updateFrequency) == 0))
     {
         // Safe to update.
 //        NSLog(@"PING!! (%lu)", self.timerCounter);
@@ -153,6 +157,11 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 - (BOOL)windowIsVisible
 {
     return self.window.alphaValue == 1.0;
+}
+
+- (BOOL)windowHasHeight
+{
+    return self.window.frame.size.height > 3;
 }
 
 - (void)performAnimation:(NSDictionary *)properties
@@ -219,10 +228,10 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
     if (showWindow)
     {
-        if (![self windowIsVisible])
+        if (!self.windowIsVisible || !self.windowHasHeight)
         {
-            self.showHideMenuItem.title = @"Sleep SkronkFM";
-            self.showHideStatusbarItem.title = @"Sleep SkronkFM";
+            self.showHideMenuItem.title = @"Sleep SkronkBar";
+            self.showHideStatusbarItem.title = @"Sleep SkronkBar";
             [self fadeInWindow];
 
             // Don't update here after all. Causes issues with quick hide/show.
@@ -232,10 +241,10 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     else
     {
         // If window is still visible, hide it.
-        if ([self windowIsVisible])
+        if (self.windowIsVisible || self.windowHasHeight)
         {
-            self.showHideMenuItem.title = @"Wake SkronkFM";
-            self.showHideStatusbarItem.title = @"Wake SkronkFM";
+            self.showHideMenuItem.title = @"Wake SkronkBar";
+            self.showHideStatusbarItem.title = @"Wake SkronkBar";
             [self fadeOutWindow];
         }
     }
@@ -340,13 +349,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         // load the last track played previously.s
         NSAttributedString *labelText = self.label.attributedStringValue;
         displayText = [[NSMutableAttributedString alloc] initWithAttributedString:labelText];
-
-        NSDictionary *gray = [NSDictionary dictionaryWithObjectsAndKeys:
-//            [NSFont fontWithName:@"Helvetica" size:14.0], NSFontAttributeName,
-            [NSColor grayColor], NSForegroundColorAttributeName,
-            nil];
-        NSRange range = NSMakeRange(0, displayText.length);
-        [displayText setAttributes:gray range:range];
     }
 
     return displayText;
@@ -354,6 +356,11 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 
 - (void)adjustWindowSize
 {
+    if (!self.windowIsVisible)
+    {
+        return;
+    }
+    
     NSRect newFrame = self.window.frame;
 
     // Settings.
@@ -411,11 +418,14 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     // Make sure we have the current best music service.
     [self checkServices];
 
-    if (self.currentSongUpdater == self.emptyUpdater)
+    // If we are autohiding, then we have to keep checking play status, even when hidden.
+    BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
+
+    if (!hideWhenNotPlaying && self.currentSongUpdater == self.emptyUpdater)
     {
 //        NSLog(@"No music services found. Uh oh.");
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSString *message = @"No music players found.";
+            NSString *message = @"Waiting for a music player....";
             self.serviceIcon.image = self.emptyUpdater.icon;
             NSColor *highlightColor = [NSColor colorWithCalibratedWhite:0.9 alpha:1.0];
             NSDictionary *white = [NSDictionary dictionaryWithObject:highlightColor forKey:NSForegroundColorAttributeName];
@@ -451,6 +461,14 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                 // If we have something new to report, show it.
                 if (displayText /*&& ![displayText.string isEqualToString:self.label.stringValue]*/)
                 {
+                    // Might want to force a resize.
+                    self.currentPlayingMenuItem.image = self.currentSongUpdater.icon;
+//                    self.currentPlayingMenuItem.image = self.currentSong.albumImage;
+                    
+                    self.currentPlayingMenuItem.title = self.currentSong.isPlaying ?
+                        displayText.mutableString :
+                        @"No Song Playing";
+                    
                     self.label.attributedStringValue = displayText;
                     [self adjustWindowSize];
                 }
@@ -462,7 +480,6 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
                 }
 
                 // Hide window when not playing and autohide is on.
-                BOOL hideWhenNotPlaying = [[NSUserDefaults standardUserDefaults] boolForKey:kPreferenceAutohide];
                 BOOL hideWindow = !self.currentSong.isPlaying && hideWhenNotPlaying;
                 [self showWindow:!hideWindow];
 
@@ -521,7 +538,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         }
         else
         {
-            // Something bad happened, probably network.
+            // Explicit error. Something bad happened, probably network.
             __weak NSString *errString = self.currentSong.errorText;
 //            NSLog(@"Track error: %@ (%@)", errString, self.currentSongUpdater);
 
@@ -693,6 +710,17 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     }
 }
 
+- (NSMenu *)applicationDockMenu:(id) sender
+{
+    NSMenu *dockMenu = [[NSMenu alloc] init];
+    [dockMenu addItemWithTitle:self.currentPlayingMenuItem.title action:nil keyEquivalent:@""];
+    
+    // Not supported for dock menus?
+    //dockMenuItem.image = self.currentSongUpdater.icon;
+
+    return dockMenu;
+}
+
 - (void)awakeFromNib
 {
     // Hide window so we don't get a jump when we restore the window position.
@@ -760,7 +788,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         // Pause not supported, so lower priority.
         self.currentSongUpdater = self.lastFmAppUpdater;
     }
-    else if (lastFmUsername)
+    else if (lastFmUsername && self.lastFmUpdater.isServicePlaying)
     {
         // Fall back last on remote last.fm web service, but only if we have a last.fm user.
         self.currentSongUpdater = self.lastFmUpdater;
@@ -847,7 +875,7 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
 - (void)applicationDidBecomeActive:(NSNotification *)aNotification
 {
     // Briefly unhide if we gain focus.
-    [self showWindow:YES];
+//    [self showWindow:YES];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification

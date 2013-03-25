@@ -1,6 +1,6 @@
 //
 //  AppDelegate.h
-//  SkronkFM
+//  SkronkBar
 //
 //  Created by John Sheets on 2/4/12.
 //  Copyright (c) 2012 FourFringe. All rights reserved.
@@ -39,6 +39,7 @@
 @property (weak) IBOutlet NSTextField *icon;
 @property (weak) IBOutlet NSImageView *art;
 @property (weak) IBOutlet NSImageView *serviceIcon;
+@property (weak) IBOutlet NSMenuItem *currentPlayingMenuItem;
 
 @property (assign) CGFloat backgroundWidth;
 @property (strong) PreferencesController *preferencesController;
