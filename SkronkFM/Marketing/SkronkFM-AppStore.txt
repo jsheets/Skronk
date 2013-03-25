@@ -1,6 +1,6 @@
-Watch your music from the comfort of your own desktop.
+skronk: "To produce a raw and discordant sound with electric guitars" - Wiktionary
 
-SkronkBar is a status bar for your music.
+SkronkBar is a status bar for your music. Watch your music from the comfort of your own desktop.
 
 Always know which song you're currently playing. SkronkBar talks directly to local music player applications like iTunes, Spotify, Rdio, Mog, and Radium for quick and accurate song updates.
 
@@ -66,6 +66,7 @@ Other Improvements:
 
 Version 1.2:
 
+* Renamed app to SkronkBar.
 * Also display current track in menu icon and dock menu.
 * Fixed a last.fm bug that would stall updates.
 * Improved last.fm song detection.

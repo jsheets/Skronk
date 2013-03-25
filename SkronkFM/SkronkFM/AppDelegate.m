@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  SkronkFM
+//  SkronkBar
 //
 //  Created by John Sheets on 2/4/12.
 //  Copyright (c) 2012 FourFringe. All rights reserved.
@@ -230,8 +230,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
     {
         if (!self.windowIsVisible || !self.windowHasHeight)
         {
-            self.showHideMenuItem.title = @"Sleep SkronkFM";
-            self.showHideStatusbarItem.title = @"Sleep SkronkFM";
+            self.showHideMenuItem.title = @"Sleep SkronkBar";
+            self.showHideStatusbarItem.title = @"Sleep SkronkBar";
             [self fadeInWindow];
 
             // Don't update here after all. Causes issues with quick hide/show.
@@ -243,8 +243,8 @@ static CGFloat const kServiceIconHiddenAlpha = 0.0f;
         // If window is still visible, hide it.
         if (self.windowIsVisible || self.windowHasHeight)
         {
-            self.showHideMenuItem.title = @"Wake SkronkFM";
-            self.showHideStatusbarItem.title = @"Wake SkronkFM";
+            self.showHideMenuItem.title = @"Wake SkronkBar";
+            self.showHideStatusbarItem.title = @"Wake SkronkBar";
             [self fadeOutWindow];
         }
     }

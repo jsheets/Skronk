@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12A269</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2829</string>
-		<string key="IBDocument.AppKitVersion">1187</string>
-		<string key="IBDocument.HIToolboxVersion">624.00</string>
+		<string key="IBDocument.SystemVersion">12C3012</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
+		<string key="IBDocument.AppKitVersion">1187.34</string>
+		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2829</string>
+			<string key="NS.object.0">3084</string>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -49,7 +49,7 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{196, 240}, {425, 311}}</string>
 				<int key="NSWTFlags">544735232</int>
-				<string key="NSWindowTitle">SkronkFM Preferences</string>
+				<string key="NSWindowTitle">SkronkBar Preferences</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<object class="NSToolbar" key="NSViewClass" id="147455787">
 					<object class="NSMutableString" key="NSToolbarIdentifier">
@@ -162,7 +162,7 @@
 						<object class="NSButtonCell" key="NSCell" id="410188668">
 							<int key="NSCellFlags">-2080374784</int>
 							<int key="NSCellFlags2">0</int>
-							<string key="NSContents">Show SkronkFM in the menu bar</string>
+							<string key="NSContents">Show SkronkBar in the menu bar</string>
 							<object class="NSFont" key="NSSupport" id="697142319">
 								<string key="NSName">LucidaGrande</string>
 								<double key="NSSize">13</double>
@@ -199,7 +199,7 @@
 									<object class="NSTextField" id="562922954">
 										<reference key="NSNextResponder" ref="666754958"/>
 										<int key="NSvFlags">268</int>
-										<string key="NSFrame">{{15, 17}, {144, 17}}</string>
+										<string key="NSFrame">{{15, 17}, {152, 17}}</string>
 										<reference key="NSSuperview" ref="666754958"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="854610365"/>
@@ -208,7 +208,7 @@
 										<object class="NSTextFieldCell" key="NSCell" id="624645386">
 											<int key="NSCellFlags">68157504</int>
 											<int key="NSCellFlags2">272630784</int>
-											<string key="NSContents">Sleep/Wake SkronkFM</string>
+											<string key="NSContents">Sleep/Wake SkronkBar</string>
 											<reference key="NSSupport" ref="697142319"/>
 											<string key="NSCellIdentifier">_NS:3944</string>
 											<reference key="NSControlView" ref="562922954"/>
@@ -236,7 +236,7 @@
 									<object class="NSCustomView" id="854610365">
 										<reference key="NSNextResponder" ref="666754958"/>
 										<int key="NSvFlags">266</int>
-										<string key="NSFrame">{{164, 14}, {207, 22}}</string>
+										<string key="NSFrame">{{172, 14}, {199, 22}}</string>
 										<reference key="NSSuperview" ref="666754958"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="150703310"/>
@@ -421,7 +421,7 @@
 						<object class="NSTextFieldCell" key="NSTitleCell">
 							<int key="NSCellFlags">67108864</int>
 							<int key="NSCellFlags2">0</int>
-							<string key="NSContents">SkronkFM</string>
+							<string key="NSContents">SkronkBar</string>
 							<reference key="NSSupport" ref="26"/>
 							<reference key="NSBackgroundColor" ref="224221161"/>
 							<object class="NSColor" key="NSTextColor">
@@ -562,7 +562,7 @@
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCustomView" id="943935839">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -571,6 +571,8 @@
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{166, 280}, {207, 22}}</string>
 						<reference key="NSSuperview" ref="943935839"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:903</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="157527133">
@@ -591,6 +593,7 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{17, 283}, {144, 17}}</string>
 						<reference key="NSSuperview" ref="943935839"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="281900066"/>
 						<string key="NSReuseIdentifierKey">_NS:3944</string>
 						<bool key="NSEnabled">YES</bool>
@@ -608,6 +611,8 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{393, 320}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="964527122"/>
 				<string key="NSReuseIdentifierKey">_NS:1192</string>
 				<string key="NSClassName">NSView</string>
